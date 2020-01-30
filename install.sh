@@ -2,42 +2,75 @@
 
 # Update the system
 
-sudo apt update && sudo apt install upgrade -y
+sudo apt update && sudo apt upgrade -y
+
+# Utils
+
+sudo apt install unzip
 
 # Terminal related packages
 
 echo "Installing fish & rxvt-unicode"
-sudo apt install fish rxvt-unicode
+sudo apt install -y fish rxvt-unicode
 curl -L https://get.oh-my.fish | fish
 omf insall bobthefish
 chsh -s /usr/bin/fish
 
 # Slim WM
 
-sudo apt install slim
+sudo apt install -y slim
 sudo cp wallpaper/andre-benz-JBkwaYMuhdc-unsplash.jpg
-/usr/share/slim/themes/default/background.jpg
+  \ /usr/share/slim/themes/default/background.jpg
 sudo sed -i "s/\(current_theme *\).*/\1default/" /etc/slim.conf
 
 # Desktop
 
-echo "Installing i3, xorg, rofi, i3lock, xsettings, compton, hsetroot & lxappearance..."
-sudo apt install -y i3 xorg suckless-tools rofi i3lock xsettingsd hsetroot lxappearance
+echo "Installing i3, xorg, i3lock, xsettings, compton & hsetroot..."
+sudo apt install -y i3 xorg suckless-tools i3lock xsettingsd hsetroot
 cp wallpaper/andre-benz-JBkwaYMuhdc-unsplash.jpg ~/.config/i3/wallpaper.jpg
+
+# Customization
+
+echo "Installing lxappearance..."
+sudo apt install -y lxappearance
+
+# Fonts (DejaVuSansMono Nerd Fonts)
+
+echo "Installing fonts..."
+cd /tmp/
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/DejaVuSansMono.zip
+unzip DejaVuSansMono.zip -d ~/.local/share/fonts/
+
+# Dmenu
+
+echo "Installing rofi..."
+sudo apt install -y rofi
+
+# Screen capture
+
+echo "Installing scrot..."
+sudo apt install -y scrot
+
+# Calc
+
+echo "Installing qalc..."
+sudo apt install -Y qalc
 
 # Snap
 
 echo "Installing snapd..."
-sudo apt install snapd
+sudo apt install -y snapd
 
 # Browser
 
 echo "Installing brave-browser..."
-sudo apt install apt-transport-https curl
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
-echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt install -y apt-transport-https curl
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo
+  \ apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable
+  \ main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
-sudo apt install brave-browser
+sudo apt install -y brave-browser
 
 # Node
 

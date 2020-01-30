@@ -11,6 +11,10 @@ cd dotfiles
 
 ## Packages Info
 
+### Fonts
+
+- [Nerd Fonts](https://www.nerdfonts.com/)
+
 ### Terminal
 
 - [fish](https://fishshell.com/): shell
