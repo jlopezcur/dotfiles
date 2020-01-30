@@ -28,6 +28,12 @@ bindsym $mod+Return exec urxvt
 for_window [class="Gpick"] floating enable
 bindsym $mod+p exec gpick 
 
+# print screen
+bindsym --release $mod+z exec scrot -s
+
+# calc
+bindsym $mod+c exec rofi -show calc -modi "calc:qalc +u8 -nocurrencies"
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
