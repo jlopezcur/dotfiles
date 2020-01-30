@@ -10,8 +10,8 @@ cp -v ~/.Xresources urxvt/
 # i3
 cp -v ~/.config/i3/config i3/
 
-# i3status
-cp -v ~/.config/i3status/config i3status/
+# i3blocks
+cp -v ~/.config/i3blocks/* i3blocks/
 
 # vim
 cp -v ~/.config/vim/vimrc vim/

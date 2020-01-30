@@ -15,9 +15,6 @@ set $mod Mod4
 exec --no-startup-id hsetroot -solid "#333333" 
 exec --no-startup-id xsettingsd &
 
-# Set font
-font pango: DejaVu Sans Mono Nerd Font Mono 10
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -161,23 +158,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-  colors {
-    background #2f343f
-    statusline #2f343f
-    separator #4b5262
-
-    # colour of border, background, and text
-    focused_workspace       #2f343f #bf616a #d8dee8
-    active_workspace        #2f343f #2f343f #d8dee8
-    inactive_workspace      #2f343f #2f343f #d8dee8
-    urgent_workspacei       #2f343f #ebcb8b #2f343f
-  }
-  status_command i3status
-}
-
 # i3lock
 bindsym $mod+Shift+x exec i3lock -c 000000
 bindsym $mod+Shift+z exec systemctl suspend
@@ -186,4 +166,59 @@ bindsym $mod+Shift+z exec systemctl suspend
 bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"
 bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
 bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
+
+# ------------------------------------------------------------------------------
+# Theme
+# ------------------------------------------------------------------------------
+
+# set primary gruvbox colorscheme colors
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+
+# font used by i3 for titles and bars
+font pango: DejaVu Sans Mono Nerd Font Mono 10
+
+#start of bar section
+bar {
+  position bottom
+  status_command i3blocks
+  colors {
+    # bar background color
+    background $bg
+    # text color used for blocks that do not have a color specified.
+    statusline $yellow
+    # workspaces section
+    #                    border  backgr. text
+    focused_workspace    $aqua $aqua $darkgray
+    inactive_workspace   $darkgray $darkgray $yellow
+    active_workspace     $darkgray $darkgray $yellow
+    urgent_workspace     $red $red $bg
+  }
+}
+#end of bar section
+
+#start of window title bars & borders section
+
+# green gruvbox
+# class                 border|backgr|text|indicator|child_border
+#client.focused          $green $green $darkgray $purple $darkgray
+#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+#client.urgent           $red $red $white $red $red
+
+# blue gruvbox
+# class                 border|backgr|text|indicator|child_border
+client.focused          $blue $blue $darkgray $purple $darkgray
+client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.urgent           $red $red $white $red $red
+
+#end of window title bars & borders section
 

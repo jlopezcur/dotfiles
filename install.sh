@@ -6,7 +6,7 @@ sudo apt update && sudo apt upgrade -y
 
 # Utils
 
-sudo apt install unzip
+sudo apt install -y unzip
 
 # Terminal related packages
 
@@ -25,9 +25,14 @@ sudo sed -i "s/\(current_theme *\).*/\1default/" /etc/slim.conf
 
 # Desktop
 
-echo "Installing i3, xorg, i3lock, xsettings, compton & hsetroot..."
-sudo apt install -y i3 xorg suckless-tools i3lock xsettingsd hsetroot
+echo "Installing i3, xorg, i3lock, i3blocks, xsettingsd, compton & hsetroot..."
+sudo apt install -y i3 xorg suckless-tools i3lock i3blocks xsettingsd hsetroot
 cp wallpaper/andre-benz-JBkwaYMuhdc-unsplash.jpg ~/.config/i3/wallpaper.jpg
+
+# Sensors
+
+echo "Installing lm-sensors..."
+sudo apt install -y lm-sensors
 
 # Customization
 
@@ -87,7 +92,7 @@ sudo apt install -y xpdf feh
 echo "Installing gpick..."
 sudo apt install -y gpick
 
-# Inlscape
+# Inkscape
 
 echo "Installing Inkscape & Gimp..."
 sudo snap install inkscape gimp

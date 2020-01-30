@@ -73,4 +73,5 @@ Using `Plug` system.
 - https://github.com/gerardbm/dotfiles
 - https://github.com/addy-dclxvi/i3-starterpack
 - https://github.com/AaronFoley/dotfiles
+- https://github.com/a-schaefers/i3-wm-gruvbox-theme
 
