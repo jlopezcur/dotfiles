@@ -1,8 +1,6 @@
 # dotfiles (alpha)
 
-## Requirements
-
-After a clean Debian 10 (Buster) install:
+## Install from a clean Debian 10 (Buster)
 
 ```shell
 sudo apt install git
