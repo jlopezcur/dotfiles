@@ -6,8 +6,8 @@ After a clean Debian 10 (Buster) install:
 
 ```shell
 sudo apt install git
-git clone ...
-cd ...
+git clone git@github.com:jlopezcur/dotfiles.git
+cd dotfiles
 ./install.sh
 ```
 
