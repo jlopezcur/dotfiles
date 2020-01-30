@@ -1,0 +1,77 @@
+#!/bin/bash
+
+# Update the system
+
+sudo apt update && sudo apt install upgrade -y
+
+# Terminal related packages
+
+echo "Installing fish & rxvt-unicode"
+sudo apt install fish rxvt-unicode
+curl -L https://get.oh-my.fish | fish
+omf insall bobthefish
+chsh -s /usr/bin/fish
+
+# Slim WM
+
+sudo apt install slim
+sudo cp wallpaper/andre-benz-JBkwaYMuhdc-unsplash.jpg
+/usr/share/slim/themes/default/background.jpg
+sudo sed -i "s/\(current_theme *\).*/\1default/" /etc/slim.conf
+
+# Desktop
+
+echo "Installing i3, xorg, rofi, i3lock, xsettings, compton, hsetroot & lxappearance..."
+sudo apt install -y i3 xorg suckless-tools rofi i3lock xsettingsd hsetroot lxappearance
+cp wallpaper/andre-benz-JBkwaYMuhdc-unsplash.jpg ~/.config/i3/wallpaper.jpg
+
+# Snap
+
+echo "Installing snapd..."
+sudo apt install snapd
+
+# Browser
+
+echo "Installing brave-browser..."
+sudo apt install apt-transport-https curl
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser
+
+# Node
+
+echo "Installing node..."
+sudo snap install --edge node
+
+# Viewers
+
+echo "Installing xpdf & feh..."
+sudo apt install -y xpdf feh 
+
+# GPick
+
+echo "Installing gpick..."
+sudo apt install -y gpick
+
+# Inlscape
+
+echo "Installing Inkscape & Gimp..."
+sudo snap install inkscape gimp
+
+# Vim
+
+echo "Installing vim..."
+sudo apt install -y vim silversearcher-ag
+
+# Neomutt
+
+echo "Installing neomutt..."
+sudo apt install -y neomutt
+
+# liquorix kernel
+
+echo "Installing liquorix kernel..."
+codename="$(find /etc/apt -type f -name '*.list' | xargs grep -E '^deb' | awk '{print $3}' | grep -Eo '^[a-z]+' | sort | uniq -c | sort -n | tail -n1 | grep -Eo '[a-z]+$')" && sudo apt-get update && sudo apt-get install apt-transport-https && echo -e "deb http://liquorix.net/debian $codename main\ndeb-src http://liquorix.net/debian $codename main\n\n# Mirrors:\n#\n# Unit193 - France\n# deb http://mirror.unit193.net/liquorix $codename main\n# deb-src http://mirror.unit193.net/liquorix $codename main" | sudo tee /etc/apt/sources.list.d/liquorix.list && curl https://liquorix.net/linux-liquorix.pub | sudo apt-key add - && sudo apt-get update
+sudo apt-get install -y linux-image-liquorix-amd64 linux-headers-liquorix-amd64
+
