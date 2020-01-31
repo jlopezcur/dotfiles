@@ -36,7 +36,7 @@ separator=false
 instance=eno1
 interval=5
 color=#fabd2f
-label= ETH
+label=
 
 #my wifi interface is wlp2s0
 #[wifi]
@@ -86,7 +86,7 @@ color=#b16286
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [temperature]
-label= TEMP
+label=
 interval=10
 color=#fabd2f
 
@@ -106,8 +106,8 @@ color=#b16286
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label= FREE
-interval=30
+label=
+interval=1
 color=#b8bb26
 
 ########################
@@ -126,7 +126,7 @@ color=#b16286
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label= HD /
+label= /
 interval=30
 color=#fb4934
 separator_block_width=10
