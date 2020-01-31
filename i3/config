@@ -12,8 +12,7 @@
 set $mod Mod4
 
 # Autostart
-exec --no-startup-id hsetroot -solid "#333333" 
-exec --no-startup-id xsettingsd &
+exec --no-startup-id hsetroot -center ~/.config/i3/wallpaper.jpg
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
