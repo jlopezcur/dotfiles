@@ -1,5 +1,7 @@
 # dotfiles (alpha)
 
+![Screenshot](https://github.com/jlopezcur/dotfiles/raw/master/screenshot.png)
+
 ## Install from a clean Debian 10 (Buster)
 
 ```shell
