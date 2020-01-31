@@ -38,6 +38,14 @@ sudo apt install -y lm-sensors
 echo "Installing lxappearance..."
 sudo apt install -y lxappearance
 
+# Icons
+
+echo "Installing paper icons..."
+cd /tmp/
+wget https://snwh.org/paper/download.php?owner=snwh&ppa=ppa&pkg=paper-icon-theme,18.04
+sudo dpkg -i paper*.deb
+sudo apt install -f
+
 # Fonts (DejaVuSansMono Nerd Fonts)
 
 echo "Installing fonts..."
