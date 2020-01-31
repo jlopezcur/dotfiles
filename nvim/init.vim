@@ -8,7 +8,7 @@ set encoding=UTF-8
 set nobackup
 set nowritebackup
 set viminfo+=!
-let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim"
+let $MYVIMRC="~/.config/nvim/init.vim"
 
 " Minivimrc Optimizations
 " https://github.com/bling/minivimrc
@@ -77,6 +77,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'PsychoLlama/further.vim'
 Plug 'yggdroot/indentline'
 Plug 'kshenoy/vim-signature'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 " Tests
 Plug 'janko/vim-test'
@@ -235,6 +236,15 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " ------------------------------------------------------------------------------
+" Polyglot
+" ------------------------------------------------------------------------------
+
+let g:vim_markdown_conceal = 0
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+let g:vim_markdown_conceal_code_blocks = 0
+
+" ------------------------------------------------------------------------------
 " FZF
 " ------------------------------------------------------------------------------
 
@@ -305,7 +315,6 @@ endif
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
 
 " ------------------------------------------------------------------------------
