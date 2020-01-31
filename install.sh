@@ -10,14 +10,17 @@ sudo apt install -y unzip
 
 # Terminal related packages
 
-echo "Installing fish & rxvt-unicode"
+echo "Installing fish & rxvt-unicode..."
 sudo apt install -y fish rxvt-unicode
 curl -L https://get.oh-my.fish | fish
 omf insall bobthefish
 chsh -s /usr/bin/fish
+cp fish/config.fish ~/.config/fish/
+cp urxvt/.Xresources ~/
 
 # Slim WM
 
+echo "Installing slim..."
 sudo apt install -y slim
 sudo cp wallpaper/wallpaper.jpg /usr/share/slim/themes/default/background.jpg
 sudo sed -i "s/\(current_theme *\).*/\1default/" /etc/slim.conf
@@ -27,6 +30,8 @@ sudo sed -i "s/\(current_theme *\).*/\1default/" /etc/slim.conf
 echo "Installing i3, xorg, i3lock, i3blocks & hsetroot..."
 sudo apt install -y i3 xorg suckless-tools i3lock i3blocks hsetroot
 cp wallpaper/wallpaper.jpg ~/.config/i3/wallpaper.jpg
+cp i3/config ~/.config/i3/
+cp i3blocks/* ~/.config/i3blocks/
 
 # Sensors
 
@@ -57,6 +62,7 @@ unzip DejaVuSansMono.zip -d ~/.local/share/fonts/
 
 echo "Installing rofi..."
 sudo apt install -y rofi
+cp -R rofi/* ~/.config/rofi/
 
 # Screen capture
 
@@ -111,6 +117,7 @@ sudo snap install nvim --beta --classic
 sudo apt install silversearcher-ag
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
   \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+cp nvim/* ~/.config/nvim/
 
 # Neomutt
 
