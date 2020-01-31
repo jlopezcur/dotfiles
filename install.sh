@@ -96,10 +96,13 @@ sudo apt install -y gpick
 echo "Installing Inkscape & Gimp..."
 sudo snap install inkscape gimp
 
-# Vim
+# NeoVim
 
-echo "Installing vim..."
-sudo apt install -y vim silversearcher-ag
+echo "Installing neovim..."
+sudo snap install nvim --beta --classic
+sudo apt install silversearcher-ag
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Neomutt
 

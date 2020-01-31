@@ -13,9 +13,9 @@ cp -v ~/.config/i3/config i3/
 # i3blocks
 cp -v ~/.config/i3blocks/* i3blocks/
 
-# vim
-cp -v ~/.config/vim/vimrc vim/
-cp -Rv ~/.config/vim/autoload/plug.vim vim/autoload/
+# nvim
+cp -v ~/.config/nvim/init.vim nvim/
+cp -Rv ~/.config/nvim/coc-settings.json nvim/
 
 # fish
 cp -v ~/.config/fish/config.fish fish/
