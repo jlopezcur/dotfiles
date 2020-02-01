@@ -79,6 +79,7 @@ Using [Plug](https://github.com/junegunn/vim-plug) system.
 - [gitv](https://github.com/gregsexton/gitv)
 - [vim-devicons](https://github.com/ryanoasis/vim-devicons)
 - [gruvbox](https://github.com/morhetz/gruvbox)
+- [vim-surround](https://github.com/tpope/vim-surround)
 
 ### Optimizations
 

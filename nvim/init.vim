@@ -57,9 +57,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
 
-" ES Lint
-"Plug 'dense-analysis/ale'
-
 " Fuzzy file finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -78,6 +75,7 @@ Plug 'PsychoLlama/further.vim'
 Plug 'yggdroot/indentline'
 Plug 'kshenoy/vim-signature'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'tpope/vim-surround'
 
 " Tests
 Plug 'janko/vim-test'
