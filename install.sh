@@ -94,6 +94,7 @@ sudo apt install -y brave-browser
 
 echo "Installing node..."
 sudo snap install --edge node
+sudo npm install -g neovim
 
 # Viewers
 
