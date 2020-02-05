@@ -96,6 +96,7 @@ git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger
 # Until ranger works well with plugin folders
 cp ~/.config/ranger/plugins/ranger_devicons/devicons.py ~/.config/ranger/plugins/devicons.py
 cp ~/.config/ranger/plugins/ranger_devicons/__init__.py ~/.config/ranger/plugins/devicons_linemode.py
+echo 'SELECTED_EDITOR="/snap/bin/nvim"' > ~/.selected_editor
 
 # Sensors
 
@@ -126,7 +127,7 @@ sudo apt install -Y qalc
 # Browser
 
 echo "Installing brave-browser..."
-sudo apt install -y apt-transport-https curl
+sudo apt install -y apt-transport-https curl w3m w3m-img
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo
   \ apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable
