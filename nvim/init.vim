@@ -14,15 +14,18 @@ let $MYVIMRC="~/.config/nvim/init.vim"
 " https://github.com/bling/minivimrc
 
 filetype plugin indent on
-syntax enable
+syntax on
 set keywordprg=":help"
 set backspace=indent,eol,start
 set ttimeout
 set ttimeoutlen=50
 set incsearch
 set hlsearch
-set laststatus=2
+
+" Split to the bottom by default on horizontal split
 set splitbelow
+
+" Split to the right by default on vertical split
 set splitright
 
 let mapleader = ","
@@ -30,6 +33,8 @@ let g:mapleader = ","
 
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>s <C-w>s
+
+" Movement between windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -45,10 +50,11 @@ nnoremap <silent> <leader>DQ :exe ":profile pause"<cr>:noautocmd qall!<cr>
 " Plugins
 " ------------------------------------------------------------------------------
 
-call plug#begin('~/.config/vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " Autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'honza/vim-snippets'
 
 " Syntax Highlighting
 Plug 'sheerun/vim-polyglot'
@@ -65,7 +71,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-vinegar'
-"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Code Tools
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
@@ -76,18 +82,19 @@ Plug 'yggdroot/indentline'
 Plug 'kshenoy/vim-signature'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'tpope/vim-surround'
+Plug 'sjl/gundo.vim'
 
 " Tests
 Plug 'janko/vim-test'
 
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'gregsexton/gitv', {'on': ['Gitv']}
+
 " Smarter tab line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-" Git
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'gregsexton/gitv', {'on': ['Gitv']}
 
 " Initialize plugin system
 call plug#end()
@@ -104,7 +111,10 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-json',
   \ 'coc-yank',
-  \ 'coc-prettier'
+  \ 'coc-prettier',
+  "\ 'coc-highlight',
+  \ 'coc-snippets',
+  \ 'coc-texlab',
   \ ]
 
 " if hidden is not set, TextEdit might fail.
@@ -118,7 +128,7 @@ set nowritebackup
 set cmdheight=2
 
 " You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
+set updatetime=100
 
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
@@ -130,15 +140,18 @@ set signcolumn=yes
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other
 " plugin.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+  \ pumvisible() ? "\<C-n>" :
+  \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -254,8 +267,8 @@ nnoremap <Leader>h :History<CR>
 " Comments
 " ------------------------------------------------------------------------------
 
-vmap <Leader>cc <plug>NERDCommenterToggle
-nmap <Leader>cc <plug>NERDCommenterToggle
+vmap <Leader>c <plug>NERDCommenterToggle
+nmap <Leader>c <plug>NERDCommenterToggle
 
 " ------------------------------------------------------------------------------
 " Nerdtree
@@ -268,7 +281,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen = 1
 let g:NERDTreeGitStatusWithFlags = 1
-let g:NERDTreeIgnore = ['^node_modules$']
+"let g:NERDTreeIgnore = ['^node_modules$']
 
 " open NERDTree automatically if no file were specified
 autocmd StdinReadPre * let s:std_in=1
@@ -281,10 +294,16 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
 " ------------------------------------------------------------------------------
 " Airline
 " ------------------------------------------------------------------------------
+
 let g:airline_extensions = []
 let g:airline_highlighting_cache = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_theme='angr'
+
+" Always show status line
+set laststatus=2
 
 " ------------------------------------------------------------------------------
 " Theme
@@ -316,6 +335,13 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap \ :Ag<SPACE>
 
 " ------------------------------------------------------------------------------
+" Fugitive
+" ------------------------------------------------------------------------------
+
+nnoremap <Leader>gg :G<CR>
+nnoremap <Leader>gp :Gpush<CR>
+
+" ------------------------------------------------------------------------------
 " Folding
 " ------------------------------------------------------------------------------
 
@@ -338,9 +364,9 @@ set tabstop=2
 " always uses spaces instead of tab characters
 set expandtab
 set shiftwidth=2
-set autoindent
-set smartindent
-set smarttab
+"set autoindent
+"set smartindent
+"set smarttab
 set cindent
 
 " ------------------------------------------------------------------------------
@@ -380,12 +406,12 @@ set relativenumber
 autocmd VimLeave * silent !stty ixon
 
 " Edit vimr configuration file
-nnoremap <Leader>ve :e $MYVIMRC<CR>
-" Watch changes on config files
+nnoremap <Leader>ve :vsplit $MYVIMRC<CR>
+" Watch changes on this file
 augroup myvimrchooks
-    au!
-    autocmd bufwritepost .vimrc so $MYVIMRC
-augroup END
+  au!
+  autocmd BufWritePost ~/.config/nvim/init.vim :so $MYVIMRC
+augroup end
 
 " ------------------------------------------------------------------------------
 " Hidden Chars
@@ -393,4 +419,9 @@ augroup END
 
 set list
 set lcs=eol:¬
+
+" ------------------------------------------------------------------------------
+" Custom Shortcuts
+" ------------------------------------------------------------------------------
+
 
