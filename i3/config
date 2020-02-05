@@ -13,6 +13,7 @@ set $mod Mod4
 
 # Autostart
 exec --no-startup-id hsetroot -center ~/.config/i3/wallpaper.jpg
+exec --no-startup-id dunst
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -75,7 +76,8 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+#bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -186,7 +188,7 @@ font pango: DejaVu Sans Mono Nerd Font Mono 10
 
 #start of bar section
 bar {
-  position bottom
+  position top
   status_command i3blocks
   colors {
     # bar background color
@@ -218,6 +220,8 @@ client.focused          $blue $blue $darkgray $purple $darkgray
 client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
 client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
 client.urgent           $red $red $white $red $red
-
+#for_window [class="^.*"] border pixel 1
+default_border none
+default_floating_border normal
 #end of window title bars & borders section
 
