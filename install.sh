@@ -6,9 +6,43 @@ sudo apt update && sudo apt upgrade -y
 
 # Utils
 
-sudo apt install -y unzip
+sudo apt install -y unzip tree time dnsutils
+# Custom dirs
+mkdir ~/github
+mkdir ~/gitlab
 
-# Terminal related packages
+# Snap
+
+echo "Installing snapd..."
+sudo apt install -y snapd
+
+# Rust Enviroment
+
+echo "Installing rust..."
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+echo "set PATH ~/.cargo/bin $PATH" >> ~/.config/fish/config.fish
+
+# Node
+
+echo "Installing node..."
+sudo snap install --edge node
+
+# Icons
+
+echo "Installing paper icons..."
+cd /tmp/
+wget https://snwh.org/paper/download.php?owner=snwh&ppa=ppa&pkg=paper-icon-theme,18.04
+sudo dpkg -i paper*.deb
+sudo apt install -f
+
+# Fonts (DejaVuSansMono Nerd Fonts)
+
+echo "Installing fonts..."
+cd /tmp/
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/DejaVuSansMono.zip
+unzip DejaVuSansMono.zip -d ~/.local/share/fonts/
+
+# Terminal emulator & shell
 
 echo "Installing fish & rxvt-unicode..."
 sudo apt install -y fish rxvt-unicode
@@ -17,6 +51,16 @@ omf insall bobthefish
 chsh -s /usr/bin/fish
 cp fish/config.fish ~/.config/fish/
 cp urxvt/.Xresources ~/
+
+# Installing broot
+
+cd github
+git clone https://github.com/Canop/broot.git
+cargo install broot
+broot --install
+cd
+echo 'alias ll "br -dp"' >> ~/.config/fish/config.fish
+echo 'alias ls "br --sizes"' >> ~/.config/fish/config.fish
 
 # Slim WM
 
@@ -33,6 +77,26 @@ cp wallpaper/wallpaper.jpg ~/.config/i3/wallpaper.jpg
 cp i3/config ~/.config/i3/
 cp i3blocks/* ~/.config/i3blocks/
 
+# Notification Manager
+
+echo "Installing dunst..."
+sudo apt install -y dunst
+mkdir -p ~/.config/dunst/
+wget https://raw.githubusercontent.com/dunst-project/dunst/master/dunstrc -O
+ \ ~/.config/dunst/dunstrc
+systemctl restart --user dunst.service
+
+# File Manager
+
+echo "Installing ranger..."
+sudo apt install ranger
+ranger --copy-config
+cp ranger/rc.conf ~/.config/ranger/rc.conf
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+# Until ranger works well with plugin folders
+cp ~/.config/ranger/plugins/ranger_devicons/devicons.py ~/.config/ranger/plugins/devicons.py
+cp ~/.config/ranger/plugins/ranger_devicons/__init__.py ~/.config/ranger/plugins/devicons_linemode.py
+
 # Sensors
 
 echo "Installing lm-sensors..."
@@ -42,21 +106,6 @@ sudo apt install -y lm-sensors
 
 echo "Installing lxappearance..."
 sudo apt install -y lxappearance
-
-# Icons
-
-echo "Installing paper icons..."
-cd /tmp/
-wget https://snwh.org/paper/download.php?owner=snwh&ppa=ppa&pkg=paper-icon-theme,18.04
-sudo dpkg -i paper*.deb
-sudo apt install -f
-
-# Fonts (DejaVuSansMono Nerd Fonts)
-
-echo "Installing fonts..."
-cd /tmp/
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/DejaVuSansMono.zip
-unzip DejaVuSansMono.zip -d ~/.local/share/fonts/
 
 # Dmenu
 
@@ -74,11 +123,6 @@ sudo apt install -y scrot
 echo "Installing qalc..."
 sudo apt install -Y qalc
 
-# Snap
-
-echo "Installing snapd..."
-sudo apt install -y snapd
-
 # Browser
 
 echo "Installing brave-browser..."
@@ -90,16 +134,10 @@ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable
 sudo apt update
 sudo apt install -y brave-browser
 
-# Node
-
-echo "Installing node..."
-sudo snap install --edge node
-sudo npm install -g neovim
-
 # Viewers
 
 echo "Installing xpdf & feh..."
-sudo apt install -y xpdf feh 
+sudo apt install -y xpdf feh jpegoptim optipng
 
 # GPick
 
@@ -114,11 +152,13 @@ sudo snap install inkscape gimp
 # NeoVim
 
 echo "Installing neovim..."
-sudo snap install nvim --beta --classic
+sudo snap install --candidate nvim --classic
 sudo apt install silversearcher-ag
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
   \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cp nvim/* ~/.config/nvim/
+echo 'set EDITOR "nvim"' >> ~/.config/fish/config.fish
+sudo npm install -g neovim
 
 # Neomutt
 

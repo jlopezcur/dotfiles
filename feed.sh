@@ -23,3 +23,6 @@ cp -v ~/.config/fish/config.fish fish/
 # rofi
 cp -Rv ~/.config/rofi/* rofi/
 
+# ranger
+cp -v ~/.config/ranger/rc.conf ranger/
+

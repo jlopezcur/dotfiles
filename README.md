@@ -27,7 +27,7 @@ cd dotfiles
 - [omf](https://github.com/oh-my-fish/oh-my-fish): oh-my-fish
 - [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html): terminal
 - [silver searcher](https://github.com/ggreer/the_silver_searcher): grep
-    substitution
+  substitution
 
 ### Desktop
 
@@ -80,6 +80,7 @@ Using [Plug](https://github.com/junegunn/vim-plug) system.
 - [vim-devicons](https://github.com/ryanoasis/vim-devicons)
 - [gruvbox](https://github.com/morhetz/gruvbox)
 - [vim-surround](https://github.com/tpope/vim-surround)
+- [gundo](https://github.com/sjl/gundo.vim)
 
 ### Optimizations
 
@@ -97,4 +98,3 @@ Using [Plug](https://github.com/junegunn/vim-plug) system.
 - https://github.com/addy-dclxvi/i3-starterpack
 - https://github.com/AaronFoley/dotfiles
 - https://github.com/a-schaefers/i3-wm-gruvbox-theme
-
