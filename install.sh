@@ -154,7 +154,7 @@ sudo snap install inkscape gimp
 
 echo "Installing neovim..."
 sudo snap install --candidate nvim --classic
-sudo apt install silversearcher-ag
+sudo apt install -y silversearcher-ag python-neovim python3-neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
   \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cp nvim/* ~/.config/nvim/
