@@ -177,6 +177,12 @@ Plug 'gorodinskiy/vim-coloresque'
 
 Plug 'sheerun/vim-polyglot'
 
+" gundo.vim
+" https://github.com/sjl/gundo.vim
+" ------------------------------------------------------------------------------
+
+Plug 'sjl/gundo.vim'
+
 " Prettier
 " https://github.com/prettier/vim-prettier
 " ------------------------------------------------------------------------------
@@ -194,6 +200,12 @@ Plug 'dense-analysis/ale'
 " ------------------------------------------------------------------------------
 
 Plug 'morhetz/gruvbox'
+
+" multiple-cursor
+" https://github.com/terryma/vim-multiple-cursors
+" ------------------------------------------------------------------------------
+
+Plug 'terryma/vim-multiple-cursors'
 
 " Fuzzy file finder
 " https://github.com/junegunn/fzf.vim
@@ -294,6 +306,30 @@ call plug#end()
 " ==============================================================================
 " Plugins Configuration
 " ==============================================================================
+
+" gundo.vim
+" https://github.com/sjl/gundo.vim
+" ------------------------------------------------------------------------------
+
+nnoremap <F5> :GundoToggle<CR>
+
+" multiple-cursors
+" ------------------------------------------------------------------------------
+
+nnoremap <silent> <M-j> :MultipleCursorsFind <C-R>/<CR>
+vnoremap <silent> <M-j> :MultipleCursorsFind <C-R>/<CR>
+
+" let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-j>'
+let g:multi_cursor_select_all_word_key = '<A-j>'
+let g:multi_cursor_start_key           = 'g<C-j>'
+let g:multi_cursor_select_all_key      = 'g<A-j>'
+let g:multi_cursor_next_key            = '<C-j>'
+let g:multi_cursor_prev_key            = '<C-k>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
 " gruvbox
 " https://github.com/morhetz/gruvbox
