@@ -177,6 +177,17 @@ Plug 'gorodinskiy/vim-coloresque'
 
 Plug 'sheerun/vim-polyglot'
 
+" vim-startify
+" https://github.com/mhinz/vim-startify
+" ------------------------------------------------------------------------------
+Plug 'mhinz/vim-startify'
+
+" vim-orgmode
+" https://github.com/jceb/vim-orgmode
+" ------------------------------------------------------------------------------
+
+Plug 'jceb/vim-orgmode'
+
 " gundo.vim
 " https://github.com/sjl/gundo.vim
 " ------------------------------------------------------------------------------
