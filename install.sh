@@ -26,6 +26,8 @@ echo "set PATH ~/.cargo/bin $PATH" >> ~/.config/fish/config.fish
 
 echo "Installing node..."
 sudo snap install --edge node
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
 
 # Icons
 
