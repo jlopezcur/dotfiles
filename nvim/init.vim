@@ -405,6 +405,8 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
       \ b:NERDTree.isTabTree()) | q | endif
 
+let g:NERDTreeShowIgnoredStatus = 1
+
 " fzf
 " https://github.com/junegunn/fzf.vim
 " https://github.com/yuki-ycino/fzf-preview.vim
