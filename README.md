@@ -34,6 +34,13 @@ cd dotfiles
 - [i3](https://i3wm.org/)
 - [rofi](https://github.com/davatorium/rofi): dmenu alternative
 
+### Browser
+
+- [Brave Browser](https://brave.com/)
+
+**Notes:** For enabled the **lighthouse** we have to enabled the
+_Remote debugging_ on [brave://settings/privacy](brave://settings/privacy)
+
 ### Image
 
 - [feh](https://feh.finalrewind.org/): image viewer
