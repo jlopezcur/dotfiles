@@ -74,7 +74,7 @@ sudo sed -i "s/\(current_theme *\).*/\1default/" /etc/slim.conf
 # Desktop
 
 echo "Installing i3, xorg, i3lock, i3blocks & hsetroot..."
-sudo apt install -y i3 xorg suckless-tools i3lock i3blocks hsetroot
+sudo apt install -y i3 xorg suckless-tools i3lock i3blocks hsetroot numlockx
 cp wallpaper/wallpaper.jpg ~/.config/i3/wallpaper.jpg
 cp i3/config ~/.config/i3/
 cp i3blocks/* ~/.config/i3blocks/
