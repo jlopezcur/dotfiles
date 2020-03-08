@@ -137,17 +137,27 @@ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable
 sudo apt update
 sudo apt install -y brave-browser
 
+# Spotify
+
+echo "Installing spt.."
+sudo snap install spt spotifyd
+
 # Viewers
 
 echo "Installing xpdf & feh..."
 sudo apt install -y xpdf feh jpegoptim optipng
+
+# LaTex
+
+echo "Installing texlive..."
+sudo apt install -y texlive
 
 # GPick
 
 echo "Installing gpick..."
 sudo apt install -y gpick
 
-# Inkscape
+# Inkscape & Gimp
 
 echo "Installing Inkscape & Gimp..."
 sudo snap install inkscape gimp
