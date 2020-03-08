@@ -1,17 +1,3 @@
 {
-  "suggest.noselect": false,
-  "tslint.autoFixOnSave": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "scss",
-    "markdown",
-    "md",
-    "Markdown",
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "graphql"
-  ]
+  "suggest.noselect": false
 }

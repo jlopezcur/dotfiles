@@ -13,6 +13,7 @@ set keywordprg=":help"
 set backspace=indent,eol,start
 set ttimeout
 set ttimeoutlen=50
+set autoread
 
 " Search
 set incsearch
@@ -31,15 +32,6 @@ set splitbelow
 
 " Split to the right by default on vertical split
 set splitright
-
-" ------------------------------------------------------------------------------
-" Movement between windows
-" ------------------------------------------------------------------------------
-
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 " ------------------------------------------------------------------------------
 " Grep (Silver Searcher)
@@ -133,10 +125,12 @@ set relativenumber
 " Edit vimr configuration file
 nnoremap <Leader>e :e $MYVIMRC<CR>
 " Watch changes on this file
-augroup myvimrchooks
-  au!
-  autocmd BufWritePost ~/.config/nvim/init.vim :so $MYVIMRC
-augroup end
+if has ('autocmd') " Remain compatible with earlier versions
+ augroup vimrc     " Source vim configuration upon save
+    autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
+    autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
+  augroup END
+endif " has autocmd
 
 " ------------------------------------------------------------------------------
 " Hidden Chars
@@ -182,6 +176,12 @@ Plug 'gorodinskiy/vim-coloresque'
 " ------------------------------------------------------------------------------
 
 Plug 'sheerun/vim-polyglot'
+
+" jsdoc
+" https://github.com/heavenshell/vim-jsdoc
+" ------------------------------------------------------------------------------
+
+Plug 'heavenshell/vim-jsdoc'
 
 " vim-startify
 " https://github.com/mhinz/vim-startify
@@ -330,13 +330,31 @@ call plug#end()
 
 nnoremap <F5> :GundoToggle<CR>
 
+" jsdoc
+" https://github.com/heavenshell/vim-jsdoc
+" ------------------------------------------------------------------------------
+
+nmap <silent> <C-l> ?function<cr>:noh<cr><Plug>(jsdoc)
+
+" ale
+" https://github.com/w0rp/ale
+" ------------------------------------------------------------------------------
+
+let g:ale_sign_error = 'X'
+let g:ale_sign_warning = '⚠️'
+
+let b:ale_fixers = {'javascript': ['eslint']}
+
+" Fix files automatically on save
+let g:ale_fix_on_save = 1
+
 " multiple-cursors
 " ------------------------------------------------------------------------------
 
-nnoremap <silent> <M-j> :MultipleCursorsFind <C-R>/<CR>
-vnoremap <silent> <M-j> :MultipleCursorsFind <C-R>/<CR>
+" nnoremap <silent> <M-j> :MultipleCursorsFind <C-R>/<CR>
+" vnoremap <silent> <M-j> :MultipleCursorsFind <C-R>/<CR>
 
-" let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_use_default_mapping=0
 
 " Default mapping
 let g:multi_cursor_start_word_key      = '<C-j>'
@@ -414,6 +432,7 @@ let g:NERDTreeShowIgnoredStatus = 1
 
 nnoremap <C-p> :FzfPreviewProjectFiles<CR>
 nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>h :Buffers<CR>
 
 " polyglot
 " https://github.com/sheerun/vim-polyglot
@@ -470,6 +489,7 @@ set signcolumn=yes
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
@@ -478,6 +498,8 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -565,3 +587,17 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
