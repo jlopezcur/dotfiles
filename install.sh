@@ -56,8 +56,8 @@ sudo apt install -y blackbird-gtk-theme
 
 # Terminal emulator & shell
 
-echo "Installing fish & rxvt-unicode..."
-sudo apt install -y fish rxvt-unicode
+echo "Installing fish, tmux & rxvt-unicode..."
+sudo apt install -y fish tmux rxvt-unicode
 curl -L https://get.oh-my.fish | fish
 omf insall bobthefish
 chsh -s /usr/bin/fish
