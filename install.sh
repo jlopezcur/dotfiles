@@ -6,15 +6,20 @@ sudo apt update && sudo apt upgrade -y
 
 # Utils
 
-sudo apt install -y unzip tree time dnsutils
+sudo apt install -y unzip tree time dnsutils htop
+
 # Custom dirs
+
 mkdir ~/github
 mkdir ~/gitlab
 
-# Snap
+# Installing package managers
 
 echo "Installing snapd..."
 sudo apt install -y snapd
+
+echo "Installing pip3..."
+sudo apt install -y python3-pip
 
 # Rust Enviroment
 
@@ -43,6 +48,11 @@ echo "Installing fonts..."
 cd /tmp/
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/DejaVuSansMono.zip
 unzip DejaVuSansMono.zip -d ~/.local/share/fonts/
+
+# GTK Theme BlackBird
+
+echo "Installing blackbird-gtk-theme..."
+sudo apt install -y blackbird-gtk-theme
 
 # Terminal emulator & shell
 
@@ -99,6 +109,10 @@ git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger
 cp ~/.config/ranger/plugins/ranger_devicons/devicons.py ~/.config/ranger/plugins/devicons.py
 cp ~/.config/ranger/plugins/ranger_devicons/__init__.py ~/.config/ranger/plugins/devicons_linemode.py
 echo 'SELECTED_EDITOR="/snap/bin/nvim"' > ~/.selected_editor
+
+echo "Installing vifm..."
+sudo apt install -y vifm
+sudo pip3 install ueberzug
 
 # Sensors
 
