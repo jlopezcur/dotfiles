@@ -158,8 +158,8 @@ sudo snap install spt spotifyd
 
 # Viewers
 
-echo "Installing xpdf & feh..."
-sudo apt install -y xpdf feh jpegoptim optipng
+echo "Installing zathura, xpdf & feh..."
+sudo apt install -y zathura xpdf feh jpegoptim optipng
 
 # LaTex
 
