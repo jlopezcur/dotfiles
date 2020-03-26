@@ -5,6 +5,7 @@ set -g theme_nerd_fonts yes
 set PATH ~/.cargo/bin:$PATH
 set PATH ~/bin:$PATH
 set PATH ~/.npm-global/bin:$PATH
+set PATH /snap/bin:$PATH
 
 alias lb "br -dp"
 alias lv "br --sizes"
