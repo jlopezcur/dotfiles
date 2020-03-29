@@ -395,7 +395,7 @@ set laststatus=2
 
 nnoremap <Leader>gg :G<CR>
 nnoremap <Leader>gl :Glog<CR>
-nnoremap <Leader>gp :Gpush<CR>
+nnoremap <Leader>gp :Gina push<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
 
