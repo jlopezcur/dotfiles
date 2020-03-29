@@ -97,6 +97,6 @@ URxvt.matcher.button: 1
 !  Font Setting
 !----------------
 
-URxvt.font: xft:DejaVu Sans Mono Nerd Font Mono:style=Regular:size=10
-URxvt.boldFont: xft:DejaVu Sans Mono Nerd Font Mono:style=Bold:size=10
+URxvt.font: xft:DejaVu Sans Mono Nerd Font Mono:style=Regular:size=9
+URxvt.boldFont: xft:DejaVu Sans Mono Nerd Font Mono:style=Bold:size=9
 

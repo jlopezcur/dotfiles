@@ -5,24 +5,25 @@
 # ------------------------------------------------------------------------------
 
 # URxvt
-cp -v ~/.Xresources urxvt/
+cp -v ~/.Xresources config/urxvt/
 
 # i3
-cp -v ~/.config/i3/config i3/
+cp -v ~/.config/i3/config config/i3/
 
-# i3blocks
-cp -v ~/.config/i3blocks/* i3blocks/
+# polybar
+cp -v ~/.config/polybar/* config/polybar/
 
 # nvim
-cp -v ~/.config/nvim/init.vim nvim/
-cp -Rv ~/.config/nvim/coc-settings.json nvim/
+cp -v ~/.config/nvim/init.vim config/nvim/
+cp -Rv ~/.config/nvim/coc-settings.json config/nvim/
 
 # fish
-cp -v ~/.config/fish/config.fish fish/
+cp -v ~/.config/fish/config.fish config/fish/
 
 # rofi
-cp -Rv ~/.config/rofi/* rofi/
+cp -Rv ~/.config/rofi/* config/rofi/
 
 # ranger
-cp -v ~/.config/ranger/rc.conf ranger/
+cp -v ~/.config/ranger/rc.conf config/ranger/
+cp -v ~/.config/ranger/rifle.conf config/ranger/
 

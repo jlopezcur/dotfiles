@@ -59,7 +59,7 @@ nnoremap \ :Ag<SPACE>
 " Terminal
 " ------------------------------------------------------------------------------
 
-tnoremap <Esc><Esc> <C-\><C-n>
+" tnoremap <Esc><Esc> <C-\><C-n>
 
 " ------------------------------------------------------------------------------
 " Folding
@@ -157,6 +157,12 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" codi.vim
+" https://github.com/metakirby5/codi.vim
+" ------------------------------------------------------------------------------
+
+Plug 'metakirby5/codi.vim'
+
 " utilsnips
 " https://github.com/SirVer/ultisnips
 " https://github.com/honza/vim-snippets
@@ -200,12 +206,6 @@ Plug 'jceb/vim-orgmode'
 
 Plug 'sjl/gundo.vim'
 
-" Prettier
-" https://github.com/prettier/vim-prettier
-" ------------------------------------------------------------------------------
-
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-
 " Ale
 " https://github.com/dense-analysis/ale
 " ------------------------------------------------------------------------------
@@ -226,12 +226,10 @@ Plug 'terryma/vim-multiple-cursors'
 
 " Fuzzy file finder
 " https://github.com/junegunn/fzf.vim
-" https://github.com/yuki-ycino/fzf-preview.vim
 " ------------------------------------------------------------------------------
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'yuki-ycino/fzf-preview.vim'
 
 " NERDTree
 " https://github.com/preservim/nerdtree
@@ -305,9 +303,11 @@ Plug 'janko/vim-test'
 " ------------------------------------------------------------------------------
 
 Plug 'tpope/vim-fugitive'
+Plug 'idanarye/vim-merginal'
 " Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
 Plug 'gregsexton/gitv', {'on': ['Gitv']}
+Plug 'lambdalisue/gina.vim'
 
 " airline
 " https://github.com/vim-airline/vim-airline
@@ -427,10 +427,8 @@ let g:NERDTreeShowIgnoredStatus = 1
 
 " fzf
 " https://github.com/junegunn/fzf.vim
-" https://github.com/yuki-ycino/fzf-preview.vim
 " ------------------------------------------------------------------------------
 
-nnoremap <C-p> :FzfPreviewProjectFiles<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>h :Buffers<CR>
 
@@ -442,12 +440,6 @@ let g:vim_markdown_conceal = 0
 let g:tex_conceal = ""
 let g:vim_markdown_math = 1
 let g:vim_markdown_conceal_code_blocks = 0
-
-" prettier
-" https://github.com/prettier/vim-prettier
-" ------------------------------------------------------------------------------
-
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html,*.md PrettierAsync
 
 " nerdcommenter
 " ------------------------------------------------------------------------------
@@ -601,3 +593,10 @@ let g:coc_snippet_prev = '<c-k>'
 
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" coc-prettier
+" https://github.com/neoclide/coc-prettier
+" ------------------------------------------------------------------------------
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
