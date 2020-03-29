@@ -12,6 +12,8 @@ sudo apt install -y unzip tree time dnsutils htop
 
 mkdir ~/github
 mkdir ~/gitlab
+mkdir ~/scripts
+mkdir ~/bin
 
 # Installing package managers
 
@@ -61,49 +63,36 @@ sudo apt install -y fish tmux rxvt-unicode
 curl -L https://get.oh-my.fish | fish
 omf insall bobthefish
 chsh -s /usr/bin/fish
-cp fish/config.fish ~/.config/fish/
-cp urxvt/.Xresources ~/
+cp config/fish/config.fish ~/.config/fish/
+cp config/urxvt/.Xresources ~/
 
 # Installing broot
 
 cd github
 git clone https://github.com/Canop/broot.git
+cd broot
 cargo install broot
 broot --install
 cd
-echo 'alias ll "br -dp"' >> ~/.config/fish/config.fish
-echo 'alias ls "br --sizes"' >> ~/.config/fish/config.fish
-
-# Slim WM
-
-echo "Installing slim..."
-sudo apt install -y slim
-sudo cp wallpaper/wallpaper.jpg /usr/share/slim/themes/default/background.jpg
-sudo sed -i "s/\(current_theme *\).*/\1default/" /etc/slim.conf
+rm -rf ~/github/broot
 
 # Desktop
 
-echo "Installing i3, xorg, i3lock, i3blocks & hsetroot..."
-sudo apt install -y i3 xorg suckless-tools i3lock i3blocks hsetroot numlockx
+echo "Installing xorg..."
+sudo apt install -y xorg
+
+echo "Installing i3, compton, suckless-tools, i3lock, hsetroot, numlockx..."
+sudo apt install -y i3 compton suckless-tools i3lock hsetroot numlockx
+  
 cp wallpaper/wallpaper.jpg ~/.config/i3/wallpaper.jpg
-cp i3/config ~/.config/i3/
-cp i3blocks/* ~/.config/i3blocks/
-
-# Notification Manager
-
-echo "Installing dunst..."
-sudo apt install -y dunst
-mkdir -p ~/.config/dunst/
-wget https://raw.githubusercontent.com/dunst-project/dunst/master/dunstrc -O
- \ ~/.config/dunst/dunstrc
-systemctl restart --user dunst.service
+cp config/i3/config ~/.config/i3/
 
 # File Manager
 
 echo "Installing ranger..."
 sudo apt install ranger
 ranger --copy-config
-cp ranger/rc.conf ~/.config/ranger/rc.conf
+cp config/ranger/rc.conf ~/.config/ranger/rc.conf
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 # Until ranger works well with plugin folders
 cp ~/.config/ranger/plugins/ranger_devicons/devicons.py ~/.config/ranger/plugins/devicons.py
@@ -128,12 +117,12 @@ sudo apt install -y lxappearance
 
 echo "Installing rofi..."
 sudo apt install -y rofi
-cp -R rofi/* ~/.config/rofi/
+cp -R config/rofi/* ~/.config/rofi/
 
 # Screen capture
 
-echo "Installing scrot..."
-sudo apt install -y scrot
+echo "Installing peek, scrot..."
+sudo apt install -y peek scrot
 
 # Calc
 
@@ -183,7 +172,7 @@ sudo snap install --candidate nvim --classic
 sudo apt install -y silversearcher-ag python-neovim python3-neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
   \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-cp nvim/* ~/.config/nvim/
+cp config/nvim/* ~/.config/nvim/
 echo 'set EDITOR "nvim"' >> ~/.config/fish/config.fish
 sudo npm install -g neovim
 
