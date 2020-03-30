@@ -22,7 +22,7 @@ background = #222
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
-foreground-alt = #dfdfdf
+foreground-alt = #999999
 ; foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
@@ -31,16 +31,16 @@ alert = #bd2c40
 [bar/top]
 monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 22
 ;offset-x = 1%
-;offset-y = 1%
-radius = 0
+; offset-y = 5%
+radius = 0.0
 fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 1
 line-color = #f00
 
 border-size = 0
@@ -49,20 +49,19 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 1
+module-margin-left = 4
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = DejaVuSansMono Nerd Font Mono:size=14;1
+font-2 = DejaVuSansMono Nerd Font Mono:size=14;2
 
 modules-left = i3
 modules-center = mpd
 modules-right = filesystem alsa memory cpu eth temperature date powermenu
 
+; No tray area
 tray-position = none
-; tray-padding = 2
-; tray-background = #3d3d3d
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -73,9 +72,7 @@ cursor-scroll = ns-resize
 [module/filesystem]
 type = internal/fs
 interval = 25
-
 mount-0 = /
-
 label-mounted =  %mountpoint% %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
@@ -85,7 +82,6 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-
 ws-icon-0 = 1
 ws-icon-1 = 2
 ws-icon-2 = 3
@@ -141,6 +137,7 @@ label-song-ellipsis = true
 type = internal/cpu
 interval = 2
 format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage:2%%
 
 [module/memory]
@@ -154,85 +151,43 @@ label = %percentage_used%%
 type = internal/network
 interface = eno1
 interval = 3.0
-
 format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%  %upspeed%  %downspeed%
 
 [module/date]
 type = internal/date
 interval = 5
-
 date = %d/%m/%Y
 time = %H:%M
-
-label =  %date%  %time%
+label =  %date%   %time%
 
 [module/alsa]
 type = internal/alsa
-
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
-
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = ---
-
 ramp-volume-0 = 墳
 ramp-volume-1 = 墳
-ramp-volume-foreground = ${root.foreground}
-
+ramp-volume-foreground = ${colors.foreground-alt}
 ramp-headphones-0 = 
 ramp-headphones-1 = 
-ramp-headphones-foreground = ${root.foreground}
-
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = ADP1
-full-at = 98
-
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
+ramp-headphones-foreground = ${colors.foreground-alt}
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
-
 format = <ramp> <label>
-; format-underline = #f50a4d
+; format-overline = #f50a4d
 format-warn = <ramp> <label-warn>
 ; format-warn-underline = ${self.format-underline}
-
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
-
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
@@ -240,11 +195,8 @@ ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
-
 expand-right = true
-
 format-spacing = 1
-
 label-open = ⏻
 label-open-foreground = ${colors.foreground}
 label-close = cancel
@@ -273,7 +225,7 @@ screenchange-reload = true
 ; compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
-;pseudo-transparency = false
+pseudo-transparency = false
 
 [global/wm]
 margin-top = 5
