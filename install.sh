@@ -66,26 +66,17 @@ chsh -s /usr/bin/fish
 cp config/fish/config.fish ~/.config/fish/
 cp config/urxvt/.Xresources ~/
 
-# Installing broot
-
-cd github
-git clone https://github.com/Canop/broot.git
-cd broot
-cargo install broot
-broot --install
-cd
-rm -rf ~/github/broot
-
 # Desktop
 
-echo "Installing xorg..."
+echo "Installing Desktop..."
 sudo apt install -y xorg
-
-echo "Installing i3, compton, suckless-tools, i3lock, hsetroot, numlockx..."
 sudo apt install -y i3 compton suckless-tools i3lock hsetroot numlockx
-  
 cp wallpaper/wallpaper.jpg ~/.config/i3/wallpaper.jpg
 cp config/i3/config ~/.config/i3/
+sudo apt install -y rofi
+cp -R config/rofi/* ~/.config/rofi/
+sudo apt install -y lm-sensors
+sudo apt install -y lxappearance
 
 # File Manager
 
@@ -103,22 +94,6 @@ echo "Installing vifm..."
 sudo apt install -y vifm
 sudo pip3 install ueberzug
 
-# Sensors
-
-echo "Installing lm-sensors..."
-sudo apt install -y lm-sensors
-
-# Customization
-
-echo "Installing lxappearance..."
-sudo apt install -y lxappearance
-
-# Dmenu
-
-echo "Installing rofi..."
-sudo apt install -y rofi
-cp -R config/rofi/* ~/.config/rofi/
-
 # Screen capture
 
 echo "Installing peek, scrot..."
@@ -131,7 +106,7 @@ sudo apt install -Y qalc
 
 # Browser
 
-echo "Installing brave-browser..."
+echo "Installing Browser..."
 sudo apt install -y apt-transport-https curl w3m w3m-img
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo
   \ apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
@@ -140,6 +115,11 @@ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable
 sudo apt update
 sudo apt install -y brave-browser
 
+# Office Tools
+
+echo "Installing Office Tools..."
+sudo snap install --channel=beta libreoffice
+
 # Spotify
 
 echo "Installing spt.."
@@ -147,27 +127,24 @@ sudo snap install spt spotifyd
 
 # Viewers
 
-echo "Installing zathura, xpdf & feh..."
-sudo apt install -y zathura xpdf feh jpegoptim optipng
+echo "Installing Viewers..."
+sudo apt install -y zathura xpdf feh
 
-# LaTex
+# Document Tools
 
-echo "Installing texlive..."
+echo "Installing Document Tools..."
 sudo apt install -y texlive
 
-# GPick
+# Design tools
 
-echo "Installing gpick..."
-sudo apt install -y gpick
-
-# Inkscape & Gimp
-
-echo "Installing Inkscape & Gimp..."
+echo "Installing Design Tools..."
 sudo snap install inkscape gimp
+sudo apt install -y scribus gpick
+sudo apt install -y jpegoptim optipng
 
-# NeoVim
+# Code Editor
 
-echo "Installing neovim..."
+echo "Installing Code Editor..."
 sudo snap install --candidate nvim --classic
 sudo apt install -y silversearcher-ag python-neovim python3-neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
@@ -175,6 +152,9 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
 cp config/nvim/* ~/.config/nvim/
 echo 'set EDITOR "nvim"' >> ~/.config/fish/config.fish
 sudo npm install -g neovim
+nvim -c 'CocInstall -sync coc-yank coc-snippets coc-pairs coc-highlight
+coc-eslint coc-emmet coc-yaml coc-txserver coc-texlab coc-svg coc-markdown
+coc-json coc-import-cost coc-css coc-json coc-html coc-prettier|q'
 
 # Neomutt
 
