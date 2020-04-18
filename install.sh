@@ -17,9 +17,6 @@ mkdir ~/bin
 
 # Installing package managers
 
-echo "Installing snapd..."
-sudo apt install -y snapd
-
 echo "Installing pip3..."
 sudo apt install -y python3-pip
 
@@ -32,7 +29,8 @@ echo "set PATH ~/.cargo/bin $PATH" >> ~/.config/fish/config.fish
 # Node
 
 echo "Installing node..."
-sudo snap install --edge node
+curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
+sudo apt update && sudo apt install nodejs
 mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'
 
@@ -61,7 +59,7 @@ sudo apt install -y blackbird-gtk-theme
 echo "Installing fish, tmux & rxvt-unicode..."
 sudo apt install -y fish tmux rxvt-unicode
 curl -L https://get.oh-my.fish | fish
-omf insall bobthefish
+omf insall sashimi
 chsh -s /usr/bin/fish
 cp config/fish/config.fish ~/.config/fish/
 cp config/urxvt/.Xresources ~/
@@ -88,7 +86,7 @@ git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger
 # Until ranger works well with plugin folders
 cp ~/.config/ranger/plugins/ranger_devicons/devicons.py ~/.config/ranger/plugins/devicons.py
 cp ~/.config/ranger/plugins/ranger_devicons/__init__.py ~/.config/ranger/plugins/devicons_linemode.py
-echo 'SELECTED_EDITOR="/snap/bin/nvim"' > ~/.selected_editor
+echo 'SELECTED_EDITOR="/usr/bin/nvim"' > ~/.selected_editor
 
 echo "Installing vifm..."
 sudo apt install -y vifm
@@ -98,11 +96,6 @@ sudo pip3 install ueberzug
 
 echo "Installing peek, scrot..."
 sudo apt install -y peek scrot
-
-# Calc
-
-echo "Installing qalc..."
-sudo apt install -Y qalc
 
 # Browser
 
@@ -118,12 +111,7 @@ sudo apt install -y brave-browser
 # Office Tools
 
 echo "Installing Office Tools..."
-sudo snap install --channel=beta libreoffice
-
-# Spotify
-
-echo "Installing spt.."
-sudo snap install spt spotifyd
+sudo apt install -y libreoffice
 
 # Viewers
 
@@ -138,20 +126,20 @@ sudo apt install -y texlive
 # Design tools
 
 echo "Installing Design Tools..."
-sudo snap install inkscape gimp
+sudo apt install -y inkscape gimp scribus krita
 sudo apt install -y scribus gpick
 sudo apt install -y jpegoptim optipng
 
 # Code Editor
 
 echo "Installing Code Editor..."
-sudo snap install --candidate nvim --classic
-sudo apt install -y silversearcher-ag python-neovim python3-neovim
+sudo apt install -y neovim python-neovim python3-neovim
+sudo apt install -y silversearcher-ag
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
   \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cp config/nvim/* ~/.config/nvim/
 echo 'set EDITOR "nvim"' >> ~/.config/fish/config.fish
-sudo npm install -g neovim
+npm install -g neovim
 nvim -c 'CocInstall -sync coc-yank coc-snippets coc-pairs coc-highlight
 coc-eslint coc-emmet coc-yaml coc-txserver coc-texlab coc-svg coc-markdown
 coc-json coc-import-cost coc-css coc-json coc-html coc-prettier|q'
