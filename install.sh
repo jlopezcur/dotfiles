@@ -148,7 +148,8 @@ echo 'set EDITOR "nvim"' >> ~/.config/fish/config.fish
 npm install -g neovim
 nvim -c 'CocInstall -sync coc-yank coc-snippets coc-pairs coc-highlight
 coc-eslint coc-emmet coc-yaml coc-txserver coc-texlab coc-svg coc-markdown
-coc-json coc-import-cost coc-css coc-json coc-html coc-prettier|q'
+coc-json coc-import-cost coc-css coc-json coc-html coc-prettier coc-cssmodules
+coc-browser|q'
 
 # Neomutt
 
