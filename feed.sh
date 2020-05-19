@@ -4,24 +4,22 @@
 # Feed the configutarion files of the repo with the system ones
 # ------------------------------------------------------------------------------
 
-# URxvt
-cp -v ~/.Xresources config/urxvt/
+# alacritty
+cp -v ~/.config/alacritty/alacritty.yml config/alacritty/
 
-# i3
-cp -v ~/.config/i3/config config/i3/
+# xmonad
+cp -v ~/.xmonad/xmonad.hs config/xmonad/
+cp -v ~/.config/xmobar/* config/xmobar/
 
-# polybar
-cp -v ~/.config/polybar/* config/polybar/
+# dmenu
+cp -v ~/.dmenu/* config/dmenu/
 
 # nvim
 cp -v ~/.config/nvim/init.vim config/nvim/
-cp -Rv ~/.config/nvim/coc-settings.json config/nvim/
+cp -v ~/.config/nvim/coc-settings.json config/nvim/
 
 # fish
 cp -v ~/.config/fish/config.fish config/fish/
-
-# rofi
-cp -Rv ~/.config/rofi/* config/rofi/
 
 # ranger
 cp -v ~/.config/ranger/rc.conf config/ranger/

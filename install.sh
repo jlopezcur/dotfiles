@@ -56,25 +56,34 @@ sudo apt install -y blackbird-gtk-theme
 
 # Terminal emulator & shell
 
-echo "Installing fish, tmux & rxvt-unicode..."
-sudo apt install -y fish tmux rxvt-unicode
+echo "Installing fish, tmux & alacritty..."
+sudo apt install -y fish tmux
 curl -L https://get.oh-my.fish | fish
 omf insall sashimi
 chsh -s /usr/bin/fish
 cp config/fish/config.fish ~/.config/fish/
-cp config/urxvt/.Xresources ~/
+sudo apt install cmake libfreetype6-dev libfontconfig1-dev xclip
+git clone https://github.com/jwilm/alacritty.git
+cd alacritty
+cargo build --release
+sudo cp target/release/alacritty /usr/local/bin
+cp ./extra/linux/Alacritty.desktop ~/.local/share/applications
+gzip ./extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
+sudo cp ./extra/completions/alacritty.fish /usr/share/fish/vendor_completions.d/alacritty.fish
+cd ..
+sudo rm -rf alacritty
+cp -R .config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # Desktop
 
 echo "Installing Desktop..."
 sudo apt install -y xorg
-sudo apt install -y i3 compton suckless-tools i3lock hsetroot numlockx
+sudo apt install -y xmonad suckless-tools hsetroot numlockx
 cp wallpaper/wallpaper.jpg ~/.config/i3/wallpaper.jpg
 cp config/i3/config ~/.config/i3/
-sudo apt install -y rofi
-cp -R config/rofi/* ~/.config/rofi/
-sudo apt install -y lm-sensors
-sudo apt install -y lxappearance
+sudo apt install -y dmenu
+cp -R config/dmenu/* ~/.dmenu/
+sudo apt install -y lm-sensors lxappearance arandr pavucontrol
 
 # File Manager
 
@@ -133,8 +142,9 @@ sudo apt install -y texlive
 
 echo "Installing Design Tools..."
 sudo apt install -y inkscape gimp scribus krita
-sudo apt install -y scribus gpick
+sudo apt install -y gpick
 sudo apt install -y jpegoptim optipng
+sudo apt install -y blender
 
 # Code Editor
 
