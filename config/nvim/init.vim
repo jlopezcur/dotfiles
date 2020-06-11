@@ -1,64 +1,92 @@
+"
+"     _____  ___
+"     | | | / /
+"     | | |/ /
+"     | |   <
+" ___ | | |\ \
+" | |_| | | \ \
+" |_____|_|__\_\_
+"
+"
+ 
+" No comments added
+" Press <S-K> on any command to see documentation
 
-" Enviroment
-" set nocompatible
+" ==============================================================================
+" plugins
+" ==============================================================================
+
+call plug#begin()
+
+" autocompletion
+" ------------------------------------------------------------------------------
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " https://github.com/neoclide/coc.nvim
+Plug 'honza/vim-snippets' " https://github.com/honza/vim-snippets
+
+" highlighting & colors
+" ------------------------------------------------------------------------------
+
+Plug 'gruvbox-community/gruvbox' " https://github.com/gruvbox-community/gruvbox
+Plug 'yggdroot/indentline' " https://github.com/Yggdroot/indentLine
+Plug 'itchyny/lightline.vim' " https://github.com/itchyny/lightline.vim
+Plug 'sheerun/vim-polyglot' " https://github.com/sheerun/vim-polyglot
+
+" file management
+" ------------------------------------------------------------------------------
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim' " https://github.com/junegunn/fzf.vim
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } } " https://github.com/iamcco/markdown-preview.nvim
+Plug 'preservim/nerdtree' " https://github.com/preservim/nerdtree
+Plug 'Xuyuanp/nerdtree-git-plugin' " https://github.com/Xuyuanp/nerdtree-git-plugin
+
+" ------------------------------------------------------------------------------
+
+Plug 'preservim/nerdcommenter' " https://github.com/preservim/nerdcommenter
+Plug 'janko/vim-test' " https://github.com/janko/vim-test
+
+" vcs
+" ------------------------------------------------------------------------------
+
+Plug 'tpope/vim-fugitive' " https://github.com/tpope/vim-fugitive
+Plug 'mhinz/vim-signify' " https://github.com/mhinz/vim-signify
+
+call plug#end()
+
+" ==============================================================================
+" configuration
+" ==============================================================================
+
+let $MYVIMRC="~/.config/nvim/init.vim"
+
+" gruvbox
+" ------------------------------------------------------------------------------
+
+colorscheme gruvbox
+set termguicolors
+
+" general
+" ------------------------------------------------------------------------------
+
 set path+=**
-set wildmenu
 set wildignore+=**/node_modules/**
 set encoding=UTF-8
-set nobackup
-set nowritebackup
-" set viminfo+=!
-let $MYVIMRC="~/.config/nvim/init.vim"
-set shell=/bin/bash
+set scrolloff=4
+set shell=/usr/bin/zsh
 
-filetype plugin indent on
-syntax on
-" set keywordprg=":help"
-set backspace=indent,eol,start
-set ttimeout
-set ttimeoutlen=50
-set autoread
-
-" Search
-set incsearch
-set hlsearch
-
-" Leader
 let mapleader = ","
 let g:mapleader = ","
 
-" Split to bottom and right
-set splitbelow splitright
+syntax enable
 
-" silver searcher instead grep
+set clipboard+=unnamedplus
+
+" backup files
 " ------------------------------------------------------------------------------
 
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-endif
-
-" bind \ (backward slash) to grep shortcut
-nnoremap \ :Ag<SPACE>
-
-" terminal
-" ------------------------------------------------------------------------------
-
-" tnoremap <Esc><Esc> <C-\><C-n>
-
-" netwr
-" ------------------------------------------------------------------------------
-
-let g:netrw_banner = 0
-let g:netrw_liststyle = 0
-let g:netrw_altv = 1
-let g:netrw_alto = 1
-
-" Per default netrw leaves unmodified vuffers open.
-autocmd FileType netrw setl bufhidden=delete
-
-nnoremap <Leader>x :Ex<cr><cr>
+set nobackup
+set noswapfile
 
 " folding
 " ------------------------------------------------------------------------------
@@ -75,17 +103,19 @@ set mouse=a
 " indentation
 " ------------------------------------------------------------------------------
 
-set tabstop=2
-set expandtab " always uses spaces instead of tab characters
+set tabstop=2 softtabstop=2
+set shiftwidth=2
+set expandtab
 set smartindent
 
 " 80 lines
 " ------------------------------------------------------------------------------
 
 set textwidth=80
-set cc=+1
-highlight OverLength ctermfg=red
-match OverLength /\%81v.\+/
+set colorcolumn=80,120
+highlight ColorColumn ctermbg=0 guibg=#242424
+set nowrap
+set smartcase
 
 " cursor
 " ------------------------------------------------------------------------------
@@ -96,9 +126,6 @@ set cursorline
 " ------------------------------------------------------------------------------
 
 set number relativenumber
-" TODO make this a toggle
-nnoremap <Leader>n :set norelativenumber<CR>
-
 
 " Hidden Chars
 " ------------------------------------------------------------------------------
@@ -107,172 +134,73 @@ set list
 set lcs=eol:¬
 
 " ==============================================================================
-" Plugins
-" ==============================================================================
-
-call plug#begin('~/.config/nvim/plugged')
-
-" coc
-" https://github.com/neoclide/coc.nvim
-" ------------------------------------------------------------------------------
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" utilsnips
-" https://github.com/SirVer/ultisnips
-" https://github.com/honza/vim-snippets
-" ------------------------------------------------------------------------------
-
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-
-" coloresque
-" https://github.com/gko/vim-coloresque
-" ------------------------------------------------------------------------------
-
-Plug 'gorodinskiy/vim-coloresque'
-
-" polyglot
-" https://github.com/sheerun/vim-polyglot
-" ------------------------------------------------------------------------------
-
-Plug 'sheerun/vim-polyglot'
-
-" Grubvox
-" https://github.com/morhetz/gruvbox
-" ------------------------------------------------------------------------------
-
-Plug 'morhetz/gruvbox'
-
-" Fuzzy file finder
-" https://github.com/junegunn/fzf.vim
-" ------------------------------------------------------------------------------
-
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-
-" yast.vim
-" https://github.com/othree/yajs.vim
-" ------------------------------------------------------------------------------
-
-Plug 'othree/yajs.vim' " TS Syntax
-
-" vim-styled-components
-" https://github.com/styled-components/vim-styled-components
-" ------------------------------------------------------------------------------
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-
-" indentline
-" https://github.com/Yggdroot/indentLine
-" ------------------------------------------------------------------------------
-
-Plug 'yggdroot/indentline'
-
-" markdown-preview
-" https://github.com/iamcco/markdown-preview.nvim
-" ------------------------------------------------------------------------------
-
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-
-" NERDCommenter
-" https://github.com/preservim/nerdcommenter
-" ------------------------------------------------------------------------------
-
-Plug 'preservim/nerdcommenter'
-
-" Tests
-" https://github.com/janko/vim-test
-" ------------------------------------------------------------------------------
-
-Plug 'janko/vim-test'
-
-" fugitive
-" https://github.com/tpope/vim-fugitive
-" https://github.com/airblade/vim-gitgutter
-" https://vimawesome.com/plugin/vim-signify
-" https://github.com/gregsexton/gitv
-" ------------------------------------------------------------------------------
-
-Plug 'tpope/vim-fugitive'
-" Plug 'airblade/vim-gitgutter'
-Plug 'mhinz/vim-signify'
-Plug 'gregsexton/gitv', {'on': ['Gitv']}
-
-" lightline
-" https://github.com/itchyny/lightline.vim
-" ------------------------------------------------------------------------------
-
-Plug 'itchyny/lightline.vim'
-
-" Initialize plugin system
-call plug#end()
-
-" ==============================================================================
 " Plugins Configuration
 " ==============================================================================
 
-" gruvbox
-" https://github.com/morhetz/gruvbox
-" ------------------------------------------------------------------------------
-
-set background=dark
-colorscheme gruvbox
-
 " lightline
-" https://github.com/itchyny/lightline.vim
 " ------------------------------------------------------------------------------
 
-set laststatus=2      " always show status line
-set noshowmode        " no need for mode since lightline is showing too
+set noshowmode
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
-      \   'right': [ [ 'lineinfo', 'cocstatus', 'currentfunction' ],
-      \              [ 'percent' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead',
-      \   'cocstatus': 'coc#status',
-      \   'currentfunction': 'CocCurrentFunction',
-      \   'filename': 'FilenameForLightline'
-      \ },
-      \ }
+  \ 'colorscheme': 'wombat',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+  \   'right': [ [ 'lineinfo', 'cocstatus', 'currentfunction' ],
+  \              [ 'percent' ],
+  \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'FugitiveHead',
+  \   'cocstatus': 'coc#status',
+  \   'currentfunction': 'CocCurrentFunction',
+  \   'filename': 'FilenameForLightline'
+  \ },
+  \ }
 
 command! LightlineReload call LightlineReload()
 
-function! LightlineReload()
-  call lightline#init()
-  call lightline#colorscheme()
-  call lightline#update()
-endfunction
+if ! exists("LightlineReload")
+  function! LightlineReload()
+    call lightline#init()
+    call lightline#colorscheme()
+    call lightline#update()
+  endfunction
+endif
 
-function! FilenameForLightline()
-  return @%
-endfunction
+if ! exists("FilenameForLightline")
+  function! FilenameForLightline()
+    return @%
+  endfunction
+endif
 
-function! CocCurrentFunction()
+if ! exists("CocCurrentFunction")
+  function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
-endfunction
+  endfunction
+endif
 
 " fzf
-" https://github.com/junegunn/fzf.vim
 " ------------------------------------------------------------------------------
+
+" The Silver Searcher as the main grep tool
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
+" bind \ (backward slash) to grep shortcut
+nnoremap \ :Ag!<space>
 
 nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>f :Files<CR>
+nnoremap <leader>f :Files!<CR>
+nnoremap <Leader>g :BCommits!<CR>
+nnoremap <Leader>v :GFiles?<CR>
 
-" polyglot
-" https://github.com/sheerun/vim-polyglot
+" vim-fugitive
 " ------------------------------------------------------------------------------
 
-let g:vim_markdown_conceal = 0
-let g:tex_conceal = ""
-let g:vim_markdown_math = 1
-let g:vim_markdown_conceal_code_blocks = 0
+nmap <leader>gs :G<CR>
 
 " nerdcommenter
 " ------------------------------------------------------------------------------
@@ -290,8 +218,35 @@ let g:NERDToggleCheckAllLines = 1
 " https://github.com/neoclide/coc.nvim
 " ------------------------------------------------------------------------------
 
+let g:coc_global_extensions = [
+    \ 'coc-snippets',
+    \ 'coc-actions',
+    \ 'coc-pairs',
+    \ 'coc-tsserver',
+    \ 'coc-html',
+    \ 'coc-css',
+    \ 'coc-cssmodules',
+    \ 'coc-styled-components',
+    \ 'coc-yaml',
+    \ 'coc-python',
+    \ 'coc-svg',
+    \ 'coc-prettier',
+    \ 'coc-vimlsp',
+    \ 'coc-xml',
+    \ 'coc-yank',
+    \ 'coc-json',
+    \ 'coc-vimtex',
+    \ 'coc-marketplace',
+    \ 'coc-import-cost',
+    \ 'coc-eslint',
+    \ 'coc-svg',
+    \ 'coc-markdownlint',
+    \ 'coc-texlab',
+    \ ]
+
 set hidden
-set updatetime=300
+set updatetime=100
+set timeoutlen=300
 set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -328,9 +283,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-" Highlight symbol under cursor on CursorHold
-" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 augroup mygroup
   autocmd!
@@ -369,13 +321,13 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Using CocList
 " Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
 " Show commands
 nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document
@@ -404,11 +356,42 @@ let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
-" coc-prettier
-" https://github.com/neoclide/coc-prettier
+" coc extensions
 " ------------------------------------------------------------------------------
 
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+command! -nargs=0 Prettier :CocCommand prettier.formatFile " https://github.com/neoclide/coc-prettier
+
+" nerdtree
+" ------------------------------------------------------------------------------
+
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+" nnoremap <space>e :NERDTreeFind<CR>
+" " nnoremap <space>e g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+let NERDTreeShowHidden=1
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+nnoremap <silent> <expr> <space>e g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 0
+let NERDTreeQuitOnOpen = 1
+let g:NERDTreeGitStatusWithFlags = 1
+"let g:NERDTreeIgnore = ['^node_modules$']
+
+" open NERDTree automatically if no file were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+" Autoclose NERDTree if it's the only open window left.
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
+      \ b:NERDTree.isTabTree()) | q | endif
+
+let g:NERDTreeShowIgnoredStatus = 1
 
 " vimrc
 " ------------------------------------------------------------------------------
@@ -419,8 +402,17 @@ nnoremap <Leader>e :e $MYVIMRC<CR>
 " Watch changes on this file
 augroup vimrc
   au!
-  autocmd BufWritePost init.vim source $MYVIMRC | echo "Reloaded vim configuration" | LightlineReload
+  autocmd BufWritePost init.vim source $MYVIMRC | call coc#client#restart_all() | call LightlineReload() | echom "Reloaded vim configuration"
 augroup END
+
+" conceal
+" ------------------------------------------------------------------------------
+
+set conceallevel=0
+" let g:vim_markdown_conceal = 0
+" let g:tex_conceal = ""
+" let g:vim_markdown_math = 1
+" let g:vim_markdown_conceal_code_blocks = 0
 
 " tests
 " ------------------------------------------------------------------------------

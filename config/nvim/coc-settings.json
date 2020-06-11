@@ -1,5 +1,27 @@
 {
   "suggest.noselect": false,
+
+  // prettier
+  "prettier.singleQuote": true,
+
+  // autoformat
   "coc.preferences.formatOnSaveFiletypes": [
-    "scss", "css", "markdown", "javascript", "javascriptreact", "typescript", "typescriptreact", "json", "graphql", "markdown.mdx"]
+    "scss",
+    "css",
+    "markdown",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "graphql",
+    "markdown.mdx"
+  ],
+  "coc.preferences.hoverTarget": "float",
+
+  // snippets
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/snips"],
+
+  // codelens
+  "codeLens.enable": true
 }
