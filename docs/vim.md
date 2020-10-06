@@ -1,25 +1,10 @@
-# Vim Cheatsheet
+# Vim 
 
-## Movements
+Currently I'm using the git version (next 0.5) so the configuration only apply
+to this version right now.
 
-### Window
+## References
 
-- `<C-h>`: left
-- `<C-j>`: bottom
-- `<C-k>`: top
-- `<C-l>`: right
-
-## Formating text
-
-- `gq`: reformat selected text
-
-## Folding
-
-- `zo`: open
-- `zc`: close
-
-## Navigation
-
-- `<C-n>`: open NERDTree
-- `-`: open NERDTree w/ vinegar
--
+- [tree-sitter tracking issue](https://github.com/neovim/neovim/issues/11724)
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
