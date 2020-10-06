@@ -1,9 +1,9 @@
 # Music
 
-## spotify
+## spotify-tui
 
-- [spotifyd](https://github.com/Spotifyd/spotifyd) Started as a systemd service
 - [spotify-tui](https://github.com/Rigellute/spotify-tui)
+- [spotifyd](https://github.com/Spotifyd/spotifyd) Started as a systemd service
 
 ### References
 
