@@ -3,6 +3,8 @@
 
   // prettier
   "prettier.singleQuote": true,
+  "prettier.requireConfig": true,
+  "prettier.eslintIntegration": true,
 
   // autoformat
   "coc.preferences.formatOnSaveFiletypes": [
@@ -23,5 +25,8 @@
   "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/snips"],
 
   // codelens
-  "codeLens.enable": true
+  "codeLens.enable": true,
+  "tsserver.implicitProjectConfig.experimentalDecorators": true,
+  "typescript.referencesCodeLens.enable": false,
+  "javascript.referencesCodeLens.enable": false
 }
