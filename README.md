@@ -24,3 +24,4 @@
 
 - https://github.com/gerardbm/dotfiles
 - https://github.com/AaronFoley/dotfiles
+- https://github.com/mathiasbynens/dotfiles
