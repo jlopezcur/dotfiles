@@ -1,0 +1,9 @@
+xrandr --output eDP1 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --mode 1920x1080 --pos 3840x0 --scale 2x2 --rotate normal --output VIRTUAL1 --off
+amixer -c 0 -q set Master 100% unmute
+xrdb -merge ~/.Xresources
+setxkbmap -layout es
+xsetroot -cursor_name left_ptr
+xsetwacom set 11 MapToOutput eDP1
+xsetwacom set 12 MapToOutput eDP1
+xsetwacom set 23 MapToOutput eDP1
+exec xmonad
