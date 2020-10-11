@@ -3,14 +3,14 @@
 ## Packages Info
 
 - Font: [SauceCodePro Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro)
-- Editor: [neovim](https://neovim.io/) [Notes](docs/neovim.md) 
+- Editor: [neovim](https://neovim.io/) [:pencil: Notes](docs/neovim.md) 
 - File Manager: [ranger](https://github.com/ranger/ranger)
-- Tiled Windows Manager: [xmonad](https://xmonad.org/) [Notes](docs/xmonad.md)
-- Shell: [bash](https://www.gnu.org/software/bash/) [Notes](docs/bash.md)
+- Tiled Windows Manager: [xmonad](https://xmonad.org/) [:pencil: Notes](docs/xmonad.md)
+- Shell: [bash](https://www.gnu.org/software/bash/) [:pencil: Notes](docs/bash.md)
 - Terminal Emulator: [alacritty](https://github.com/alacritty/alacritty)
 - Grep: [RigGrep](https://github.com/BurntSushi/ripgrep)
 - Fzf: [Fzf](https://github.com/junegunn/fzf)
-- Browser: [Brave](https://brave.com/) [Notes](docs/brave.md)
+- Browser: [Brave](https://brave.com/) [:pencil: Notes](docs/brave.md)
 - PDF: [Zathura](https://en.wikipedia.org/wiki/Zathura_(document_viewer))
 - Vector: [Inkscape](https://inkscape.org/es/)
 - Raster: [Gimp](https://www.gimp.org/)
