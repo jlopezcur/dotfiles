@@ -25,8 +25,8 @@
 # https://github.com/junegunn/fzf
 # ------------------------------------------------------------------------------
 
-[[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
-source ~/.fzf/shell/completion.bash
+[ -f ~/.fzf.bash ] && . ~/.fzf.bash
+. ~/.fzf/shell/completion.bash
 
 # nvm
 # https://github.com/nvm-sh/nvm
@@ -66,14 +66,14 @@ if [ -f /usr/lib/bash-git-prompt/gitprompt.sh ]; then
    # To use upstream's default theme, modified by arch maintainer
    # GIT_PROMPT_THEME=Default_Arch
    GIT_PROMPT_THEME=Solarized
-   source /usr/lib/bash-git-prompt/gitprompt.sh
+   . /usr/lib/bash-git-prompt/gitprompt.sh
 fi
 
 # Aliases
 # ------------------------------------------------------------------------------
 
-[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
-[[ -f ~/.bash_work_aliases ]] && . ~/.bash_work_aliases
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+[ -f ~/.bash_work_aliases ] && . ~/.bash_work_aliases
 
 # Use the current path in the window name
 # ------------------------------------------------------------------------------
