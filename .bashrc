@@ -25,20 +25,20 @@
 # https://github.com/junegunn/fzf
 # ------------------------------------------------------------------------------
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 source ~/.fzf/shell/completion.bash
 
 # nvm
 # https://github.com/nvm-sh/nvm
 # ------------------------------------------------------------------------------
 
-export NVM_DIR=#$HOME/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # ------------------------------------------------------------------------------
 
-export EDITOR='nvim'
+export EDITOR="nvim"
 export ARCHFLAGS="-arch x86_64"
 
 # key speed
@@ -79,10 +79,8 @@ fi
 # ------------------------------------------------------------------------------
 
 case ${TERM} in
-
-  xterm*|rxvt*|Eterm|alacritty|aterm|kterm|gnome*)
-     PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s\007" "${PWD/#$HOME/\~}"'
-
+  alacritty)
+    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s\007" "${PWD/#$HOME/\~}"'
     ;;
   screen*)
     PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s\033\\" "${PWD/#$HOME/\~}"'
