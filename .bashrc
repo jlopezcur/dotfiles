@@ -32,9 +32,13 @@ source ~/.fzf/shell/completion.bash
 # https://github.com/nvm-sh/nvm
 # ------------------------------------------------------------------------------
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Only add to path for speed (if nvm itself is needed then uncomment upper
+# lines)
+PATH=~/.nvm/versions/node/v12.16.3/bin:$PATH
 
 # ------------------------------------------------------------------------------
 
