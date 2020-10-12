@@ -1,9 +1,19 @@
 # Xmonad
 
+## Requirements
+
+- xprop
+- xdotool
+- i3lock
+
+```sh
+yay -S xprop xdotool i3lock
+```
+
 ## Install
 
 ```sh
-yay -S xmonad xmonad-contrib xmobar xprop xdotool
+yay -S xmonad xmonad-contrib xmobar
 ```
 
 ## References

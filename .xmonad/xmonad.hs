@@ -135,6 +135,8 @@ myKeys conf@(XConfig {modMask = modm}) =
   , ((modm, xK_r), spawn "xmonad --recompile && xmonad --restart")
   -- Prompt for quit xmonad
   , ((modm, xK_q), confirmPrompt promptConfig "quit xmonad?" $ io (exitWith ExitSuccess))
+  -- Lock desktop
+  , ((modm .|. shiftMask, xK_l), spawn "i3lock -c 000000")
 
   -- Windows
   -- ---------------------------------------------------------------------------
@@ -344,7 +346,7 @@ space      = renamed [Replace "space"]    $ limitWindows 4  $ spacing 6 $ Mirror
 ---MAIN
 ------------------------------------------------------------------------
 main = do
-  -- Launching three instances of xmobar on their monitors.
+  -- Launching instances of xmobar on their monitors.
   xmproc0 <- spawnPipe "xmobar -x 0 ~/.config/xmobar/xmobar.hs"
   xmproc1 <- spawnPipe "xmobar -x 1 ~/.config/xmobar/xmobar.hs"
   -- the xmonad, ya know...what the WM is named after!
@@ -374,6 +376,7 @@ main = do
     }
   where
     customKeys = (additionalKeys `ap` myKeys)
+
 
 ------------------------------------------------------------------------
 -- Help content
