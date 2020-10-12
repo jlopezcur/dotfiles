@@ -8,6 +8,7 @@ import qualified XMonad.StackSet as W
 -- Data
 import Data.List
 import Data.Monoid
+import Data.Ratio
 import Control.Monad (ap)
 
 -- Utilities
@@ -15,6 +16,8 @@ import XMonad.Util.Loggers
 import XMonad.Util.EZConfig
 import XMonad.Util.Run (safeSpawn, unsafeSpawn, runInTerm, spawnPipe)
 import XMonad.Util.SpawnOnce
+import XMonad.ManageHook
+import XMonad.Util.NamedScratchpad
 
 -- Hooks
 import XMonad.Hooks.DynamicLog (dynamicLogWithPP, defaultPP, wrap, pad, xmobarPP, xmobarColor, shorten, PP(..))
@@ -66,7 +69,7 @@ import XMonad.Prompt.Man
 import XMonad.Prompt.ConfirmPrompt
 
 ------------------------------------------------------------------------
--- VARIABLES
+-- 1. Variables
 ------------------------------------------------------------------------
 
 myFont :: String
@@ -78,8 +81,8 @@ myModMask = mod4Mask -- Sets modkey to super/windows key
 altMask :: KeyMask
 altMask = mod1Mask -- this is the super key, but I have it remapped
 
-myTerminal :: String
-myTerminal = "alacritty"
+myTerm :: String
+myTerm = "alacritty"
 
 myTextEditor :: String
 myTextEditor = "nvim"
@@ -87,11 +90,10 @@ myTextEditor = "nvim"
 myBrowser :: String
 myBrowser = "brave"
 
-myBorderWidth = 0            -- Sets border width for windows
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
 
 ------------------------------------------------------------------------
--- startup
+-- 2. Startup
 ------------------------------------------------------------------------
 
 myStartupHook :: X ()
@@ -99,13 +101,11 @@ myStartupHook = do
   spawnOnce "nitrogen --restore &" -- Background
   spawnOnce "dunst &" -- Notifications
   spawnOnce "udiskie &" -- Drive auto mounter
-  -- spawnHere myTerminal
-  -- spawnOn "\xf489" (myTerminal ++ " -e bpytop")
   -- https://hackage.haskell.org/package/xmonad-contrib-0.16/docs/XMonad-Hooks-SetWMName.html
   setWMName "LG3D"
 
 ------------------------------------------------------------------------
--- prompt
+-- 3. Prompt
 ------------------------------------------------------------------------
 
 promptConfig :: XPConfig
@@ -119,12 +119,12 @@ promptConfig = def
   }
 
 ------------------------------------------------------------------------
--- KEYBINDINGS
+-- 4. Keybindings
 ------------------------------------------------------------------------
 
 type Key = (KeyMask, KeySym)
 myKeys :: XConfig l -> [(Key, X ())]
-myKeys conf@(XConfig {modMask = modm}) =
+myKeys conf@XConfig {modMask = modm} =
   -- Xmonad
   -- ---------------------------------------------------------------------------
   -- Recompile xmonad
@@ -134,7 +134,7 @@ myKeys conf@(XConfig {modMask = modm}) =
   -- Recompile & restart xmonad
   , ((modm, xK_r), spawn "xmonad --recompile && xmonad --restart")
   -- Prompt for quit xmonad
-  , ((modm, xK_q), confirmPrompt promptConfig "quit xmonad?" $ io (exitWith ExitSuccess))
+  , ((modm, xK_q), confirmPrompt promptConfig "quit xmonad?" $ io exitSuccess)
   -- Lock desktop
   , ((modm .|. shiftMask, xK_l), spawn "i3lock -c 000000")
 
@@ -255,9 +255,9 @@ myKeys conf@(XConfig {modMask = modm}) =
   -- My Applications
   -- ---------------------------------------------------------------------------
   -- Open Terminal
-  , ((modm, xK_Return), spawn myTerminal)
+  , ((modm, xK_Return), spawn myTerm)
   -- Open file manager
-  , ((modm .|. shiftMask, xK_Return), spawn (myTerminal ++ " -e ranger"))
+  , ((modm .|. shiftMask, xK_Return), spawn (myTerm ++ " -e ranger"))
   -- Open color picker
   , ((modm .|. altMask, xK_p), spawn "gpick")
   -- Open gif capture
@@ -267,31 +267,33 @@ myKeys conf@(XConfig {modMask = modm}) =
   -- ---------------------------------------------------------------------------
   , ((0, xK_Print), spawn "scrot 0")
 
-  -- Help command
+  -- Scratchpads
   -- ---------------------------------------------------------------------------
-  , ((modm .|. shiftMask, xK_F1), spawn (myTerminal ++ " -e echo " ++ show help ++ " | less "))
+  , ((modm .|. controlMask, xK_Return), namedScratchpadAction myScratchPads "term")
+  , ((modm .|. controlMask, xK_s), namedScratchpadAction myScratchPads "spt")
+  , ((modm .|. controlMask, xK_h), namedScratchpadAction myScratchPads "help")
+  , ((modm .|. controlMask, xK_b), namedScratchpadAction myScratchPads "bpytop")
+  , ((modm .|. controlMask, xK_n), namedScratchpadAction myScratchPads "node")
 
   -- Multimedia Keys
   -- ---------------------------------------------------------------------------
   -- Audio keys
-  -- , ((0, xF86XK_AudioMute), spawn "amixer set Master toggle")
-  -- , ((0, xF86XK_AudioLowerVolume), spawn "amixer set Master 5%- unmute")
-  -- , ((0, xF86XK_AudioRaiseVolume), spawn "amixer set Master 5%+ unmute")
-  -- , ((0, xF86XK_AudioMicMute), spawn "amixer set Capture toggle")
+  , ((0, stringToKeysym "XF86AudioMute"), spawn "amixer set Master toggle")
+  , ((0, stringToKeysym "XF86AudioLowerVolume"), spawn "amixer set Master 5%- unmute")
+  , ((0, stringToKeysym "XF86AudioRaiseVolume"), spawn "amixer set Master 5%+ unmute")
+  , ((0, stringToKeysym "XF86AudioMicMute"), spawn "amixer set Capture toggle")
   -- Brightness
   -- , ("<XF86MonBrightnessUp>", spawn "echo")
   -- , ("<XF86MonBrightnessDown>", spawn "echo")
   -- Display
   -- , ("<XF86Display>", spawn "echo")
   -- Extra
-  -- , ((0, xF86XK_Favorites), spawn myBrowser)
+  , ((0, stringToKeysym "XF86Favorites"), spawn myBrowser)
   ]
 
 ------------------------------------------------------------------------
----WORKSPACES
+-- 5. Workspaces
 ------------------------------------------------------------------------
--- My workspaces are clickable meaning that the mouse can be used to switch
--- workspaces. This requires xdotool.
 
 xmobarEscape = concatMap doubleLts
   where
@@ -305,25 +307,57 @@ myWorkspaces = clickable . map xmobarEscape
     clickable l = [ "<action=xdotool key super+" ++ show n ++ ">" ++ ws ++ "</action>" | (i,ws) <- zip [1..7] l, let n = i ] 
 
 ------------------------------------------------------------------------
--- MANAGEHOOK
+-- 6. Managehook
 ------------------------------------------------------------------------
--- Sets some rules for certain programs. Examples include forcing certain
--- programs to always float, or to always appear on a certain workspace.
--- Forcing programs to a certain workspace with a doShift requires xdotool
--- if you are using clickable workspaces. You need the className or title 
--- of the program. Use xprop to get this info.
 
 myManageHook :: Query (Data.Monoid.Endo WindowSet)
 myManageHook = composeAll
  [ className =? "Gpick" --> doFloat
  , className =? "Peek" --> doFloat
  , (className =? "Brave-browser" <&&> resource =? "Dialog") --> doFloat  -- Float Browser Dialog
- , (className =? "Godot" <&&> resource =? "penny") --> doFloat  -- Float Browser Dialog
- , (className =? "Godot" <&&> resource =? "color-twin") --> doFloat  -- Float Browser Dialog
- ]
+ ] <+> namedScratchpadManageHook myScratchPads
 
 ------------------------------------------------------------------------
--- LAYOUTS
+-- 7. ScratchPads
+------------------------------------------------------------------------
+
+myScratchPads :: [NamedScratchpad]
+myScratchPads =
+  [ NS "term"
+    (myTerm ++ " --class spterm")
+    (resource =? "spterm")
+    spconf
+
+  , NS "bpytop"
+    (myTerm ++ " --class spbpytop -e bpytop")
+    (resource =? "spbpytop")
+    spconf
+
+  , NS "spt"
+    (myTerm ++ " --class spspt -e spt")
+    (resource =? "spspt")
+    spconf
+
+  , NS "help"
+    (myTerm ++ " --class sphelp -e less ~/.xmonad/xmonad.help")
+    (resource =? "sphelp")
+    spconf
+
+  , NS "node"
+    (myTerm ++ " --class spnode -e node")
+    (resource =? "spnode")
+    spconf
+
+  ] where
+    spconf = customFloating $ W.RationalRect l t w h
+      where
+        h = 0.7
+        w = 0.7
+        t = (1 - h)/2
+        l = (1 - w)/2
+
+------------------------------------------------------------------------
+-- 8. Layouts
 ------------------------------------------------------------------------
 
 myLayoutHook =
@@ -345,8 +379,9 @@ grid       = renamed [Replace "grid"]     $ limitWindows 12 $ spacing 3 $ mkTogg
 space      = renamed [Replace "space"]    $ limitWindows 4  $ spacing 6 $ Mirror $ mkToggle (single MIRROR) $ mkToggle (single REFLECTX) $ mkToggle (single REFLECTY) $ OneBig (2/3) (2/3)
 
 ------------------------------------------------------------------------
----MAIN
+-- 9. Main
 ------------------------------------------------------------------------
+
 main = do
   -- Launching instances of xmobar on their monitors.
   xmproc0 <- spawnPipe "xmobar -x 0 ~/.config/xmobar/xmobar.hs"
@@ -368,53 +403,14 @@ main = do
       }
     , modMask            = myModMask
     , handleEventHook    = handleEventHook desktopConfig <+> fullscreenEventHook
-    , terminal           = myTerminal
+    , terminal           = myTerm
     , startupHook        = myStartupHook
     , layoutHook         = myLayoutHook 
     , workspaces         = myWorkspaces
-    , borderWidth        = myBorderWidth
+    , borderWidth        = 0
     , normalBorderColor  = "#292d3e"
     , focusedBorderColor = "#bbc5ff"
     }
   where
-    customKeys = (additionalKeys `ap` myKeys)
-
-
-------------------------------------------------------------------------
--- Help content
-------------------------------------------------------------------------
-
-help :: String
-help = unlines
-  [ "The default modified key is 'windows'. Keybindings:"
-  , ""
-  , "-- launching and killings programs"
-  , "mod-Enter                  Launch terminal"
-  , "mod-Shift-Enter            Launch file manager"
-  , "mod-p                      Prompt for program"
-  , "mod-Alt-p                  Color picker"
-  , "mod-Alt-c                  Gif capture"
-  , ""
-  , "-- Layouts"
-  , "mod-Tab                    Rotate between the layouts"
-  , ""
-  , "-- Xmonad"
-  , "mod-q                      Prompt to quit xmonad"
-  , "mod-Control-r              Recompile xmonad"
-  , "mod-Shift-r                Reload xmonad"
-  , "mod-Shift-l                Lock screen"
-  , ""
-  , "-- Workspaces"
-  , "mod-[1..9]                 Switch to workSpace N"
-  , "mod-Shift-[1..9]           Move client to workSpace N"
-  , ""
-  , "-- Screens"
-  , "mod-,                      Switch to the right screen"
-  , "mod-.                      Switch to the left screen"
-  , ""
-  , "-- Mouse bindings"
-  , "mod-button1                Set the window to floating mode and move by dragging"
-  , "mod-button2                Raise the window to the top of the stack"
-  , "mod-button3                Set the window to floating mode and resize by dragging"
-  ]
+    customKeys = additionalKeys `ap` myKeys
 
