@@ -260,6 +260,8 @@ myKeys conf@(XConfig {modMask = modm}) =
   , ((modm .|. shiftMask, xK_Return), spawn (myTerminal ++ " -e ranger"))
   -- Open color picker
   , ((modm .|. altMask, xK_p), spawn "gpick")
+  -- Open gif capture
+  , ((modm .|. altMask, xK_c), spawn "peek")
  
   -- Screen capture
   -- ---------------------------------------------------------------------------
@@ -390,6 +392,8 @@ help = unlines
   , "mod-Enter                  Launch terminal"
   , "mod-Shift-Enter            Launch file manager"
   , "mod-p                      Prompt for program"
+  , "mod-Alt-p                  Color picker"
+  , "mod-Alt-c                  Gif capture"
   , ""
   , "-- Layouts"
   , "mod-Tab                    Rotate between the layouts"
@@ -398,6 +402,7 @@ help = unlines
   , "mod-q                      Prompt to quit xmonad"
   , "mod-Control-r              Recompile xmonad"
   , "mod-Shift-r                Reload xmonad"
+  , "mod-Shift-l                Lock screen"
   , ""
   , "-- Workspaces"
   , "mod-[1..9]                 Switch to workSpace N"
