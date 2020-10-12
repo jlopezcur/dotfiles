@@ -111,8 +111,9 @@ nnoremap <Leader>ss :terminal npm start<cr>
 " images
 " ------------------------------------------------------------------------------
 
-autocmd bufenter *.png,*.jpg,*.jpeg exec "!sxiv -qp ".expand("%") | :bd
-autocmd bufenter *.pdf exec "! zathura ".expand("%") | :bw
+autocmd bufenter *.png,*.jpg,*.jpeg exec "!sxiv -qp '".expand("%")."'" | :bd
+autocmd bufenter *.gif exec "!mplayer '".expand("%")."'" | :bd
+autocmd bufenter *.pdf exec "! zathura '".expand("%")."'" | :bw
 
 " term
 " ------------------------------------------------------------------------------
