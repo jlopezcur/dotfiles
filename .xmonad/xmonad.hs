@@ -73,7 +73,7 @@ import XMonad.Prompt.ConfirmPrompt
 ------------------------------------------------------------------------
 
 myFont :: String
-myFont = "xft:SauceCodePro Nerd Font Mono:regular:size=11:antialias=true:hinting:true"
+myFont = "xft:SauceCodePro Nerd Font Mono:regular:size=11:antialias=true:hinting=true"
 
 myModMask :: KeyMask
 myModMask = mod4Mask -- Sets modkey to super/windows key
@@ -390,7 +390,7 @@ main = do
   xmonad $ customKeys $ ewmh desktopConfig
     { manageHook = myManageHook <+> manageSpawn <+> manageHook desktopConfig <+> manageDocks
     , logHook = dynamicLogWithPP xmobarPP
-      { ppOutput = hPutStrLn xmproc0
+      { ppOutput = \x -> hPutStrLn xmproc0 x  >> hPutStrLn xmproc1 x
       , ppCurrent = xmobarColor "grey" "" . wrap "[" "]" -- Current workspace in xmobar
       , ppVisible = xmobarColor "grey" ""                -- Visible but not current workspace
       , ppHidden = xmobarColor "grey" "" . wrap "*" ""   -- Hidden workspaces in xmobar
