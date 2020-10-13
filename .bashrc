@@ -74,7 +74,7 @@ fi
 # ------------------------------------------------------------------------------
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
-[ -f ~/.bash_work_aliases ] && . ~/.bash_work_aliases
+[ -f ~/.bashrc_private ] && . ~/.bashrc_private
 
 # Use the current path in the window name
 # ------------------------------------------------------------------------------
