@@ -1,8 +1,6 @@
 " general
 " ------------------------------------------------------------------------------
 
-let $MYVIMRC="~/.config/nvim/init.vim"
-
 set termguicolors
 set background=dark
 set noshowmode
