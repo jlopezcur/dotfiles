@@ -339,7 +339,7 @@ myScratchPads =
     spconf
 
   , NS "help"
-    (myTerm ++ " --class sphelp -e less ~/.xmonad/xmonad.help")
+    (myTerm ++ " --class sphelp -e less ~/.xmonad/xmonad.md")
     (resource =? "sphelp")
     spconf
 
