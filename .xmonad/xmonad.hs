@@ -100,6 +100,7 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 myStartupHook :: X ()
 myStartupHook = do
   spawnOnce "nitrogen --restore &" -- Background
+  spawnOnce "picom &" -- Compositor
   spawnOnce "dunst &" -- Notifications
   spawnOnce "udiskie &" -- Drive auto mounter
   -- https://hackage.haskell.org/package/xmonad-contrib-0.16/docs/XMonad-Hooks-SetWMName.html
