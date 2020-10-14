@@ -9,6 +9,9 @@ ln -sf "$DIR/.bashrc" ~/.bashrc
 ln -sf "$DIR/.bash_aliases" ~/.bash_aliases
 ln -sf "$DIR/.inputrc" ~/.inputrc
 
+# Git
+ln -sf "$DIR/.gitconfig" ~/.gitconfig
+
 # Window Manager
 ln -sf "$DIR/.Xresources" ~/.Xresources
 ln -sf "$DIR/.xinitrc" ~/.xinitrc
