@@ -40,10 +40,11 @@ import XMonad.Actions.SpawnOn
 import qualified XMonad.Actions.ConstrainedResize as Sqr
 
 -- Layouts modifiers
+import XMonad.Layout.LayoutModifier
 import XMonad.Layout.PerWorkspace (onWorkspace) 
 import XMonad.Layout.Renamed (renamed, Rename(CutWordsLeft, Replace))
 import XMonad.Layout.WorkspaceDir
-import XMonad.Layout.Spacing (spacing) 
+import XMonad.Layout.Spacing
 import XMonad.Util.Themes
 import XMonad.Layout.NoBorders
 import XMonad.Layout.LimitWindows (limitWindows, increaseLimit, decreaseLimit)
@@ -373,10 +374,13 @@ myLayoutHook =
   mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout where 
     myDefaultLayout = noBorders monocle ||| tall ||| grid ||| space
 
+mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
+mySpacing i = spacingRaw True (Border i i i i) True (Border i i i i) True
+
 monocle    = renamed [Replace "monocle"]  $ limitWindows 20 Full
-tall       = renamed [Replace "tall"]     $ limitWindows 12 $ spacing 3 $ ResizableTall 1 (3/100) (1/2) []
-grid       = renamed [Replace "grid"]     $ limitWindows 12 $ spacing 3 $ mkToggle (single MIRROR) $ Grid (16/10)
-space      = renamed [Replace "space"]    $ limitWindows 4  $ spacing 6 $ Mirror $ mkToggle (single MIRROR) $ mkToggle (single REFLECTX) $ mkToggle (single REFLECTY) $ OneBig (2/3) (2/3)
+tall       = renamed [Replace "tall"]     $ limitWindows 12 $ mySpacing 3 $ ResizableTall 1 (3/100) (1/2) []
+grid       = renamed [Replace "grid"]     $ limitWindows 12 $ mySpacing 3 $ mkToggle (single MIRROR) $ Grid (16/10)
+space      = renamed [Replace "space"]    $ limitWindows 4  $ mySpacing 6 $ Mirror $ mkToggle (single MIRROR) $ mkToggle (single REFLECTX) $ mkToggle (single REFLECTY) $ OneBig (2/3) (2/3)
 
 ------------------------------------------------------------------------
 -- 9. Main
