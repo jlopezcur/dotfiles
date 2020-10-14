@@ -3,12 +3,14 @@
 ## Requirements
 
 - fzf
+- nvm
+- bash-git-prompt
 
 ```sh
-yay -S fzf
+yay -S fzf nvm bash-git-prompt
 ```
 
-## Triks
+## Tricks
 
 - cowsay
 - lolcat

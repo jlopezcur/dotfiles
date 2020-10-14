@@ -25,8 +25,8 @@
 # https://github.com/junegunn/fzf
 # ------------------------------------------------------------------------------
 
-[ -f ~/.fzf.bash ] && . ~/.fzf.bash
-. ~/.fzf/shell/completion.bash
+. /usr/share/fzf/key-bindings.bash
+. /usr/share/fzf/completion.bash
 
 # nvm
 # https://github.com/nvm-sh/nvm
@@ -52,7 +52,7 @@ setxkbmap -layout es
 # ------------------------------------------------------------------------------
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
- exec startx
+  exec startx
 fi
 
 # bash git prompt
