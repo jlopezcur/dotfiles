@@ -122,20 +122,10 @@ set shell=/usr/bin/bash
 
 let g:netrw_browsex_viewer="setsid xdg-open"
 
-" spelling
+" spell
 " ------------------------------------------------------------------------------
 
-function! Writer ()
-  setlocal spell spelllang=en_us
-endfunction
-com! WR call Writer()
-
-function! FzfSpellSink(word)
-  exe 'normal! "_ciw'.a:word
-endfunction
-function! FzfSpell()
-  let suggestions = spellsuggest(expand("<cword>"))
-  return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
-endfunction
-nnoremap z= :call FzfSpell()<CR>
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+autocmd FileType gitcommit setlocal spell spelllang=en_us
+set complete+=kspell
 
