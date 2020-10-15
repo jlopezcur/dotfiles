@@ -37,6 +37,7 @@ ln -sf "$DIR/.config/nvim/gruvbox.vim" ~/.config/nvim/gruvbox.vim
 ln -sf "$DIR/.config/nvim/init.vim" ~/.config/nvim/init.vim
 ln -sf "$DIR/.config/nvim/lightline.vim" ~/.config/nvim/lightline.vim
 ln -sf "$DIR/.config/nvim/nerdcommenter.vim" ~/.config/nvim/nerdcommenter.vim
+ln -sf "$DIR/.config/nvim/prettier.vim" ~/.config/nvim/prettier.vim
 mkdir -p ~/.config/nvim/lua
 ln -sf "$DIR/.config/nvim/lua/lsp.lua" ~/.config/nvim/lua/lsp.lua
 ln -sf "$DIR/.config/nvim/lua/treesitter.lua" ~/.config/nvim/lua/treesitter.lua

@@ -1,13 +1,22 @@
-"
-"                                 _____  ___
-"                                 | | | / /
-"                                 | | |/ /
-"                                 | |   <
-"                             ___ | | |\ \
-"                             | |_| | | \ \
-"                             |_____|_|__\_\_
-"
-"
+"  __________
+" < vim.init >
+"  ----------
+"       \                    / \  //\
+"        \    |\___/|      /   \//  \\
+"             /0  0  \__  /    //  | \ \
+"            /     /  \/_/    //   |  \  \
+"            @_^_@'/   \/_   //    |   \   \
+"            //_^_/     \/_ //     |    \    \
+"         ( //) |        \///      |     \     \
+"       ( / /) _|_ /   )  //       |      \     _\
+"     ( // /) '/,_ _ _/  ( ; -.    |    _ _\.-~        .-~~~^-.
+"   (( / / )) ,-{        _      `-.|.-~-.           .~         `.
+"  (( // / ))  '/\      /                 ~-. _ .-~      .-~^-.  \
+"  (( /// ))      `.   {            }                   /      \  \
+"   (( / ))     .----~-.\        \-'                 .~         \  `. \^-.
+"              ///.----..>        \             _ -~             `.  ^-`  ^-_
+"                ///-._ _ _ _ _ _ _}^ - - - - ~                     ~-- ,.-~
+"                                                                   /.-~
 
 " No comments added
 " Press <S-K> on any command to see documentation
@@ -75,11 +84,13 @@ source $HOME/.config/nvim/fugitive.vim
 source $HOME/.config/nvim/nerdcommenter.vim
 " source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/dirvish.vim
+source $HOME/.config/nvim/prettier.vim
+
+lua require("treesitter")
 lua require("lsp")
-autocmd BufWritePost * lua vim.lsp.buf.formatting()
+" autocmd BufWritePost * lua vim.lsp.buf.formatting()
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:completion_enable_snippet = 'UltiSnips'
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-lua require("treesitter")
