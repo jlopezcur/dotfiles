@@ -8,7 +8,7 @@ alias ll='ls -alh'
 alias vim='nvim'
 
 alias myip='curl http://ipecho.net/plain; echo'
-alias update-system='yay && yay -Yc && nvim +PlugUpdate +PlugUpgrade'
+alias update-system='yay && yay -Yc && nvim +PlugUpdate +PlugUpgrade +TSUpdate'
 
 # Git
 
