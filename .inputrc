@@ -1,10 +1,47 @@
+# Tab cycle over results
+
+TAB: menu-complete
+
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
+
+# Vi mode
+# https://catonmat.net/ftp/bash-vi-editing-mode-cheat-sheet.pdf
+# ------------------------------------------------------------------------------
+
+set editing-mode vi
+set show-mode-in-prompt on
+set vi-ins-mode-string \1\e[6 q\2
+set vi-cmd-mode-string \1\e[2 q\2
+
+# Put a slash at the end of dirs and symlink dirs
+# ------------------------------------------------------------------------------
+
+set mark-directories on
+set mark-symlinked-directories on
+
+# Enable completion colors
+# ------------------------------------------------------------------------------
+
+set colored-completion-prefix on
 set colored-stats on
 set visible-stats on
-set mark-symlinked-directories on
-set colored-completion-prefix on
-set menu-complete-display-prefix on
+
+# Ignore case-sensitive on completion
+# ------------------------------------------------------------------------------
+
 set completion-ignore-case on
+
+# Complete only the missing part 
+# ------------------------------------------------------------------------------
+
+set menu-complete-display-prefix on
 set completion-prefix-display-length 3
+
+# Disable pagination on complete list
+# ------------------------------------------------------------------------------
+
 set page-completions off
+set skip-completed-text on
+
+set bell-style visible
