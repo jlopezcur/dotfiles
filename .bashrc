@@ -33,8 +33,10 @@
 # ------------------------------------------------------------------------------
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . $NVM_DIR/nvm.sh --no-use  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . $NVM_DIR/bash_completion  # This loads nvm bash_completion
+# This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR"/nvm.sh --no-use
+# This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR"/bash_completion
 PATH=~/.nvm/versions/node/v12.16.3/bin:$PATH
 
 # ------------------------------------------------------------------------------
@@ -66,7 +68,7 @@ if [ -f /usr/lib/bash-git-prompt/gitprompt.sh ]; then
    # GIT_PROMPT_THEME=Default
    # To use upstream's default theme, modified by arch maintainer
    # GIT_PROMPT_THEME=Default_Arch
-   GIT_PROMPT_THEME=Solarized
+   export GIT_PROMPT_THEME=Solarized
    . /usr/lib/bash-git-prompt/gitprompt.sh
 fi
 
