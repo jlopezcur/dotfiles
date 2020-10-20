@@ -43,9 +43,7 @@ Plug 'honza/vim-snippets' " https://github.com/honza/vim-snippets
 " ------------------------------------------------------------------------------
 
 " Plug 'sheerun/vim-polyglot' " https://github.com/sheerun/vim-polyglot
-" Plug 'gruvbox-community/gruvbox' " https://github.com/gruvbox-community/gruvbox
 Plug 'sainnhe/gruvbox-material'
-" Plug 'phanviet/vim-monokai-pro'
 Plug 'itchyny/lightline.vim' " https://github.com/itchyny/lightline.vim
 Plug 'nvim-treesitter/nvim-treesitter'
 
