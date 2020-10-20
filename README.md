@@ -3,9 +3,13 @@
 ## Packages Info
 
 - Font: [SauceCodePro Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro)
+- Icons: [Paper](https://snwh.org/paper)
+- GTK Theme: [Arc Dark](https://github.com/horst3180/Arc-theme)
+- GTK Theme Manager: [lxappearance](https://wiki.lxde.org/es/LXAppearance)
 - Editor: [neovim](https://neovim.io/) [:pencil: Notes](docs/neovim.md) 
 - File Manager: [ranger](https://github.com/ranger/ranger)
 - Tiled Windows Manager: [xmonad](https://xmonad.org/) [:pencil: Notes](docs/xmonad.md)
+- Compositor: [picom](https://wiki.archlinux.org/index.php/Picom)
 - Shell: [bash](https://www.gnu.org/software/bash/) [:pencil: Notes](docs/bash.md)
 - Terminal Emulator: [alacritty](https://github.com/alacritty/alacritty)
 - Grep: [RigGrep](https://github.com/BurntSushi/ripgrep)
@@ -15,6 +19,7 @@
 - Vector: [Inkscape](https://inkscape.org/es/)
 - Raster: [Gimp](https://www.gimp.org/)
 - Viewer: [sxiv](https://github.com/muennich/sxiv)
+- Desktop Background Browser: [nitrogen](https://wiki.archlinux.org/index.php/Nitrogen)
 - Color Picker: [gpick](https://github.com/thezbyg/gpick)
 - Task Manager: [bpytop](https://github.com/aristocratos/bpytop)
 - Music: [spotify-tui](https://github.com/Rigellute/spotify-tui)
