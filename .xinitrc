@@ -19,4 +19,4 @@ xsetwacom set 12 MapToOutput eDP1
 xsetwacom set 23 MapToOutput eDP1
 
 # start xmonad
-exec xmonad
+exec dbus-launch xmonad
