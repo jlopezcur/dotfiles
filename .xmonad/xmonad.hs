@@ -379,9 +379,9 @@ mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spaci
 mySpacing i = spacingRaw True (Border i i i i) True (Border i i i i) True
 
 monocle    = renamed [Replace "monocle"]  $ limitWindows 20 Full
-tall       = renamed [Replace "tall"]     $ limitWindows 12 $ mySpacing 3 $ ResizableTall 1 (3/100) (1/2) []
-grid       = renamed [Replace "grid"]     $ limitWindows 12 $ mySpacing 3 $ mkToggle (single MIRROR) $ Grid (16/10)
-space      = renamed [Replace "space"]    $ limitWindows 4  $ mySpacing 6 $ Mirror $ mkToggle (single MIRROR) $ mkToggle (single REFLECTX) $ mkToggle (single REFLECTY) $ OneBig (2/3) (2/3)
+tall       = renamed [Replace "tall"]     $ limitWindows 12 $ mySpacing 24 $ ResizableTall 1 (3/100) (1/2) []
+grid       = renamed [Replace "grid"]     $ limitWindows 12 $ mySpacing 24 $ mkToggle (single MIRROR) $ Grid (16/10)
+space      = renamed [Replace "space"]    $ limitWindows 4  $ mySpacing 24 $ Mirror $ mkToggle (single MIRROR) $ mkToggle (single REFLECTX) $ mkToggle (single REFLECTY) $ OneBig (2/3) (2/3)
 
 ------------------------------------------------------------------------
 -- 9. Main
@@ -412,9 +412,9 @@ main = do
     , startupHook        = myStartupHook
     , layoutHook         = myLayoutHook 
     , workspaces         = myWorkspaces
-    , borderWidth        = 0
+    , borderWidth        = 1
     , normalBorderColor  = "#292d3e"
-    , focusedBorderColor = "#bbc5ff"
+    , focusedBorderColor = "#458588"
     }
   where
     customKeys = additionalKeys `ap` myKeys
