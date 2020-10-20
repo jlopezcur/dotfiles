@@ -116,7 +116,7 @@ promptConfig = def
   , font = myFont
   , bgColor = "#000000"
   , promptBorderWidth = 0
-  , height = 40
+  , height = 42
   , alwaysHighlight = True
   }
 
