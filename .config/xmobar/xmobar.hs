@@ -12,6 +12,7 @@ Config {
   hideOnStart = False,
   allDesktops = True,
   persistent = True,
+  alpha = 0,
   commands = [
     Run Date "%a, %d %b %Y, %H:%M" "date" 60,
     Run MultiCpu [
