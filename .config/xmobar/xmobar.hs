@@ -8,9 +8,10 @@ Config {
   -- bgColor = "#282828",
   fgColor = "#666666",
   position = Top,
-  lowerOnStart = True,
+  overrideRedirect = False,
+  lowerOnStart = False,
   hideOnStart = False,
-  allDesktops = True,
+  -- allDesktops = True,
   persistent = True,
   alpha = 0,
   commands = [
