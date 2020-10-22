@@ -1,7 +1,7 @@
 # Set the right display configuration
 xrandr \
-  --output eDP1 --primary --mode 3840x2160 --pos 0x0 --rotate normal \
-  --output HDMI1 --mode 1920x1080 --pos 3840x0 --scale 2x2 --rotate normal
+  --output eDP1 --primary --mode 3840x2160 --pos 0x0 \
+  --output HDMI1 --mode 1920x1080 --pos 3840x0 --scale 2.2x2.2
 
 # Put the sound in the correct state
 amixer -c 0 -q set Master 100% unmute
