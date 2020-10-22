@@ -24,6 +24,7 @@
 - Task Manager: [bpytop](https://github.com/aristocratos/bpytop)
 - Music: [spotify-tui](https://github.com/Rigellute/spotify-tui)
 - 3D & Video Edition: [blender](https://www.blender.org/)
+- IRC: [irssi](https://irssi.org/)
 
 ## References
 
