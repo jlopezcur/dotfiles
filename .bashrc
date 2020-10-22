@@ -100,3 +100,11 @@ shopt -s checkwinsize
 
 # Complete command names and file names
 complete -cf sudo
+
+# History
+
+HISTFILESIZE=5000000
+HISTSIZE=10000
+shopt -s histappend
+HISTCONTROL=ignoreboth
+
