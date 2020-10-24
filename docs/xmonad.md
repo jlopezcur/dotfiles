@@ -16,6 +16,13 @@ yay -S xprop xdotool i3lock
 yay -S xmonad xmonad-contrib xmobar
 ```
 
+## Keybindings
+
+testing kbd
+
+<kbd>x</kbd>
+
+
 ## References
 
 - https://github.com/xmonad/xmonad/blob/master/src/XMonad/Config.hs
