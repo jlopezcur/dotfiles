@@ -3,8 +3,8 @@
 -- you can find weather location codes here: http://weather.noaa.gov/index.html
 
 Config {
-  font = "xft:SauceCodePro Nerd Font Mono:pixelsize=32:antialias=true:hinting=true",
-  additionalFonts = [ "xft:monospace:pixelsize=32" ],
+  font = "xft:SauceCodePro Nerd Font Mono:size=8:antialias=true:hinting=true",
+  additionalFonts = [ "xft:monospace:size=8" ],
   -- bgColor = "#282828",
   fgColor = "#666666",
   position = Top,
