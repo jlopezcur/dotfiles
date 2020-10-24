@@ -120,6 +120,9 @@ promptConfig = def
   , alwaysHighlight = True
   }
 
+exitPrompt :: X ()
+exitPrompt = confirmPrompt promptConfig "Quit XMonad?" $ io exitSuccess
+
 ------------------------------------------------------------------------
 -- 4. Keybindings
 ------------------------------------------------------------------------
@@ -136,7 +139,7 @@ myKeys conf@XConfig {modMask = modm} =
   -- Recompile & restart xmonad
   , ((modm, xK_r), spawn "xmonad --recompile && xmonad --restart")
   -- Prompt for quit xmonad
-  , ((modm, xK_q), confirmPrompt promptConfig "quit xmonad?" $ io exitSuccess)
+  , ((modm, xK_q), exitPrompt)
   -- Lock desktop
   , ((modm .|. shiftMask, xK_l), spawn "i3lock -c 000000")
 
