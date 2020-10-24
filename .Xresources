@@ -1,6 +1,4 @@
-Xft.dpi: 235
-
-! These might also be useful depending on your monitor and personal preference:
+Xft.dpi: 243
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintfull
