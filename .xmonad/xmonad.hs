@@ -278,7 +278,6 @@ myKeys conf@XConfig {modMask = modm} =
   -- ---------------------------------------------------------------------------
   , ((modm .|. controlMask, xK_Return), namedScratchpadAction myScratchPads "term")
   , ((modm .|. controlMask, xK_s), namedScratchpadAction myScratchPads "spt")
-  , ((modm .|. controlMask, xK_h), namedScratchpadAction myScratchPads "help")
   , ((modm .|. controlMask, xK_b), namedScratchpadAction myScratchPads "bpytop")
   , ((modm .|. controlMask, xK_n), namedScratchpadAction myScratchPads "node")
 
@@ -343,11 +342,6 @@ myScratchPads =
   , NS "spt"
     (myTerm ++ " --class spspt -e spt")
     (resource =? "spspt")
-    spconf
-
-  , NS "help"
-    (myTerm ++ " --class sphelp -e less ~/.xmonad/xmonad.md")
-    (resource =? "sphelp")
     spconf
 
   , NS "node"

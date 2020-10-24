@@ -18,10 +18,53 @@ yay -S xmonad xmonad-contrib xmobar
 
 ## Keybindings
 
-testing kbd
+The Mod key is <kbd>Win</kbd>
 
-<kbd>x</kbd>
+### Launching and killings programs
 
+- <kbd>Mod</kbd> + <kbd>Enter</kbd> Launch terminal
+- <kbd>Mod</kbd> + <kbd>Shift</kbd> + <kbd>enter</kbd> Launch file manager
+- <kbd>Mod</kbd> + <kbd>p</kbd> Prompt for program
+- <kbd>Mod</kbd> + <kbd>Alt</kbd> + <kbd>p</kbd> Gpick
+- <kbd>Mod</kbd> + <kbd>Alt</kbd> + <kbd>c</kbd> Peek
+- <kbd>Mod</kbd> + <kbd>Alt</kbd> + <kbd>f</kbd> Flameshot
+
+### Layouts
+
+- <kbd>Mod</kbd> + <kbd>tab</kbd> Rotate between the layouts
+
+### Xmonad
+
+- <kbd>Mod</kbd> + <kbd>q</kbd> Prompt to quit xmonad
+- <kbd>Mod</kbd> + <kbd>Ctrl</kbd> + <kbd>r</kbd> Recompile xmonad
+- <kbd>Mod</kbd> + <kbd>Shift</kbd> + <kbd>r</kbd> Reload xmonad
+- <kbd>Mod</kbd> + <kbd>Shift</kbd> + <kbd>l</kbd> Lock screen
+
+### Workspaces
+
+- <kbd>Mod</kbd> + <kbd>[1..9]</kbd> Switch to workSpace N
+- <kbd>Mod</kbd> + <kbd>Shift</kbd> + <kbd>[1..9]</kbd> Move client to workSpace
+  N
+
+### Screens
+
+- <kbd>Mod</kbd> + <kbd>,</kbd> Switch to the right screen
+- <kbd>Mod</kbd> + <kbd>.</kbd> Switch to the left screen
+
+### Mouse bindings
+
+- <kbd>Mod</kbd> + <kbd>LMB</kbd> Set the window to floating mode and move by
+  dragging
+- <kbd>Mod</kbd> + <kbd>CMB</kbd> Raise the window to the top of the stack
+- <kbd>Mod</kbd> + <kbd>RMB</kbd> Set the window to floating mode and resize by
+  dragging
+
+### Scratchpads
+
+- <kbd>Mod</kbd> + <kbd>Ctrl</kbd> + <kbd>n</kbd> Node scratchpad
+- <kbd>Mod</kbd> + <kbd>Ctrl</kbd> + <kbd>b</kbd> Bpytop scratchpad
+- <kbd>Mod</kbd> + <kbd>Ctrl</kbd> + <kbd>s</kbd> Spotify-tui scratchpad
+- <kbd>Mod</kbd> + <kbd>Ctrl</kbd> + <kbd>Enter</kbd> Terminal scratchpad
 
 ## References
 
