@@ -3,19 +3,17 @@
 -- you can find weather location codes here: http://weather.noaa.gov/index.html
 
 Config {
-  font = "xft:SauceCodePro Nerd Font Mono:size=8:antialias=true:hinting=true",
-  additionalFonts = [ "xft:monospace:size=8" ],
-  -- bgColor = "#282828",
+  font = "xft:SauceCodePro Nerd Font Mono:size=9:antialias=true:hinting=true",
+  additionalFonts = [ "xft:monospace:size=9" ],
   fgColor = "#666666",
   position = Top,
   overrideRedirect = False,
   lowerOnStart = False,
   hideOnStart = False,
-  -- allDesktops = True,
   persistent = True,
   alpha = 0,
   commands = [
-    Run Date "%a, %d %b %Y, %H:%M" "date" 60,
+    Run UnsafeStdinReader,
     Run MultiCpu [
       "-t", "<total>%",
       "-H", "50", "-h", "red"
@@ -30,6 +28,7 @@ Config {
     ] 10,
     Run DiskU [("/", "<used>")] [] 3600,
     Run Alsa "default" "Master" ["-t" , "<volume>%"],
+    Run Date "%a, %d %b %Y, %H:%M" "date" 60,
     Run Battery [
       "--template" , "<acstatus>",
       "--Low"      , "10",        -- units: %
@@ -44,8 +43,7 @@ Config {
       "-O", " <left>% (<timeleft>)",
       -- charged status
       "-i", " 100%"
-    ] 50,
-    Run UnsafeStdinReader
+    ] 50
   ],
   sepChar = "%",
   alignSep = "}{",
