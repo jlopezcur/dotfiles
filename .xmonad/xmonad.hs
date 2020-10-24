@@ -267,6 +267,8 @@ myKeys conf@XConfig {modMask = modm} =
   , ((modm .|. altMask, xK_p), spawn "gpick")
   -- Open gif capture
   , ((modm .|. altMask, xK_c), spawn "peek")
+  -- Open flameshot
+  , ((modm .|. altMask, xK_f), spawn "flameshot gui -p ~/Downloads")
  
   -- Screen capture
   -- ---------------------------------------------------------------------------
