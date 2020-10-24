@@ -1,7 +1,9 @@
 # Set the right display configuration
 xrandr \
-  --output eDP1 --primary --mode 3840x2160 --pos 0x0 \
-  --output HDMI1 --mode 1920x1080 --pos 3840x0 --scale 2.2x2.2
+  --dpi 324 \
+  --output eDP1 --mode 3840x2160 --rate 60 --pos 0x0 --primary \
+  --output HDMI1 --mode 1920x1080 --rate 60 --pos 3840x0 --scale 2x2 \
+  --output VIRTUAL1 --off
 
 # Put the sound in the correct state
 amixer -c 0 -q set Master 100% unmute
@@ -21,4 +23,4 @@ xsetwacom set 12 MapToOutput eDP1
 xsetwacom set 23 MapToOutput eDP1
 
 # start xmonad
-exec dbus-launch xmonad
+dbus-launch xmonad
