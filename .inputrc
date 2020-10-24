@@ -36,13 +36,3 @@ set page-completions off
 set skip-completed-text on
 
 set bell-style visible
-
-# Key Bindings
-# ------------------------------------------------------------------------------
-
-"\C-k": history-search-backward
-"\C-j": history-search-forward
-
-"\C-h": backward-word
-"\C-l": forward-word
-
