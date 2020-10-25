@@ -66,6 +66,14 @@ The Mod key is <kbd>Win</kbd>
 - <kbd>Mod</kbd> + <kbd>Ctrl</kbd> + <kbd>s</kbd> Spotify-tui scratchpad
 - <kbd>Mod</kbd> + <kbd>Ctrl</kbd> + <kbd>Enter</kbd> Terminal scratchpad
 
+## Xorg
+
+I use a definition for the device entry of xorg:
+
+```sh
+sudo cp etc/X11/xorg.conf.d/20-intel.conf /etc/X11/xorg.conf.d/20-intel.conf
+```
+
 ## References
 
 - https://github.com/xmonad/xmonad/blob/master/src/XMonad/Config.hs
