@@ -4,10 +4,10 @@ DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "Installing from $DIR..."
 
-# Bash
-ln -sf "$DIR/.bashrc" ~/.bashrc
-ln -sf "$DIR/.bash_aliases" ~/.bash_aliases
-ln -sf "$DIR/.inputrc" ~/.inputrc
+# Fish
+mkdir -p ~/.config/fish
+ln -sf "$DIR/.config/fish/config.fish" ~/.config/fish/config.fish
+ln -sf "$DIR/.config/fish/aliases.fish" ~/.config/fish/aliases.fish
 
 # Git
 ln -sf "$DIR/.gitconfig" ~/.gitconfig

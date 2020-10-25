@@ -233,7 +233,7 @@ cursor:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /usr/bin/bash
+  program: /bin/fish
 #  args:
 #    - --login
 
