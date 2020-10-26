@@ -30,7 +30,6 @@ call plug#begin()
 " autocompletion
 " ------------------------------------------------------------------------------
 
-" Plug 'neoclide/coc.nvim', {'branch': 'release'} " https://github.com/neoclide/coc.nvim
 Plug 'RishabhRD/nvim-lsputils'
 Plug 'RishabhRD/popfix'
 Plug 'neovim/nvim-lspconfig'
@@ -42,7 +41,6 @@ Plug 'honza/vim-snippets' " https://github.com/honza/vim-snippets
 " highlighting & colors
 " ------------------------------------------------------------------------------
 
-" Plug 'sheerun/vim-polyglot' " https://github.com/sheerun/vim-polyglot
 Plug 'sainnhe/gruvbox-material'
 Plug 'itchyny/lightline.vim' " https://github.com/itchyny/lightline.vim
 Plug 'nvim-treesitter/nvim-treesitter'
@@ -52,7 +50,6 @@ Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' " https://github.com/junegunn/fzf.vim
-" Plug 'antoinemadec/coc-fzf' " https://github.com/antoinemadec/coc-fzf
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } } " https://github.com/iamcco/markdown-preview.nvim
 Plug 'justinmk/vim-dirvish'
 
@@ -61,9 +58,7 @@ Plug 'justinmk/vim-dirvish'
 Plug 'preservim/nerdcommenter' " https://github.com/preservim/nerdcommenter
 Plug 'janko/vim-test' " https://github.com/janko/vim-test
 Plug 'tpope/vim-dispatch'
-" Plug 'antoinemadec/FixCursorHold.nvim' " https://github.com/antoinemadec/FixCursorHold.nvim
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-" Plug 'vuciv/vim-bujo'
 
 " vcs
 " ------------------------------------------------------------------------------
@@ -80,7 +75,6 @@ source $HOME/.config/nvim/lightline.vim
 source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/fugitive.vim
 source $HOME/.config/nvim/nerdcommenter.vim
-" source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/dirvish.vim
 source $HOME/.config/nvim/prettier.vim
 
