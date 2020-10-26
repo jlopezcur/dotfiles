@@ -42,18 +42,7 @@ local custom_attach = function(client)
 	map('n','<leader>i', '<cmd>lua vim.lsp.buf.code_action({source = { organizeImports = true }})<CR>')
 end
 
-lsp.tsserver.setup({
-  cmd = {"typescript-language-server", "--stdio"},
-	filetypes = {
-    "javascript",
-    "javascriptreact",
-    "javascript.jsx",
-    "typescript",
-    "typescriptreact",
-    "typescript.tsx"
-  },
-	on_attach = custom_attach
-})
+lsp.tsserver.setup{on_attach = custom_attach}
 
 lsp.sumneko_lua.setup{on_attach=custom_attach}
 
