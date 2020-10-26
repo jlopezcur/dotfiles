@@ -52,7 +52,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' " https://github.com/junegunn/fzf.vim
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } } " https://github.com/iamcco/markdown-preview.nvim
 Plug 'justinmk/vim-dirvish'
-Plug 'kristijanhusak/vim-dirvish-git'
 
 " ------------------------------------------------------------------------------
 
@@ -61,6 +60,7 @@ Plug 'janko/vim-test' " https://github.com/janko/vim-test
 Plug 'tpope/vim-dispatch'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'vimwiki/vimwiki'
+Plug 'tpope/vim-surround'
 
 " vcs
 " ------------------------------------------------------------------------------
