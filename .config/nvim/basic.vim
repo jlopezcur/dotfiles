@@ -117,8 +117,7 @@ autocmd bufenter *.pdf exec "! zathura '".expand("%")."'" | :bw
 " ------------------------------------------------------------------------------
 
 nnoremap <Leader>gq :bd!<cr>
-tnoremap <Leader><Esc> <C-\><C-n>
-set shell=/usr/bin/bash
+tnoremap <Esc> <C-\><C-n>
 
 let g:netrw_browsex_viewer="setsid xdg-open"
 
