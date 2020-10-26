@@ -59,6 +59,7 @@ Plug 'preservim/nerdcommenter' " https://github.com/preservim/nerdcommenter
 Plug 'janko/vim-test' " https://github.com/janko/vim-test
 Plug 'tpope/vim-dispatch'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'vimwiki/vimwiki'
 
 " vcs
 " ------------------------------------------------------------------------------
