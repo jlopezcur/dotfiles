@@ -9,3 +9,7 @@
 ## pass [web](https://www.passwordstore.org/)
 
 > the standard unix password manager
+
+## firewall
+
+- [ufw](https://launchpad.net/ufw)

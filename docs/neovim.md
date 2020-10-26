@@ -3,6 +3,17 @@
 Currently I'm using the git version (next 0.5) so the configuration only apply
 to this version right now.
 
+## Requirements
+
+- xsel
+- neovim node package
+
+```sh
+yay -S xsel
+npm i -g neovim
+pip install pynvim
+```
+
 ## Autocompletion
 
 Using LSP needs some manual installation for several languages:

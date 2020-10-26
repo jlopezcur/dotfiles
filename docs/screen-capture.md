@@ -7,3 +7,5 @@
 ## Screenshots
 
 - [Scrot](https://github.com/dreamer/scrot)
+- [Flameshot](https://flameshot.js.org/#/)
+
