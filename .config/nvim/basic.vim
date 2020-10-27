@@ -106,7 +106,7 @@ nnoremap <Leader>lf :terminal npm run eslint -- --fix<cr>
 " Storybook
 nnoremap <Leader>ss :terminal npm start<cr>
 
-" images
+" images & pdf
 " ------------------------------------------------------------------------------
 
 autocmd bufenter *.png,*.jpg,*.jpeg exec "!sxiv -qp '".expand("%")."'" | :bd
@@ -117,9 +117,7 @@ autocmd bufenter *.pdf exec "! zathura '".expand("%")."'" | :bw
 " ------------------------------------------------------------------------------
 
 nnoremap <Leader>gq :bd!<cr>
-tnoremap <Esc> <C-\><C-n>
-
-let g:netrw_browsex_viewer="setsid xdg-open"
+tnoremap <Leader><Esc> <C-\><C-n>
 
 " spell
 " ------------------------------------------------------------------------------
