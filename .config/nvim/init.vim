@@ -56,12 +56,12 @@ Plug 'justinmk/vim-dirvish'
 " ------------------------------------------------------------------------------
 
 Plug 'preservim/nerdcommenter' " https://github.com/preservim/nerdcommenter
-Plug 'janko/vim-test' " https://github.com/janko/vim-test
+Plug 'vim-test/vim-test' " https://github.com/vim-test/vim-test
 Plug 'tpope/vim-dispatch'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-Plug 'vimwiki/vimwiki'
-Plug 'tpope/vim-surround'
-Plug 'godlygeek/tabular'
+Plug 'vimwiki/vimwiki' " https://github.com/vimwiki/vimwiki
+Plug 'tpope/vim-surround' " https://github.com/tpope/vim-surround
+Plug 'godlygeek/tabular' " https://github.com/godlygeek/tabular
 
 " vcs
 " ------------------------------------------------------------------------------
@@ -80,6 +80,8 @@ source $HOME/.config/nvim/fugitive.vim
 source $HOME/.config/nvim/nerdcommenter.vim
 source $HOME/.config/nvim/dirvish.vim
 source $HOME/.config/nvim/prettier.vim
+source $HOME/.config/nvim/test.vim
+source $HOME/.config/nvim/tabular.vim
 
 lua require("treesitter")
 lua require("lsp")
