@@ -61,6 +61,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
 
 " vcs
 " ------------------------------------------------------------------------------
