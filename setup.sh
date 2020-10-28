@@ -17,7 +17,6 @@ ln -sf "$DIR/.Xresources" ~/.Xresources
 ln -sf "$DIR/.xinitrc" ~/.xinitrc
 mkdir -p ~/.xmonad
 ln -sf "$DIR/.xmonad/xmonad.hs" ~/.xmonad/xmonad.hs
-ln -sf "$DIR/.xmonad/xmonad.md" ~/.xmonad/xmonad.md
 mkdir -p ~/.config/xmobar
 ln -sf "$DIR/.config/xmobar/xmobar.hs" ~/.config/xmobar/xmobar.hs
 mkdir -p ~/.config/picom
