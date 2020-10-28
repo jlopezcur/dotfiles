@@ -289,8 +289,8 @@ myKeys conf@XConfig {modMask = modm} =
   , ((0, stringToKeysym "XF86AudioRaiseVolume"), spawn "amixer set Master 5%+ unmute")
   , ((0, stringToKeysym "XF86AudioMicMute"), spawn "amixer set Capture toggle")
   -- Brightness
-  -- , ("<XF86MonBrightnessUp>", spawn "echo")
-  -- , ("<XF86MonBrightnessDown>", spawn "echo")
+  , ((0, stringToKeysym "XF86MonBrightnessUp"), spawn "lux -a 5%")
+  , ((0, stringToKeysym "XF86MonBrightnessDown"), spawn "lux -s 5%")
   -- Display
   -- , ("<XF86Display>", spawn "echo")
   -- Extra

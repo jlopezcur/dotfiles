@@ -2,12 +2,13 @@
 
 ## Requirements
 
-- xprop
-- xdotool
-- i3lock
+- [xprop](https://linux.die.net/man/1/xprop)
+- [xdotool](https://www.semicomplete.com/projects/xdotool/)
+- [i3lock](https://github.com/i3/i3lock)
+- [lux](https://github.com/Ventto/lux) (see install process)
 
 ```sh
-yay -S xprop xdotool i3lock
+yay -S xprop xdotool i3lock lux
 ```
 
 ## Install
