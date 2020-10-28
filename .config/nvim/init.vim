@@ -82,6 +82,7 @@ source $HOME/.config/nvim/dirvish.vim
 source $HOME/.config/nvim/prettier.vim
 source $HOME/.config/nvim/test.vim
 source $HOME/.config/nvim/tabular.vim
+source $HOME/.config/nvim/vimwiki.vim
 
 lua require("treesitter")
 lua require("lsp")
