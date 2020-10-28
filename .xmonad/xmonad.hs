@@ -143,13 +143,6 @@ myKeys conf@XConfig {modMask = modm} =
   -- Lock desktop
   , ((modm .|. shiftMask, xK_l), spawn "i3lock -c 000000")
 
-  -- Windows
-  -- ---------------------------------------------------------------------------
-  -- Kill the currently focused client
-  , ((modm .|. shiftMask, xK_c), kill1)
-  -- Kill all the windows on current workspace
-  , ((modm .|. shiftMask, xK_a), killAll)
-
   -- Screen Layouts
   -- ---------------------------------------------------------------------------
   -- , ("M-S-'", spawn "~/.screenlayout/mono.sh")   -- Change to a mono layout
@@ -164,18 +157,8 @@ myKeys conf@XConfig {modMask = modm} =
 
   -- Windows navigation
   -- ---------------------------------------------------------------------------
-  -- Move focus to the master window
-  , ((modm, xK_m), windows W.focusMaster)
-  -- Move focus to the next window
-  , ((modm, xK_j), windows W.focusDown)
-  -- Move focus to the prev window
-  , ((modm, xK_k), windows W.focusUp)
   -- Swap the focused window and the master window
   , ((modm .|. shiftMask, xK_m), windows W.swapMaster)
-  -- Swap the focused window with the next window
-  , ((modm .|. shiftMask, xK_j), windows W.swapDown)
-  -- Swap the focused window with the prev window
-  , ((modm .|. shiftMask, xK_k), windows W.swapUp)
   -- Moves focused window to master, all others maintain order
   , ((modm, xK_BackSpace), promote)
   -- Rotate all windows except master and keep focus in place
@@ -230,10 +213,6 @@ myKeys conf@XConfig {modMask = modm} =
   , ((modm .|. shiftMask, xK_asterisk), increaseLimit)
   -- Decrease number of windows that can be shown
   , ((modm .|. shiftMask, xK_slash), decreaseLimit)
-  -- Shrink current pane
-  , ((modm, xK_h), sendMessage Shrink)
-  -- Expand current pane
-  , ((modm, xK_l), sendMessage Expand)
   , ((modm .|. controlMask, xK_j), sendMessage MirrorShrink)
   , ((modm .|. controlMask, xK_k), sendMessage MirrorExpand)
 
@@ -243,7 +222,7 @@ myKeys conf@XConfig {modMask = modm} =
   -- Zoom full toggle
   , ((modm, xK_semicolon), sendMessage ZoomFullToggle)
 
-  -- Workspaces
+  -- Multiple monitors
   -- ---------------------------------------------------------------------------
   -- Switch focus to next monitor
   , ((modm, xK_period), nextScreen)
