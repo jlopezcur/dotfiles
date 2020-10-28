@@ -26,6 +26,10 @@ Using LSP needs some manual installation for several languages:
   ```sh
   yay -S texlive-core texlab
   ```
+- rust:
+  ```sh
+  rustup component add rls rust-analysis rust-src
+  ```
 
 ## References
 
