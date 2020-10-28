@@ -23,7 +23,7 @@ abbr -a -g l ls -alh
 abbr -a -g vim nvim
 
 alias myip "curl http://ipecho.net/plain; echo"
-alias update-system "yay && yay -Yc && nvim +PlugUpdate +PlugUpgrade +TSUpdate"
+alias upgrade "yay && yay -Yc && nvim +PlugUpdate +PlugUpgrade +TSUpdate"
 
 # Git
 
@@ -49,4 +49,3 @@ abbr -a -g gpsup 'git push --set-upstream origin (git_current_branch)'
 
 abbr -a -g reboot sudo systemctl reboot
 abbr -a -g poweroff sudo systemctl poweroff
-
