@@ -44,6 +44,7 @@ Plug 'honza/vim-snippets' " https://github.com/honza/vim-snippets
 Plug 'sainnhe/gruvbox-material'
 Plug 'itchyny/lightline.vim' " https://github.com/itchyny/lightline.vim
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'romgrk/nvim-treesitter-context'
 
 " file management
 " ------------------------------------------------------------------------------
