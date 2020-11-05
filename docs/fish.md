@@ -42,6 +42,10 @@ ln -sfT dash /usr/bin/sh
 Also [Luke Smith](https://lukesmith.xyz/) has a good video explaining about
 this: [Bash is Bloated!](https://lbry.tv/@Luke:7/bash-is-bloated:8).
 
+## Utilities
+
+- [cheat](https://github.com/cheat/cheat)
+
 ## Funny stuff
 
 - cowsay
