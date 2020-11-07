@@ -35,7 +35,6 @@ ln -sf "$DIR/.config/nvim/fzf.vim" ~/.config/nvim/fzf.vim
 ln -sf "$DIR/.config/nvim/gruvbox.vim" ~/.config/nvim/gruvbox.vim
 ln -sf "$DIR/.config/nvim/init.vim" ~/.config/nvim/init.vim
 ln -sf "$DIR/.config/nvim/lightline.vim" ~/.config/nvim/lightline.vim
-ln -sf "$DIR/.config/nvim/nerdcommenter.vim" ~/.config/nvim/nerdcommenter.vim
 ln -sf "$DIR/.config/nvim/prettier.vim" ~/.config/nvim/prettier.vim
 ln -sf "$DIR/.config/nvim/tabular.vim" ~/.config/nvim/tabular.vim
 ln -sf "$DIR/.config/nvim/test.vim" ~/.config/nvim/test.vim
