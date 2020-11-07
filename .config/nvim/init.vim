@@ -56,7 +56,7 @@ Plug 'justinmk/vim-dirvish'
 
 " ------------------------------------------------------------------------------
 
-Plug 'preservim/nerdcommenter' " https://github.com/preservim/nerdcommenter
+Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
 Plug 'vim-test/vim-test' " https://github.com/vim-test/vim-test
 Plug 'tpope/vim-dispatch'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
@@ -78,7 +78,6 @@ source $HOME/.config/nvim/gruvbox.vim
 source $HOME/.config/nvim/lightline.vim
 source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/fugitive.vim
-source $HOME/.config/nvim/nerdcommenter.vim
 source $HOME/.config/nvim/dirvish.vim
 source $HOME/.config/nvim/prettier.vim
 source $HOME/.config/nvim/test.vim
