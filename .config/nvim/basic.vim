@@ -8,7 +8,6 @@ set noshowmode
 set path=.,**
 " set wildignore+=**/node_modules/**
 set encoding=UTF-8
-set scrolloff=4
 
 let mapleader=","
 let g:mapleader=","
@@ -24,6 +23,12 @@ set timeoutlen=300
 set signcolumn=yes
 
 set shortmess+=c
+
+" scroll
+" ------------------------------------------------------------------------------
+
+set scrolloff=4
+set lazyredraw
 
 " backup files
 " ------------------------------------------------------------------------------
