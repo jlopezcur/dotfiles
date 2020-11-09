@@ -68,6 +68,8 @@ lsp.rls.setup{on_attach=custom_attach}
 
 lsp.hls.setup{on_attach=custom_attach}
 
+lsp.pyls.setup{on_attach=custom_attach}
+
 local strategy = { 'exact', 'substring', 'fuzzy' }
 vim.g.completion_matching_strategy_list = strategy
 vim.g.diagnostic_enable_virtual_text = 1
