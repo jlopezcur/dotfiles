@@ -57,12 +57,14 @@ Plug 'justinmk/vim-dirvish'
 " ------------------------------------------------------------------------------
 
 Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
+Plug 'suy/vim-context-commentstring' " https://github.com/suy/vim-context-commentstring
 Plug 'vim-test/vim-test' " https://github.com/vim-test/vim-test
 Plug 'tpope/vim-dispatch'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'vimwiki/vimwiki' " https://github.com/vimwiki/vimwiki
 Plug 'tpope/vim-surround' " https://github.com/tpope/vim-surround
 Plug 'godlygeek/tabular' " https://github.com/godlygeek/tabular
+Plug 'brooth/far.vim' " https://github.com/brooth/far.vim
 
 " vcs
 " ------------------------------------------------------------------------------
@@ -70,6 +72,7 @@ Plug 'godlygeek/tabular' " https://github.com/godlygeek/tabular
 Plug 'tpope/vim-fugitive' " https://github.com/tpope/vim-fugitive
 Plug 'mhinz/vim-signify' " https://github.com/mhinz/vim-signify
 Plug 'stsewd/fzf-checkout.vim' " https://github.com/stsewd/fzf-checkout.vim
+Plug 'rhysd/git-messenger.vim' " https://github.com/rhysd/git-messenger.vim
 
 call plug#end()
 
@@ -83,6 +86,8 @@ source $HOME/.config/nvim/prettier.vim
 source $HOME/.config/nvim/test.vim
 source $HOME/.config/nvim/tabular.vim
 source $HOME/.config/nvim/vimwiki.vim
+source $HOME/.config/nvim/commentary.vim
+source $HOME/.config/nvim/far.vim
 
 lua require("treesitter")
 lua require("lsp")

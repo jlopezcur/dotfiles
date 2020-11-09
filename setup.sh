@@ -39,6 +39,8 @@ ln -sf "$DIR/.config/nvim/prettier.vim" ~/.config/nvim/prettier.vim
 ln -sf "$DIR/.config/nvim/tabular.vim" ~/.config/nvim/tabular.vim
 ln -sf "$DIR/.config/nvim/test.vim" ~/.config/nvim/test.vim
 ln -sf "$DIR/.config/nvim/vimwiki.vim" ~/.config/nvim/vimwiki.vim
+ln -sf "$DIR/.config/nvim/commentary.vim" ~/.config/nvim/commentary.vim
+ln -sf "$DIR/.config/nvim/far.vim" ~/.config/nvim/far.vim
 mkdir -p ~/.config/nvim/lua
 ln -sf "$DIR/.config/nvim/lua/lsp.lua" ~/.config/nvim/lua/lsp.lua
 ln -sf "$DIR/.config/nvim/lua/treesitter.lua" ~/.config/nvim/lua/treesitter.lua
