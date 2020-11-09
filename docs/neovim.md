@@ -30,6 +30,14 @@ Using LSP needs some manual installation for several languages:
   ```sh
   rustup component add rls rust-analysis rust-src
   ```
+- haskell (hls):
+  ```sh
+  yay -S haskell-language-server-bin
+  ```
+- python:
+  ```sh
+  pip install python-language-server
+  ```
 
 ## References
 
