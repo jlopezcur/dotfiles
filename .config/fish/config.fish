@@ -27,9 +27,6 @@ set BROWSER "brave"
 # Set general architecture flags
 set ARCHFLAGS "-arch x86_64"
 
-# set keyboard layout
-setxkbmap -layout es
-
 # key speed
 xset r rate 300 50
 

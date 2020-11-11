@@ -11,9 +11,6 @@ amixer -c 0 -q set Master 100% unmute
 # Merge the Xresources
 xrdb -merge ~/.Xresources
 
-# Set keyborard layout to es
-setxkbmap -layout es
-
 # Change the cursor pointer
 xsetroot -cursor_name left_ptr
 
