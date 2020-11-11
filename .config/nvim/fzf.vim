@@ -10,7 +10,8 @@ endif
 nnoremap <Leader>º :Rg<space>
 
 nnoremap <Leader>b :Buffers<CR>
-nnoremap <leader>f :Files<CR>
+nnoremap <leader>F :Files<CR>
+silent! nmap <Leader>f :GFiles<CR>
 " nnoremap <Leader>g :BCommits<CR>
 " nnoremap <Leader>v :GFiles?<CR>
 
