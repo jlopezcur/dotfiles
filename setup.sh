@@ -57,6 +57,11 @@ ln -sf "$DIR/.config/spotifyd/spotifyd.conf" ~/.config/spotifyd/spotifyd.conf
 mkdir -p ~/.config/spotify-tui
 ln -sf "$DIR/.config/spotify-tui/config.yml" ~/.config/spotify-tui/config.yml
 
+# Vimb
+mkdir -p ~/.config/vimb
+ln -sf "$DIR/.config/vimb/config" ~/.config/vimb/config
+ln -sf "$DIR/.config/vimb/style.css" ~/.config/vimb/style.css
+
 # Custom Services
 mkdir -p ~/.config/systemd
 ln -sf "$DIR/.config/systemd/spotify.service" ~/.config/systemd/spotify.service
