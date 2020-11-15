@@ -233,6 +233,8 @@ myKeys conf@XConfig {modMask = modm} =
   -- ---------------------------------------------------------------------------
   -- Prompt for programs
   , ((modm, xK_p), shellPrompt promptConfig)
+  -- Prompt for password manager
+  , ((modm .|. shiftMask, xK_p), spawn "passmenu")
   -- Prompt for man docs
   , ((modm, xK_F1), manPrompt promptConfig)
 

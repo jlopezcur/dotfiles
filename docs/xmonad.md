@@ -26,6 +26,7 @@ The Mod key is <kbd>Win</kbd>
 - <kbd>Mod</kbd> + <kbd>Enter</kbd> Launch terminal
 - <kbd>Mod</kbd> + <kbd>Shift</kbd> + <kbd>enter</kbd> Launch file manager
 - <kbd>Mod</kbd> + <kbd>p</kbd> Prompt for program
+- <kbd>Mod</kbd> + <kbd>Shift</kbd> + <kbd>p</kbd> Prompt for password manager
 - <kbd>Mod</kbd> + <kbd>Alt</kbd> + <kbd>p</kbd> Gpick
 - <kbd>Mod</kbd> + <kbd>Alt</kbd> + <kbd>c</kbd> Peek
 - <kbd>Mod</kbd> + <kbd>Alt</kbd> + <kbd>f</kbd> Flameshot
