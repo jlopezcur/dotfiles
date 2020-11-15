@@ -1,5 +1,5 @@
 local vim = vim
-local lsp = require'nvim_lsp'
+local lsp = require'lspconfig'
 
 local map = function(type, key, value)
 	vim.fn.nvim_buf_set_keymap(0,type,key,value,{noremap = true, silent = true});
