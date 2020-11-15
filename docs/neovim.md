@@ -41,6 +41,7 @@ Using LSP needs some manual installation for several languages:
 
 ## References
 
+- [Mastering the Vim Language, thoughtbot](https://www.youtube.com/watch?v=wlR5gYd6um0)
 - [tree-sitter tracking issue](https://github.com/neovim/neovim/issues/11724)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
