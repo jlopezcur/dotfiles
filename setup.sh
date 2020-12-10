@@ -9,6 +9,9 @@ mkdir -p ~/.config/fish
 ln -sf "$DIR/.config/fish/config.fish" ~/.config/fish/config.fish
 ln -sf "$DIR/.config/fish/aliases.fish" ~/.config/fish/aliases.fish
 
+# Starship
+ln -sf "$DIR/.config/starship.toml" ~/.config/starship.toml
+
 # Git
 ln -sf "$DIR/.gitconfig" ~/.gitconfig
 

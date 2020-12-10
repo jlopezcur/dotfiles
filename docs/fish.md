@@ -4,27 +4,34 @@
 
 - fzf
 
-```sh
+```
 yay -S fzf
 ```
 
 ## Install
 
-```sh
+```
 yay -S fish fisher
 chsh -s /usr/bin/fish
 ```
 
 ## Plugins
 
-```sh
-fisher add mattgreen/lucid.fish
+```
 fisher add jethrokuan/fzf
 fisher add jorgebucaran/nvm.fish
 ```
 
 - **nvm:** The nvm plugin will install its own nvm installation. After that we
   need to set the default node version: `nvm use x.x.x`
+
+## Prompt
+
+[Starship](https://starship.rs/)
+
+```
+yay -S starship
+```
 
 ## Improvements
 
@@ -34,7 +41,7 @@ Following the [arch wiki for dash](https://wiki.archlinux.org/index.php/Dash)
 we can find useful to change the common shell to **dash** for security and
 speed improvements:
 
-```sh
+```
 yay -S dash
 ln -sfT dash /usr/bin/sh
 ```
@@ -52,7 +59,7 @@ this: [Bash is Bloated!](https://lbry.tv/@Luke:7/bash-is-bloated:8).
 - lolcat
 - cmatrix
 
-```sh
+```
 yay -S cowsay lolcat cmatrix
 ```
 
