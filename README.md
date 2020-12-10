@@ -27,6 +27,7 @@
 - 3D & Video Edition: [blender](https://www.blender.org/)
 - IRC: [irssi](https://irssi.org/)
 - Firewall: [ufw](https://launchpad.net/ufw)
+- Video Recording: [OBS Studio](https://obsproject.com/)
 
 ## References
 
