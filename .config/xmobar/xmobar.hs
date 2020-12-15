@@ -43,7 +43,8 @@ Config {
       "-O", " <left>% (<timeleft>)",
       -- charged status
       "-i", " 100%"
-    ] 50
+    ] 50,
+    Run Network "tun0" ["-t", " <dev>", "-x", ""] 60
   ],
   sepChar = "%",
   alignSep = "}{",
@@ -53,5 +54,6 @@ Config {
     \ .  <fc=grey>%disku%</fc>\
     \ . 蓼 <fc=grey>%alsa:default:Master%</fc>\
     \ . <fc=grey>%date%</fc>\
-    \ . <fc=grey>%battery%</fc> "
+    \ . <fc=grey>%battery%</fc>\
+    \ <fc=grey>%tun0%</fc> "
 }
