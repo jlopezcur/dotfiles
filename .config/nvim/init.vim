@@ -46,8 +46,6 @@ Plug 'romgrk/nvim-treesitter-context'
 " file management
 " ------------------------------------------------------------------------------
 
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'junegunn/fzf.vim' " https://github.com/junegunn/fzf.vim
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -78,6 +76,7 @@ Plug 'rhysd/git-messenger.vim' " https://github.com/rhysd/git-messenger.vim
 call plug#end()
 
 source $HOME/.config/nvim/basic.vim
+source $HOME/.config/nvim/fuzzy-finder.vim
 source $HOME/.config/nvim/gruvbox.vim
 source $HOME/.config/nvim/lightline.vim
 source $HOME/.config/nvim/fugitive.vim
