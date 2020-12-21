@@ -9,7 +9,6 @@
 - Editor: [neovim](https://neovim.io/) [:pencil: Notes](docs/neovim.md) 
 - File Manager: [ranger](https://github.com/ranger/ranger)
 - Tiled Windows Manager: [xmonad](https://xmonad.org/) [:pencil: Notes](docs/xmonad.md)
-- Compositor: [picom fork](https://wiki.archlinux.org/index.php/Picom)
 - Shell: [fish](https://www.gnu.org/software/bash/) [:pencil: Notes](docs/fish.md)
 - Prompt: [starship](https://starship.rs/)
 - Terminal Emulator: [alacritty](https://github.com/alacritty/alacritty)
