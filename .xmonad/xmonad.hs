@@ -328,12 +328,7 @@ myScratchPads =
     spconf
 
   ] where
-    spconf = customFloating $ W.RationalRect l t w h
-      where
-        h = 0.7
-        w = 0.7
-        t = (1 - h)/2
-        l = (1 - w)/2
+    spconf = customFloating $ W.RationalRect (1/12) (1/12) (2/3) (2/3)
 
 ------------------------------------------------------------------------
 -- 8. Layouts
