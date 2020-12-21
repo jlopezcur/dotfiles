@@ -32,9 +32,7 @@ ln -sf "$DIR/.config/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.yml
 # Text Editor
 mkdir -p ~/.config/nvim
 ln -sf "$DIR/.config/nvim/basic.vim" ~/.config/nvim/basic.vim
-ln -sf "$DIR/.config/nvim/dirvish.vim" ~/.config/nvim/dirvish.vim
 ln -sf "$DIR/.config/nvim/fugitive.vim" ~/.config/nvim/fugitive.vim
-ln -sf "$DIR/.config/nvim/fzf.vim" ~/.config/nvim/fzf.vim
 ln -sf "$DIR/.config/nvim/gruvbox.vim" ~/.config/nvim/gruvbox.vim
 ln -sf "$DIR/.config/nvim/init.vim" ~/.config/nvim/init.vim
 ln -sf "$DIR/.config/nvim/lightline.vim" ~/.config/nvim/lightline.vim

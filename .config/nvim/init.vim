@@ -30,11 +30,8 @@ call plug#begin()
 " autocompletion
 " ------------------------------------------------------------------------------
 
-Plug 'RishabhRD/nvim-lsputils'
-Plug 'RishabhRD/popfix'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
-Plug 'nvim-lua/diagnostic-nvim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets' " https://github.com/honza/vim-snippets
 
@@ -49,11 +46,14 @@ Plug 'romgrk/nvim-treesitter-context'
 " file management
 " ------------------------------------------------------------------------------
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim' " https://github.com/junegunn/fzf.vim
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim' " https://github.com/junegunn/fzf.vim
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } } " https://github.com/iamcco/markdown-preview.nvim
 Plug 'justinmk/vim-dirvish' " https://github.com/justinmk/vim-dirvish
-" Plug 'kristijanhusak/vim-dirvish-git' " https://github.com/kristijanhusak/vim-dirvish-git
 
 " ------------------------------------------------------------------------------
 
@@ -80,9 +80,7 @@ call plug#end()
 source $HOME/.config/nvim/basic.vim
 source $HOME/.config/nvim/gruvbox.vim
 source $HOME/.config/nvim/lightline.vim
-source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/fugitive.vim
-source $HOME/.config/nvim/dirvish.vim
 source $HOME/.config/nvim/prettier.vim
 source $HOME/.config/nvim/test.vim
 source $HOME/.config/nvim/tabular.vim
@@ -92,6 +90,12 @@ source $HOME/.config/nvim/far.vim
 
 lua require("treesitter")
 lua require("lsp")
-" autocmd BufWritePost * lua vim.lsp.buf.formatting()
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 let g:completion_enable_snippet = 'UltiSnips'
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
+let g:completion_matching_smart_case = 1
+

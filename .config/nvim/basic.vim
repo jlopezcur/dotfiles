@@ -11,6 +11,7 @@ set encoding=UTF-8
 
 let mapleader=","
 let g:mapleader=","
+" Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
 
 syntax enable
@@ -22,6 +23,7 @@ set updatetime=100
 set timeoutlen=300
 set signcolumn=yes
 
+" Avoid showing message extra message when using completion
 set shortmess+=c
 
 " scroll
@@ -39,9 +41,8 @@ set noswapfile
 " folding
 " ------------------------------------------------------------------------------
 
-set foldmethod=syntax
-set nofoldenable
-set foldlevel=99
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 
 " indentation
 " ------------------------------------------------------------------------------
@@ -65,21 +66,6 @@ set cursorline
 
 set number relativenumber
 
-" hidden chars
-" ------------------------------------------------------------------------------
-
-" set list
-" set lcs=eol:¬
-
-" conceal
-" ------------------------------------------------------------------------------
-
-" set conceallevel=0
-" let g:vim_markdown_conceal = 0
-" let g:tex_conceal = ""
-" let g:vim_markdown_math = 1
-" let g:vim_markdown_conceal_code_blocks = 0
-
 " shortcuts
 " ------------------------------------------------------------------------------
 
@@ -94,9 +80,9 @@ nnoremap <Leader>e :e $MYVIMRC<CR>
 " images & pdf
 " ------------------------------------------------------------------------------
 
-autocmd bufenter *.png,*.jpg,*.jpeg exec "!sxiv -qp '".expand("%")."'" | :bd
-autocmd bufenter *.gif exec "!mplayer '".expand("%")."'" | :bd
-autocmd bufenter *.pdf exec "! zathura '".expand("%")."'" | :bw
+autocmd bufenter *.png,*.jpg,*.jpeg exec "!sxiv -qp '".expand("%")."' &" | :bd
+autocmd bufenter *.gif exec "!mplayer '".expand("%")."' &" | :bd
+autocmd bufenter *.pdf exec "!zathura '".expand("%")."' &" | :bw
 
 " term
 " ------------------------------------------------------------------------------
@@ -107,7 +93,7 @@ tnoremap <Leader><Esc> <C-\><C-n>
 " spell
 " ------------------------------------------------------------------------------
 
-autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,es_es
+autocmd BufRead,BufNewFile *.md,*.tex setlocal spell spelllang=en_us,es_es
 autocmd FileType gitcommit setlocal spell spelllang=en_us,es_es
 set complete+=kspell
 
