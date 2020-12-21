@@ -53,13 +53,16 @@ The Mod key is <kbd>Win</kbd>
 - <kbd>Mod</kbd> + <kbd>,</kbd> Switch to the right screen
 - <kbd>Mod</kbd> + <kbd>.</kbd> Switch to the left screen
 
-### Mouse bindings
+### Floating Windows
 
 - <kbd>Mod</kbd> + <kbd>LMB</kbd> Set the window to floating mode and move by
   dragging
 - <kbd>Mod</kbd> + <kbd>CMB</kbd> Raise the window to the top of the stack
 - <kbd>Mod</kbd> + <kbd>RMB</kbd> Set the window to floating mode and resize by
   dragging
+- <kbd>Mod</kbd> + <kbd>BackSpace</kbd> Put selected window back to layout.
+- <kbd>Mod</kbd> + <kbd>Shift</kbd> + <kbd>BackSpace</kbd> Put all windows back
+  to layout.
 
 ### Scratchpads
 

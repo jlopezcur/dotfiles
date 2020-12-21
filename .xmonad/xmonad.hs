@@ -151,16 +151,14 @@ myKeys conf@XConfig {modMask = modm} =
   -- Floating windows
   -- ---------------------------------------------------------------------------
   -- Push floating window back to tile.
-  , ((modm, xK_Delete), withFocused $ windows . W.sink)
+  , ((modm, xK_BackSpace), withFocused $ windows . W.sink)
   -- Push ALL floating windows back to tile.
-  , ((modm .|. shiftMask, xK_Delete), sinkAll)
+  , ((modm .|. shiftMask, xK_BackSpace), sinkAll)
 
   -- Windows navigation
   -- ---------------------------------------------------------------------------
   -- Swap the focused window and the master window
   , ((modm .|. shiftMask, xK_m), windows W.swapMaster)
-  -- Moves focused window to master, all others maintain order
-  , ((modm, xK_BackSpace), promote)
   -- Rotate all windows except master and keep focus in place
   , ((altMask .|. shiftMask, xK_Tab), rotSlavesDown)
   -- Rotate all the windows in the current stack
