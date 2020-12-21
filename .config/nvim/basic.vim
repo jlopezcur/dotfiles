@@ -42,6 +42,7 @@ set noswapfile
 " ------------------------------------------------------------------------------
 
 set foldmethod=expr
+set nofoldenable
 set foldexpr=nvim_treesitter#foldexpr()
 
 " indentation
