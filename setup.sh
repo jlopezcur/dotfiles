@@ -68,6 +68,10 @@ ln -sf "$DIR/.config/vimb/style.css" ~/.config/vimb/style.css
 mkdir -p ~/.config/systemd
 ln -sf "$DIR/.config/systemd/spotify.service" ~/.config/systemd/spotify.service
 
+# Dunst
+mkdir -p ~/.config/dunst
+ln -sf "$DIR/.config/dunst/dunstrc" ~/.config/dunst/dunstrc
+
 echo "DONE!"
 
 
