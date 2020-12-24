@@ -367,7 +367,7 @@ main = do
   xmonad $ customKeys $ ewmh desktopConfig
     { manageHook = myManageHook <+> manageSpawn <+> manageHook desktopConfig <+> manageDocks
     , logHook = dynamicLogWithPP xmobarPP
-      { ppOutput = \x -> hPutStrLn xmproc0 x  >> hPutStrLn xmproc1 x
+      { ppOutput = \x -> hPutStrLn xmproc0 x >> hPutStrLn xmproc1 x
       , ppCurrent = xmobarColor "grey" "" . wrap "[" "]" -- Current workspace in xmobar
       , ppVisible = xmobarColor "grey" ""                -- Visible but not current workspace
       , ppHidden = xmobarColor "grey" "" . wrap "*" ""   -- Hidden workspaces in xmobar
