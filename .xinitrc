@@ -15,9 +15,9 @@ xrdb -merge ~/.Xresources
 xsetroot -cursor_name left_ptr
 
 # Fix wacom only apply in the laptop monitor
-xsetwacom set 11 MapToOutput eDP1
-xsetwacom set 12 MapToOutput eDP1
-xsetwacom set 23 MapToOutput eDP1
+xsetwacom set 13 MapToOutput eDP1
+xsetwacom set 14 MapToOutput eDP1
+xsetwacom set 26 MapToOutput eDP1
 
 # start xmonad
 dbus-launch xmonad
