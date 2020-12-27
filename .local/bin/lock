@@ -1,0 +1,4 @@
+#!/bin/sh
+scrot -q 75 -z -o /tmp/screenshot.jpg
+convert /tmp/screenshot.jpg -resize x720 -blur 0x5 -resize x2160 RGB:- | i3lock --raw 7680x2160:rgb --image /dev/stdin
+rm /tmp/screenshot.jpg

@@ -72,6 +72,11 @@ ln -sf "$DIR/.config/systemd/spotify.service" ~/.config/systemd/spotify.service
 mkdir -p ~/.config/dunst
 ln -sf "$DIR/.config/dunst/dunstrc" ~/.config/dunst/dunstrc
 
+# Locker
+mkdir -p ~/.local/bin
+ln -sf "$DIR/.local/bin/lock" ~/.local/bin/lock
+ln -sf "$DIR/.local/bin/locker" ~/.local/bin/locker
+
 echo "DONE!"
 
 

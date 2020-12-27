@@ -102,6 +102,7 @@ myStartupHook = do
   spawnOnce "nitrogen --restore &" -- Background
   spawnOnce "dunst &" -- Notifications
   spawnOnce "udiskie &" -- Drive auto mounter
+  spawnOnce "locker &" -- Locker script
   -- https://hackage.haskell.org/package/xmonad-contrib-0.16/docs/XMonad-Hooks-SetWMName.html
   setWMName "LG3D"
 
@@ -140,7 +141,7 @@ myKeys conf@XConfig {modMask = modm} =
   -- Prompt for quit xmonad
   , ((modm, xK_q), exitPrompt)
   -- Lock desktop
-  , ((modm .|. shiftMask, xK_l), spawn "i3lock -c 000000")
+  , ((modm .|. shiftMask, xK_l), spawn "lock")
 
   -- Screen Layouts
   -- ---------------------------------------------------------------------------

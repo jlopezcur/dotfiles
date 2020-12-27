@@ -27,6 +27,7 @@
 - IRC: [irssi](https://irssi.org/)
 - Firewall: [ufw](https://launchpad.net/ufw)
 - Video Recording: [OBS Studio](https://obsproject.com/)
+- Locker: [i3lock](https://i3wm.org/i3lock/) [:pencil: Notes](docs/locker.md)
 
 ## References
 
