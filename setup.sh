@@ -8,6 +8,8 @@ echo "Installing from $DIR..."
 mkdir -p ~/.config/fish
 ln -sf "$DIR/.config/fish/config.fish" ~/.config/fish/config.fish
 ln -sf "$DIR/.config/fish/aliases.fish" ~/.config/fish/aliases.fish
+mkdir -p ~/.config/fish/conf.d
+ln -sf "$DIR/.config/fish/conf.d/sway.fish" ~/.config/fish/conf.d/sway.fish
 
 # Starship
 ln -sf "$DIR/.config/starship.toml" ~/.config/starship.toml
