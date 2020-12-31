@@ -1,17 +1,18 @@
 # Locker
 
-I use the [i3lock](https://i3wm.org/i3lock/) for the cool indicator :) but
-with a custom script for capture the screen and blur as the lock background.
+I use the [swaylock](https://github.com/swaywm/swaylock) for the cool indicator
+:) but with a custom script for capture the screen and blur as the lock
+background.
 
 Also use:
 
-- xautolock
-- xidlehook
+- grim
+- imagemagick
 
 All the needed packages:
 
 ```sh
-yay -S imagemagick i3lock scrot xidlehoook xautolock
+yay -S imagemagick swaylock grim
 ```
 
 ## References

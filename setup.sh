@@ -16,14 +16,11 @@ ln -sf "$DIR/.config/starship.toml" ~/.config/starship.toml
 ln -sf "$DIR/.gitconfig" ~/.gitconfig
 
 # Window Manager
-ln -sf "$DIR/.Xresources" ~/.Xresources
-ln -sf "$DIR/.xinitrc" ~/.xinitrc
-mkdir -p ~/.xmonad
-ln -sf "$DIR/.xmonad/xmonad.hs" ~/.xmonad/xmonad.hs
-mkdir -p ~/.config/xmobar
-ln -sf "$DIR/.config/xmobar/xmobar.hs" ~/.config/xmobar/xmobar.hs
-mkdir -p ~/.config/picom
-ln -sf "$DIR/.config/picom/picom.conf" ~/.config/picom/picom.conf
+mkdir -p ~/.config/sway
+ln -sf "$DIR/.config/sway/config" ~/.config/sway/config
+mkdir -p ~/.config/waybar
+ln -sf "$DIR/.config/waybar/config" ~/.config/waybar/config
+ln -sf "$DIR/.config/waybar/style.css" ~/.config/waybar/style.css
 
 # Terminal Emulator
 mkdir -p ~/.config/alacritty

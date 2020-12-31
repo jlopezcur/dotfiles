@@ -1,4 +1,7 @@
 #!/bin/sh
-scrot -q 75 -z -o /tmp/screenshot.jpg
-convert /tmp/screenshot.jpg -resize x720 -blur 0x5 -resize x2160 RGB:- | i3lock --raw 7680x2160:rgb --image /dev/stdin
-rm /tmp/screenshot.jpg
+grim -o eDP-1 /tmp/screenshot1.jpg
+grim -o HDMI-A-1 /tmp/screenshot2.jpg
+convert /tmp/screenshot1.jpg -resize x720 -blur 0x5 -resize x2160 /tmp/screenlock1.jpg
+convert /tmp/screenshot2.jpg -resize x720 -blur 0x5 -resize x1080 /tmp/screenlock2.jpg
+swaylock -i eDP-1:/tmp/screenlock1.jpg -i HDMI-A-1:/tmp/screenlock2.jpg -s fill
+rm /tmp/screenshot1.jpg /tmp/screenlock1.jpg /tmp/screenshot2.jpg /tmp/screenlock2.jpg

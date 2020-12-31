@@ -8,7 +8,7 @@
 - GTK Theme Manager: [lxappearance](https://wiki.lxde.org/es/LXAppearance)
 - Editor: [neovim](https://neovim.io/) [:pencil: Notes](docs/neovim.md) 
 - File Manager: [ranger](https://github.com/ranger/ranger)
-- Tiled Windows Manager: [xmonad](https://xmonad.org/) [:pencil: Notes](docs/xmonad.md)
+- (tiling)WM: [sway](https://swaywm.org/) [:pencil: Notes](docs/sway.md)
 - Shell: [fish](https://www.gnu.org/software/bash/) [:pencil: Notes](docs/fish.md)
 - Prompt: [starship](https://starship.rs/)
 - Terminal Emulator: [alacritty](https://github.com/alacritty/alacritty)
@@ -27,7 +27,7 @@
 - IRC: [irssi](https://irssi.org/)
 - Firewall: [ufw](https://launchpad.net/ufw)
 - Video Recording: [OBS Studio](https://obsproject.com/)
-- Locker: [i3lock](https://i3wm.org/i3lock/) [:pencil: Notes](docs/locker.md)
+- Locker: [swaylock](https://github.com/swaywm/swaylock) [:pencil: Notes](docs/locker.md)
 
 ## References
 

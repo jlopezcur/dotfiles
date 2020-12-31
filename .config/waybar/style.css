@@ -1,0 +1,37 @@
+* {
+  border: none;
+  border-radius: 0;
+	font-size: 16px;
+	font-family: SauceCodePro Nerd Font;
+}
+
+window#waybar {
+	background: rgba(0,0,0,0);
+	color: #888;
+}
+
+#workspaces button {
+	padding: 0 5px;
+  background: transparent;
+	color: #fdf6e3;
+  border-top: 2px solid transparent;
+}
+#workspaces button.focused {
+	color: #268bd2;
+  border-top: 2px solid #268bd2;
+}
+
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk,
+#network {
+	padding: 0 10px;
+}
+
+#window {
+  padding: 0 10px;
+}
+

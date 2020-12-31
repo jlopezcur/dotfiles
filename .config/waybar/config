@@ -1,0 +1,86 @@
+{
+	"position": "top",
+
+	"modules-left": [
+		"sway/workspaces",
+		"sway/window",
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"pulseaudio",
+		"memory",
+		"cpu",
+		"disk",
+		"battery",
+	],
+
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"format": "{icon}",
+    "format-icons": {
+      "1": " code",
+      "2": " web",
+      "3": " design",
+      "4": " code",
+      "5": " music",
+      "6": " -",
+      "7": " vpn",
+      "urgent": ""
+    }
+	},
+
+  "sway/window": {
+    "format": "{}",
+    "max-length": 50
+  },
+
+	"clock": {
+		"format": "{:%a, %d/%m/%Y %H:%M}"
+	},
+
+	"pulseaudio": {
+		"format": "{icon} {volume:2}%",
+		"format-bluetooth": "{icon} {volume}% ",
+		"format-muted": "MUTE",
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",
+				""
+			]
+		},
+		"scroll-step": 5,
+		"on-click": "pamixer -t",
+		"on-click-right": "pavucontrol"
+	},
+	"memory": {
+		"interval": 5,
+		"format": "Mem {}%"
+	},
+	"cpu": {
+		"interval": 5,
+		"format": "CPU {usage:2}%"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon}  {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"disk": {
+		"interval": 5,
+		"format": "Disk {percentage_used:2}%",
+		"path": "/"
+	}
+}
