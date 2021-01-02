@@ -49,3 +49,4 @@ abbr -a -g gpsup 'git push --set-upstream origin (git_current_branch)'
 
 abbr -a -g reboot sudo systemctl reboot
 abbr -a -g poweroff sudo systemctl poweroff
+abbr -a -g suspend sudo systemctl suspend
