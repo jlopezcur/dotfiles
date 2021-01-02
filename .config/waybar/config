@@ -14,7 +14,16 @@
 		"cpu",
 		"disk",
 		"battery",
+    "idle_inhibitor",
 	],
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
 
 	"sway/workspaces": {
 		"disable-scroll": true,
@@ -23,7 +32,7 @@
       "1": " code",
       "2": " web",
       "3": " design",
-      "4": " code",
+      "4": " term",
       "5": " music",
       "6": " -",
       "7": " vpn",

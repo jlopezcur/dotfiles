@@ -27,7 +27,8 @@ window#waybar {
 #cpu,
 #battery,
 #disk,
-#network {
+#network,
+#idle_inhibitor {
 	padding: 0 10px;
 }
 
