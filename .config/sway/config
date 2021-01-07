@@ -18,7 +18,7 @@
 #                ///-._ _ _ _ _ _ _}^ - - - - ~                     ~-- ,.-~
 #                                                                   /.-~
 
-# Variables
+# variables
 # ------------------------------------------------------------------------------
 
 # Logo key. Use Mod1 for Alt.
@@ -30,18 +30,11 @@ set $down j
 set $up k
 set $right l
 
-# Your preferred terminal emulator
+# terminal emulator
 set $term alacritty
 
-# Your preferred file manager
-set $fm $term -e ranger
 
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-set $menu bemenu-run --line-height=26 --monitor=all --hf=00ff00 --prompt=Run:
-
-# Output configuration
+# output configuration
 # ------------------------------------------------------------------------------
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -51,7 +44,11 @@ output * bg /home/jlopez/dev/wallpapers/008.jpg fill
 output eDP-1 resolution 3840x2160 scale 2 position 0,0
 output HDMI-A-1 resolution 1920x1080 position 1920,0
 
-# Idle configuration
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
+# idle configuration
 # ------------------------------------------------------------------------------
 
 exec swayidle -w \
@@ -63,24 +60,28 @@ exec swayidle -w \
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-# External programs
+
+# startup
 # ------------------------------------------------------------------------------
 
 # Adjust the color temperature of your screen according to your surroundings.
-exec gammastep
+exec --no-startup-id gammastep
 
 # Mako notification manager
-exec mako
+exec --no-startup-id mako
 
 # Drive auto mounter
-exec udiskie
+exec --no-startup-id udiskie
 
-# Input
+
+# input
 # ------------------------------------------------------------------------------
 
 input "type:keyboard" {
   repeat_delay 300
   repeat_rate 50
+  xkb_variant ,nodeadkeys
+  xkb_options compose:ralt
 }
 
 input "type:touch" map_to_output eDP-1
@@ -89,24 +90,41 @@ input "type:tablet_tool" map_to_output eDP-1
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-# Key bindings
+
+# key bindings
 # ------------------------------------------------------------------------------
 
-#
-# Basics:
-#
+# Starters
+# ========
 
-# Start a terminal
+# terminal
 bindsym $mod+Return exec $term
 
-# Start a file manager
-bindsym $mod+Shift+Return exec $fm
+# file manager
+bindsym $mod+Shift+Return exec $term -e ranger
+
+# launcher
+bindsym $mod+p exec $term --class launcher -e bash -c 'compgen -c | sort -u | fzf --reverse --prompt="Run: " | xargs -r swaymsg -t command exec'
+for_window [app_id="^launcher$"] floating enable
+
+# spt
+bindsym $mod+m exec $term --class spotify -e spt
+for_window [app_id="spotify"] floating enable, move to scratchpad, scratchpad show, resize set width 1600 px height 800 px
+
+# color picker
+bindsym $mod+i exec gpick
+for_window [class="Gpick"] floating enable, resize set width 800 px height 600 px
+
+# top
+bindsym $mod+t exec $term --class top -e bpytop
+for_window [app_id="top"] floating enable, move to scratchpad, scratchpad show, resize set width 1600 px height 800 px
+
+
+# basics
+# ======
 
 # Kill focused window
 bindsym $mod+Shift+c kill
-
-# Start your launcher
-bindsym $mod+p exec $menu
 
 # Start your lock
 bindsym $mod+Ctrl+l exec lock
@@ -124,9 +142,9 @@ bindsym $mod+Shift+r reload
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
-#
-# Moving around:
-#
+
+# moving around
+# =============
 
 # Move your focus around
 bindsym $mod+$left focus left
@@ -150,9 +168,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-#
-# Workspaces:
-#
+
+# workspaces
+# ==========
 
 # Switch to workspace
 bindsym $mod+1 workspace number 1
@@ -179,9 +197,9 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # Note: workspaces can have any name you want, not just numbers.
 # We just use 1-10 as the default.
 
-#
-# Layout stuff:
-#
+
+# layout 
+# ======
 
 # You can "split" the current object of your focus with
 # $mod+b or $mod+v, for horizontal and vertical splits
@@ -206,9 +224,9 @@ bindsym $mod+space focus mode_toggle
 # Move focus to the parent container
 bindsym $mod+a focus parent
 
-#
-# Scratchpad:
-#
+
+# scratchpad
+# ==========
 
 # Sway has a "scratchpad", which is a bag of holding for windows.
 # You can send windows there and get them back later.
@@ -220,9 +238,9 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
-#
-# Resizing containers:
-#
+
+# resizing containers
+# ===================
 
 mode "resize" {
   # left will shrink the containers width
@@ -246,12 +264,13 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-#
-# Screens:
-#
+
+# screens
+# =======
 
 bindsym $mod+comma move workspace to output eDP-1
 bindsym $mod+period move workspace to output HDMI-A-1
+
 
 # Status Bar
 # ------------------------------------------------------------------------------
@@ -264,5 +283,40 @@ bar {
 # ------------------------------------------------------------------------------
 
 default_border pixel 1
+default_floating_border pixel 1
+
+# colors
+
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          #6272A4 #44475A #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #44475A #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+# gaps
+
+gaps inner 10
+smart_gaps on
+
+# special keys
+# ------------------------------------------------------------------------------
+
+# volume
+bindsym --locked XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up
+bindsym --locked XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down
+bindsym --locked XF86AudioMute exec --no-startup-id pulseaudio-ctl mute
+bindsym --locked XF86AudioMicMute exec --no-startup-id pulseaudio-ctl mute-input
+
+# brightness
+bindsym --locked XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+
+# media control
+bindsym --locked XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym --locked XF86AudioNext exec --no-startup-id playerctl next
+bindsym --locked XF86AudioPrev exec --no-startup-id playerctl previous
+
+# ------------------------------------------------------------------------------
 
 include /etc/sway/config.d/*

@@ -6,7 +6,8 @@
 		"sway/window",
 	],
 	"modules-center": [
-		"clock"
+		"clock#1",
+		"clock#2"
 	],
 	"modules-right": [
 		"pulseaudio",
@@ -45,8 +46,12 @@
     "max-length": 50
   },
 
-	"clock": {
-		"format": "{:%a, %d/%m/%Y %H:%M}"
+	"clock#1": {
+		"format": " {:%a, %d/%m/%Y}"
+	},
+
+	"clock#2": {
+		"format": " {:%H:%M}"
 	},
 
 	"pulseaudio": {
@@ -66,11 +71,11 @@
 	},
 	"memory": {
 		"interval": 5,
-		"format": "Mem {}%"
+		"format": " {}%"
 	},
 	"cpu": {
 		"interval": 5,
-		"format": "CPU {usage:2}%"
+		"format": " {usage:2}%"
 	},
 	"battery": {
 		"states": {
@@ -79,17 +84,11 @@
 			"critical": 15
 		},
 		"format": "{icon}  {capacity}%",
-		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
-		]
+		"format-icons": ["", "", "", "", ""]
 	},
 	"disk": {
 		"interval": 5,
-		"format": "Disk {percentage_used:2}%",
+		"format": " {percentage_used:2}%",
 		"path": "/"
 	}
 }

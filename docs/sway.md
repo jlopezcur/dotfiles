@@ -10,9 +10,12 @@
 - [swaylock](https://github.com/swaywm/swaylock)
 - [swayidle](https://github.com/swaywm/swayidle)
 - [grim](https://github.com/emersion/grim)
+- [pulseaudio-ctl](https://github.com/graysky2/pulseaudio-ctl)
+- [brightness-ctl](https://github.com/Hummer12007/brightnessctl)
+- [player-ctl](https://github.com/altdesktop/playerctl)
 
 ```sh
-yay -S waybar alacritty bemenu gammastep mako swaylock swayidle grim
+yay -S waybar alacritty bemenu gammastep mako swaylock swayidle grim pulseaudioctl brightnessctl playerctl
 ```
 
 ## Install
@@ -74,3 +77,6 @@ The Mod key is <kbd>Win</kbd>
 - <kbd>Mod</kbd> + <kbd>Shift</kbd> + <kbd>-</kbd> Put client into scratchpad
 - <kbd>Mod</kbd> + <kbd>-</kbd> Toggle scratchpad
 
+## References
+
+- https://github.com/naibaf0/dotfiles
