@@ -75,9 +75,8 @@ ln -sf "$DIR/.config/vimb/style.css" ~/.config/vimb/style.css
 mkdir -p ~/.config/systemd
 ln -sf "$DIR/.config/systemd/spotify.service" ~/.config/systemd/spotify.service
 
-# Locker
-mkdir -p ~/.local/bin
-ln -sf "$DIR/.local/bin/lock" ~/.local/bin/lock
+# Browser
+ln -sf "$DIR/.config/brave-flags.conf" ~/.config/brave-flags.conf
 
 echo "DONE!"
 
