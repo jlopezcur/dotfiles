@@ -25,6 +25,12 @@ ln -sf "$DIR/.config/waybar/config" ~/.config/waybar/config
 ln -sf "$DIR/.config/waybar/style.css" ~/.config/waybar/style.css
 mkdir -p ~/.config/mako
 ln -sf "$DIR/.config/mako/config" ~/.config/mako/config
+mkdir -p ~/.config/swaylock
+ln -sf "$DIR/.config/swaylock/config" ~/.config/swaylock/config
+
+# Locker
+mkdir -p ~/.local/bin
+ln -sf "$DIR/.local/bin/lock" ~/.local/bin/lock
 
 # Terminal Emulator
 mkdir -p ~/.config/alacritty
