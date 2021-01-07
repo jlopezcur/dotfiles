@@ -81,8 +81,7 @@ nnoremap <Leader>e :e $MYVIMRC<CR>
 " images & pdf
 " ------------------------------------------------------------------------------
 
-autocmd bufenter *.png,*.jpg,*.jpeg exec "!sxiv -qp '".expand("%")."' &" | :bd
-autocmd bufenter *.gif exec "!mplayer '".expand("%")."' &" | :bd
+autocmd bufenter *.png,*.jpg,*.jpeg,*.svg,*.gif exec "!imv '".expand("%")."' &" | :bd
 autocmd bufenter *.pdf exec "!zathura '".expand("%")."' &" | :bw
 
 " term
