@@ -17,6 +17,10 @@ Some hidden shortcuts
 - Bitwarden
 - GetPocket
 
+### Screen sharing
+
+- https://wiki.archlinux.org/index.php/PipeWire#WebRTC_screen_sharing
+
 ## Vimb
 
 ```sh
