@@ -1,0 +1,22 @@
+font=mononoki Nerd Font Mono 11
+width=500
+padding=8
+margin=4
+border-size=2
+border-color=#2f343f
+default-timeout=5000
+
+[urgency=low]
+background-color=#2f343f
+text-color=#f5f8f6
+
+[urgency=normal]
+background-color=#2f343f
+text-color=#f5f8f6
+
+[urgency=high]
+background-color=#2f343f
+text-color=#f5f8f6
+border-color=#e3788f
+default-timeout=0
+ignore-timeout=1

@@ -23,6 +23,8 @@ ln -sf "$DIR/.config/sway/config" ~/.config/sway/config
 mkdir -p ~/.config/waybar
 ln -sf "$DIR/.config/waybar/config" ~/.config/waybar/config
 ln -sf "$DIR/.config/waybar/style.css" ~/.config/waybar/style.css
+mkdir -p ~/.config/mako
+ln -sf "$DIR/.config/mako/config" ~/.config/mako/config
 
 # Terminal Emulator
 mkdir -p ~/.config/alacritty
