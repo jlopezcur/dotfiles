@@ -67,14 +67,9 @@ ln -sf "$DIR/.config/vimb/style.css" ~/.config/vimb/style.css
 mkdir -p ~/.config/systemd
 ln -sf "$DIR/.config/systemd/spotify.service" ~/.config/systemd/spotify.service
 
-# Dunst
-mkdir -p ~/.config/dunst
-ln -sf "$DIR/.config/dunst/dunstrc" ~/.config/dunst/dunstrc
-
 # Locker
 mkdir -p ~/.local/bin
 ln -sf "$DIR/.local/bin/lock" ~/.local/bin/lock
-ln -sf "$DIR/.local/bin/locker" ~/.local/bin/locker
 
 echo "DONE!"
 
