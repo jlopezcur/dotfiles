@@ -14,30 +14,31 @@ npm i -g neovim
 pip install pynvim
 ```
 
+## Install
+
+```sh
+git clone git@github.com:neovim/neovim.git
+cd neovim
+rm -rf build/
+make CMAKE_BUILD_TYPE=Release
+sudo make install
+```
+
 ## Autocompletion
 
 Using LSP needs some manual installation for several languages:
 
-- tsserver:
-  ```sh
-  npm i -g typescript typescript-language-server
-  ```
-- texlab:
-  ```sh
-  yay -S texlive-core texlab
-  ```
-- rust:
-  ```sh
-  rustup component add rls rust-analysis rust-src
-  ```
-- haskell (hls):
-  ```sh
-  yay -S haskell-language-server-bin
-  ```
-- python:
-  ```sh
-  pip install python-language-server
-  ```
+- tsserver: `npm i -g typescript typescript-language-server`
+- texlab: `yay -S texlive-core texlab`
+- rust: `rustup component add rls rust-analysis rust-src` https://github.com/rust-lang/rls
+- python: `pip install python-language-server`
+- vimls: `npm i -g vim-language-server`
+- jsonls: `npm i -g vscode-json-languageserver`
+- html: `npm i -g vscode-html-languageserver-bin`
+- yaml: `npm i -g yaml-language-server`
+- bashls: `npm i -g bash-language-server`
+- cssls: `npm i -g vscode-css-languageserver-bin`
+- summeko_lua: `npm i -g vscode-css-languageserver-bin`
 
 ## References
 
