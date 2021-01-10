@@ -23,6 +23,7 @@
 set EDITOR "nvim"
 set VISUAL "nvim"
 set BROWSER "brave"
+set PAGER "less"
 
 # Set general architecture flags
 set ARCHFLAGS "-arch x86_64"
