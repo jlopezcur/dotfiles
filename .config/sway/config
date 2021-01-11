@@ -103,6 +103,9 @@ bindsym $mod+Return exec $term
 # file manager
 bindsym $mod+Shift+Return exec $term -e ranger
 
+# news reader
+bindsym $mod+Ctrl+Return exec $term -e newsboat
+
 # launcher
 bindsym $mod+p exec $term --class launcher -e bash -c 'compgen -c | sort -u | fzf --reverse --prompt="Run: " | xargs -r swaymsg -t command exec'
 for_window [app_id="^launcher$"] floating enable
