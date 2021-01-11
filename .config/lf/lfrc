@@ -1,0 +1,46 @@
+set shellopts '-eu'
+set icons
+set info size
+set scrolloff 10
+set period 1
+set drawbox
+set ratios 2:3
+set hidden
+
+set preview true
+set previewer ~/.config/lf/preview
+
+cmd open ${{
+  case $(file --mime-type "$f" -bL) in
+    text/*|application/json) nvim "$f" ;;
+    image/*) imv "$f" > /dev/null & ;;
+    video/*) mpv "$f" > /dev/null ;;
+    sound/*) mpv "$f" > /dev/null ;;
+    image/vnd.djvu|application/pdf|application/octet-stream) setsid -f zathura $fx >/dev/null 2>&1 ;;
+    *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+  esac
+}}
+
+# extract the current file with the right command
+# (xkcd link: https://xkcd.com/1168/)
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
+
+# compress current file or selected files with tar and gunzip
+cmd tar ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    tar czf $1.tar.gz $1
+    rm -rf $1
+}}
+

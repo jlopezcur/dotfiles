@@ -32,6 +32,11 @@ ln -sf "$DIR/.config/swaylock/config" ~/.config/swaylock/config
 mkdir -p ~/.local/bin
 ln -sf "$DIR/.local/bin/lock" ~/.local/bin/lock
 
+# File manager
+mkdir -p ~/.config/lf
+ln -sf "$DIR/.config/lf/lfrc" ~/.config/lf/lfrc
+ln -sf "$DIR/.config/lf/preview" ~/.config/lf/preview
+
 # Terminal Emulator
 mkdir -p ~/.config/alacritty
 ln -sf "$DIR/.config/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.yml
