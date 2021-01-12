@@ -83,6 +83,11 @@ ln -sf "$DIR/.config/systemd/spotify.service" ~/.config/systemd/spotify.service
 # Browser
 ln -sf "$DIR/.config/brave-flags.conf" ~/.config/brave-flags.conf
 
+# Vimb
+mkdir -p ~/.newsboat
+ln -sf "$DIR/.newsboat/config" ~/.newsboat/config
+ln -sf "$DIR/.newsboat/urls" ~/.newsboat/urls
+
 echo "DONE!"
 
 
