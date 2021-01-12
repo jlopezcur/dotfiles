@@ -101,7 +101,7 @@ input "type:tablet_tool" map_to_output eDP-1
 bindsym $mod+Return exec $term
 
 # file manager
-bindsym $mod+Shift+Return exec $term -e ranger
+bindsym $mod+Shift+Return exec $term -e lf
 
 # news reader
 bindsym $mod+Ctrl+Return exec $term -e newsboat
