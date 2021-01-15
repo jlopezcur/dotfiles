@@ -77,8 +77,8 @@ ln -sf "$DIR/.config/vimb/config" ~/.config/vimb/config
 ln -sf "$DIR/.config/vimb/style.css" ~/.config/vimb/style.css
 
 # Custom Services
-mkdir -p ~/.config/systemd
-ln -sf "$DIR/.config/systemd/spotify.service" ~/.config/systemd/spotify.service
+mkdir -p ~/.config/systemd/user
+ln -sf "$DIR/.config/systemd/user/spotifyd.service" ~/.config/systemd/user/spotifyd.service
 
 # Browser
 ln -sf "$DIR/.config/brave-flags.conf" ~/.config/brave-flags.conf
