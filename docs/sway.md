@@ -13,6 +13,7 @@
 - [pulseaudio-ctl](https://github.com/graysky2/pulseaudio-ctl)
 - [brightness-ctl](https://github.com/Hummer12007/brightnessctl)
 - [player-ctl](https://github.com/altdesktop/playerctl)
+- [slurp](https://github.com/emersion/slurp)
 
 ```sh
 yay -S waybar alacritty bemenu gammastep mako swaylock swayidle grim pulseaudioctl brightnessctl playerctl
