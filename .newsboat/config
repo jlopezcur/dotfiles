@@ -20,8 +20,8 @@ bind-key k up
 bind-key l open
 bind-key h quit
 
-# include /usr/share/doc/newsboat/contrib/colorschemes/solarized-dark
-include /usr/share/doc/newsboat/contrib/colorschemes/plain
+# Theme
+include /usr/share/doc/newsboat/contrib/colorschemes/solarized-dark
 
 
 
