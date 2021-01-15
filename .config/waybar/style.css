@@ -36,3 +36,6 @@ window#waybar {
   padding: 0 10px;
 }
 
+#battery.critical {
+  background: red;
+}
