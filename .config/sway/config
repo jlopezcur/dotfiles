@@ -123,7 +123,7 @@ bindsym $mod+t exec $term --class top -e bpytop
 for_window [app_id="top"] floating enable, move to scratchpad, scratchpad show, resize set width 1600 px height 800 px
 
 # screen capture
-bindsym $mod+c exec $term -e slurp
+bindsym $mod+c exec grim -g "$(slurp)"
 
 # basics
 # ======
