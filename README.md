@@ -27,6 +27,7 @@
 - Firewall: [ufw](https://launchpad.net/ufw)
 - Video Recording: [OBS Studio](https://obsproject.com/)
 - Locker: [swaylock](https://github.com/swaywm/swaylock) [:pencil: Notes](docs/locker.md)
+- Font Preview: [fontpreview](https://github.com/sdushantha/fontpreview)
 
 ## References
 
