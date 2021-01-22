@@ -304,6 +304,9 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 gaps inner 10
 smart_gaps on
 
+focus_follows_mouse no
+hide_edge_borders smart
+
 # special keys
 # ------------------------------------------------------------------------------
 
