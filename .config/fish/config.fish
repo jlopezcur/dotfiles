@@ -31,7 +31,6 @@ set ARCHFLAGS "-arch x86_64"
 # Source other files
 
 [ -f ~/.config/fish/aliases.fish ] && . ~/.config/fish/aliases.fish
-[ -f ~/.config/fish/config-private.fish ] && . ~/.config/fish/config-private.fish
 
 # BangBang
 # https://github.com/oh-my-fish/plugin-bang-bang/
