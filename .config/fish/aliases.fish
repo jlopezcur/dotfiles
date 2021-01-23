@@ -23,7 +23,6 @@ abbr -a -g l ls -alh
 abbr -a -g vim nvim
 
 alias myip "curl http://ipecho.net/plain; echo"
-alias upgrade "yay && yay -Yc && nvim +PlugUpdate +PlugUpgrade +TSUpdate"
 
 # Git
 
