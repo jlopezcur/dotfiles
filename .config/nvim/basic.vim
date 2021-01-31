@@ -93,7 +93,7 @@ tnoremap <Leader><Esc> <C-\><C-n>
 " spell
 " ------------------------------------------------------------------------------
 
-autocmd BufRead,BufNewFile *.md,*.tex setlocal spell spelllang=en_us,es_es
+autocmd BufRead,BufNewFile *.md,*.mdx,*.tex setlocal spell spelllang=en_us,es_es
 autocmd FileType gitcommit setlocal spell spelllang=en_us,es_es
 set complete+=kspell
 
