@@ -14,7 +14,9 @@
 - Terminal Emulator: [alacritty](https://github.com/alacritty/alacritty)
 - Grep: [RigGrep](https://github.com/BurntSushi/ripgrep)
 - Fzf: [Fzf](https://github.com/junegunn/fzf)
-- Browser: [Brave](https://brave.com/) [:pencil: Notes](docs/brave.md)
+- Browsers:
+  - [Brave](https://brave.com/) [:pencil: Notes](docs/brave.md)
+  - [LibreWolf](https://gitlab.com/librewolf-community)
 - PDF: [Zathura](https://en.wikipedia.org/wiki/Zathura_(document_viewer))
 - Vector: [Inkscape](https://inkscape.org/es/)
 - Raster: [Gimp](https://www.gimp.org/)
@@ -28,6 +30,15 @@
 - Video Recording: [OBS Studio](https://obsproject.com/)
 - Locker: [swaylock](https://github.com/swaywm/swaylock) [:pencil: Notes](docs/locker.md)
 - Font Preview: [fontpreview](https://github.com/sdushantha/fontpreview)
+- Package Manager: [paru](https://github.com/morganamilo/paru)
+- Languages Info: [tokei](https://github.com/XAMPPRocky/tokei)
+
+## Replacements
+
+- Ls: [exa](https://the.exa.website/)
+- Cat: [bat](https://github.com/sharkdp/bat)
+- Grep: [ripgrep](https://github.com/BurntSushi/ripgrep)
+- Ps: [procs](https://github.com/dalance/procs)
 
 ## References
 
