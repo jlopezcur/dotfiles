@@ -40,6 +40,10 @@
 - Grep: [ripgrep](https://github.com/BurntSushi/ripgrep)
 - Ps: [procs](https://github.com/dalance/procs)
 
+## AdBlock
+
+- Hosts: [StevenBlack](https://github.com/StevenBlack/hosts)
+
 ## References
 
 - https://github.com/gerardbm/dotfiles
