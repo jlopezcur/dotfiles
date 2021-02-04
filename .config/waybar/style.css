@@ -28,6 +28,8 @@ window#waybar {
 #battery,
 #disk,
 #network,
+#custom-updates,
+#temperature,
 #idle_inhibitor {
 	padding: 0 10px;
 }

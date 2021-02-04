@@ -10,9 +10,13 @@
 		"clock#2"
 	],
 	"modules-right": [
+    "custom/updates",
+    "network#1",
+    "network#2",
 		"pulseaudio",
 		"memory",
 		"cpu",
+		"temperature",
 		"disk",
 		"battery",
     "idle_inhibitor",
@@ -26,6 +30,45 @@
     }
   },
 
+  "custom/updates": {
+    "format": " {}",
+    "exec": "checkupdates | wc -l",
+    "interval": 30
+  },
+
+  "network#1": {
+    "interface": "tun0",
+    "format": "{icon} ON",
+    "format-wifi": "{icon} ON",
+    "format-ethernet": "{icon} ON",
+    "format-disconnected": "{icon} OFF",
+    "format-icons": {
+      "wifi": ["聯", "聯", "聯"],
+      "ethernet": ["聯"],
+      "disconnected": ["輦"]
+    },
+    "tooltip-format": "{bandwidthUpBits} Up {bandwidthDownBits} Down",
+    "tooltip-format-disconnected": "VPN Disconnected",
+    "interval": 30
+  },
+
+  "temperature": {
+    "format": " {temperatureC}°C"
+  },
+
+  "network#2": {
+    "format": "{icon} {ifname}",
+    "format-alt": "{ipaddr}/{cidr} {icon}",
+    "format-alt-click": "click-right",
+    "format-icons": {
+      "wifi": ["直", "直" ,"直"],
+      "ethernet": [""],
+      "disconnected": [""]
+    },
+    "on-click": "alacritty -e nmtui",
+    "tooltip": false
+  },
+
 	"sway/workspaces": {
 		"disable-scroll": true,
 		"format": "{icon}",
@@ -36,7 +79,7 @@
       "4": " term",
       "5": " music",
       "6": " -",
-      "7": " vpn",
+      "7": " -",
       "urgent": ""
     }
 	},
@@ -84,7 +127,9 @@
 			"warning": 30,
 			"critical": 15
 		},
-		"format": "{icon}  {capacity}%",
+		"format": "{capacity}% {icon}",
+    "format-alt": "{time} {icon}",
+    "format-alt-click": "click-right",
 		"format-icons": ["", "", "", "", ""]
 	},
 	"disk": {
