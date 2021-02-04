@@ -32,6 +32,8 @@
 - Font Preview: [fontpreview](https://github.com/sdushantha/fontpreview)
 - Package Manager: [paru](https://github.com/morganamilo/paru)
 - Languages Info: [tokei](https://github.com/XAMPPRocky/tokei)
+- Git browser: [tig](https://github.com/jonas/tig)
+- Cheatsheet: [navi](https://github.com/denisidoro/navi)
 
 ## Replacements
 
