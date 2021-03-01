@@ -24,6 +24,7 @@ set EDITOR "nvim"
 set VISUAL "nvim"
 set BROWSER "brave"
 set PAGER "less"
+set -x MANPAGER "nvim -c 'set ft=man' -"
 
 # Set general architecture flags
 set ARCHFLAGS "-arch x86_64"
