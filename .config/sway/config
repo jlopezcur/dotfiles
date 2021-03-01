@@ -110,9 +110,9 @@ bindsym $mod+Ctrl+Return exec $term -e newsboat
 bindsym $mod+p exec $term --class launcher -e bash -c 'compgen -c | sort -u | fzf --reverse --prompt="Run: " | xargs -r swaymsg -t command exec'
 for_window [app_id="^launcher$"] floating enable
 
-# spt
-bindsym $mod+m exec $term --class spotify -e spt
-for_window [app_id="spotify"] floating enable, move to scratchpad, scratchpad show, resize set width 1600 px height 800 px
+# cmus
+bindsym $mod+m exec $term --class cmus -e cmus
+for_window [app_id="cmus"] floating enable, move to scratchpad, scratchpad show, resize set width 1600 px height 800 px
 
 # color picker
 bindsym $mod+i exec gpick
