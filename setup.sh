@@ -43,21 +43,8 @@ ln -sf "$DIR/.config/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.yml
 
 # Text Editor
 mkdir -p ~/.config/nvim
-ln -sf "$DIR/.config/nvim/basic.vim" ~/.config/nvim/basic.vim
-ln -sf "$DIR/.config/nvim/fuzzy-finder.vim" ~/.config/nvim/fuzzy-finder.vim
-ln -sf "$DIR/.config/nvim/fugitive.vim" ~/.config/nvim/fugitive.vim
-ln -sf "$DIR/.config/nvim/gruvbox.vim" ~/.config/nvim/gruvbox.vim
-ln -sf "$DIR/.config/nvim/init.vim" ~/.config/nvim/init.vim
-ln -sf "$DIR/.config/nvim/lightline.vim" ~/.config/nvim/lightline.vim
-ln -sf "$DIR/.config/nvim/prettier.vim" ~/.config/nvim/prettier.vim
-ln -sf "$DIR/.config/nvim/tabular.vim" ~/.config/nvim/tabular.vim
-ln -sf "$DIR/.config/nvim/test.vim" ~/.config/nvim/test.vim
-ln -sf "$DIR/.config/nvim/vimwiki.vim" ~/.config/nvim/vimwiki.vim
-ln -sf "$DIR/.config/nvim/commentary.vim" ~/.config/nvim/commentary.vim
-ln -sf "$DIR/.config/nvim/far.vim" ~/.config/nvim/far.vim
-mkdir -p ~/.config/nvim/lua
-ln -sf "$DIR/.config/nvim/lua/lsp.lua" ~/.config/nvim/lua/lsp.lua
-ln -sf "$DIR/.config/nvim/lua/treesitter.lua" ~/.config/nvim/lua/treesitter.lua
+ln -sf "$DIR/.config/nvim/init.lua" ~/.config/nvim/init.lua
+ln -sf "$DIR/.config/nvim/lua" ~/.config/nvim/lua
 
 # File Manager
 mkdir -p ~/.config/ranger
@@ -83,7 +70,7 @@ ln -sf "$DIR/.config/systemd/user/spotifyd.service" ~/.config/systemd/user/spoti
 # Browser
 ln -sf "$DIR/.config/brave-flags.conf" ~/.config/brave-flags.conf
 
-# Vimb
+# Newsboat
 mkdir -p ~/.newsboat
 ln -sf "$DIR/.newsboat/config" ~/.newsboat/config
 ln -sf "$DIR/.newsboat/urls" ~/.newsboat/urls
