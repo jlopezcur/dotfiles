@@ -34,6 +34,10 @@
 - Languages Info: [tokei](https://github.com/XAMPPRocky/tokei)
 - Git browser: [tig](https://github.com/jonas/tig)
 - Cheatsheet: [navi](https://github.com/denisidoro/navi)
+- Cryptocurrencies: [cointop](https://github.com/miguelmota/cointop)
+- Kernel Manager: [kmon](https://github.com/orhun/kmon)
+- Pulse Audio Mixer: [ncpamixer](https://github.com/fulhax/ncpamixer)
+- Music: [cmus](https://cmus.github.io/)
 
 ## Replacements
 
@@ -41,6 +45,7 @@
 - Cat: [bat](https://github.com/sharkdp/bat)
 - Grep: [ripgrep](https://github.com/BurntSushi/ripgrep)
 - Ps: [procs](https://github.com/dalance/procs)
+- Sudo: [doas](https://github.com/Duncaen/OpenDoas)
 
 ## AdBlock
 
