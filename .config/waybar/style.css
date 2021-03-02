@@ -14,11 +14,11 @@ window#waybar {
 	padding: 0 5px;
   background: transparent;
 	color: #fdf6e3;
-  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 #workspaces button.focused {
 	color: #268bd2;
-  border-top: 2px solid #268bd2;
+  border-bottom: 2px solid #268bd2;
 }
 
 #clock,
@@ -40,4 +40,12 @@ window#waybar {
 
 #battery.critical {
   background: red;
+}
+
+#custom-sway-scratch.many {
+  color: rgba(86, 182, 194, 1);
+}
+
+#custom-sway-scratch.one {
+  color: rgba(97, 175, 239, 1);
 }

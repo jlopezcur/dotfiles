@@ -1,15 +1,18 @@
 {
-	"position": "top",
+  "position": "top",
 
 	"modules-left": [
 		"sway/workspaces",
 		"sway/window",
 	],
+
 	"modules-center": [
-		"clock#1",
-		"clock#2"
+    "clock#1",
+    "clock#2"
 	],
+
 	"modules-right": [
+    "custom/sway-scratch",
     "custom/updates",
     "network#1",
     "network#2",
@@ -21,6 +24,23 @@
 		"battery",
     "idle_inhibitor",
 	],
+
+  "custom/sway-scratch": {
+    "interval": 1,
+    "return-type": "json",
+    "format": "{icon}",
+    "format-icons": {
+      "none": "",
+      "one": "",
+      "many": "",
+      "unknown": ""
+    },
+    "exec": "~/.config/waybar/modules/sway-scratch.sh",
+    "exec-if": "exit 0",
+    "on-click": "swaymsg scratchpad show",
+    "on-click-right": "swaymsg move window to scratchpad",
+    "tooltip": false,
+  },
 
   "idle_inhibitor": {
     "format": "{icon}",
@@ -38,10 +58,10 @@
 
   "network#1": {
     "interface": "tun0",
-    "format": "{icon} ON",
-    "format-wifi": "{icon} ON",
-    "format-ethernet": "{icon} ON",
-    "format-disconnected": "{icon} OFF",
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "{icon}",
+    "format-disconnected": "{icon}",
     "format-icons": {
       "wifi": ["聯", "聯", "聯"],
       "ethernet": ["聯"],
@@ -57,7 +77,7 @@
   },
 
   "network#2": {
-    "format": "{icon} {ifname}",
+    "format": "{icon}",
     "format-alt": "{ipaddr}/{cidr} {icon}",
     "format-alt-click": "click-right",
     "format-icons": {
@@ -73,13 +93,6 @@
 		"disable-scroll": true,
 		"format": "{icon}",
     "format-icons": {
-      "1": " code",
-      "2": " web",
-      "3": " design",
-      "4": " term",
-      "5": " music",
-      "6": " -",
-      "7": " -",
       "urgent": ""
     }
 	},
@@ -104,14 +117,11 @@
 		"format-muted": "MUTE",
 		"format-icons": {
 			"headphones": "",
-			"default": [
-				"",
-				""
-			]
+			"default": ["", ""]
 		},
-		"scroll-step": 5,
+		"scroll-step": 1,
 		"on-click": "pamixer -t",
-		"on-click-right": "pavucontrol"
+		"on-click-right": "alacritty -e ncpamixer"
 	},
 	"memory": {
 		"interval": 5,
