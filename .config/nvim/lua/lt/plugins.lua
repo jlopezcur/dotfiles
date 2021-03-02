@@ -16,7 +16,7 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
   -- Packer can manage itself as an optional plugin
-  use {'wbthomason/packer.vim', opt = true}
+  use { 'wbthomason/packer.nvim', opt = true }
 
   use 'neovim/nvim-lspconfig'
   use 'glepnir/lspsaga.nvim'
@@ -43,7 +43,7 @@ return require('packer').startup(function()
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
-  -- use 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } } -- https://github.com/iamcco/markdown-preview.nvim
+  use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview' } -- https://github.com/iamcco/markdown-preview.nvim
   use 'justinmk/vim-dirvish' -- https://github.com/justinmk/vim-dirvish
 
   -- ---------------------------------------------------------------------------
