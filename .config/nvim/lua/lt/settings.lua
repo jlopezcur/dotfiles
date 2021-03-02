@@ -14,7 +14,7 @@ vim.o.clipboard = "unnamedplus"
 vim.o.hidden = true
 vim.o.updatetime = 100
 vim.o.timeoutlen = 600
-vim.o.signcolumn = "yes"
+vim.o.signcolumn = 'yes'
 
 -- Avoid showing message extra message when using completion
 -- vim.cmd("set shortmess+=c")
@@ -46,34 +46,34 @@ vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 -- indentation
 --
 
-vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
 vim.o.expandtab = true
-vim.o.autoindent = true
 vim.o.smartindent = true
+vim.o.smarttab = true
+vim.o.autoindent = true
 
 --
 -- 80 lines
 --
 
-vim.bo.textwidth = 80
-vim.wo.colorcolumn = "80,120"
-vim.wo.wrap = false
+vim.o.textwidth = 80
+vim.o.colorcolumn = "80,120"
+vim.o.wrap = false
 vim.o.smartcase = true
 
 --
 -- cursor
 --
 
-vim.wo.cursorline = true
+vim.o.cursorline = true
 
 --
 -- line numbers
 --
 
-vim.wo.number = true
-vim.wo.relativenumber = true
+vim.o.relativenumber = true
 
 --
 -- vimrc
