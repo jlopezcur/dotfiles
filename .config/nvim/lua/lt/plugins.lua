@@ -18,7 +18,13 @@ return require('packer').startup(function()
   -- Packer can manage itself as an optional plugin
   use { 'wbthomason/packer.nvim', opt = true }
 
+  --
+  -- lsp
+  --
+
   use 'neovim/nvim-lspconfig'
+  use 'anott03/nvim-lspinstall'
+  use 'tjdevries/nlua.nvim'
   use 'glepnir/lspsaga.nvim'
   use 'nvim-lua/lsp-status.nvim'
   use 'onsails/lspkind-nvim'
@@ -31,10 +37,13 @@ return require('packer').startup(function()
   --
 
   use 'sainnhe/gruvbox-material'
-  use 'hoob3rt/lualine.nvim'
+  use {
+    'hoob3rt/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
   use 'nvim-treesitter/nvim-treesitter'
   use 'romgrk/nvim-treesitter-context'
-  use 'kyazdani42/nvim-web-devicons'
+  -- use 'kyazdani42/nvim-web-devicons'
 
   --
   -- file management
@@ -43,6 +52,7 @@ return require('packer').startup(function()
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-fzy-native.nvim'
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview' } -- https://github.com/iamcco/markdown-preview.nvim
   use 'justinmk/vim-dirvish' -- https://github.com/justinmk/vim-dirvish
 
@@ -50,10 +60,11 @@ return require('packer').startup(function()
 
   use 'tpope/vim-commentary' -- https://github.com/tpope/vim-commentary
   use 'suy/vim-context-commentstring' -- https://github.com/suy/vim-context-commentstring
-  use 'tpope/vim-dispatch'
+  -- use 'tpope/vim-dispatch'
   use 'vimwiki/vimwiki' -- https://github.com/vimwiki/vimwiki
   use 'tpope/vim-surround' -- https://github.com/tpope/vim-surround
   use 'brooth/far.vim' -- https://github.com/brooth/far.vim
+  use 'ojroques/nvim-bufdel' -- https://github.com/ojroques/nvim-bufdel
 
   --
   -- test & debug
@@ -61,7 +72,8 @@ return require('packer').startup(function()
 
   use 'vim-test/vim-test' -- https://github.com/vim-test/vim-test
   use 'mfussenegger/nvim-dap'
-  use 'szw/vim-maximizer'
+  -- use 'szw/vim-maximizer'
+  use 'akinsho/nvim-toggleterm.lua'
 
   --
   -- vcs

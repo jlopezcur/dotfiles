@@ -11,6 +11,10 @@ map('n', '<Leader>ts', "<cmd>:TestSuite<CR>", options)
 map('n', '<Leader>tl', "<cmd>:TestLast<CR>", options)
 map('n', '<Leader>tv', "<cmd>:TestVisit<CR>", options)
 
+-- Gnerate Mermaid Diagram
+map('n', '<Leader>mm', "<cmd>:!npx @mermaid-js/mermaid-cli mmdc -i %<CR>", { noremap = true, silent = false })
+
+
 -- " Eslint
 -- nnoremap <Leader>ll :terminal npm run eslint<cr>
 -- nnoremap <Leader>lc :terminal npm run eslint -- %<cr>

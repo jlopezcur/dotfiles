@@ -39,16 +39,16 @@ local default_lsp_config = {on_attach = on_attach, capabilities = lsp_status.cap
 local language_server_path = vim.fn.stdpath("cache") .. "/lspconfig"
 
 local servers = {
-  efm = require('lt.lsp.servers.efm')(language_server_path),
-  bashls = {}, -- require('lt.lsp.servers.bashls')(language_server_path),
   -- dockerls = {},
-  yamlls = {}, -- require('lt.lsp.servers.yamlls')(language_server_path),
-  jsonls = {}, -- require('lt.lsp.servers.jsonls')(language_server_path),
-  rls = {},
-  tsserver = {}, -- require('lt.lsp.servers.tsserver')(language_server_path, on_attach),
-  html = {}, -- require('lt.lsp.servers.htmlls')(language_server_path),
-  cssls = {}, -- require('lt.lsp.servers.cssls')(language_server_path),
+  bashls = require('lt.lsp.servers.bashls')(language_server_path),
+  cssls = require('lt.lsp.servers.cssls')(language_server_path),
+  efm = require('lt.lsp.servers.efm')(language_server_path),
+  html = require('lt.lsp.servers.htmlls')(language_server_path),
+  jsonls = require('lt.lsp.servers.jsonls')(language_server_path),
+  rls = require('lt.lsp.servers.rls')(language_server_path),
   sumneko_lua = require('lt.lsp.servers.sumneko_lua')(language_server_path),
+  tsserver = require('lt.lsp.servers.tsserver')(language_server_path, on_attach),
+  yamlls = require('lt.lsp.servers.yamlls')(language_server_path),
 }
 
 for server, config in pairs(servers) do

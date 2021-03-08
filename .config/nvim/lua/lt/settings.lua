@@ -73,7 +73,8 @@ vim.o.cursorline = true
 -- line numbers
 --
 
-vim.o.relativenumber = true
+vim.wo.number = true
+vim.wo.relativenumber = true
 
 --
 -- vimrc
