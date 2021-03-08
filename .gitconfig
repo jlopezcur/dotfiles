@@ -20,3 +20,5 @@
   ci = commit
   br = branch
   co = checkout
+[init]
+	defaultBranch = master
