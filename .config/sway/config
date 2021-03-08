@@ -38,7 +38,7 @@ set $term alacritty
 # ------------------------------------------------------------------------------
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/jlopez/dev/wallpapers/008.jpg fill
+output * bg /home/jlopez/dev/wallpapers/020.jpg fill
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output eDP-1 resolution 3840x2160 scale 2 position 0,0
@@ -72,6 +72,8 @@ exec --no-startup-id mako
 
 # Drive auto mounter
 exec --no-startup-id udiskie
+
+exec --no-startup-id pipewire
 
 
 # input
