@@ -52,7 +52,7 @@ return require('packer').startup(function()
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-fzy-native.nvim'
-  use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview' } -- https://github.com/iamcco/markdown-preview.nvim
+  use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' } -- https://github.com/iamcco/markdown-preview.nvim
   use 'justinmk/vim-dirvish' -- https://github.com/justinmk/vim-dirvish
 
   -- ---------------------------------------------------------------------------
