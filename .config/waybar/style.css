@@ -6,33 +6,39 @@
 }
 
 window#waybar {
-	/* background: rgba(0,0,0,0); */
-	background: rgba(0,0,0,0.8);
+	background: rgba(0, 0, 0, 0.8);
 	color: #888;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #workspaces button {
 	padding: 0 5px;
   background: transparent;
 	color: #fdf6e3;
-  border-bottom: 2px solid transparent;
+  border-bottom: 4px solid transparent;
 }
 #workspaces button.focused {
 	color: #268bd2;
-  border-bottom: 2px solid #268bd2;
+  border-bottom: 4px solid #268bd2;
 }
 
 #clock,
 #pulseaudio,
 #memory,
 #cpu,
-#battery,
 #disk,
-#network,
 #custom-updates,
 #temperature,
+#bluetooth,
 #idle_inhibitor {
-	padding: 0 10px;
+	padding-right: 10px;
+}
+#battery {
+	padding-right: 15px;
+}
+
+#network {
+	padding: 0 5px 0 0;
 }
 
 #window {
@@ -41,12 +47,4 @@ window#waybar {
 
 #battery.critical {
   background: red;
-}
-
-#custom-sway-scratch.many {
-  color: rgba(86, 182, 194, 1);
-}
-
-#custom-sway-scratch.one {
-  color: rgba(97, 175, 239, 1);
 }

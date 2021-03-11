@@ -1,46 +1,29 @@
 {
   "position": "top",
 
-	"modules-left": [
-		"sway/workspaces",
-		"sway/window",
-	],
+  "modules-left": [
+    "sway/workspaces",
+    "sway/window",
+  ],
 
-	"modules-center": [
+  "modules-center": [
     "clock#1",
     "clock#2"
-	],
+  ],
 
-	"modules-right": [
-    "custom/sway-scratch",
+  "modules-right": [
     "custom/updates",
-    "network#1",
+    "pulseaudio",
+    "memory",
+    "cpu",
+    "temperature",
+    "disk",
+    "battery",
+    "bluetooth",
     "network#2",
-		"pulseaudio",
-		"memory",
-		"cpu",
-		"temperature",
-		"disk",
-		"battery",
+    "network#1",
     "idle_inhibitor",
-	],
-
-  "custom/sway-scratch": {
-    "interval": 1,
-    "return-type": "json",
-    "format": "{icon}",
-    "format-icons": {
-      "none": "",
-      "one": "",
-      "many": "",
-      "unknown": ""
-    },
-    "exec": "~/.config/waybar/modules/sway-scratch.sh",
-    "exec-if": "exit 0",
-    "on-click": "swaymsg scratchpad show",
-    "on-click-right": "swaymsg move window to scratchpad",
-    "tooltip": false,
-  },
+  ],
 
   "idle_inhibitor": {
     "format": "{icon}",
@@ -63,12 +46,11 @@
     "format-ethernet": "{icon}",
     "format-disconnected": "{icon}",
     "format-icons": {
-      "wifi": ["聯", "聯", "聯"],
-      "ethernet": ["聯"],
-      "disconnected": ["輦"]
+      "wifi": ["", "", ""],
+      "ethernet": [""],
+      "disconnected": [""]
     },
     "tooltip-format": "{bandwidthUpBits} Up {bandwidthDownBits} Down",
-    "tooltip-format-disconnected": "VPN Disconnected",
     "interval": 30
   },
 
@@ -76,75 +58,91 @@
     "format": " {temperatureC}°C"
   },
 
+  "bluetooth": {
+    "format": "{icon}",
+    "format-alt": "bluetooth: {status}",
+    "interval": 30,
+    "format-icons": {
+      "enabled": "",
+      "disabled": ""
+    },
+    "tooltip-format": "{status}"
+  },
+
   "network#2": {
     "format": "{icon}",
     "format-alt": "{ipaddr}/{cidr} {icon}",
     "format-alt-click": "click-right",
     "format-icons": {
-      "wifi": ["直", "直" ,"直"],
+      "wifi": ["", "" ,""],
       "ethernet": [""],
-      "disconnected": [""]
+      "disconnected": [""]
     },
     "on-click": "alacritty -e nmtui",
     "tooltip": false
   },
 
-	"sway/workspaces": {
-		"disable-scroll": true,
-		"format": "{icon}",
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "format": "{icon}",
     "format-icons": {
       "urgent": ""
     }
-	},
+  },
 
   "sway/window": {
     "format": "{}",
     "max-length": 50
   },
 
-	"clock#1": {
-		"format": " {:%a, %d/%m/%Y}",
+  "clock#1": {
+    "format": " {:%a, %d/%m/%Y}",
     "tooltip-format": "{calendar}"
-	},
+  },
 
-	"clock#2": {
-		"format": " {:%H:%M}"
-	},
+  "clock#2": {
+    "format": " {:%H:%M}"
+  },
 
-	"pulseaudio": {
-		"format": "{icon} {volume:2}%",
-		"format-bluetooth": "{icon} {volume}% ",
-		"format-muted": "MUTE",
-		"format-icons": {
-			"headphones": "",
-			"default": ["", ""]
-		},
-		"scroll-step": 1,
-		"on-click": "pamixer -t",
-		"on-click-right": "alacritty -e ncpamixer"
-	},
-	"memory": {
-		"interval": 5,
-		"format": " {}%"
-	},
-	"cpu": {
-		"interval": 5,
-		"format": " {usage:2}%"
-	},
-	"battery": {
-		"states": {
-			"good": 95,
-			"warning": 30,
-			"critical": 15
-		},
-		"format": "{capacity}% {icon}",
+  "pulseaudio": {
+    "format": "{icon} {volume:2}%",
+    "format-bluetooth": "{icon} {volume}% ",
+    "format-muted": "MUTE",
+    "format-icons": {
+      "headphones": "",
+      "headset": "",
+      "default": ["", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pamixer -t",
+    "on-click-right": "alacritty -e ncpamixer"
+  },
+
+  "memory": {
+    "interval": 5,
+    "format": " {}%"
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": " {usage:2}%"
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
     "format-alt": "{time} {icon}",
     "format-alt-click": "click-right",
-		"format-icons": ["", "", "", "", ""]
-	},
-	"disk": {
-		"interval": 5,
-		"format": " {percentage_used:2}%",
-		"path": "/"
-	}
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "disk": {
+    "interval": 5,
+    "format": " {percentage_used:2}%",
+    "path": "/"
+  }
 }
