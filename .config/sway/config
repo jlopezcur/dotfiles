@@ -60,21 +60,17 @@ exec swayidle -w \
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-
 # startup
 # ------------------------------------------------------------------------------
 
 # Adjust the color temperature of your screen according to your surroundings.
-exec --no-startup-id gammastep
+exec gammastep -l 40.241111:-3.699444
 
 # Mako notification manager
-exec --no-startup-id mako
+exec mako
 
 # Drive auto mounter
-exec --no-startup-id udiskie
-
-exec --no-startup-id pipewire
-
+exec udiskie
 
 # input
 # ------------------------------------------------------------------------------
@@ -88,6 +84,12 @@ input "type:keyboard" {
 
 input "type:touch" map_to_output eDP-1
 input "type:tablet_tool" map_to_output eDP-1
+
+input type:touchpad {
+  dwt enabled
+  tap enabled
+  natural_scroll enabled
+}
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
