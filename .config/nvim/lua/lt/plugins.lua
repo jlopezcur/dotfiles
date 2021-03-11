@@ -41,9 +41,8 @@ return require('packer').startup(function()
     'hoob3rt/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
-  use 'nvim-treesitter/nvim-treesitter'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'romgrk/nvim-treesitter-context'
-  -- use 'kyazdani42/nvim-web-devicons'
 
   --
   -- file management
