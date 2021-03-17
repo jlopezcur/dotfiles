@@ -15,6 +15,7 @@
 - Grep: [RigGrep](https://github.com/BurntSushi/ripgrep)
 - Fzf: [Fzf](https://github.com/junegunn/fzf)
 - Browsers:
+  - [qutebrowser](https://qutebrowser.org/)
   - [Brave](https://brave.com/) [:pencil: Notes](docs/brave.md)
   - [LibreWolf](https://gitlab.com/librewolf-community)
 - PDF: [Zathura](https://en.wikipedia.org/wiki/Zathura_(document_viewer))
