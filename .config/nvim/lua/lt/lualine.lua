@@ -1,11 +1,18 @@
-local lualine = require('lualine')
-lualine.options.theme = 'gruvbox_material'
--- lualine.sections.lualine_c = {
---   {
---     'filename',
---     file_status = true,
---     full_path = true,
---     shorten = false
---   }
--- }
-lualine.status()
+require('lualine').setup({
+  options = {
+    theme = 'gruvbox_material'
+  },
+  extensions = {
+    'fugitive'
+  },
+  -- sections = {
+  --   lualine_c = {
+  --     {
+  --       'filename',
+  --       file_status = true,
+  --       full_path = true,
+  --       shorten = false
+  --     }
+  --   }
+  -- }
+})
