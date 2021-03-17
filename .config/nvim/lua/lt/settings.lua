@@ -1,6 +1,6 @@
 --
 -- general
--- 
+--
 
 vim.o.showmode = false
 
@@ -12,6 +12,7 @@ vim.g.mapleader = ','
 vim.o.clipboard = "unnamedplus"
 
 vim.o.hidden = true
+vim.cmd('set list')
 vim.o.updatetime = 100
 vim.o.timeoutlen = 600
 vim.o.signcolumn = 'yes'
