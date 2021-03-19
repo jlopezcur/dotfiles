@@ -8,5 +8,5 @@ if test -z "$DISPLAY"; and test $TTY1 = "/dev/tty1"
   export XDG_CURRENT_DESKTOP=sway
   export FONTCONFIG_PATH=/etc/fonts
   # export PIPEWIRE_DEBUG=4
-  exec sway -V > /home/jlopez/.cache/sway.log 2>&1
+  exec sway > /home/jlopez/.cache/sway.log 2>&1
 end
