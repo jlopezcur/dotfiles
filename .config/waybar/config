@@ -58,8 +58,8 @@
     "scroll-step": 1,
     "on-click": "pamixer -t",
     "on-click-right": "alacritty -e ncpamixer",
-    "format-source": " ",
-    "format-source-muted": " "
+    "format-source": "",
+    "format-source-muted": ""
   },
 
   "idle_inhibitor": {
@@ -71,15 +71,11 @@
   },
 
   "battery": {
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{capacity}% {icon}",
-    "format-alt": "{time} {icon}",
-    "format-alt-click": "click-right",
-    "format-icons": ["", "", "", "", ""]
+    "states": { "good": 95, "warning": 30, "critical": 15 },
+    "format": "{icon} {time}",
+    "format-charging": " {capacity}%",
+    "format-plugged": "",
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""],
   },
 }, {
   "position": "bottom",

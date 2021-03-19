@@ -5,30 +5,24 @@
   font-family: SauceCodePro Nerd Font;
 }
 
-window#waybar {
-  background: rgba(0, 0, 0, 0.8);
-  color: #888;
-}
+/* Bars */
 
+window#waybar { color: #999; }
 window#waybar.top {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0,0,0, 0.7);
+  background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
 }
-
 window#waybar.bottom {
   background: rgba(0,0,0, 0.7);
-  background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
 }
 
-#workspaces button {
-  padding: 0 5px;
-  background: transparent;
-  color: #fdf6e3;
-  border-bottom: 4px solid transparent;
-}
-#workspaces button.focused {
-  color: #268bd2;
-  border-bottom: 4px solid #268bd2;
-}
+/* Workspaces buttons */
+
+#workspaces button { padding: 0 5px; background: transparent; color: #fdf6e3; }
+#workspaces button.focused { color: #ccc; background: rgba(38,139,210, 0.7); }
+
+/* Modules padding */
 
 #clock,
 #pulseaudio,
@@ -39,17 +33,12 @@ window#waybar.bottom {
 #temperature,
 #bluetooth,
 #network,
+#battery,
+#window,
 #idle_inhibitor {
-  padding: 0 15px;
-}
-#battery {
-  padding-right: 25px;
+  padding: 0 8px;
 }
 
-#window {
-  padding: 0 10px;
-}
+/* Modules status */
 
-#battery.critical {
-  background: red;
-}
+#battery.critical { background: red; }
