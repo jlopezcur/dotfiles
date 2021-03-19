@@ -9,6 +9,7 @@ apps=(
   "gimp"
   "inkscape"
   "godot"
+  "steam"
   "gpick"
   "grafx2"
   "audacity"
@@ -28,6 +29,7 @@ apps=(
   "telegram-desktop"
   "alacritty -e vimiv"
   "alacritty -e nvim"
+  "alacritty -e cointop"
 )
 
 # APP="$(compgen -c | sort -u | sk --reverse --prompt='Run: ')"
