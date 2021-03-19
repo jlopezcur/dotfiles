@@ -81,5 +81,6 @@ return require('packer').startup(function()
   use 'tpope/vim-fugitive' -- https://github.com/tpope/vim-fugitive
   use 'lewis6991/gitsigns.nvim'
   use 'rhysd/git-messenger.vim' -- https://github.com/rhysd/git-messenger.vim
+  use 'f-person/git-blame.nvim' -- https://github.com/f-person/git-blame.nvim
 end)
 
