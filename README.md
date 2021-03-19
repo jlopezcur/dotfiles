@@ -24,7 +24,7 @@
 - Image Viewer: [imv](https://github.com/eXeC64/imv)
 - Color Picker: [gpick](https://github.com/thezbyg/gpick)
 - Task Manager: [bpytop](https://github.com/aristocratos/bpytop)
-- Music: [spotify-tui](https://github.com/Rigellute/spotify-tui)
+- Music: [cmus](https://cmus.github.io/)
 - 3D & Video Edition: [blender](https://www.blender.org/)
 - IRC: [irssi](https://irssi.org/)
 - Firewall: [ufw](https://launchpad.net/ufw)
@@ -38,7 +38,6 @@
 - Cryptocurrencies: [cointop](https://github.com/miguelmota/cointop)
 - Kernel Manager: [kmon](https://github.com/orhun/kmon)
 - Pulse Audio Mixer: [ncpamixer](https://github.com/fulhax/ncpamixer)
-- Music: [cmus](https://cmus.github.io/)
 
 ## Replacements
 

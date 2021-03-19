@@ -1,8 +1,0 @@
-set home-page=www.ecosia.org
-set editor-command=alacritty -e "nvim %s"
-set download-path=~/Downloads/
-set spell-checking=true
-set spell-checking-languages=en,es
-set incsearch=true
-set webgl=true
-set default-zoom=200
