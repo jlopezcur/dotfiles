@@ -33,33 +33,6 @@ set $right l
 # terminal emulator
 set $term alacritty
 
-
-# output configuration
-# ------------------------------------------------------------------------------
-
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/jlopez/dev/wallpapers/020.jpg fill
-
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-output eDP-1 mode 3840x2160 scale 2 position 0,0
-output HDMI-A-1 mode 1920x1080 position 1920,0
-
-set $laptop eDP-1
-bindswitch --reload --locked lid:on output $laptop disable
-bindswitch --reload --locked lid:off output $laptop enable
-
-# idle configuration
-# ------------------------------------------------------------------------------
-
-exec swayidle -w \
-  timeout 300 'lock' \
-  timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-  before-sleep 'lock'
-
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
 # startup
 # ------------------------------------------------------------------------------
 
@@ -71,29 +44,6 @@ exec mako
 
 # Drive auto mounter
 exec udiskie
-
-# input
-# ------------------------------------------------------------------------------
-
-input "type:keyboard" {
-  repeat_delay 300
-  repeat_rate 50
-  xkb_variant ,nodeadkeys
-  xkb_options compose:ralt
-}
-
-input "type:touch" map_to_output eDP-1
-input "type:tablet_tool" map_to_output eDP-1
-
-input type:touchpad {
-  dwt enabled
-  tap enabled
-  natural_scroll enabled
-}
-
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
-
 
 # key bindings
 # ------------------------------------------------------------------------------
@@ -110,21 +60,26 @@ bindsym $mod+Shift+Return exec $term -e lf
 # news reader
 bindsym $mod+Ctrl+Return exec $term -e newsboat
 
-# launcher
-bindsym $mod+p exec $term --class launcher -e bash -c 'compgen -c | sort -u | fzf --reverse --prompt="Run: " | xargs -r swaymsg -t command exec'
+# launchers
+# bindsym $mod+p exec $term --class launcher -e bash -c 'compgen -c | sort -u | fzf --reverse --prompt="Run: " | xargs -r swaymsg -t command exec'
+bindsym $mod+p exec $term --class launcher -e ~/.config/sway/scripts/apps.sh
+bindsym $mod+Shift+p exec $term --class launcher -e ~/.config/sway/scripts/copy-pass.sh
+bindsym $mod+Shift+m exec $term --class launcher -e ~/.config/sway/scripts/man.sh
 for_window [app_id="^launcher$"] floating enable
 
 # cmus
 bindsym $mod+m exec $term --class cmus -e cmus
-for_window [app_id="cmus"] floating enable, move to scratchpad, scratchpad show, resize set width 1600 px height 800 px
+for_window [app_id="cmus"] floating enable
+for_window [app_id="cmus"] move to scratchpad; [app_id="cmus"] scratchpad show; [app_id="cmus"] resize set width 1600 px height 800 px
 
 # color picker
 bindsym $mod+i exec gpick
-for_window [class="Gpick"] floating enable, resize set width 800 px height 600 px
+for_window [class="Gpick"] floating enable; [class="Gpick"] resize set width 800 px height 600 px
 
 # top
 bindsym $mod+t exec $term --class top -e bpytop
-for_window [app_id="top"] floating enable, move to scratchpad, scratchpad show, resize set width 1600 px height 800 px
+for_window [app_id="top"] floating enable
+for_window [app_id="top"] move to scratchpad; [app_id="top"] scratchpad show; [app_id="top"] resize set width 1600 px height 800 px
 
 # screen capture
 bindsym $mod+c exec grim -g "$(slurp)"
@@ -311,24 +266,8 @@ smart_gaps on
 focus_follows_mouse no
 hide_edge_borders smart
 
-# special keys
-# ------------------------------------------------------------------------------
-
-# volume
-bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-
-# brightness
-bindsym --locked XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
-bindsym --locked XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
-
-# media control
-bindsym --locked XF86AudioPlay exec --no-startup-id playerctl play-pause
-bindsym --locked XF86AudioNext exec --no-startup-id playerctl next
-bindsym --locked XF86AudioPrev exec --no-startup-id playerctl previous
-
 # ------------------------------------------------------------------------------
 
 include /etc/sway/config.d/*
+include ~/.config/sway/conf.d/*
+

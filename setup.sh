@@ -18,17 +18,20 @@ ln -sf "$DIR/.config/starship.toml" ~/.config/starship.toml
 ln -sf "$DIR/.gitconfig" ~/.gitconfig
 
 # Window Manager
-mkdir -p ~/.config/sway
-ln -sf "$DIR/.config/sway/config" ~/.config/sway/config
+ln -sf "$DIR/.config/sway" ~/.config/sway
+
+# System bar
 mkdir -p ~/.config/waybar
 ln -sf "$DIR/.config/waybar/config" ~/.config/waybar/config
 ln -sf "$DIR/.config/waybar/style.css" ~/.config/waybar/style.css
+
+# Notifications
 mkdir -p ~/.config/mako
 ln -sf "$DIR/.config/mako/config" ~/.config/mako/config
-mkdir -p ~/.config/swaylock
-ln -sf "$DIR/.config/swaylock/config" ~/.config/swaylock/config
 
 # Locker
+mkdir -p ~/.config/swaylock
+ln -sf "$DIR/.config/swaylock/config" ~/.config/swaylock/config
 mkdir -p ~/.local/bin
 ln -sf "$DIR/.local/bin/lock" ~/.local/bin/lock
 
@@ -41,31 +44,10 @@ ln -sf "$DIR/.config/lf/preview" ~/.config/lf/preview
 mkdir -p ~/.config/alacritty
 ln -sf "$DIR/.config/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.yml
 
-# Text Editor
+# Editor
 mkdir -p ~/.config/nvim
 ln -sf "$DIR/.config/nvim/init.lua" ~/.config/nvim/init.lua
 ln -sf "$DIR/.config/nvim/lua" ~/.config/nvim/lua
-
-# File Manager
-mkdir -p ~/.config/ranger
-ln -sf "$DIR/.config/ranger/rc.conf" ~/.config/ranger/rc.conf
-ln -sf "$DIR/.config/ranger/rifle.conf" ~/.config/ranger/rifle.conf
-ln -sf "$DIR/.config/ranger/scope.sh" ~/.config/ranger/scope.sh
-
-# Music Player
-mkdir -p ~/.config/spotifyd
-ln -sf "$DIR/.config/spotifyd/spotifyd.conf" ~/.config/spotifyd/spotifyd.conf
-mkdir -p ~/.config/spotify-tui
-ln -sf "$DIR/.config/spotify-tui/config.yml" ~/.config/spotify-tui/config.yml
-
-# Vimb
-mkdir -p ~/.config/vimb
-ln -sf "$DIR/.config/vimb/config" ~/.config/vimb/config
-ln -sf "$DIR/.config/vimb/style.css" ~/.config/vimb/style.css
-
-# Custom Services
-mkdir -p ~/.config/systemd/user
-ln -sf "$DIR/.config/systemd/user/spotifyd.service" ~/.config/systemd/user/spotifyd.service
 
 # Browser
 ln -sf "$DIR/.config/brave-flags.conf" ~/.config/brave-flags.conf

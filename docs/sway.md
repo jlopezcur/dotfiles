@@ -81,3 +81,4 @@ The Mod key is <kbd>Win</kbd>
 ## References
 
 - https://github.com/naibaf0/dotfiles
+- https://github.com/jvanbruegge/dotfiles
