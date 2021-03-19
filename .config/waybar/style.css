@@ -1,24 +1,31 @@
 * {
   border: none;
   border-radius: 0;
-	font-size: 16px;
-	font-family: SauceCodePro Nerd Font;
+  font-size: 16px;
+  font-family: SauceCodePro Nerd Font;
 }
 
 window#waybar {
-	background: rgba(0, 0, 0, 0.8);
-	color: #888;
+  background: rgba(0, 0, 0, 0.8);
+  color: #888;
+}
+
+window#waybar.top {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+window#waybar.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 #workspaces button {
-	padding: 0 5px;
+  padding: 0 5px;
   background: transparent;
-	color: #fdf6e3;
+  color: #fdf6e3;
   border-bottom: 4px solid transparent;
 }
 #workspaces button.focused {
-	color: #268bd2;
+  color: #268bd2;
   border-bottom: 4px solid #268bd2;
 }
 
@@ -30,15 +37,12 @@ window#waybar {
 #custom-updates,
 #temperature,
 #bluetooth,
+#network,
 #idle_inhibitor {
-	padding-right: 10px;
+  padding: 0 15px;
 }
 #battery {
-	padding-right: 15px;
-}
-
-#network {
-	padding: 0 5px 0 0;
+  padding-right: 25px;
 }
 
 #window {

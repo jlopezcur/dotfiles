@@ -1,28 +1,61 @@
-{
+[{
   "position": "top",
-
-  "modules-left": [
-    "sway/workspaces",
-    "sway/window",
-  ],
-
-  "modules-center": [
-    "clock#1",
-    "clock#2"
-  ],
-
+  "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+  "modules-center": ["clock#1", "clock#2"],
   "modules-right": [
     "custom/updates",
     "pulseaudio",
-    "memory",
-    "cpu",
-    "temperature",
-    "disk",
-    "battery",
-    "network#2",
-    "network#1",
     "idle_inhibitor",
   ],
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "format": "{icon}",
+    "format-icons": {
+      "urgent": ""
+    }
+  },
+
+  "sway/mode": {
+    "format": " {}",
+    "max-length": 50
+  },
+
+  "sway/window": {
+    "format": "{}",
+    "max-length": 50
+  },
+
+  "clock#1": {
+    "format": " {:%a, %d/%m/%Y}",
+    "tooltip-format": "{calendar}"
+  },
+
+  "clock#2": {
+    "format": " {:%H:%M}"
+  },
+
+  "custom/updates": {
+    "format": " {}",
+    "exec": "checkupdates | wc -l",
+    "interval": 30
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume:2}% {format_source}",
+    "format-bluetooth": "{icon} {volume}%  {format_source}",
+    "format-muted": "MUTE",
+    "format-icons": {
+      "headphones": "",
+      "headset": "",
+      "default": ["", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pamixer -t",
+    "on-click-right": "alacritty -e ncpamixer",
+    "format-source": "- ",
+    "format-source-muted": "- "
+  },
 
   "idle_inhibitor": {
     "format": "{icon}",
@@ -31,11 +64,50 @@
       "deactivated": ""
     }
   },
+}, {
+  "position": "bottom",
+  "modules-left": [
+    "memory",
+    "cpu",
+    "temperature",
+    "disk",
+  ],
+  "modules-right": [
+    "network#1",
+    "network#2",
+    "battery",
+  ],
 
-  "custom/updates": {
-    "format": " {}",
-    "exec": "checkupdates | wc -l",
-    "interval": 30
+  "memory": {
+    "interval": 5,
+    "format": " {}%"
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": " {usage:2}%"
+  },
+
+  "temperature": {
+    "format": " {temperatureC}°C"
+  },
+
+  "disk": {
+    "interval": 5,
+    "format": " {percentage_used:2}%",
+    "path": "/",
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-alt": "{time} {icon}",
+    "format-alt-click": "click-right",
+    "format-icons": ["", "", "", "", ""]
   },
 
   "network#1": {
@@ -53,10 +125,6 @@
     "interval": 30
   },
 
-  "temperature": {
-    "format": " {temperatureC}°C"
-  },
-
   "network#2": {
     "format": "{icon}",
     "format-alt": "{ipaddr}/{cidr} {icon}",
@@ -69,68 +137,4 @@
     "on-click": "alacritty -e nmtui",
     "tooltip": false
   },
-
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "format": "{icon}",
-    "format-icons": {
-      "urgent": ""
-    }
-  },
-
-  "sway/window": {
-    "format": "{}",
-    "max-length": 50
-  },
-
-  "clock#1": {
-    "format": " {:%a, %d/%m/%Y}",
-    "tooltip-format": "{calendar}"
-  },
-
-  "clock#2": {
-    "format": " {:%H:%M}"
-  },
-
-  "pulseaudio": {
-    "format": "{icon} {volume:2}%",
-    "format-bluetooth": "{icon} {volume}% ",
-    "format-muted": "MUTE",
-    "format-icons": {
-      "headphones": "",
-      "headset": "",
-      "default": ["", ""]
-    },
-    "scroll-step": 1,
-    "on-click": "pamixer -t",
-    "on-click-right": "alacritty -e ncpamixer"
-  },
-
-  "memory": {
-    "interval": 5,
-    "format": " {}%"
-  },
-
-  "cpu": {
-    "interval": 5,
-    "format": " {usage:2}%"
-  },
-
-  "battery": {
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{capacity}% {icon}",
-    "format-alt": "{time} {icon}",
-    "format-alt-click": "click-right",
-    "format-icons": ["", "", "", "", ""]
-  },
-
-  "disk": {
-    "interval": 5,
-    "format": " {percentage_used:2}%",
-    "path": "/"
-  }
-}
+}]
