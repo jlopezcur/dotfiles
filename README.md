@@ -24,6 +24,7 @@
 - Image Viewer: [imv](https://github.com/eXeC64/imv)
 - Color Picker: [gpick](https://github.com/thezbyg/gpick)
 - Task Manager: [bpytop](https://github.com/aristocratos/bpytop)
+- Monitoring: [glances](https://github.com/nicolargo/glances)
 - Music: [cmus](https://cmus.github.io/)
 - 3D & Video Edition: [blender](https://www.blender.org/)
 - IRC: [irssi](https://irssi.org/)
