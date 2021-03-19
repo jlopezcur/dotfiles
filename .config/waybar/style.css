@@ -15,7 +15,8 @@ window#waybar.top {
 }
 
 window#waybar.bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0,0,0, 0.7);
+  background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
 }
 
 #workspaces button {
