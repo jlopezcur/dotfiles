@@ -18,10 +18,10 @@ ln -sf "$DIR/.config/starship.toml" ~/.config/starship.toml
 ln -sf "$DIR/.gitconfig" ~/.gitconfig
 
 # Window Manager
-ln -sf "$DIR/.config/sway" ~/.config/sway
+ln -sfn "$DIR/.config/sway" ~/.config/sway
 
 # System bar
-ln -sf "$DIR/.config/waybar" ~/.config/waybar
+ln -sfn "$DIR/.config/waybar" ~/.config/waybar
 
 # Notifications
 mkdir -p ~/.config/mako
@@ -45,7 +45,7 @@ ln -sf "$DIR/.config/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.yml
 # Editor
 mkdir -p ~/.config/nvim
 ln -sf "$DIR/.config/nvim/init.lua" ~/.config/nvim/init.lua
-ln -sf "$DIR/.config/nvim/lua" ~/.config/nvim/lua
+ln -sfn "$DIR/.config/nvim/lua" ~/.config/nvim/lua
 
 # Browser
 ln -sf "$DIR/.config/brave-flags.conf" ~/.config/brave-flags.conf
