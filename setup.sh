@@ -21,9 +21,7 @@ ln -sf "$DIR/.gitconfig" ~/.gitconfig
 ln -sf "$DIR/.config/sway" ~/.config/sway
 
 # System bar
-mkdir -p ~/.config/waybar
-ln -sf "$DIR/.config/waybar/config" ~/.config/waybar/config
-ln -sf "$DIR/.config/waybar/style.css" ~/.config/waybar/style.css
+ln -sf "$DIR/.config/waybar" ~/.config/waybar
 
 # Notifications
 mkdir -p ~/.config/mako

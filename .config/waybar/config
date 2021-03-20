@@ -80,13 +80,13 @@
 }, {
   "position": "bottom",
   "modules-left": ["memory", "cpu", "temperature", "disk"],
-  "modules-right": ["custom/updates", "custom/updates2"],
+  "modules-right": ["custom/updates", "custom/updates-aur"],
 
   "memory": { "interval": 5, "format": " {}%" },
   "cpu": { "interval": 5, "format": " {usage:2}%" },
   "temperature": { "format": " {temperatureC}°C" },
   "disk": { "interval": 5, "format": " {percentage_used:2}%", "path": "/" },
 
-  "custom/updates": { "format": " {}", "exec": "checkupdates | wc -l", "interval": 30 },
-  "custom/updates2": { "format": " {}", "exec": "paru -Qua", "interval": 30 },
+  "custom/updates": { "format": " {}", "escape": true, "return-type": "json", "exec": "checkupdates | $HOME/.config/waybar/modules/counter.sh", "interval": 30 },
+  "custom/updates-aur": { "format": " {}", "escape": true, "return-type": "json", "exec": "paru -Qua | $HOME/.config/waybar/modules/counter.sh", "interval": 30 },
 }]

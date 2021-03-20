@@ -30,6 +30,7 @@ window#waybar.bottom {
 #cpu,
 #disk,
 #custom-updates,
+#custom-updates-aur,
 #temperature,
 #bluetooth,
 #network,
@@ -42,3 +43,6 @@ window#waybar.bottom {
 /* Modules status */
 
 #battery.critical { background: red; }
+#custom-updates.one, #custom-updates.many { color: orange; }
+#custom-updates-aur.one, #custom-updates-aur.many { color: orange; }
+
