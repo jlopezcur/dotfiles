@@ -87,6 +87,22 @@
   "temperature": { "format": " {temperatureC}°C" },
   "disk": { "interval": 5, "format": " {percentage_used:2}%", "path": "/" },
 
-  "custom/updates": { "format": " {}", "escape": true, "return-type": "json", "exec": "checkupdates | $HOME/.config/waybar/modules/counter.sh", "interval": 30 },
-  "custom/updates-aur": { "format": " {}", "escape": true, "return-type": "json", "exec": "paru -Qua | $HOME/.config/waybar/modules/counter.sh", "interval": 30 },
+  "custom/updates": {
+    "format": " {}",
+    "format-none": "",
+    "escape": true,
+    "return-type": "json",
+    "exec": "checkupdates | $HOME/.config/waybar/modules/counter.sh",
+    "exec-if": "checkupdates",
+    "interval": 3600
+  },
+  "custom/updates-aur": {
+    "format": " {}",
+    "format-none": "",
+    "escape": true,
+    "return-type": "json",
+    "exec": "paru -Qua | $HOME/.config/waybar/modules/counter.sh",
+    "exec-if": "paru -Qua",
+    "interval": 3600
+  },
 }]
