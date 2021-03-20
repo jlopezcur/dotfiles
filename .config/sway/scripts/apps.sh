@@ -10,7 +10,6 @@ apps=(
   "inkscape"
   "godot"
   "steam"
-  "gpick"
   "grafx2"
   "audacity"
   "celestia"
@@ -30,8 +29,14 @@ apps=(
   "alacritty -e vimiv"
   "alacritty -e nvim"
   "alacritty -e cointop"
+  "alacritty -e glances"
 )
 
 # APP="$(compgen -c | sort -u | sk --reverse --prompt='Run: ')"
-APP=$(printf "\n%s" "${apps[@]}" | sk --reverse --prompt="Run: ")
-swaymsg -t command exec "$APP"
+app=$(printf "\n%s" "${apps[@]}" | sk --reverse --prompt="Run: ")
+
+if [[ $app = "" ]]; then
+  exit
+fi
+
+swaymsg -t command exec "$app"
