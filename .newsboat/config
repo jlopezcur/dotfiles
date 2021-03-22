@@ -5,7 +5,7 @@ max-items 50
 ignore-mode "display"    # Do not show them.
 
 # external browser
-browser "/usr/bin/brave"
+browser "/usr/bin/qutebrowser"
 
 # unbind keys
 unbind-key ENTER
