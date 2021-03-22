@@ -90,7 +90,7 @@ bindsym $mod+c exec grim -g "$(slurp)"
 bindsym $mod+Shift+c kill
 
 # Start your lock
-bindsym $mod+Ctrl+l exec lock
+bindsym $mod+Ctrl+l exec swaylock --screenshots --clock --effect-blur 8x8
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.

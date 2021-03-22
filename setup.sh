@@ -30,8 +30,6 @@ ln -sf "$DIR/.config/mako/config" ~/.config/mako/config
 # Locker
 mkdir -p ~/.config/swaylock
 ln -sf "$DIR/.config/swaylock/config" ~/.config/swaylock/config
-mkdir -p ~/.local/bin
-ln -sf "$DIR/.local/bin/lock" ~/.local/bin/lock
 
 # File manager
 mkdir -p ~/.config/lf

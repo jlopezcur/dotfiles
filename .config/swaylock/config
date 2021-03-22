@@ -4,5 +4,5 @@ indicator-caps-lock
 scaling=fill
 color=000000
 font='mononoki Nerd Font Mono'
-font-size=16
+font-size=32
 indicator-radius=200

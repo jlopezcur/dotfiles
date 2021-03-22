@@ -30,7 +30,7 @@
 - IRC: [irssi](https://irssi.org/)
 - Firewall: [ufw](https://launchpad.net/ufw)
 - Video Recording: [OBS Studio](https://obsproject.com/)
-- Locker: [swaylock](https://github.com/swaywm/swaylock) [:pencil: Notes](docs/locker.md)
+- Locker: [swaylock-effects](https://github.com/mortie/swaylock-effects)
 - Font Preview: [fontpreview](https://github.com/sdushantha/fontpreview)
 - Package Manager: [paru](https://github.com/morganamilo/paru)
 - Languages Info: [tokei](https://github.com/XAMPPRocky/tokei)
