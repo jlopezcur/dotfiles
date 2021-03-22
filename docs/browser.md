@@ -1,5 +1,9 @@
 # Browser
 
+## Qutebrowser
+
+- qt5-webengine-widevine
+
 ## Brave
 
 For enabled the **lighthouse** we have to enabled the
