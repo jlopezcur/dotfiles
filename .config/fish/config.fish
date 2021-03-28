@@ -22,7 +22,7 @@
 # Set default programs
 set EDITOR "nvim"
 set VISUAL "nvim"
-set BROWSER "brave"
+set BROWSER "qutebrowser"
 set PAGER "less"
 set -x MANPAGER "nvim -c 'set ft=man' -"
 
