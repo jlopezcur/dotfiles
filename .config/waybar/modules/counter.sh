@@ -7,8 +7,8 @@ if [[ $list = "" ]]; then
   exit
 fi
 
-count=$(echo $list | wc -l)
-plainlist="$(echo $list | sed ':a; N; $!ba; s/\n/\\n/g')"
+count=$(echo "$list" | wc -l)
+plainlist="$(echo "$list" | sed ':a; N; $!ba; s/\n/\\n/g')"
 
 if [[ "$count" -eq 0 ]]; then
   class="none"
@@ -20,4 +20,5 @@ else
   class="unknown"
 fi
 
-printf '{"text":"%s", "class":"%s", "alt":"%s", "tooltip":"%s"}\n' "$count" "$class" "$class" "$plainlist"
+printf '{"text":"%s", "class":"%s", "alt":"%s", "tooltip":"%s"}\n' \
+    "$count" "$class" "$class" "$plainlist" | jq --unbuffered --compact-output
