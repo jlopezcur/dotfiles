@@ -10,6 +10,8 @@ ln -sf "$DIR/.config/fish/config.fish" ~/.config/fish/config.fish
 ln -sf "$DIR/.config/fish/aliases.fish" ~/.config/fish/aliases.fish
 mkdir -p ~/.config/fish/conf.d
 ln -sf "$DIR/.config/fish/conf.d/sway.fish" ~/.config/fish/conf.d/sway.fish
+ln -sf "$DIR/.config/fish/conf.d/bangbang.fish" ~/.config/fish/conf.d/bangbang.fish
+ln -sf "$DIR/.config/fish/conf.d/lf.fish" ~/.config/fish/conf.d/lf.fish
 
 # Starship
 ln -sf "$DIR/.config/starship.toml" ~/.config/starship.toml
@@ -49,9 +51,9 @@ ln -sfn "$DIR/.config/nvim/lua" ~/.config/nvim/lua
 ln -sf "$DIR/.config/brave-flags.conf" ~/.config/brave-flags.conf
 
 # Newsboat
-mkdir -p ~/.newsboat
-ln -sf "$DIR/.newsboat/config" ~/.newsboat/config
-ln -sf "$DIR/.newsboat/urls" ~/.newsboat/urls
+mkdir -p ~/.config/newsboat
+ln -sf "$DIR/.config/newsboat/config" ~/.config/newsboat/config
+ln -sf "$DIR/.config/newsboat/urls" ~/.config/newsboat/urls
 
 echo "DONE!"
 

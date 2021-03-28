@@ -1,26 +1,38 @@
-# Friends
+" "
+"-- Friends --"
 https://trigoporres.github.io/itnasBlog/rss
 
-# Godot
+" "
+"-- Godot --"
 https://godotengine.org/rss.xml
 
-# Neovim
+" "
+"-- Neovim --"
 https://neovim.io/news.xml
 
-# i3wm/sway
+" "
+"-- i3/sway --"
 https://www.reddit.com/r/i3wm/.rss?format=xml
 https://www.reddit.com/r/swaywm/.rss?format=xml
 
-# React/Javascript
+" "
+"-- react/js --"
 https://davidwalsh.name/feed
 https://www.youtube.com/feeds/videos.xml?user=jsconfeu
 http://feeds.feedburner.com/2ality
 https://reactjs.org/feed.xml
-
+https://storybook.js.org/blog/sitemap.xml
 https://madewithreact.com/rss/
-http://www.concordsoftwareandexecutiveconsulting.com/wordpress/wordpress/feed/
 https://www.reddit.com/r/reactjs/.rss?format=xml
 https://feeds.feedburner.com/ReactjsComponents
+
+" "
+"-- tech talks --"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg
+
+" "
+"-- uncategorized --"
 https://blog.reactnativecoach.com/feed
 https://reactsharing.com/feed
 http://blog.koalite.com/tag/reactjs/feed/
@@ -28,7 +40,6 @@ http://www.infoworld.com/category/javascript/index.rss
 http://blog.rust-lang.org/feed.xml
 https://www.reddit.com/r/javascript/.rss?format=xml
 https://www.echojs.com/rss
-https://www.emberjs.com/blog/feed.xml?format=xml
 https://www.bennadel.com/index.cfm?event=blog.rss
 https://www.jqwidgets.com/feed/
 https://blog.meteor.com/feed

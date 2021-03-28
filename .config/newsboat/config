@@ -23,5 +23,8 @@ bind-key h quit
 # Theme
 include /usr/share/doc/newsboat/contrib/colorschemes/solarized-dark
 
+# For categories (luke smith)
+highlight all "--.*--" yellow
+highlight feedlist ".*(0/0))" black
 
 
