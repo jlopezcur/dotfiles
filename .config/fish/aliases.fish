@@ -27,6 +27,9 @@ alias ls "exa"
 alias cat "bat"
 alias find "fd"
 alias ps "procs"
+abbr -a -g ... ../..
+abbr -a -g .... ../../..
+abbr -a -g ..... ../../../..
 
 # Git
 
