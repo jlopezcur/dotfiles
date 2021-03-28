@@ -7,9 +7,6 @@
   "sway/workspaces": {
     "disable-scroll": true,
     "format": "{icon}",
-    "format-icons": {
-      "urgent": ""
-    }
   },
 
   "sway/mode": { "format": " {}", "max-length": 50 },

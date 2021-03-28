@@ -21,6 +21,7 @@ window#waybar.bottom {
 
 #workspaces button { padding: 0 5px; background: transparent; color: #fdf6e3; }
 #workspaces button.focused { color: #ccc; background: rgba(38,139,210, 0.7); }
+#workspaces button.urgent { background: rgba(214,93,14, 0.7); }
 
 /* Modules padding */
 
