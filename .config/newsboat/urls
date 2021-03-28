@@ -7,29 +7,34 @@ https://trigoporres.github.io/itnasBlog/rss
 https://godotengine.org/rss.xml
 
 " "
+"-- Linux --"
+https://www.linuxjournal.com/news/feed
+
+" "
 "-- Neovim --"
 https://neovim.io/news.xml
+https://github.com/neovim/neovim/commits/master.atom "~ Neovim"
 
 " "
 "-- i3/sway --"
-https://www.reddit.com/r/i3wm/.rss?format=xml
-https://www.reddit.com/r/swaywm/.rss?format=xml
+https://www.reddit.com/r/i3wm.rss "~ r/i3wm"
+https://www.reddit.com/r/swaywm.rss "~ r/SwayWM"
 
 " "
 "-- react/js --"
 https://davidwalsh.name/feed
-https://www.youtube.com/feeds/videos.xml?user=jsconfeu
+https://www.youtube.com/feeds/videos.xml?user=jsconfeu "~ JSConf"
 http://feeds.feedburner.com/2ality
 https://reactjs.org/feed.xml
-https://storybook.js.org/blog/sitemap.xml
+https://storybook.js.org/blog/rss/
 https://madewithreact.com/rss/
-https://www.reddit.com/r/reactjs/.rss?format=xml
+https://www.reddit.com/r/reactjs.rss "~ r/ReactJS"
 https://feeds.feedburner.com/ReactjsComponents
 
 " "
 "-- tech talks --"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA
-https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~ Luke Smith"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~ Distrotube"
 
 " "
 "-- uncategorized --"

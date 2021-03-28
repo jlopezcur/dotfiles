@@ -1,5 +1,5 @@
 # general settings
-auto-reload yes
+auto-reload no
 max-items 50
 # ignore-mode "download" # Default: Delete them.
 ignore-mode "display"    # Do not show them.
@@ -26,5 +26,8 @@ include /usr/share/doc/newsboat/contrib/colorschemes/solarized-dark
 # For categories (luke smith)
 highlight all "--.*--" yellow
 highlight feedlist ".*(0/0))" black
+
+highlight all "" red default
+highlight all "" yellow default
 
 
