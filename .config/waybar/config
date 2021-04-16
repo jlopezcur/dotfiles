@@ -2,7 +2,7 @@
   "position": "top",
   "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
   "modules-center": ["clock#1", "clock#2"],
-  "modules-right": ["network#1", "network#2", "pulseaudio", "idle_inhibitor", "battery"],
+  "modules-right": ["network#1", "network#2", "pulseaudio", "backlight", "idle_inhibitor", "battery"],
 
   "sway/workspaces": {
     "disable-scroll": true,
@@ -46,10 +46,14 @@
   "pulseaudio": {
     "format": "{icon} {volume:2}% {format_source}",
     "format-bluetooth": "{icon} {volume}%  {format_source}",
-    "format-muted": "MUTE",
+    "format-muted": "ﱝ {format_source}",
     "format-icons": {
       "headphones": "",
+      "hands-free": "",
       "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
       "default": ["", ""]
     },
     "scroll-step": 1,
@@ -57,6 +61,16 @@
     "on-click-right": "alacritty -e ncpamixer",
     "format-source": "",
     "format-source-muted": ""
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-alt-click": "click-right",
+    //"format-icons": ["", ""],
+    //"format-icons": ["", ""],
+    "format-icons": ["", ""],
+    "on-scroll-down": "light -A 1",
+    "on-scroll-up": "light -U 1"
   },
 
   "idle_inhibitor": {
@@ -91,7 +105,9 @@
     "return-type": "json",
     "exec": "checkupdates | $HOME/.config/waybar/modules/counter.sh",
     "exec-if": "checkupdates",
-    "interval": 3600
+    "interval": 3600,
+    "signal": 8,
+    "on-click": "alacritty -e paru && pkill -SIGRTMIN+8 waybar",
   },
   "custom/updates-aur": {
     "format": " {}",
@@ -100,6 +116,8 @@
     "return-type": "json",
     "exec": "paru -Qua | $HOME/.config/waybar/modules/counter.sh",
     "exec-if": "paru -Qua",
-    "interval": 3600
+    "interval": 3600,
+    "signal": 8,
+    "on-click": "alacritty -e paru && pkill -SIGRTMIN+8 waybar",
   },
 }]
