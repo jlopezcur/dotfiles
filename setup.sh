@@ -22,6 +22,9 @@ ln -sf "$DIR/.gitconfig" ~/.gitconfig
 # Window Manager
 ln -sfn "$DIR/.config/sway" ~/.config/sway
 
+# Launcher
+ln -sfn "$DIR/.config/sway-launcher-desktop" ~/.config/sway-launcher-desktop
+
 # System bar
 ln -sfn "$DIR/.config/waybar" ~/.config/waybar
 
