@@ -1,5 +1,6 @@
 # general settings
 auto-reload no
+reload-threads 100
 max-items 50
 # ignore-mode "download" # Default: Delete them.
 ignore-mode "display"    # Do not show them.
@@ -23,11 +24,13 @@ bind-key h quit
 # Theme
 include /usr/share/doc/newsboat/contrib/colorschemes/solarized-dark
 
-# For categories (luke smith)
-highlight all "--.*--" yellow
-highlight feedlist ".*(0/0))" black
+# Subheadings
+highlight feedlist "--.*--" yellow default bold
+highlight feedlist ".*(0/0))" default default invis
 
 highlight all "" red default
 highlight all "" yellow default
 
+# Macros
 
+macro y set browser "mpv %u" ; open-in-browser ; set browser "elinks %u"

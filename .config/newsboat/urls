@@ -1,19 +1,19 @@
 " "
-"-- Friends --"
+"-- friends --"
 https://trigoporres.github.io/itnasBlog/rss
 
 " "
-"-- Godot --"
+"-- godot --"
 https://godotengine.org/rss.xml
 
 " "
-"-- Linux --"
+"-- linux --"
 https://www.linuxjournal.com/news/feed
 
 " "
-"-- Neovim --"
-https://neovim.io/news.xml
-https://github.com/neovim/neovim/commits/master.atom "~ Neovim"
+"-- neovim --"
+https://neovim.io/news.xml neovim
+https://github.com/neovim/neovim/commits/master.atom neovim "~ Neovim"
 
 " "
 "-- i3/sway --"
@@ -24,6 +24,7 @@ https://www.reddit.com/r/swaywm.rss "~ r/SwayWM"
 "-- react/js --"
 https://davidwalsh.name/feed
 https://www.youtube.com/feeds/videos.xml?user=jsconfeu "~ JSConf"
+https://www.reddit.com/r/javascript/.rss?format=xml "~ r/javascript"
 http://feeds.feedburner.com/2ality
 https://reactjs.org/feed.xml
 https://storybook.js.org/blog/rss/
@@ -35,15 +36,24 @@ https://feeds.feedburner.com/ReactjsComponents
 "-- tech talks --"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~ Luke Smith"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~ Distrotube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "~ Brodie Robertson"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC5UAwBUum7CPN5buc-_N1Fw "~ The Linux Experiment"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCkf4VIqu3Acnfzuk3kRIFwA "~ gotbletu"
+
+" "
+"-- philosofy --"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC_ip4-o4YpaINBPNE1eb91A "~ Entelekia Filosofik"
+
+" "
+"-- games --"
+https://blog.ncase.me/rss/
 
 " "
 "-- uncategorized --"
 https://blog.reactnativecoach.com/feed
-https://reactsharing.com/feed
 http://blog.koalite.com/tag/reactjs/feed/
 http://www.infoworld.com/category/javascript/index.rss
 http://blog.rust-lang.org/feed.xml
-https://www.reddit.com/r/javascript/.rss?format=xml
 https://www.echojs.com/rss
 https://www.bennadel.com/index.cfm?event=blog.rss
 https://www.jqwidgets.com/feed/
@@ -57,7 +67,6 @@ http://javascriptweekly.com/rss
 https://www.dasjs.com/feed
 https://writingjavascript.com/rss.xml
 http://feeds.feedburner.com/TheJavascriptPlayground/?x=1
-https://nodexperts.com/blog/feed/
 https://thejavascriptninja.com/feed/
 https://www.javascriptsearch.com/rss_xmls/3_rss.xml
 https://theapicompany.com/blog/feed/
