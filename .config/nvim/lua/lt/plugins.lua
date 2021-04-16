@@ -64,6 +64,7 @@ return require('packer').startup(function()
   use 'tpope/vim-surround' -- https://github.com/tpope/vim-surround
   use 'brooth/far.vim' -- https://github.com/brooth/far.vim
   use 'ojroques/nvim-bufdel' -- https://github.com/ojroques/nvim-bufdel
+  use 'mhinz/vim-startify' -- https://github.com/mhinz/vim-startify
 
   --
   -- test & debug
