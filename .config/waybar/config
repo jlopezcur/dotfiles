@@ -93,8 +93,8 @@
   "modules-left": ["memory", "cpu", "temperature", "disk"],
   "modules-right": ["custom/updates", "custom/updates-aur"],
 
-  "memory": { "interval": 5, "format": " {}%" },
-  "cpu": { "interval": 5, "format": " {usage:2}%" },
+  "memory": { "interval": 5, "format": " {}% ({used:0.1f}G)" },
+  "cpu": { "interval": 5, "format": " {usage:2}%" },
   "temperature": { "format": " {temperatureC}°C" },
   "disk": { "interval": 5, "format": " {percentage_used:2}%", "path": "/" },
 
