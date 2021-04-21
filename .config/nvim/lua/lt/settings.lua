@@ -3,6 +3,7 @@
 --
 
 vim.o.showmode = false
+vim.o.title = true
 
 vim.o.path = ".,**"
 vim.o.encoding = "UTF-8"
