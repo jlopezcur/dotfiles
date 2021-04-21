@@ -1,10 +1,6 @@
-local treesitter = require'nvim-treesitter.configs'
-
-treesitter.setup {
+require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
-  highlight = {
-    enable = true,
-  },
+  highlight = { enable = true },
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -14,8 +10,7 @@ treesitter.setup {
       node_decremental = "grm",
     },
   },
-  indent = {
-    enable = true,
-  },
+  indent = { enable = true },
+  autotag = { enable = true },
 }
 
