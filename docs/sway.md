@@ -14,15 +14,16 @@
 - [brightness-ctl](https://github.com/Hummer12007/brightnessctl)
 - [player-ctl](https://github.com/altdesktop/playerctl)
 - [slurp](https://github.com/emersion/slurp)
+- [autotiling](https://github.com/nwg-piotr/autotiling)
 
 ```sh
-yay -S waybar alacritty bemenu gammastep mako swaylock swayidle grim pulseaudioctl brightnessctl playerctl
+paru waybar alacritty gammastep sway-launcher-desktop mako swaylock swayidle grim pulseaudioctl brightnessctl playerctl autotiling-git
 ```
 
 ## Install
 
 ```sh
-yay -S sway
+paru sway
 ```
 
 ## Keybindings
