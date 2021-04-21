@@ -95,3 +95,8 @@ vim.cmd("nnoremap <Leader>e :e $MYVIMRC<CR>")
 vim.cmd('autocmd bufenter *.png,*.jpg,*.jpeg,*.gif exec "!imv \'".expand("%")."\' &" | :bd')
 vim.cmd('autocmd bufenter *.pdf exec "!zathura \'".expand("%")."\' &" | :bw')
 
+--
+-- Visual editor integration
+--
+
+vim.o.guifont = "SauceCodePro Nerd Font"
