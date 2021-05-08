@@ -12,7 +12,11 @@
   "sway/mode": { "format": " {}", "max-length": 50 },
   "sway/window": { "format": "{}", "max-length": 50 },
 
-  "clock#1": { "format": " {:%a, %d/%m/%Y}", "tooltip-format": "{calendar}" },
+  "clock#1": {
+    "format": " {:%a, %d/%m/%Y}",
+    "tooltip-format": "{calendar}",
+    "on-click": "alacritty -e calcurse",
+  },
   "clock#2": { "format": " {:%H:%M}" },
 
   "network#1": {
