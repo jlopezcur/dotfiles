@@ -32,15 +32,16 @@ return require('packer').startup(function()
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets' -- https://github.com/honza/vim-snippets
 
-  --
-  -- highlighting & colors
-  --
+  -- Theme
+  use 'folke/tokyonight.nvim'
 
-  use 'sainnhe/gruvbox-material'
+  -- Line
   use {
     'hoob3rt/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
+
+  -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'romgrk/nvim-treesitter-context'
 
