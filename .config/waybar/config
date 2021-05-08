@@ -69,12 +69,9 @@
 
   "backlight": {
     "format": "{icon} {percent}%",
-    "format-alt-click": "click-right",
-    //"format-icons": ["", ""],
-    //"format-icons": ["", ""],
-    "format-icons": ["", ""],
-    "on-scroll-down": "light -A 1",
-    "on-scroll-up": "light -U 1"
+    "format-icons": ["","","","","","",""],
+    "on-scroll-down": "light -U 1",
+    "on-scroll-up": "light -A 1"
   },
 
   "idle_inhibitor": {
