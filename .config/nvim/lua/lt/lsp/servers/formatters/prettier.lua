@@ -1,6 +1,4 @@
-local prettier  = {
-  formatCommand = "./node_modules/.bin/prettier --stdin --stdin-filepath ${INPUT}",
+return {
+  formatCommand = 'prettier --find-config-path --stdin-filepath ${INPUT}',
   formatStdin = true
 }
-
-return prettier
