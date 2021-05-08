@@ -50,7 +50,7 @@
   "pulseaudio": {
     "format": "{icon} {volume:2}% {format_source}",
     "format-bluetooth": "{icon} {volume}%  {format_source}",
-    "format-muted": "ﱝ {format_source}",
+    "format-muted": "{icon} --% {format_source}",
     "format-icons": {
       "headphones": "",
       "hands-free": "",
@@ -58,7 +58,7 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", ""]
+      "default": ""
     },
     "scroll-step": 1,
     "on-click": "pamixer -t",
