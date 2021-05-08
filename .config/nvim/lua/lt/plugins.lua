@@ -9,10 +9,8 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute 'packadd packer.nvim'
 end
 
-vim.cmd('autocmd BufWritePost plugins.lua PackerCompile')
-
 vim.cmd [[packadd packer.nvim]]
--- vim._update_package_paths()
+vim.cmd('autocmd BufWritePost plugins.lua PackerCompile')
 
 return require('packer').startup(function()
   -- Packer can manage itself as an optional plugin
@@ -49,23 +47,45 @@ return require('packer').startup(function()
   -- file management
   --
 
-  use 'nvim-lua/popup.nvim'
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-fzy-native.nvim'
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+  }
+
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' } -- https://github.com/iamcco/markdown-preview.nvim
   use 'justinmk/vim-dirvish' -- https://github.com/justinmk/vim-dirvish
 
   -- ---------------------------------------------------------------------------
 
-  use 'tpope/vim-commentary' -- https://github.com/tpope/vim-commentary
-  use 'suy/vim-context-commentstring' -- https://github.com/suy/vim-context-commentstring
+  -- Comments
+  use 'terrortylor/nvim-comment'
+  require('nvim_comment').setup()
+
+  -- Pears
+  use 'steelsojka/pears.nvim'
+  require('pears').setup()
+
+  -- Indent Guides
+  -- use 'glepnir/indent-guides.nvim'
+  -- require('indent_guides').setup()
+
   -- use 'tpope/vim-dispatch'
   use 'vimwiki/vimwiki' -- https://github.com/vimwiki/vimwiki
   use 'tpope/vim-surround' -- https://github.com/tpope/vim-surround
   use 'brooth/far.vim' -- https://github.com/brooth/far.vim
   use 'ojroques/nvim-bufdel' -- https://github.com/ojroques/nvim-bufdel
   use 'mhinz/vim-startify' -- https://github.com/mhinz/vim-startify
+  use {
+    'folke/which-key.nvim',
+    config = function() require('which-key').setup {} end
+  }
+
+  use {
+    'lewis6991/spellsitter.nvim',
+    config = function()
+      require('spellsitter').setup()
+    end
+  }
 
   --
   -- test & debug
@@ -81,7 +101,11 @@ return require('packer').startup(function()
   --
 
   use 'tpope/vim-fugitive' -- https://github.com/tpope/vim-fugitive
-  use 'lewis6991/gitsigns.nvim'
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {'nvim-lua/plenary.nvim'},
+    config = function() require('gitsigns').setup() end
+  }
   use 'rhysd/git-messenger.vim' -- https://github.com/rhysd/git-messenger.vim
   use 'f-person/git-blame.nvim' -- https://github.com/f-person/git-blame.nvim
 end)
