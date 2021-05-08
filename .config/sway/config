@@ -266,6 +266,8 @@ smart_gaps on
 focus_follows_mouse no
 hide_edge_borders smart
 
+for_window [shell="xwayland"] title_format "%title [XWayland]"
+
 # ------------------------------------------------------------------------------
 
 include /etc/sway/config.d/*
