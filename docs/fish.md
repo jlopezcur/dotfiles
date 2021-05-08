@@ -20,6 +20,7 @@ chsh -s /usr/bin/fish
 ```
 fisher add jethrokuan/fzf
 fisher add jorgebucaran/nvm.fish
+fisher add jethrokuan/z
 ```
 
 - **nvm:** The nvm plugin will install its own nvm installation. After that we
