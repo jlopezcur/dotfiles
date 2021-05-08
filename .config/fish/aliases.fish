@@ -19,7 +19,7 @@
 #                ///-._ _ _ _ _ _ _}^ - - - - ~                     ~-- ,.-~
 #                                                                   /.-~
 
-abbr -a -g l ls -alh
+abbr -a -g l ls -alh --icons
 abbr -a -g vim nvim
 
 alias myip "curl http://ipecho.net/plain; echo"
