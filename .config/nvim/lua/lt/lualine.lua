@@ -1,18 +1,14 @@
 require('lualine').setup({
-  options = {
-    theme = 'gruvbox_material'
-  },
+  options = { theme = 'tokyonight' },
   extensions = {
     'fugitive'
   },
-  -- sections = {
-  --   lualine_c = {
-  --     {
-  --       'filename',
-  --       file_status = true,
-  --       full_path = true,
-  --       shorten = false
-  --     }
-  --   }
-  -- }
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch'},
+    lualine_c = {{'diagnostic', sources = {'nvim_lsp'}}, {'filename'}},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'},
+  }
 })
