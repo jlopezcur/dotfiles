@@ -42,9 +42,6 @@ exec gammastep -l 40.241111:-3.699444
 # Mako notification manager
 exec mako
 
-# Added autotiling
-exec autotiling
-
 # Drive auto mounter
 exec udiskie
 
