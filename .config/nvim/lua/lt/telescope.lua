@@ -1,23 +1,10 @@
-local actions = require('telescope.actions')
 local map = vim.api.nvim_set_keymap
 
 require('telescope').setup {
   defaults = {
-    file_sorter = require('telescope.sorters').get_fzy_sorter,
     prompt_prefix = ' ﮊ ',
-
-    flie_previewer = require('telescope.previewers').vim_buffer_cat.new,
-    grep_previewer = require('telescope.previewers').vim_buffer_vimgrep.new,
   },
-  extensions = {
-    fzy_native = {
-      override_generic_sorter = false,
-      override_file_sorter = true,
-    }
-  }
 }
-
-require('telescope').load_extension('fzy_native')
 
 options = { noremap = true }
 map('n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files()<CR>", options)
