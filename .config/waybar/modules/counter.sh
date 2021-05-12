@@ -2,7 +2,7 @@
 
 list=$(cat)
 
-if [[ $list = "" ]]; then
+if [ "$list" = "" ]; then
   printf '{"text":"", "class":"none", "alt":"none", "tooltip":""}\n'
   exit
 fi
@@ -10,11 +10,11 @@ fi
 count=$(echo "$list" | wc -l)
 plainlist="$(echo "$list" | sed ':a; N; $!ba; s/\n/\\n/g')"
 
-if [[ "$count" -eq 0 ]]; then
+if [ "$count" -eq 0 ]; then
   class="none"
-elif [[ "$count" -eq 1 ]]; then
+elif [ "$count" -eq 1 ]; then
   class="one"
-elif [[ "$count" -gt 1 ]]; then
+elif [ "$count" -gt 1 ]; then
   class="many"
 else
   class="unknown"
