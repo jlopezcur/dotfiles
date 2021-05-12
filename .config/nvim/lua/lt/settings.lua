@@ -100,4 +100,11 @@ vim.cmd('autocmd bufenter *.pdf exec "!zathura \'".expand("%")."\' &" | :bw')
 -- Visual editor integration
 --
 
-vim.o.guifont = "SauceCodePro Nerd Font"
+vim.o.guifont = "SauceCodePro Nerd Font:h15"
+
+--
+-- Netrw
+--
+
+vim.g.netrw_bufsettings = 'noma nomod relnu nobl nowrap ro'
+vim.g.netrw_fastbrowse = 0

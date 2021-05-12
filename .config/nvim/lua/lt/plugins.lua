@@ -52,7 +52,7 @@ return require('packer').startup(function()
   }
 
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' } -- https://github.com/iamcco/markdown-preview.nvim
-  use 'justinmk/vim-dirvish' -- https://github.com/justinmk/vim-dirvish
+  use 'tpope/vim-vinegar' -- https://github.com/tpope/vim-vinegar
 
   -- ---------------------------------------------------------------------------
 
