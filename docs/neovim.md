@@ -28,7 +28,7 @@ sudo make install
 
 Using LSP needs some manual installation for several languages:
 
-- tsserver: `npm i -g typescript typescript-language-server`
+- tsserver: `npm i -g typescript typescript-language-server prettier eslint_d`
 - texlab: `yay -S texlive-core texlab`
 - rust: `rustup component add rls rust-analysis rust-src` https://github.com/rust-lang/rls
 - python: `pip install python-language-server`
@@ -47,3 +47,4 @@ Using LSP needs some manual installation for several languages:
 - [tree-sitter tracking issue](https://github.com/neovim/neovim/issues/11724)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- https://github.com/ecosse3/nvim
