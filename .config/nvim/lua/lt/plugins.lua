@@ -41,7 +41,6 @@ return require('packer').startup(function()
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'romgrk/nvim-treesitter-context'
 
   --
   -- file management
