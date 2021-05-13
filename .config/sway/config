@@ -84,6 +84,10 @@ for_window [app_id="top"] move to scratchpad; [app_id="top"] scratchpad show; [a
 # screen capture
 bindsym $mod+c exec grim -g "$(slurp)"
 
+# gif capture
+bindsym $mod+g exec $term --class capturer --title "Create gif" -e create-gif
+for_window [app_id="^capturer$"] floating enable, sticky enable, resize set 30 ppt 5 ppt, border pixel 10, move position 3 ppt 90 ppt
+
 # basics
 # ======
 

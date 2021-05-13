@@ -58,6 +58,9 @@ mkdir -p ~/.config/newsboat
 ln -sf "$DIR/.config/newsboat/config" ~/.config/newsboat/config
 ln -sf "$DIR/.config/newsboat/urls" ~/.config/newsboat/urls
 
+# Scripts
+ln -sf "$DIR/.local/bin/create-gif" ~/.local/bin/create-gif
+
 echo "DONE!"
 
 
