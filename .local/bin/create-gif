@@ -2,5 +2,5 @@
 
 read -p "Press Enter to start" </dev/tty
 wf-recorder -g "$(slurp)" -f /tmp/recording.mp4
-ffmpeg -i /tmp/recording.mp4 -vf fps=5,smartblur=ls=-0.5,crop=iw:ih-2:0:0 ~/video/recording.gif
+ffmpeg -i /tmp/recording.mp4 -vf fps=5,smartblur=ls=-0.5,crop=iw:ih-2:0:0 -y ~/video/recording.gif
 
