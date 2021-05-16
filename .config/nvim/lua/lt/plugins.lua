@@ -26,7 +26,6 @@ return require('packer').startup(function()
   use 'nvim-lua/lsp-status.nvim'
   use 'onsails/lspkind-nvim'
   use 'hrsh7th/nvim-compe'
-  use 'nvim-lua/completion-nvim' -- https://github.com/nvim-lua/completion-nvim
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets' -- https://github.com/honza/vim-snippets
 
