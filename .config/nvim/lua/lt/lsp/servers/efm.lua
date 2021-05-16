@@ -4,6 +4,7 @@ local functions = require "lt.utils.functions"
 local luafmt = require "lt.lsp.servers.formatters.luafmt"
 local prettier = require "lt.lsp.servers.formatters.prettier"
 local eslint_d = require "lt.lsp.servers.linters.eslint_d"
+local shellcheck = require "lt.lsp.servers.linters.shellcheck"
 
 local languages = {
   lua = {luafmt},
@@ -19,6 +20,7 @@ local languages = {
   scss = {prettier},
   css = {prettier},
   markdown = {prettier},
+  sh = {shellcheck},
 }
 
 local function eslint_config_exists()
