@@ -15,24 +15,22 @@ return require('packer').startup(function()
   -- Packer can manage itself as an optional plugin
   use { 'wbthomason/packer.nvim', opt = true }
 
-  --
   -- lsp
-  --
-
   use 'neovim/nvim-lspconfig'
   use 'anott03/nvim-lspinstall'
   use 'tjdevries/nlua.nvim'
   use 'glepnir/lspsaga.nvim'
   use 'nvim-lua/lsp-status.nvim'
-  use 'onsails/lspkind-nvim'
   use 'hrsh7th/nvim-compe'
+
+  -- snippets
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets' -- https://github.com/honza/vim-snippets
 
-  -- Theme
+  -- theme
   use 'folke/tokyonight.nvim'
 
-  -- Line
+  -- line
   use {
     'hoob3rt/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
@@ -40,20 +38,24 @@ return require('packer').startup(function()
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use {
+    'lewis6991/spellsitter.nvim',
+    config = function()
+      require('spellsitter').setup()
+    end
+  }
 
-  --
-  -- file management
-  --
-
+  -- fzf
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
   }
 
+  -- markdown preview
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' } -- https://github.com/iamcco/markdown-preview.nvim
-  use 'tpope/vim-vinegar' -- https://github.com/tpope/vim-vinegar
 
-  -- ---------------------------------------------------------------------------
+  -- file manager
+  use 'tpope/vim-vinegar' -- https://github.com/tpope/vim-vinegar
 
   -- Comments
   use 'terrortylor/nvim-comment'
@@ -63,41 +65,38 @@ return require('packer').startup(function()
   use 'steelsojka/pears.nvim'
   require('pears').setup()
 
-  -- Indent Guides
-  -- use 'glepnir/indent-guides.nvim'
-  -- require('indent_guides').setup()
-
-  -- use 'tpope/vim-dispatch'
+  -- wiki
   use 'vimwiki/vimwiki' -- https://github.com/vimwiki/vimwiki
+
+  -- sorround
   use 'tpope/vim-surround' -- https://github.com/tpope/vim-surround
+
+  -- multi edition
   use 'brooth/far.vim' -- https://github.com/brooth/far.vim
+
+  -- buffers
   use 'ojroques/nvim-bufdel' -- https://github.com/ojroques/nvim-bufdel
+
+  -- dashboard
   use 'mhinz/vim-startify' -- https://github.com/mhinz/vim-startify
+
+  -- wich key
   use {
     'folke/which-key.nvim',
     config = function() require('which-key').setup {} end
   }
 
-  use {
-    'lewis6991/spellsitter.nvim',
-    config = function()
-      require('spellsitter').setup()
-    end
-  }
-
-  --
-  -- test & debug
-  --
-
+  -- test
   use 'vim-test/vim-test' -- https://github.com/vim-test/vim-test
+
+  -- debug
   use 'mfussenegger/nvim-dap'
   -- use 'szw/vim-maximizer'
+
+  -- term
   use 'akinsho/nvim-toggleterm.lua'
 
-  --
   -- vcs
-  --
-
   use 'tpope/vim-fugitive' -- https://github.com/tpope/vim-fugitive
   use {
     'lewis6991/gitsigns.nvim',
