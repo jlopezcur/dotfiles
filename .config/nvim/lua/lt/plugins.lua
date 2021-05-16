@@ -1,10 +1,9 @@
 -- Install the packer if not yet
 local execute = vim.api.nvim_command
-local fn = vim.fn
 
-local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+local install_path = vim.fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
-if fn.empty(fn.glob(install_path)) > 0 then
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
   execute 'packadd packer.nvim'
 end
@@ -27,6 +26,8 @@ return require('packer').startup(function()
   use 'nvim-lua/lsp-status.nvim'
   use 'onsails/lspkind-nvim'
   use 'hrsh7th/nvim-compe'
+  use 'hrsh7th/nvim-compe'
+  use 'nvim-lua/completion-nvim' -- https://github.com/nvim-lua/completion-nvim
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets' -- https://github.com/honza/vim-snippets
 
