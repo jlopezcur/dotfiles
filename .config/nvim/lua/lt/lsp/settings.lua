@@ -14,9 +14,6 @@ local function on_attach(client, bufnr)
     remaps.set(client.server_capabilities, bufnr)
     lsp_status.on_attach(client, bufnr)
     -- lsp_completion.on_attach(client, bufnr)
-
-    -- adds beatiful icon to completion
-    require('lspkind').init()
 end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

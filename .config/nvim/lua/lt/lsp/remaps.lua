@@ -38,7 +38,7 @@ function M.set(cap, bufnr)
   buf_set_keymap('n', 'gs', "<cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>", opts)
 
   -- if cap.workspaceSymbolProvider then
-  --   map('n','<leader>gW','<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
+  --   buf_set_keymap('n', '<leader>gW', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
   -- end
 
   if cap.codeActionProvider then
