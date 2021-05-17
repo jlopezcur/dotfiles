@@ -4,6 +4,7 @@
 
 actions=(
   "lock"
+  "logout"
   "hibernate"
   "reboot"
   "poweroff"
@@ -12,7 +13,8 @@ actions=(
 action=$(printf "\n%s" "${actions[@]}" | sk --reverse --prompt="System: ")
 
 case $action in
-  "lock") lock ;;
+  "lock") swaylock ;;
+  "logout") swaymsg exit ;;
   "hibernate") systemctl hibernate ;;
   "reboot") systemctl reboot ;;
   "poweroff") systemctl poweroff ;;
