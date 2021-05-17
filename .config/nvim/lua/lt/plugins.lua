@@ -71,6 +71,9 @@ return require('packer').startup(function()
   -- sorround
   use 'tpope/vim-surround' -- https://github.com/tpope/vim-surround
 
+  -- colors
+  use 'norcalli/nvim-colorizer.lua' -- https://github.com/norcalli/nvim-colorizer.lua
+
   -- multi edition
   use 'brooth/far.vim' -- https://github.com/brooth/far.vim
 
