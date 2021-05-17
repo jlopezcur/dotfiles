@@ -27,6 +27,7 @@ ln -sfn "$DIR/.config/sway-launcher-desktop" ~/.config/sway-launcher-desktop
 
 # System bar
 ln -sfn "$DIR/.config/waybar" ~/.config/waybar
+ln -sfn "$DIR/.config/workstyle" ~/.config/workstyle
 
 # Notifications
 mkdir -p ~/.config/mako
