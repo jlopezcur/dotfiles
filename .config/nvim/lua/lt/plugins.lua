@@ -36,7 +36,7 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
 
-  -- Treesitter
+  -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use {
     'lewis6991/spellsitter.nvim',
@@ -45,7 +45,7 @@ return require('packer').startup(function()
     end
   }
 
-  -- fzf
+  -- fuzzy finder
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
@@ -57,11 +57,11 @@ return require('packer').startup(function()
   -- file manager
   use 'tpope/vim-vinegar' -- https://github.com/tpope/vim-vinegar
 
-  -- Comments
+  -- comments
   use 'terrortylor/nvim-comment'
   require('nvim_comment').setup()
 
-  -- Pears
+  -- pears
   use 'steelsojka/pears.nvim'
   require('pears').setup()
 
@@ -94,7 +94,8 @@ return require('packer').startup(function()
 
   -- debug
   use 'mfussenegger/nvim-dap'
-  -- use 'szw/vim-maximizer'
+  use 'nvim-telescope/telescope-dap.nvim'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
   -- term
   use 'akinsho/nvim-toggleterm.lua'
