@@ -84,11 +84,8 @@ bindsym $mod+t exec $term --class top -e bpytop
 for_window [app_id="top"] floating enable
 for_window [app_id="top"] move to scratchpad; [app_id="top"] scratchpad show; [app_id="top"] resize set width 1600 px height 800 px
 
-# screen capture
-bindsym $mod+c exec grim -g "$(slurp)"
-
-# gif capture
-bindsym $mod+g exec $term --class capturer --title "Create gif" -e create-gif
+# capture menu (screenshot, video & gif)
+bindsym $mod+c exec $term --class launcher --title Capture -e ~/.config/sway/scripts/capture.sh
 for_window [app_id="^capturer$"] floating enable, sticky enable, resize set 30 ppt 5 ppt, border pixel 10, move position 3 ppt 90 ppt
 
 # basics

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+read -p "Press Enter to start" </dev/tty
+wf-recorder -g "$(slurp)" -f ~/video/recording.mp4
+
+

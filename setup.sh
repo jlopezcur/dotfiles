@@ -61,6 +61,7 @@ ln -sf "$DIR/.config/newsboat/urls" ~/.config/newsboat/urls
 
 # Scripts
 ln -sf "$DIR/.local/bin/create-gif" ~/.local/bin/create-gif
+ln -sf "$DIR/.local/bin/create-video" ~/.local/bin/create-video
 
 echo "DONE!"
 
