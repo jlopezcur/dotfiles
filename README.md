@@ -39,6 +39,7 @@
 - Cryptocurrencies: [cointop](https://github.com/miguelmota/cointop)
 - Kernel Manager: [kmon](https://github.com/orhun/kmon)
 - Pulse Audio Mixer: [ncpamixer](https://github.com/fulhax/ncpamixer)
+- Email CLI: [himalaya](https://github.com/soywod/himalaya)
 
 ## Replacements
 
