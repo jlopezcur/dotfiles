@@ -40,6 +40,9 @@
 - Kernel Manager: [kmon](https://github.com/orhun/kmon)
 - Pulse Audio Mixer: [ncpamixer](https://github.com/fulhax/ncpamixer)
 - Email CLI: [himalaya](https://github.com/soywod/himalaya)
+- Password Manager: [gopass](https://www.gopass.pw/)
+  - Mobile: [Password Store](https://play.google.com/store/apps/details?id=dev.msfjarvis.aps)
+  - Browser: [Gopass Bridge](https://github.com/gopasspw/gopassbridge)
 
 ## Replacements
 
