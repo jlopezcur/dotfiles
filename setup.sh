@@ -51,8 +51,10 @@ mkdir -p ~/.config/nvim
 ln -sf "$DIR/.config/nvim/init.lua" ~/.config/nvim/init.lua
 ln -sfn "$DIR/.config/nvim/lua" ~/.config/nvim/lua
 
-# Browser
+# Browsers
 ln -sf "$DIR/.config/brave-flags.conf" ~/.config/brave-flags.conf
+ln -sf "$DIR/.config/qutebrowser/config.py" ~/.config/qutebrowser/config.py
+ln -sf "$DIR/.config/qutebrowser/gruvbox.py" ~/.config/qutebrowser/gruvbox.py
 
 # Newsboat
 mkdir -p ~/.config/newsboat
