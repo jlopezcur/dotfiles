@@ -88,6 +88,9 @@ for_window [app_id="top"] move to scratchpad; [app_id="top"] scratchpad show; [a
 bindsym $mod+c exec $term --class launcher --title Capture -e ~/.config/sway/scripts/capture.sh
 for_window [app_id="^capturer$"] floating enable, sticky enable, resize set 30 ppt 5 ppt, border pixel 10, move position 3 ppt 90 ppt
 
+# Open scrcpy in floating mode on the right side of the screen
+for_window [app_id="^scrcpy$"] floating enable, sticky enable, resize set 508 px 900 px, border pixel 10, move position 70 ppt 4 ppt
+
 # basics
 # ======
 
