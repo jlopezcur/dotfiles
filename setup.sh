@@ -65,6 +65,12 @@ ln -sf "$DIR/.config/newsboat/urls" ~/.config/newsboat/urls
 ln -sf "$DIR/.local/bin/create-gif" ~/.local/bin/create-gif
 ln -sf "$DIR/.local/bin/create-video" ~/.local/bin/create-video
 
+# App launchers
+mkdir -p ~/.local/share/applications
+ln -sf "$DIR/.local/share/applications/slack.desktop" ~/.local/share/applications/slack.desktop
+ln -sf "$DIR/.local/share/applications/scrcpy.desktop" ~/.local/share/applications/scrcpy.desktop
+ln -sf "$DIR/.local/share/applications/zathura.desktop" ~/.local/share/applications/zathura.desktop
+
 echo "DONE!"
 
 

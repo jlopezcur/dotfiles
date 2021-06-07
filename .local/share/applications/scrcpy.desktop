@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Scrcpy
+Comment=Display and control your android device
+Exec=scrcpy %U
+# Translators: Icon of the desktop entry.
+# Icon=org.pwmt.zathura
+Terminal=false
+# Translators: Search terms to find this application. Do not translate or
+# localize the semicolons. The list must also end with a semicolon.
+Keywords=android;screen;scr;scrcpy;
