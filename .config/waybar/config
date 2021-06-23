@@ -91,13 +91,29 @@
   },
 }, {
   "position": "bottom",
-  "modules-left": ["memory", "cpu", "temperature", "disk"],
+  "modules-left": ["memory", "cpu", "temperature", "disk", "custom/mouse-bat", "custom/keyboard-bat"],
   "modules-right": ["custom/updates", "custom/updates-aur"],
 
-  "memory": { "interval": 5, "format": " {}% ({used:0.1f}G)" },
+  "memory": { "interval": 5, "format": " {}% ({used:0.2f}G)" },
   "cpu": { "interval": 5, "format": " {usage:2}%" },
   "temperature": { "format": " {temperatureC}°C" },
   "disk": { "interval": 5, "format": " {percentage_used:2}%", "path": "/" },
+  "custom/mouse-bat": {
+    "format": " {}",
+    "format-none": "",
+    "escape": true,
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/modules/mouse_battery.sh",
+    "interval": 1000,
+  },
+  "custom/keyboard-bat": {
+    "format": " {}",
+    "format-none": "",
+    "escape": true,
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/modules/keyboard_battery.sh",
+    "interval": 1000,
+  },
 
   "custom/updates": {
     "format": " {}",
