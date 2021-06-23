@@ -18,6 +18,7 @@
   - [qutebrowser](https://qutebrowser.org/)
   - [Brave](https://brave.com/) [:pencil: Notes](docs/brave.md)
   - [LibreWolf](https://gitlab.com/librewolf-community)
+  - [Nyxt](https://github.com/atlas-engineer/nyxt)
 - PDF: [Zathura](https://en.wikipedia.org/wiki/Zathura_(document_viewer))
 - Vector: [Inkscape](https://inkscape.org/es/)
 - Raster: [Gimp](https://www.gimp.org/)
