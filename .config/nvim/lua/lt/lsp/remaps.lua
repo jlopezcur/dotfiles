@@ -4,7 +4,7 @@ function M.set(cap, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
-  local opts = { noremap=true, silent=true }
+  local opts = { noremap = true, silent = true }
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -13,7 +13,7 @@ function M.set(cap, bufnr)
 
   if cap.definitionProvider then
     buf_set_keymap('n', 'gD', "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>", opts)
-    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    buf_set_keymap('n', 'gd', "<cmd>lua require'telescope.builtin'.lsp_definitions()<CR>", opts)
     -- buf_set_keymap('n','<leader>tt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   end
   -- if cap.declarationProvider then
