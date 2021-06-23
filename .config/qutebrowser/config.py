@@ -125,7 +125,11 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
 # Setting dark mode
-config.set("colors.webpage.darkmode.enabled", True)
+# config.set("colors.webpage.darkmode.enabled", True)
+# config.set("colors.webpage.darkmode.threshold.background", 128)
+# config.set("colors.webpage.darkmode.threshold.text", 128)
+# config.set("colors.webpage.darkmode.policy.images", 'never')
+
 config.set("colors.webpage.preferred_color_scheme", "dark")
 config.set("colors.webpage.bg", "#22272E")
 
@@ -141,6 +145,7 @@ config.bind(',dv', 'hint links spawn alacritty -e youtube-dl -o ~/Downloads/%(ti
 
 # Bind for download a youtube audio with youtube-dl
 config.bind(',ds', 'hint links spawn alacritty -e youtube-dl -i --extract-audio --audio-format mp3 --audio-quality 0 -o ~/music/%(title)s.%(ext)s {hint-url}')
+
 config.bind(',xb', 'config-cycle statusbar.show always never')
 config.bind(',xt', 'config-cycle tabs.show always never')
 config.bind(',xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
