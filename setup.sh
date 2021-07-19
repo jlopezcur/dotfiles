@@ -17,7 +17,7 @@ ln -sf "$DIR/.config/fish/conf.d/lf.fish" ~/.config/fish/conf.d/lf.fish
 ln -sf "$DIR/.config/starship.toml" ~/.config/starship.toml
 
 # Git
-ln -sf "$DIR/.gitconfig" ~/.gitconfig
+stow -vt ~ git
 
 # Window Manager
 ln -sfn "$DIR/.config/sway" ~/.config/sway
