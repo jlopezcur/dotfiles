@@ -57,9 +57,7 @@ ln -sf "$DIR/.config/qutebrowser/config.py" ~/.config/qutebrowser/config.py
 ln -sf "$DIR/.config/qutebrowser/gruvbox.py" ~/.config/qutebrowser/gruvbox.py
 
 # Newsboat
-mkdir -p ~/.config/newsboat
-ln -sf "$DIR/.config/newsboat/config" ~/.config/newsboat/config
-ln -sf "$DIR/.config/newsboat/urls" ~/.config/newsboat/urls
+stow -vt ~ newsboat
 
 # Scripts
 ln -sf "$DIR/.local/bin/create-gif" ~/.local/bin/create-gif
