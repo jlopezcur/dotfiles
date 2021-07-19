@@ -14,7 +14,7 @@ ln -sf "$DIR/.config/fish/conf.d/bangbang.fish" ~/.config/fish/conf.d/bangbang.f
 ln -sf "$DIR/.config/fish/conf.d/lf.fish" ~/.config/fish/conf.d/lf.fish
 
 # Starship
-ln -sf "$DIR/.config/starship.toml" ~/.config/starship.toml
+stow -vt ~ starship
 
 # Git
 stow -vt ~ git
