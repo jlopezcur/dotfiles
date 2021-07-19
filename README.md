@@ -44,6 +44,7 @@
 - Password Manager: [gopass](https://www.gopass.pw/)
   - Mobile: [Password Store](https://play.google.com/store/apps/details?id=dev.msfjarvis.aps)
   - Browser: [Gopass Bridge](https://github.com/gopasspw/gopassbridge)
+- Focus Sounds: [blanket](https://github.com/rafaelmardojai/blanket)
 
 ## Replacements
 
