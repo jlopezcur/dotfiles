@@ -1,8 +1,11 @@
--- dap
+require('telescope').load_extension('dap')
 
--- local dap = require('dap')
--- dap.adapters.node2 = {
---   type = 'executable',
---   command = 'node',
---   args = {os.getenv('HOME') .. '/apps...'},
--- }
+require "lt.dap.bindings"
+
+-- require("dapui").setup()
+
+require "lt.dap.dbg.node"
+
+vim.fn.sign_define('DapBreakpoint', {text='', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapStopped', {text='', texthl='', linehl='', numhl=''})
+

@@ -74,7 +74,7 @@ return require('packer').startup(function()
   -- wiki
   use 'vimwiki/vimwiki' -- https://github.com/vimwiki/vimwiki
 
-  -- sorround
+  -- surround
   use 'tpope/vim-surround' -- https://github.com/tpope/vim-surround
 
   -- colors
@@ -101,7 +101,7 @@ return require('packer').startup(function()
   -- debug
   use 'mfussenegger/nvim-dap'
   use 'nvim-telescope/telescope-dap.nvim'
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  -- use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
   -- term
   use 'akinsho/nvim-toggleterm.lua'
@@ -110,10 +110,15 @@ return require('packer').startup(function()
   use 'tpope/vim-fugitive' -- https://github.com/tpope/vim-fugitive
   use {
     'lewis6991/gitsigns.nvim',
-    requires = {'nvim-lua/plenary.nvim'},
-    config = function() require('gitsigns').setup() end
+    requires = {
+      'nvim-lua/plenary.nvim'
+    }
   }
   use 'rhysd/git-messenger.vim' -- https://github.com/rhysd/git-messenger.vim
   use 'f-person/git-blame.nvim' -- https://github.com/f-person/git-blame.nvim
+
+  -- others
+  use 'edluffy/specs.nvim' -- https://github.com/edluffy/specs.nvim
+  use 'nacro90/numb.nvim' -- https://github.com/nacro90/numb.nvim
 end)
 

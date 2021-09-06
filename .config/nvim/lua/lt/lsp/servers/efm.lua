@@ -2,24 +2,17 @@ local lsp = require('lspconfig')
 local functions = require "lt.utils.functions"
 
 local luafmt = require "lt.lsp.servers.formatters.luafmt"
-local prettier = require "lt.lsp.servers.formatters.prettier"
 local eslint_d = require "lt.lsp.servers.linters.eslint_d"
 local shellcheck = require "lt.lsp.servers.linters.shellcheck"
 
 local languages = {
   lua = {luafmt},
-  typescript = {prettier, eslint_d},
-  javascript = {prettier, eslint_d},
-  typescriptreact = {prettier, eslint_d},
-  ['typescript.tsx'] = {prettier, eslint_d},
-  javascriptreact = {prettier, eslint_d},
-  ['javascript.jsx'] = {prettier, eslint_d},
-  yaml = {prettier},
-  json = {prettier},
-  html = {prettier},
-  scss = {prettier},
-  css = {prettier},
-  markdown = {prettier},
+  typescript = {eslint_d},
+  javascript = {eslint_d},
+  typescriptreact = {eslint_d},
+  ['typescript.tsx'] = {eslint_d},
+  javascriptreact = {eslint_d},
+  ['javascript.jsx'] = {eslint_d},
   sh = {shellcheck},
 }
 

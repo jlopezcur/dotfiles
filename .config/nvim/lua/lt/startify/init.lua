@@ -32,7 +32,7 @@ g.startify_bookmarks = {
   { v = '~/dev/vizco/develop'},
   { m = '~/dev/minutk2'},
   { d = '~/dev/dotfiles'},
-  { c = '~/dev/cultural'},
+  { c = '~/dev/legado8-cultural'},
 }
 
 -- Reference:
