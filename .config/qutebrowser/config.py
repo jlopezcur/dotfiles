@@ -136,7 +136,7 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 # config.set("colors.webpage.darkmode.policy.images", 'never')
 
 config.set("colors.webpage.preferred_color_scheme", "dark")
-config.set("colors.webpage.bg", "#22272E")
+# config.set("colors.webpage.bg", "#22272E")
 
 c.fonts.statusbar = '11pt "SauceCodePro Nerd Font"'
 c.fonts.debug_console = '11pt "SauceCodePro Nerd Font"'
