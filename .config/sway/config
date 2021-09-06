@@ -63,6 +63,7 @@ bindsym $mod+Ctrl+Return exec $term --title Newsboat -e newsboat
 # launchers
 # bindsym $mod+p exec $term --class launcher --title Launcher -e ~/.config/sway/scripts/apps.sh
 bindsym $mod+p exec $term --class launcher --title Launcher -e sway-launcher-desktop
+bindsym $mod+Alt+p exec $term --class launcher --title Launcher -e slings
 bindsym $mod+Shift+p exec $term --class launcher --title Gopass -e ~/.config/sway/scripts/copy-pass.sh
 bindsym $mod+Shift+m exec $term --class launcher --title Man -e ~/.config/sway/scripts/man.sh
 bindsym $mod+escape exec $term --class launcher --title "Sytem Options" -e ~/.config/sway/scripts/system.sh
