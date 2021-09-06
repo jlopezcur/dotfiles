@@ -45,9 +45,6 @@ exec mako
 # Drive auto mounter
 exec udiskie
 
-# workstyle
-exec_always --no-startup-id workstyle &> ~/.cache/workstyle.log
-
 # key bindings
 # ------------------------------------------------------------------------------
 
