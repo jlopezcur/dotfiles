@@ -17,15 +17,20 @@ return require('packer').startup(function()
 
   -- lsp
   use 'neovim/nvim-lspconfig'
-  use 'anott03/nvim-lspinstall'
+  use 'kabouzeid/nvim-lspinstall'
   use 'tjdevries/nlua.nvim'
   use 'glepnir/lspsaga.nvim'
   use 'nvim-lua/lsp-status.nvim'
-  use 'hrsh7th/nvim-compe'
+  use 'hrsh7th/nvim-compe' --completion
+  -- use {'tzachar/compe-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-compe'}
+
+  -- formatter
+  use 'mhartington/formatter.nvim' -- https://github.com/mhartington/formatter.nvim
 
   -- snippets
-  use 'SirVer/ultisnips'
-  use 'honza/vim-snippets' -- https://github.com/honza/vim-snippets
+  -- use 'SirVer/ultisnips' -- https://github.com/sirver/UltiSnips
+  -- use 'honza/vim-snippets' -- https://github.com/honza/vim-snippets
+  use 'norcalli/snippets.nvim' -- https://github.com/norcalli/snippets.nvim
 
   -- theme
   use 'folke/tokyonight.nvim'
