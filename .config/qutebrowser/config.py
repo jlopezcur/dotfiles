@@ -6,7 +6,12 @@ c.downloads.position = 'bottom'
 c.spellcheck.languages = ['en-US', 'es-ES']
 
 c.auto_save.session = True
-c.url.searchengines = { "DEFAULT": "https://www.ecosia.org/search?q={}", "wa": "https://wiki.archlinux.org/?search={}" }
+c.url.searchengines = {
+    "DEFAULT": "https://www.ecosia.org/search?q={}",
+    "wa": "https://wiki.archlinux.org/?search={}",
+    "ww": "https://en.wikipedia.org/w/index.php?search={}",
+    "yt": "https://www.youtube.com/results?search_query={}"
+}
 c.url.start_pages = ["https://www.ecosia.org"]
 c.url.default_page = "https://www.ecosia.org"
 c.scrolling.smooth = True
