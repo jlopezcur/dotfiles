@@ -39,7 +39,7 @@
     "format-alt": "{ipaddr}/{cidr} {icon}",
     "format-alt-click": "click-right",
     "format-icons": {
-      "wifi": ["", "" ,""],
+      "wifi": ["1", "2" ,"3"],
       "ethernet": [""],
       "disconnected": [""]
     },
@@ -94,7 +94,7 @@
   "modules-left": ["memory", "cpu", "temperature", "disk", "custom/mouse-bat", "custom/keyboard-bat"],
   "modules-right": ["custom/updates", "custom/updates-aur"],
 
-  "memory": { "interval": 5, "format": " {}% ({used:0.2f}G)" },
+  "memory": { "interval": 1, "format": " {}% ({used:0.2f}G)" },
   "cpu": { "interval": 5, "format": " {usage:2}%" },
   "temperature": { "format": " {temperatureC}°C" },
   "disk": { "interval": 5, "format": " {percentage_used:2}%", "path": "/" },
@@ -104,7 +104,7 @@
     "escape": true,
     "return-type": "json",
     "exec": "$HOME/.config/waybar/modules/mouse_battery.sh",
-    "interval": 1000,
+    "interval": 5,
   },
   "custom/keyboard-bat": {
     "format": " {}",
@@ -112,7 +112,7 @@
     "escape": true,
     "return-type": "json",
     "exec": "$HOME/.config/waybar/modules/keyboard_battery.sh",
-    "interval": 1000,
+    "interval": 5,
   },
 
   "custom/updates": {
