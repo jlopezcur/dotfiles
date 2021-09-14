@@ -5,13 +5,7 @@ DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "Installing from $DIR..."
 
 # Fish
-mkdir -p ~/.config/fish
-ln -sf "$DIR/.config/fish/config.fish" ~/.config/fish/config.fish
-ln -sf "$DIR/.config/fish/aliases.fish" ~/.config/fish/aliases.fish
-mkdir -p ~/.config/fish/conf.d
-ln -sf "$DIR/.config/fish/conf.d/sway.fish" ~/.config/fish/conf.d/sway.fish
-ln -sf "$DIR/.config/fish/conf.d/bangbang.fish" ~/.config/fish/conf.d/bangbang.fish
-ln -sf "$DIR/.config/fish/conf.d/lf.fish" ~/.config/fish/conf.d/lf.fish
+stow -vt ~ fish
 
 # Starship
 stow -vt ~ starship
