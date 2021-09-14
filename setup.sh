@@ -42,8 +42,8 @@ ln -sf "$DIR/.config/nvim/init.lua" ~/.config/nvim/init.lua
 ln -sfn "$DIR/.config/nvim/lua" ~/.config/nvim/lua
 
 # Browsers
-ln -sf "$DIR/.config/brave-flags.conf" ~/.config/brave-flags.conf
 stow -vt ~ qutebrowser
+stow -vt ~ brave
 
 # Newsboat
 stow -vt ~ newsboat
