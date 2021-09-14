@@ -19,6 +19,7 @@ stow -vt ~ qutebrowser # Primary Browsers
 stow -vt ~ brave # Secondary Browser
 stow -vt ~ newsboat # Newsboat
 stow -vt ~ zathura # PDF Reader
+stow -vt ~ slack # Slack
 
 # Scripts
 ln -sf "$DIR/.local/bin/create-gif" ~/.local/bin/create-gif
@@ -26,7 +27,6 @@ ln -sf "$DIR/.local/bin/create-video" ~/.local/bin/create-video
 
 # App launchers
 mkdir -p ~/.local/share/applications
-ln -sf "$DIR/.local/share/applications/slack.desktop" ~/.local/share/applications/slack.desktop
 ln -sf "$DIR/.local/share/applications/scrcpy.desktop" ~/.local/share/applications/scrcpy.desktop
 
 echo "DONE!"
