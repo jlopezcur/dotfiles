@@ -20,8 +20,7 @@ stow -vt ~ sway
 ln -sfn "$DIR/.config/sway-launcher-desktop" ~/.config/sway-launcher-desktop
 
 # System bar
-ln -sfn "$DIR/.config/waybar" ~/.config/waybar
-ln -sfn "$DIR/.config/workstyle" ~/.config/workstyle
+stow -vt ~ waybar
 
 # Notifications
 mkdir -p ~/.config/mako
