@@ -45,6 +45,7 @@
   - Mobile: [Password Store](https://play.google.com/store/apps/details?id=dev.msfjarvis.aps)
   - Browser: [Gopass Bridge](https://github.com/gopasspw/gopassbridge)
 - Focus Sounds: [blanket](https://github.com/rafaelmardojai/blanket)
+- Tmux: [Byobu](https://www.byobu.org/)
 
 ## Replacements
 
