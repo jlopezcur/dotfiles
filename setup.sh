@@ -32,9 +32,7 @@ mkdir -p ~/.config/swaylock
 ln -sf "$DIR/.config/swaylock/config" ~/.config/swaylock/config
 
 # File manager
-mkdir -p ~/.config/lf
-ln -sf "$DIR/.config/lf/lfrc" ~/.config/lf/lfrc
-ln -sf "$DIR/.config/lf/preview" ~/.config/lf/preview
+stow -vt ~ lf
 
 # Terminal Emulator
 stow -vt ~ alacritty
