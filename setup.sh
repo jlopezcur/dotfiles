@@ -16,9 +16,6 @@ stow -vt ~ git
 # Window Manager
 stow -vt ~ sway
 
-# Launcher
-ln -sfn "$DIR/.config/sway-launcher-desktop" ~/.config/sway-launcher-desktop
-
 # System bar
 stow -vt ~ waybar
 # stow -vt ~ workstyle
@@ -27,8 +24,7 @@ stow -vt ~ waybar
 stow -vt ~ mako
 
 # Locker
-mkdir -p ~/.config/swaylock
-ln -sf "$DIR/.config/swaylock/config" ~/.config/swaylock/config
+stow -vt ~ swaylock
 
 # File manager
 stow -vt ~ lf
