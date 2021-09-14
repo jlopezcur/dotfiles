@@ -21,6 +21,7 @@ ln -sfn "$DIR/.config/sway-launcher-desktop" ~/.config/sway-launcher-desktop
 
 # System bar
 stow -vt ~ waybar
+# stow -vt ~ workstyle
 
 # Notifications
 stow -vt ~ mako
