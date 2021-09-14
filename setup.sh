@@ -23,8 +23,7 @@ ln -sfn "$DIR/.config/sway-launcher-desktop" ~/.config/sway-launcher-desktop
 stow -vt ~ waybar
 
 # Notifications
-mkdir -p ~/.config/mako
-ln -sf "$DIR/.config/mako/config" ~/.config/mako/config
+stow -vt ~ mako
 
 # Locker
 mkdir -p ~/.config/swaylock
