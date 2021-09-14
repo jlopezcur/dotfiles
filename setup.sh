@@ -21,6 +21,7 @@ stow -vt ~ newsboat # Newsboat
 stow -vt ~ zathura # PDF Reader
 stow -vt ~ slack # Slack
 stow -vt ~ scrcpy # Mobile viewer
+stow -vt ~ bpytop # Process monitor
 
 # Scripts
 ln -sf "$DIR/.local/bin/create-gif" ~/.local/bin/create-gif
