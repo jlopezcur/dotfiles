@@ -2,5 +2,5 @@
 
 ## CPU
 
-- cpu-x: `yay -S cpu-x`
+- cpu-x: `paru cpu-x`
 

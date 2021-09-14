@@ -5,13 +5,13 @@
 - fzf
 
 ```
-yay -S fzf
+paru fzf
 ```
 
 ## Install
 
 ```
-yay -S fish fisher
+paru fish fisher
 chsh -s /usr/bin/fish
 ```
 
@@ -31,7 +31,7 @@ fisher add jethrokuan/z
 [Starship](https://starship.rs/)
 
 ```
-yay -S starship
+paru starship
 ```
 
 ## Improvements
@@ -43,7 +43,7 @@ we can find useful to change the common shell to **dash** for security and
 speed improvements:
 
 ```
-yay -S dash
+paru dash
 ln -sfT dash /usr/bin/sh
 ```
 
@@ -61,7 +61,7 @@ this: [Bash is Bloated!](https://lbry.tv/@Luke:7/bash-is-bloated:8).
 - cmatrix
 
 ```
-yay -S cowsay lolcat cmatrix
+paru cowsay lolcat cmatrix
 ```
 
 - For the configuration files I use: `cowsay -f dragon 'text'`

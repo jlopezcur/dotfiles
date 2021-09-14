@@ -8,7 +8,7 @@ doc](fish.md).
 ## Lua
 
 ```sh
-yay -S lua
+paru lua
 ```
 
 ## Rust
@@ -17,5 +17,5 @@ Using [rustup](https://github.com/rust-lang/rustup/#other-installation-methods)
 package manager
 
 ```sh
-yay -S rustup
+paru rustup
 ```

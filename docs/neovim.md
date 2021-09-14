@@ -9,7 +9,7 @@ to this version right now.
 - neovim node package
 
 ```sh
-yay -S xsel
+paru xsel
 npm i -g neovim
 pip install pynvim
 ```
@@ -29,7 +29,7 @@ sudo make install
 Using LSP needs some manual installation for several languages:
 
 - tsserver: `npm i -g typescript typescript-language-server prettier eslint_d`
-- texlab: `yay -S texlive-core texlab`
+- texlab: `paru texlive-core texlab`
 - rust: `rustup component add rls rust-analysis rust-src` https://github.com/rust-lang/rls
 - python: `pip install python-language-server`
 - vimls: `npm i -g vim-language-server`

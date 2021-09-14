@@ -3,7 +3,7 @@
 ## Install
 
 ```sh
-yay -S git git-lfs
+paru git git-lfs
 ```
 
 ## References

@@ -5,7 +5,7 @@
 [Chs](https://github.com/nickzuber/chs) using [stockfish](https://stockfishchess.org/)
 
 ```sh
-yay -S stockfish
+paru stockfish
 pip install chs
 ```
 

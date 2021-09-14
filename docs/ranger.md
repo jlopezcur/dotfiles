@@ -6,7 +6,7 @@
 ## Requirements
 
 ```shell
-yay -S ueberzug calibre
+paru ueberzug calibre
 ```
 
 ## Icons

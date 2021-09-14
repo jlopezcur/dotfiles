@@ -1,7 +1,7 @@
 # Intel
 
 ```sh
-yay -S xf86-video-intel
+paru xf86-video-intel
 ```
 
 /etc/X11/xorg.conf.d/20-intel.conf

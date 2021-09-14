@@ -3,5 +3,5 @@
 ## Requirements
 
 ```sh
-yay -S texlive biber
+paru texlive biber
 ```

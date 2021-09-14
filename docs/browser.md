@@ -28,5 +28,5 @@ Some hidden shortcuts
 ## Vimb
 
 ```sh
-yay -S vimb
+paru -S vimb
 ```
