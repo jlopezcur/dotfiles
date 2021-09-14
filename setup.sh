@@ -37,9 +37,7 @@ stow -vt ~ lf
 stow -vt ~ alacritty
 
 # Editor
-mkdir -p ~/.config/nvim
-ln -sf "$DIR/.config/nvim/init.lua" ~/.config/nvim/init.lua
-ln -sfn "$DIR/.config/nvim/lua" ~/.config/nvim/lua
+stow -vt ~ nvim
 
 # Browsers
 stow -vt ~ qutebrowser
