@@ -43,8 +43,7 @@ ln -sf "$DIR/.config/lf/lfrc" ~/.config/lf/lfrc
 ln -sf "$DIR/.config/lf/preview" ~/.config/lf/preview
 
 # Terminal Emulator
-mkdir -p ~/.config/alacritty
-ln -sf "$DIR/.config/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.yml
+stow -vt ~ alacritty
 
 # Editor
 mkdir -p ~/.config/nvim
