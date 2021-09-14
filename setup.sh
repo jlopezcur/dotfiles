@@ -20,7 +20,7 @@ stow -vt ~ starship
 stow -vt ~ git
 
 # Window Manager
-ln -sfn "$DIR/.config/sway" ~/.config/sway
+stow -vt ~ sway
 
 # Launcher
 ln -sfn "$DIR/.config/sway-launcher-desktop" ~/.config/sway-launcher-desktop
