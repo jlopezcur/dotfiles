@@ -42,8 +42,7 @@ ln -sfn "$DIR/.config/nvim/lua" ~/.config/nvim/lua
 
 # Browsers
 ln -sf "$DIR/.config/brave-flags.conf" ~/.config/brave-flags.conf
-ln -sf "$DIR/.config/qutebrowser/config.py" ~/.config/qutebrowser/config.py
-ln -sf "$DIR/.config/qutebrowser/gruvbox.py" ~/.config/qutebrowser/gruvbox.py
+stow -vt ~ qutebrowser
 
 # Newsboat
 stow -vt ~ newsboat
