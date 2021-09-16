@@ -1,0 +1,5 @@
+set continue=true
+set continue_album=true
+
+colorscheme solarized-light
+view 3
