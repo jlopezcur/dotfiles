@@ -61,6 +61,9 @@ bindsym $mod+Shift+Return exec $term --title LF -e lf
 # news reader
 bindsym $mod+Ctrl+Return exec $term --title Newsboat -e newsboat
 
+# email client
+bindsym $mod+Alt+Return exec $term --title Neomutt -e neomutt
+
 # launchers
 # bindsym $mod+p exec $term --class launcher --title Launcher -e ~/.config/sway/scripts/apps.sh
 bindsym $mod+p exec $term --class launcher --title Launcher -e sway-launcher-desktop
