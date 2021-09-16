@@ -1,5 +1,6 @@
 set continue=true
 set continue_album=true
+set mouse=true
 
 colorscheme solarized-light
 view 3
