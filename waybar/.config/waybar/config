@@ -1,7 +1,7 @@
 [{
   "position": "top",
   "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-  "modules-center": ["clock#1", "clock#2"],
+  "modules-center": ["custom/calendar", "clock#2"],
   "modules-right": ["network#1", "network#2", "pulseaudio", "backlight", "idle_inhibitor", "battery"],
 
   "sway/workspaces": {
@@ -12,10 +12,12 @@
   "sway/mode": { "format": " {}", "max-length": 50 },
   "sway/window": { "format": "{}", "max-length": 50 },
 
-  "clock#1": {
-    "format": " {:%a, %d/%m/%Y}",
-    "tooltip-format": "{calendar}",
+  "custom/calendar": {
+    "format": " {}",
     "on-click": "alacritty -e calcurse",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/modules/calendar.sh",
+    "interval": 60,
   },
   "clock#2": { "format": " {:%H:%M}" },
 
