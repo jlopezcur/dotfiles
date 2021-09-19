@@ -94,6 +94,7 @@
 }, {
   "position": "bottom",
   "modules-left": ["memory", "cpu", "temperature", "disk", "custom/mouse-bat", "custom/keyboard-bat"],
+  "modules-center": ["custom/cmus"],
   "modules-right": ["custom/updates", "custom/updates-aur"],
 
   "memory": { "interval": 1, "format": " {}% ({used:0.2f}G)" },
@@ -115,6 +116,16 @@
     "return-type": "json",
     "exec": "$HOME/.config/waybar/modules/keyboard_battery.sh",
     "interval": 5,
+  },
+
+  "custom/cmus": {
+    "format": "♪ {}",
+    "max-length": 15,
+    "interval": 10,
+    "exec": "cmus-remote -C \"format_print '%a - %t'\"", // artist - title
+    "exec-if": "pgrep cmus",
+    "on-click": "cmus-remote -u",                        //toggle pause
+    "escape": true                                       //handle markup entities
   },
 
   "custom/updates": {
