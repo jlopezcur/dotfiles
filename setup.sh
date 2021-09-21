@@ -4,27 +4,24 @@ DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "Installing from $DIR..."
 
-stow -vt ~ fish # Fish
-stow -vt ~ starship # Starship
-stow -vt ~ git # Git
-stow -vt ~ sway # Window manager
-stow -vt ~ waybar # System bar
-# stow -vt ~ workstyle
-stow -vt ~ mako # Notifications
-stow -vt ~ swaylock # Locker
-stow -vt ~ lf # File manager
-stow -vt ~ alacritty # Terminal emulator
-stow -vt ~ nvim # Editor
-stow -vt ~ qutebrowser # Primary browsers
-stow -vt ~ brave # Secondary browser
-stow -vt ~ newsboat # Newsboat
-stow -vt ~ zathura # PDF Reader
-stow -vt ~ slack # Slack
-stow -vt ~ scrcpy # Mobile viewer
-stow -vt ~ bpytop # Process monitor
-
-# Scripts
-ln -sf "$DIR/.local/bin/create-gif" ~/.local/bin/create-gif
-ln -sf "$DIR/.local/bin/create-video" ~/.local/bin/create-video
+stow -vt ~ $DIR/fish             # Shell
+stow -vt ~ $DIR/starship         # Makeup for shell & much more
+stow -vt ~ $DIR/git              # Git
+stow -vt ~ $DIR/sway             # Window manager
+stow -vt ~ $DIR/waybar           # System bar
+stow -vt ~ $DIR/mako             # Notifications
+stow -vt ~ $DIR/swaylock         # Locker
+stow -vt ~ $DIR/lf               # File manager
+stow -vt ~ $DIR/alacritty        # Terminal
+stow -vt ~ $DIR/nvim             # Text editor
+stow -vt ~ $DIR/qutebrowser      # Primary browsers
+stow -vt ~ $DIR/brave            # Secondary browser
+stow -vt ~ $DIR/newsboat         # Newsboat
+stow -vt ~ $DIR/zathura          # PDF Reader
+stow -vt ~ $DIR/slack            # Slack
+stow -vt ~ $DIR/scrcpy           # Mobile viewer
+stow -vt ~ $DIR/bpytop           # Process monitor
+stow -vt ~ $DIR/neomutt          # Email client
+stow -vt ~ $DIR/scripts          # Custom scripts
 
 echo "DONE!"
