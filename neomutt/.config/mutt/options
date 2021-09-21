@@ -1,0 +1,56 @@
+# vim: filetype=neomuttrc
+
+# Mail editor
+set editor=nvim
+
+# Display Sidebar
+set sidebar_width=20
+set sidebar_visible=true
+
+# If hcache is a folder, Mutt create a sub cache folders for each account witch
+# may speeds things up even more
+set header_cache = ~/.cache/mutt
+
+# Store messages locally to speed things up, like searching message body
+set message_cachedir = ~/.cache/mutt
+
+# Other options
+# unset help
+set sleep_time = 0
+set mime_forward = yes
+set wait_key = no
+set fast_reply
+set fcc_attach
+set forward_format = "Fwd: %s"
+set forward_quote
+set reverse_name
+set include
+set mail_check=60 # to avoid lags using IMAP with some email providers (yahoo for example)
+set quit
+unset mark_old
+
+# Pager View Options
+set pager_index_lines = 10  # Shows 10 lines of index when pager is active
+set pager_context = 3
+set pager_stop
+set menu_scroll
+set tilde
+unset markers
+
+set sort = threads
+set sort_aux = reverse-last-date-received
+set mailcap_path = "~/.config/mutt/mailcap"
+
+auto_view text/html # automatically show html (mailcap uses lynx)
+
+# sidebar
+set sidebar_visible = yes
+set sidebar_width = 20
+set sidebar_short_path = yes
+set sidebar_next_new_wrap = yes
+set mail_check_stats
+set sidebar_format = '%D%?F? [%F]?%* %?N?%N/? %?S?%S?'
+
+# use abook fot contacts
+# https://www.paritybit.ca/blog/refining-my-neomutt-config
+set query_command="abook --mutt-query '%s'"

@@ -1,0 +1,4 @@
+source ~/.config/mutt/accounts      # accounts configuration
+source ~/.config/mutt/bindings      # bindings configuration
+source ~/.config/mutt/options       # options configuration
+source ~/.config/mutt/color         # colors configuration
