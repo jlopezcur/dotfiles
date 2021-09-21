@@ -120,12 +120,12 @@
 
   "custom/cmus": {
     "format": "♪ {}",
-    "max-length": 15,
+    "max-length": 75,
     "interval": 10,
-    "exec": "cmus-remote -C \"format_print '%a - %t'\"", // artist - title
+    "exec": "cmus-remote -C \"format_print '%a - %t'\"",
     "exec-if": "pgrep cmus",
-    "on-click": "cmus-remote -u",                        //toggle pause
-    "escape": true                                       //handle markup entities
+    "on-click": "cmus-remote -u",
+    "escape": true
   },
 
   "custom/updates": {
