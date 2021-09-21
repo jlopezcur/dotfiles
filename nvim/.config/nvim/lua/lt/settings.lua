@@ -11,7 +11,10 @@ vim.g.mapleader = ','
 vim.o.completeopt = "menuone,noselect"
 
 -- vim.cmd("set clipboard+=unnamedplus")
-vim.o.clipboard = "unnamedplus"
+-- vim.o.clipboard = "unnamedplus"
+-- Prefer to use:
+-- "*y Primary clipboard (middle click)
+-- "+y Regular clipboard (ctrl+v)
 
 vim.o.hidden = true
 vim.cmd('set list')
