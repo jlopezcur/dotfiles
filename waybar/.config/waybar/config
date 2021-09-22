@@ -22,8 +22,11 @@
   },
   "clock#2": { "format": " {:%H:%M}" },
   "custom/weather": {
-    "exec": "curl 'https://wttr.in/?format=1'",
-    "interval": 3600
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "$HOME/.config/waybar/modules/wttr.py",
+    "return-type": "json"
   },
 
   "custom/vpn": {
