@@ -1,7 +1,7 @@
 # vim: filetype=neomuttrc
 
 # Fetch mail shortcut
-bind index G imap-fetch-mail
+bind index \Cg imap-fetch-mail
 
 # Sidebar navigation
 bind index,pager \Ck sidebar-prev
