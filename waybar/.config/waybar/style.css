@@ -48,4 +48,11 @@ window#waybar.bottom {
 #battery.critical { background: red; }
 #custom-updates.one, #custom-updates.many { color: orange; }
 #custom-updates-aur.one, #custom-updates-aur.many { color: orange; }
+#custom-scratchpad-indicator {
+  color: black;
+  padding: 0 4px;
+  background: lightgrey;
+  margin: 5px;
+  font-size: 12px;
+}
 

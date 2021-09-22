@@ -1,8 +1,8 @@
 [{
   "position": "top",
   "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-  "modules-center": ["custom/calendar", "clock#2"],
-  "modules-right": ["network#1", "network#2", "pulseaudio", "backlight", "idle_inhibitor", "battery"],
+  "modules-center": ["custom/calendar", "clock#2", "custom/weather"],
+  "modules-right": ["custom/vpn", "network#2", "pulseaudio", "backlight", "idle_inhibitor", "battery"],
 
   "sway/workspaces": {
     "disable-scroll": true,
@@ -15,25 +15,23 @@
   "custom/calendar": {
     "format": " {}",
     "on-click": "alacritty -e calcurse",
-    "return-type": "json",
     "exec": "$HOME/.config/waybar/modules/calendar.sh",
     "interval": 60,
+    "return-type": "json",
+    "escape": false
   },
   "clock#2": { "format": " {:%H:%M}" },
+  "custom/weather": {
+    "exec": "curl 'https://wttr.in/?format=1'",
+    "interval": 3600
+  },
 
-  "network#1": {
-    "interface": "tun0",
-    "format": "{icon}",
-    "format-wifi": "{icon}",
-    "format-ethernet": "{icon}",
-    "format-disconnected": "{icon}",
-    "format-icons": {
-      "wifi": ["", "", ""],
-      "ethernet": [""],
-      "disconnected": [""]
-    },
-    "tooltip-format": "{bandwidthUpBits} Up {bandwidthDownBits} Down",
-    "interval": 30
+  "custom/vpn": {
+    "format": "VPN ",
+    "exec": "echo '{\"class\": \"connected\"}'",
+    "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
+    "return-type": "json",
+    "interval": 5
   },
 
   "network#2": {
@@ -93,10 +91,18 @@
   },
 }, {
   "position": "bottom",
-  "modules-left": ["memory", "cpu", "temperature", "disk", "custom/mouse-bat", "custom/keyboard-bat"],
+  "modules-left": ["custom/scratchpad-indicator", "memory", "cpu", "temperature", "disk", "custom/mouse-bat", "custom/keyboard-bat"],
   "modules-center": ["custom/cmus"],
   "modules-right": ["custom/updates", "custom/updates-aur"],
 
+  "custom/scratchpad-indicator": {
+    "interval": 3,
+    "return-type": "json",
+    "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '( select(.name == \"root\") | .nodes[] | select(.name == \"__i3\") | .nodes[] | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") }'",
+    "format": "{}",
+    "on-click": "exec swaymsg 'scratchpad show'",
+    "on-click-right": "exec swaymsg 'move scratchpad'"
+  },
   "memory": { "interval": 1, "format": " {}% ({used:0.2f}G)" },
   "cpu": { "interval": 5, "format": " {usage:2}%" },
   "temperature": { "format": " {temperatureC}°C" },
