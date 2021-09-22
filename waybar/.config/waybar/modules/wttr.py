@@ -112,7 +112,7 @@ for i, day in enumerate(weather['weather']):
             if int(format_time(hour['time'])) < datetime.now().hour-2:
                 continue
         data['tooltip'] += f"{format_time(hour['time'])} {WEATHER_CODES[hour['weatherCode']]} {format_temp(hour['FeelsLikeC'])} {hour['weatherDesc'][0]['value']}, {format_chances(hour)}\n"
-
+data['tooltip'] = data['tooltip'][:-1]
 
 print(json.dumps(data))
 
