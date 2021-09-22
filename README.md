@@ -16,9 +16,9 @@
 - Fzf: [Fzf](https://github.com/junegunn/fzf)
 - Browsers:
   - [qutebrowser](https://qutebrowser.org/)
+  - [Nyxt](https://github.com/atlas-engineer/nyxt)
   - [Brave](https://brave.com/) [:pencil: Notes](docs/brave.md)
   - [LibreWolf](https://gitlab.com/librewolf-community)
-  - [Nyxt](https://github.com/atlas-engineer/nyxt)
 - PDF: [Zathura](https://en.wikipedia.org/wiki/Zathura_(document_viewer))
 - Vector: [Inkscape](https://inkscape.org/es/)
 - Raster: [Gimp](https://www.gimp.org/)
@@ -40,7 +40,9 @@
 - Cryptocurrencies: [cointop](https://github.com/miguelmota/cointop)
 - Kernel Manager: [kmon](https://github.com/orhun/kmon)
 - Pulse Audio Mixer: [ncpamixer](https://github.com/fulhax/ncpamixer)
-- Email CLI: [himalaya](https://github.com/soywod/himalaya)
+- Email:
+  - Client: [neomutt](https://neomutt.org/)
+  - CLI: [himalaya](https://github.com/soywod/himalaya)
 - Password Manager: [gopass](https://www.gopass.pw/)
   - Mobile: [Password Store](https://play.google.com/store/apps/details?id=dev.msfjarvis.aps)
   - Browser: [Gopass Bridge](https://github.com/gopasspw/gopassbridge)
