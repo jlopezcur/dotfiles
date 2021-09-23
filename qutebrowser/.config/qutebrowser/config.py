@@ -10,7 +10,8 @@ c.url.searchengines = {
     "DEFAULT": "https://www.ecosia.org/search?q={}",
     "wa": "https://wiki.archlinux.org/?search={}",
     "ww": "https://en.wikipedia.org/w/index.php?search={}",
-    "yt": "https://www.youtube.com/results?search_query={}"
+    "yt": "https://www.youtube.com/results?search_query={}",
+    "od": "https://odysee.com/$/search?q={}"
 }
 c.url.start_pages = ["https://www.ecosia.org"]
 c.url.default_page = "https://www.ecosia.org"
