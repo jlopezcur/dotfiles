@@ -96,7 +96,7 @@
   "position": "bottom",
   "modules-left": ["custom/scratchpad-indicator", "memory", "cpu", "temperature", "disk", "custom/mouse-bat", "custom/keyboard-bat"],
   "modules-center": ["custom/cmus"],
-  "modules-right": ["custom/updates", "custom/updates-aur"],
+  "modules-right": ["custom/updates", "custom/updates-aur", "custom/quit"],
 
   "custom/scratchpad-indicator": {
     "interval": 3,
@@ -158,5 +158,11 @@
     "interval": 3600,
     "signal": 8,
     "on-click": "alacritty -e paru && pkill -SIGRTMIN+8 waybar",
+  },
+  "custom/quit": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/modules/quit.py",
+    "interval": 3600,
   },
 }]
