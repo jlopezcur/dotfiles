@@ -3,6 +3,7 @@
 ## Packages Info
 
 - Font: [SauceCodePro Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro)
+- Emoji Font: [Noto Fonts Emoji](https://archlinux.org/packages/extra/any/noto-fonts-emoji/)
 - Icons: [Paper](https://snwh.org/paper)
 - GTK Theme: [Arc Dark](https://github.com/horst3180/Arc-theme)
 - GTK Theme Manager: [lxappearance](https://wiki.lxde.org/es/LXAppearance)
