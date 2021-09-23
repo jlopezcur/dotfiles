@@ -23,5 +23,6 @@ stow -vt ~ $DIR/scrcpy           # Mobile viewer
 stow -vt ~ $DIR/bpytop           # Process monitor
 stow -vt ~ $DIR/neomutt          # Email client
 stow -vt ~ $DIR/scripts          # Custom scripts
+stow -vt ~ $DIR/castero          # Castero
 
 echo "DONE!"
