@@ -18,6 +18,5 @@ total_cost = (cost_per_day * elapsed_seconds) / day_in_seconds
 data = {}
 data['text'] = str(int(round(total, 0))) + " " + emoji + " " + str(round(total_cost, 2)) + "€"
 data['class'] = "quit"
-data['tooltip'] = "Nothing yet"
 
 print(json.dumps(data))
