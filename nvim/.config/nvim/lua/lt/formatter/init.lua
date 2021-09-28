@@ -40,6 +40,15 @@ require('formatter').setup({
         }
       end
     },
+    python = {
+      -- Rustfmt
+      function()
+        return {
+          exe = "pyformat",
+          stdin = true
+        }
+      end
+    },
     sh = {
       -- Shell Script Formatter
       function()
