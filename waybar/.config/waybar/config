@@ -100,7 +100,7 @@
   "position": "bottom",
   "modules-left": ["custom/scratchpad-indicator", "memory", "cpu", "temperature", "disk"],
   "modules-center": ["custom/cmus"],
-  "modules-right": ["custom/updates", "custom/updates-aur", "custom/quit"],
+  "modules-right": ["custom/updates", "custom/updates-aur", "custom/tasks", "custom/quit"],
 
   "custom/scratchpad-indicator": {
     "interval": 3,
@@ -152,6 +152,12 @@
     "interval": 3600,
     "signal": 8,
     "on-click": "alacritty -e paru && pkill -SIGRTMIN+8 waybar",
+  },
+  "custom/tasks": {
+    "format": " {}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/modules/tasks.py",
+    "interval": 3600,
   },
   "custom/quit": {
     "format": "{}",
