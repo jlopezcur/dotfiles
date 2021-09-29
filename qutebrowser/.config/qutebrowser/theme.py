@@ -1,3 +1,18 @@
+# Dark mode
+
+config.set("colors.webpage.darkmode.enabled", True)
+# config.set("colors.webpage.darkmode.threshold.background", 128)
+# config.set("colors.webpage.darkmode.threshold.text", 128)
+# config.set("colors.webpage.darkmode.policy.images", 'never')
+config.set("colors.webpage.preferred_color_scheme", "dark")
+# config.set("colors.webpage.bg", "#22272E")
+
+# Font
+
+c.fonts.statusbar = '11pt "SauceCodePro Nerd Font"'
+c.fonts.debug_console = '11pt "SauceCodePro Nerd Font"'
+c.fonts.default_family = '12pt "SauceCodePro Nerd Font"'
+
 # gruvbox dark hard qutebrowser theme by Florian Bruhin <me@the-compiler.org>
 #
 # Originally based on:
