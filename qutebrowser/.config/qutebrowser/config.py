@@ -3,6 +3,8 @@ config.load_autoconfig(True)
 c.new_instance_open_target = 'window'
 c.downloads.position = 'bottom'
 c.spellcheck.languages = ['en-US', 'es-ES']
+c.tabs.show = 'never'
+c.qt.force_software_rendering = 'chromium'
 
 c.url.searchengines = {
   "DEFAULT": "https://www.ecosia.org/search?q={}",
