@@ -15,7 +15,8 @@ stow -vt ~ $DIR/lf               # File manager
 stow -vt ~ $DIR/alacritty        # Terminal
 stow -vt ~ $DIR/nvim             # Text editor
 stow -vt ~ $DIR/qutebrowser      # Primary browsers
-stow -vt ~ $DIR/brave            # Secondary browser
+stow -vt ~ $DIR/brave            # Second browser
+stow -vt ~ $DIR/chromium         # Third browser
 stow -vt ~ $DIR/newsboat         # Newsboat
 stow -vt ~ $DIR/zathura          # PDF Reader
 stow -vt ~ $DIR/slack            # Slack
@@ -24,5 +25,8 @@ stow -vt ~ $DIR/bpytop           # Process monitor
 stow -vt ~ $DIR/neomutt          # Email client
 stow -vt ~ $DIR/scripts          # Custom scripts
 stow -vt ~ $DIR/castero          # Castero
+stow -vt ~ $DIR/sxiv             # Image viewer
+stow -vt ~ $DIR/termshark        # Packet analyzer
+stow -vt ~ $DIR/calcurse         # Calendar manager
 
 echo "DONE!"
