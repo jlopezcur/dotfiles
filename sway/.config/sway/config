@@ -93,6 +93,8 @@ for_window [app_id="^capturer$"] floating enable, sticky enable, resize set 30 p
 # Open scrcpy in floating mode on the right side of the screen
 for_window [app_id="^scrcpy$"] floating enable, sticky enable, resize set 508 px 900 px, border pixel 10, move position 70 ppt 4 ppt
 
+for_window [app_id="^telegramdesktop$"] floating disable
+
 # basics
 # ======
 
