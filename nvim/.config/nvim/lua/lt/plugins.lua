@@ -56,6 +56,7 @@ return require('packer').startup(function()
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
   }
+  use 'nvim-telescope/telescope-fzy-native.nvim'
 
   -- markdown preview
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' } -- https://github.com/iamcco/markdown-preview.nvim
