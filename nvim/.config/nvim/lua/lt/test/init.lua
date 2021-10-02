@@ -16,9 +16,6 @@ map('n', '<Leader>tv', "<cmd>:TestVisit<CR>", options)
 
 -- " ------------------------------------------------------------------------------
 
--- " Rust
--- autocmd FileType rust nnoremap <buffer> <leader>rr :terminal cargo run<esc>
-
 -- " Python
 -- autocmd FileType python nnoremap <buffer> <leader>rr :!python %<cr>
 
