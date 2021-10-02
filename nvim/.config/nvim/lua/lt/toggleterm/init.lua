@@ -1,8 +1,3 @@
-options = {noremap=true, silent=true}
-
-vim.api.nvim_set_keymap('n', '<Leader>gq', "<cmd>:BufDel<CR>", options)
-vim.api.nvim_set_keymap('t', '<Leader><Esc>', "<C-\\><C-n>", options)
-
 require"toggleterm".setup{
   size = 20,
   open_mapping = [[<c-\>]],
@@ -13,3 +8,6 @@ require"toggleterm".setup{
   persist_size = true,
   direction = 'horizontal', -- 'vertical', | 'horizontal',
 }
+
+options = {noremap=true, silent=true}
+vim.api.nvim_set_keymap('t', '<Leader><Esc>', "<C-\\><C-n>", options)
