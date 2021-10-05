@@ -28,6 +28,7 @@ alias cat "bat"
 alias find "fd"
 alias ps "procs"
 alias ping "gping"
+alias v "nvim"
 abbr -a -g ... ../..
 abbr -a -g .... ../../..
 abbr -a -g ..... ../../../..
