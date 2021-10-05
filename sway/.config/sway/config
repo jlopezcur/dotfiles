@@ -94,6 +94,7 @@ for_window [app_id="^capturer$"] floating enable, sticky enable, resize set 30 p
 for_window [app_id="^scrcpy$"] floating enable, sticky enable, resize set 508 px 900 px, border pixel 10, move position 70 ppt 4 ppt
 
 for_window [app_id="^telegramdesktop$"] floating disable
+for_window [app_id="^downloader$"] floating enable, sticky enable, resize set 508 px 200 px, border pixel 10, move position 70 ppt 4 ppt
 
 # basics
 # ======
