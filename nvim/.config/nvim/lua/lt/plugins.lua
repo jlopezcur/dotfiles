@@ -121,5 +121,6 @@ return require('packer').startup(function()
   -- others
   use 'edluffy/specs.nvim' -- https://github.com/edluffy/specs.nvim
   use 'nacro90/numb.nvim' -- https://github.com/nacro90/numb.nvim
+  use 'godlygeek/tabular' -- 
 end)
 
