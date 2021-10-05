@@ -9,6 +9,7 @@ https://godotengine.org/rss.xml
 " "
 "-- linux --"
 https://www.linuxjournal.com/news/feed
+https://www.reddit.com/r/qutebrowser.rss "~ r/qutebrowser"
 
 " "
 "-- neovim --"
