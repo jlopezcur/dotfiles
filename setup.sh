@@ -21,7 +21,7 @@ stow -vt ~ $DIR/newsboat         # Newsboat
 stow -vt ~ $DIR/zathura          # PDF Reader
 stow -vt ~ $DIR/slack            # Slack
 stow -vt ~ $DIR/scrcpy           # Mobile viewer
-stow -vt ~ $DIR/bpytop           # Process monitor
+stow -vt ~ $DIR/btop             # Process monitor
 stow -vt ~ $DIR/neomutt          # Email client
 stow -vt ~ $DIR/scripts          # Custom scripts
 stow -vt ~ $DIR/castero          # Castero
