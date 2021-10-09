@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Requirements: skim
+# Requirements: bemenu
 
-PAGE="$(apropos . | awk '{print $1}' | sk --reverse --prompt='Man page: ')"
-swaymsg -t command exec "alacritty -e man $PAGE"
+page="$(apropos . | awk '{print $1}' | bemenu -H 25 --tf '#268bd2' --hf '#268bd2' -p 'Man Page')"
+[ -z "$page" ] || alacritty -e man $page

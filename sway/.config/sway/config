@@ -65,13 +65,11 @@ bindsym $mod+Ctrl+Return exec $term --title Newsboat -e newsboat
 bindsym $mod+Alt+Return exec $term --title Neomutt -e neomutt
 
 # launchers
-# bindsym $mod+p exec $term --class launcher --title Launcher -e ~/.config/sway/scripts/apps.sh
 bindsym $mod+p exec $term --class launcher --title Launcher -e sway-launcher-desktop
-bindsym $mod+Ctrl+p exec bemenu-run
 bindsym $mod+Alt+p exec $term --class launcher --title Launcher -e slings
-bindsym $mod+Shift+p exec $term --class launcher --title Gopass -e ~/.config/sway/scripts/copy-pass.sh
-bindsym $mod+Shift+m exec $term --class launcher --title Man -e ~/.config/sway/scripts/man.sh
-bindsym $mod+escape exec $term --class launcher --title "Sytem Options" -e ~/.config/sway/scripts/system.sh
+bindsym $mod+Shift+p exec ~/.config/sway/scripts/password.sh
+bindsym $mod+Shift+m exec ~/.config/sway/scripts/man.sh
+bindsym $mod+escape exec ~/.config/sway/scripts/system.sh
 for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
 
 # cmus
@@ -79,17 +77,13 @@ bindsym $mod+m exec $term --class cmus -e cmus
 for_window [app_id="cmus"] floating enable
 for_window [app_id="cmus"] move to scratchpad; [app_id="cmus"] scratchpad show; [app_id="cmus"] resize set width 1600 px height 800 px
 
-# color picker
-bindsym $mod+i exec ~/.config/sway/scripts/color-picker.sh
-
 # top
 bindsym $mod+t exec $term --class top -e bpytop
 for_window [app_id="top"] floating enable
 for_window [app_id="top"] move to scratchpad; [app_id="top"] scratchpad show; [app_id="top"] resize set width 1600 px height 800 px
 
-# capture menu (screenshot, video & gif)
-bindsym $mod+c exec $term --class launcher --title Capture -e ~/.config/sway/scripts/capture.sh
-for_window [app_id="^capturer$"] floating enable, sticky enable, resize set 30 ppt 5 ppt, border pixel 10, move position 3 ppt 90 ppt
+# capture menu (screenshot, video, gif & color)
+bindsym $mod+c exec ~/.config/sway/scripts/capture.sh
 
 # Open scrcpy in floating mode on the right side of the screen
 for_window [app_id="^scrcpy$"] floating enable, sticky enable, resize set 508 px 900 px, border pixel 10, move position 70 ppt 4 ppt

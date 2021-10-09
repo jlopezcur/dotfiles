@@ -1,25 +1,29 @@
 #!/bin/sh
 
-# Requirements: skim
+# Requirements: bemenu
 
 actions=(
-  "screenshot"
-  "screenshot (partial)"
+  "screen"
+  "partial-screen"
   "video"
-  "video (partial)"
-  "gif (partial)"
-  "color (hex)"
+  "partial-video"
+  "partial-gif"
+  "color-hex"
 )
 
-action=$(printf "\n%s" "${actions[@]}" | sk --reverse --prompt="Capture: ")
+list=$(printf "\n%s" "${actions[@]}") # list of entries in lines
+list="${list:1}" # remove the first separator
+action=$(echo "${list}" | bemenu -H 25 --tf '#268bd2' --hf '#268bd2' -p 'Capture')
+
+export GRIM_DEFAULT_DIR="$HOME/images/"
 
 case $action in
-  "screenshot") cd ~/images && grim ;;
-  "screenshot (partial)") grim -g "$(slurp)" -o "~/images/capture.png" ;;
+  "screen") grim ;;
+  "partial-screen") grim -g "$(slurp)" ;;
   "video") create-video ;;
-  "video (partial)") create-video ;;
-  "gif (partial)") create-gif ;;
-  "color (hex)") capture-color ;;
+  "partial-video") create-video ;;
+  "partial-gif") create-gif ;;
+  "color-hex") capture-color ;;
   *) echo "Invalid option $action" ;;
 esac
 

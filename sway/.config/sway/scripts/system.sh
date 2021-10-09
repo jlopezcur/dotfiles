@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Requirements: skim
+# Requirements: bemenu
 
 actions=(
   "lock"
@@ -13,7 +13,9 @@ actions=(
   "idle"
 )
 
-action=$(printf "\n%s" "${actions[@]}" | sk --reverse --prompt="System: ")
+list=$(printf "\n%s" "${actions[@]}") # list of entries in lines
+list="${list:1}" # remove the first separator
+action=$(echo "${list}" | bemenu -H 25 --tf '#268bd2' --hf '#268bd2' -p "System")
 
 case $action in
   "lock") swaylock ;;
