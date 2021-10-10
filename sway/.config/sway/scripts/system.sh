@@ -25,6 +25,5 @@ case $action in
   "poweroff") systemctl poweroff ;;
   "update") alacritty -e paru && pkill -SIGRTMIN+8 waybar ;;
   "show updates") alacritty -e show-updates ;;
-  "idle") inhibit-idle ;;
   *) echo "Invalid option $action" ;;
 esac
