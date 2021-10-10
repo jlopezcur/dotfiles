@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# read -p "Press Enter to start" </dev/tty
+# wf-recorder -g "$(slurp)" -f /tmp/recording.mp4
+# ffmpeg -i /tmp/recording.mp4 -vf fps=5,smartblur=ls=-0.5,crop=iw:ih-2:0:0 -y ~/video/recording.gif
+
+if ! pkill -INT -P "$(pgrep -xo record-gif)" wf-recorder 2>/dev/null; then
+    geometry="$(slurp -d)"
+    if [ -n "$geometry" ]; then
+        pkill -USR1 -x record-gifd
+        mkdir -p ~/video
+        filename="gif-record-$(date +%Y-%m-%d-%H-%M-%S)"
+        wf-recorder -f /tmp/"$filename".mp4 -g "$geometry"
+        ffmpeg -i /tmp/"$filename".mp4 -vf fps=5,smartblur=ls=-0.5,crop=iw:ih-2:0:0 -y ~/video/"$filename".gif
+        pkill -USR2 -x record-gifd
+    fi
+fi

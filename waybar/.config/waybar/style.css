@@ -7,21 +7,40 @@
 
 /* Bars */
 
-window#waybar { color: #999; }
+window#waybar {
+  color: #999;
+}
 window#waybar.top {
-  background: rgba(0,0,0, 0.7);
-  background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+  background: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
 }
 window#waybar.bottom {
-  background: rgba(0,0,0, 0.7);
-  background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+  background: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
 }
 
 /* Workspaces buttons */
 
-#workspaces button { padding: 0 5px; background: transparent; color: #fdf6e3; }
-#workspaces button.focused { color: #ccc; background: rgba(38,139,210, 0.7); }
-#workspaces button.urgent { background: rgba(214,93,14, 0.7); }
+#workspaces button {
+  padding: 0 5px;
+  background: transparent;
+  color: #fdf6e3;
+}
+#workspaces button.focused {
+  color: #ccc;
+  background: rgba(38, 139, 210, 0.7);
+}
+#workspaces button.urgent {
+  background: rgba(214, 93, 14, 0.7);
+}
 
 /* Modules padding */
 
@@ -41,6 +60,8 @@ window#waybar.bottom {
 #custom-calendar,
 #custom-times,
 #custom-tasks,
+#custom-videorec,
+#custom-gifrec,
 #temperature,
 #bluetooth,
 #network,
@@ -52,9 +73,17 @@ window#waybar.bottom {
 
 /* Modules status */
 
-#battery.critical { background: red; }
-#custom-updates.one, #custom-updates.many { color: orange; }
-#custom-updates-aur.one, #custom-updates-aur.many { color: orange; }
+#battery.critical {
+  background: red;
+}
+#custom-updates.one,
+#custom-updates.many {
+  color: orange;
+}
+#custom-updates-aur.one,
+#custom-updates-aur.many {
+  color: orange;
+}
 #custom-scratchpad-indicator {
   color: black;
   padding: 0 4px;
@@ -63,3 +92,7 @@ window#waybar.bottom {
   font-size: 12px;
 }
 
+#custom-videorec,
+#custom-gifrec {
+  color: red;
+}

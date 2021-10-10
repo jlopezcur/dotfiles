@@ -4,10 +4,8 @@
 
 actions=(
   "screen"
-  "partial-screen"
   "video"
-  "partial-video"
-  "partial-gif"
+  "gif"
   "color-hex"
 )
 
@@ -18,11 +16,9 @@ action=$(echo "${list}" | bemenu -H 25 --tf '#268bd2' --hf '#268bd2' -p 'Capture
 export GRIM_DEFAULT_DIR="$HOME/images/"
 
 case $action in
-  "screen") grim ;;
-  "partial-screen") grim -g "$(slurp)" ;;
-  "video") create-video ;;
-  "partial-video") create-video ;;
-  "partial-gif") create-gif ;;
+  "screen") grim -g "$(slurp)" ;;
+  "video") record-screen ;;
+  "gif") record-gif ;;
   "color-hex") capture-color ;;
   *) echo "Invalid option $action" ;;
 esac

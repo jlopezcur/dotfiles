@@ -2,7 +2,7 @@
   "position": "top",
   "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
   "modules-center": ["custom/calendar", "custom/times", "custom/weather"],
-  "modules-right": ["custom/vpn", "network#2", "pulseaudio", "backlight", "idle_inhibitor", "battery"],
+  "modules-right": ["custom/videorec", "custom/gifrec", "custom/vpn", "network", "pulseaudio", "backlight", "idle_inhibitor", "battery"],
 
   "sway/workspaces": {
     "disable-scroll": true,
@@ -41,7 +41,21 @@
     "interval": 5
   },
 
-  "network#2": {
+  "custom/videorec": {
+    "format": " VID",
+    "exec": "exec record-screend",
+    "exec-on-event": false,
+    "on-click": "pkill -INT -P \"$(pgrep -xo record-screen)\" wf-recorder"
+  },
+
+  "custom/gifrec": {
+    "format": " GIF",
+    "exec": "exec record-gifd",
+    "exec-on-event": false,
+    "on-click": "pkill -INT -P \"$(pgrep -xo record-gif)\" wf-recorder"
+  },
+
+  "network": {
     "format": "{icon}",
     "format-alt": "{ipaddr}/{cidr} {icon}",
     "format-alt-click": "click-right",
