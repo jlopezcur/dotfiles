@@ -1,4 +1,21 @@
 #!/bin/sh
 
-grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
+formats="$(grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1)"
 
+resutl=""
+format=""
+if [[ $1 == "--hex" ]]
+then
+  result="$(echo $formats | awk '{ print $3 }')"
+  format="Hexadecimal"
+elif [[ $1 == "--rgb" ]]
+then
+  result="rgb$(echo $formats | awk '{ print $2 }')"
+  format="RGB"
+fi
+
+if [ -n $result ]
+then
+  wl-copy -p $result
+  notify-send "$format copied!" "$result" -u normal -i color
+fi
