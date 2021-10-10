@@ -20,14 +20,14 @@
 #                                                                   /.-~
 
 # Set default programs
-set EDITOR "nvim"
-set VISUAL "nvim"
-set BROWSER "qutebrowser"
-set PAGER "less"
-set -x MANPAGER "nvim -c 'set ft=man' -"
+export EDITOR="nvim"
+export VISUAL="nvim"
+export BROWSER="qutebrowser"
+export PAGER="less"
+export MANPAGER="nvim -c 'set ft=man' -"
 
 # Set general architecture flags
-set ARCHFLAGS "-arch x86_64"
+export ARCHFLAGS="-arch x86_64"
 
 # Source other files
 
