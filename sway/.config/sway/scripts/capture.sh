@@ -17,7 +17,14 @@ export GRIM_DEFAULT_DIR="$HOME/images/"
 
 case $action in
   "screen") grim -g "$(slurp)" ;;
-  "video") record-screen ;;
+  "video")
+    subaction=$(echo -e "mute\naudio" | bemenu -H 25 --tf '#268bd2' --hf '#268bd2' -p 'Capture Video')
+    case $subaction in
+      "mute") record-screen ;;
+      "audio") record-screen --audio ;;
+      *) echo "Invalid suboption $subaction" ;;
+    esac
+    ;;
   "gif") record-gif ;;
   "color")
     subaction=$(echo -e "hex\nrgb" | bemenu -H 25 --tf '#268bd2' --hf '#268bd2' -p 'Capture Color')

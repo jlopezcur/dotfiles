@@ -8,7 +8,11 @@ if ! pkill -INT -P "$(pgrep -xo record-screen)" wf-recorder 2>/dev/null; then
     if [ -n "$geometry" ]; then
         pkill -USR1 -x record-screend
         mkdir -p ~/video
-        wf-recorder -f ~/video/"screen-record-$(date +%Y-%m-%d-%H-%M-%S).mp4" -g "$geometry"
+        if [[ $1 == "--audio" ]]; then
+          wf-recorder -a -f ~/video/"screen-record-$(date +%Y-%m-%d-%H-%M-%S).mp4" -g "$geometry"
+        else
+          wf-recorder -f ~/video/"screen-record-$(date +%Y-%m-%d-%H-%M-%S).mp4" -g "$geometry"
+        fi
         pkill -USR2 -x record-screend
     fi
 fi
