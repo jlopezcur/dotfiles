@@ -24,7 +24,7 @@ case $action in
   "reboot") systemctl reboot ;;
   "poweroff") systemctl poweroff ;;
   "update") alacritty -e paru && pkill -SIGRTMIN+8 waybar ;;
-  "show updates") update-show ;;
+  "show updates") alacritty -e show-updates ;;
   "idle") inhibit-idle ;;
   *) echo "Invalid option $action" ;;
 esac
