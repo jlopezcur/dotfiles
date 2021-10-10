@@ -28,6 +28,7 @@
   "custom/weather": {
     "format": "{}",
     "tooltip": true,
+    "on-click": "alacritty --title Weather -e weather",
     "interval": 3600,
     "exec": "$HOME/.config/waybar/modules/wttr.py",
     "return-type": "json"

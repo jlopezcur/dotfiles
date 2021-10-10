@@ -1,0 +1,5 @@
+#!/bin/sh
+
+curl 'https://wttr.in/Pinto'
+
+read -p "Press Enter to continue" </dev/tty
