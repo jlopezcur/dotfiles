@@ -67,10 +67,12 @@ bindsym $mod+Alt+Return exec $term --title Neomutt -e neomutt
 # launchers
 bindsym $mod+p exec $term --class launcher --title Launcher -e sway-launcher-desktop
 bindsym $mod+Alt+p exec $term --class launcher --title Launcher -e slings
+for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+
 bindsym $mod+Shift+p exec ~/.config/sway/scripts/password.sh
 bindsym $mod+Shift+m exec ~/.config/sway/scripts/man.sh
 bindsym $mod+escape exec ~/.config/sway/scripts/system.sh
-for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+
 
 # cmus
 bindsym $mod+m exec $term --class cmus -e cmus
@@ -89,7 +91,7 @@ bindsym $mod+c exec ~/.config/sway/scripts/capture.sh
 for_window [app_id="^scrcpy$"] floating enable, sticky enable, resize set 508 px 900 px, border pixel 10, move position 70 ppt 4 ppt
 
 for_window [app_id="^telegramdesktop$"] floating disable
-for_window [app_id="^downloader$"] floating enable, sticky enable, resize set 508 px 200 px, border pixel 10, move position 70 ppt 4 ppt
+for_window [app_id="^statusline$"] floating enable, sticky enable, resize set 98 ppt 18 ppt, border pixel 2, move position 1ppt 80 ppt
 
 # basics
 # ======
