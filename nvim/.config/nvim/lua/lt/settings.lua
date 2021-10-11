@@ -94,23 +94,7 @@ vim.wo.relativenumber = true
 vim.cmd("nnoremap <Leader>e :e $MYVIMRC<CR>")
 
 --
--- images & pdf
--- 
-
-vim.cmd('autocmd bufenter *.png,*.jpg,*.jpeg,*.gif exec "!imv \'".expand("%")."\' &" | :bd')
-vim.cmd('autocmd bufenter *.pdf exec "!zathura \'".expand("%")."\' &" | :bw')
-
---
 -- Visual editor integration
 --
 
 vim.o.guifont = "SauceCodePro Nerd Font:h15"
-
---
--- Netrw
---
-
-vim.g.netrw_bufsettings = 'noma nomod nonu nobl nowrap ro rnu'
--- vim.g.netrw_fastbrowse = 0
--- vim.g.netrw_keepdir = 0
-vim.g.netrw_localcopydircmd = 'cp -r'
