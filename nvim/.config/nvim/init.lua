@@ -20,6 +20,7 @@
 
 -- General settings
 require "lt.settings"
+require "lt.netrw"
 
 -- Plugins
 require "lt.plugins"
