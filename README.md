@@ -1,6 +1,6 @@
 # dotfiles (alpha)
 
-## Packages Info
+## Pieces
 
 - Font: [SauceCodePro Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro)
 - Emoji Font: [Noto Fonts Emoji](https://archlinux.org/packages/extra/any/noto-fonts-emoji/)
@@ -29,7 +29,8 @@
 - Monitoring: [glances](https://github.com/nicolargo/glances)
 - Music: [cmus](https://cmus.github.io/)
 - 3D & Video Edition: [blender](https://www.blender.org/)
-- IRC: [irssi](https://irssi.org/)
+- IRC: [weechat](https://weechat.org/)
+  - Server#1: [libera.chat](https://libera.chat/)
 - Firewall: [ufw](https://launchpad.net/ufw)
 - Video Recording: [OBS Studio](https://obsproject.com/)
 - Locker: [swaylock-effects](https://github.com/mortie/swaylock-effects)

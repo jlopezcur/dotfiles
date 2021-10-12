@@ -64,6 +64,9 @@ bindsym $mod+Ctrl+Return exec $term --title Newsboat -e newsboat
 # email client
 bindsym $mod+Alt+Return exec $term --title Neomutt -e neomutt
 
+# irc client
+bindsym $mod+Ctrl+Alt+Return exec $term --title Weechat -e weechat
+
 # launchers
 bindsym $mod+p exec $term --class launcher --title Launcher -e sway-launcher-desktop
 bindsym $mod+Alt+p exec $term --class launcher --title Launcher -e slings
