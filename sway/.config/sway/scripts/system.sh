@@ -9,7 +9,6 @@ actions=(
   "reboot"
   "poweroff"
   "update"
-  "show updates"
   "idle"
 )
 
@@ -23,7 +22,6 @@ case $action in
   "hibernate") systemctl hibernate ;;
   "reboot") systemctl reboot ;;
   "poweroff") systemctl poweroff ;;
-  "update") alacritty -e paru && pkill -SIGRTMIN+8 waybar ;;
-  "show updates") alacritty -e show-updates ;;
+  "update") alacritty -e system-update ;;
   *) echo "Invalid option $action" ;;
 esac
