@@ -28,5 +28,6 @@ stow -vt ~ $DIR/castero          # Castero
 stow -vt ~ $DIR/sxiv             # Image viewer
 stow -vt ~ $DIR/termshark        # Packet analyzer
 stow -vt ~ $DIR/calcurse         # Calendar manager
+stow -vt ~ $DIR/weechat          # IRC
 
 echo "DONE!"
