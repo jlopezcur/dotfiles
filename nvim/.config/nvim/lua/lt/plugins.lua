@@ -17,7 +17,6 @@ return require('packer').startup(function()
 
   -- lsp
   use 'neovim/nvim-lspconfig'
-  use 'kabouzeid/nvim-lspinstall'
   use 'tjdevries/nlua.nvim'
   use 'glepnir/lspsaga.nvim'
   use 'nvim-lua/lsp-status.nvim'
