@@ -59,7 +59,12 @@ nvim_lsp.tsserver.setup{
   end
 }
 nvim_lsp.eslint.setup{}
-nvim_lsp.rust_analyzer.setup{}
+nvim_lsp.rust_analyzer.setup{
+  on_attach = function (client)
+    client.resolved_capabilities.document_formatting = false
+    on_attach(client)
+  end
+}
 nvim_lsp.cssls.setup{}
 nvim_lsp.html.setup{}
 nvim_lsp.bashls.setup{}
