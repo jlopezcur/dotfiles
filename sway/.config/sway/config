@@ -73,6 +73,7 @@ bindsym $mod+Alt+p exec $term --class launcher --title Launcher -e slings
 for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
 
 bindsym $mod+Shift+p exec ~/.config/sway/scripts/password.sh
+bindsym $mod+Shift+o exec ~/.config/sway/scripts/otp.sh
 bindsym $mod+Shift+m exec ~/.config/sway/scripts/man.sh
 bindsym $mod+escape exec ~/.config/sway/scripts/system.sh
 
