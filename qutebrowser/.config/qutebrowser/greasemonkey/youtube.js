@@ -6,6 +6,6 @@
 // ==/UserScript==
 
 window.addEventListener('load', function () {
-  document.querySelector('.ytp-gradient-bottom').style.backgroundImage = 'none';
-  document.querySelector('.ytp-gradient-top').style.backgroundImage = 'none';
+  document.querySelector('.ytp-gradient-bottom').remove();
+  document.querySelector('.ytp-gradient-top').remove();
 });
