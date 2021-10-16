@@ -14,7 +14,7 @@ else
     response="Y"
   fi
   case $response in
-    "Y") paru && pkill -SIGRTMIN+8 waybar ;;
+    "Y") paru && pkill -SIGRTMIN+8 waybar ; read -p "Process exited review the output (press Enter to continue)..." </dev/tty ;;
     *) ;;
   esac
 fi
