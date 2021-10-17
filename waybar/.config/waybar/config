@@ -57,16 +57,15 @@
   },
 
   "network": {
-    "format": "{icon}",
-    "format-alt": "{ipaddr}/{cidr} {icon}",
-    "format-alt-click": "click-right",
-    "format-icons": {
-      "wifi": ["1", "2" ,"3"],
-      "ethernet": [""],
-      "disconnected": [""]
-    },
-    "on-click": "alacritty -e nmtui",
-    "tooltip": false
+    "tooltip": true,
+    "format": "{iframe}",
+    "format-wifi": "{icon} {signalStrength}%",
+    "tooltip-format-wifi": "Inrterface: {ifname}\nIP: {ipaddr}/{cidr}\nSSID: {essid}\nFreq: {frequency} MHz\nStrength: {signaldBm} dBm ({signalStrength}%)\nUp: {bandwidthUpBits}\nDown: {bandwidthDownBits}",
+    "format-ethernet": "{icon}",
+    "tooltip-format-ethernet": "Inrterface: {ifname}\nIP: {ipaddr}/{cidr}\nUp: {bandwidthUpBits}\nDown: {bandwidthDownBits}",
+    "format-disconnected": "",
+    "format-icons": { "wifi": "", "ethernet": "" },
+    "on-click": "alacritty -e nmtui"
   },
 
   "pulseaudio": {
