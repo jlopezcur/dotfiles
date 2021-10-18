@@ -53,17 +53,14 @@ end
 
 nvim_lsp.pyright.setup{}
 nvim_lsp.tsserver.setup{
-  on_attach = function (client)
+  on_attach = function (client, bufnr)
     client.resolved_capabilities.document_formatting = false
-    on_attach(client)
+    on_attach(client, bufnr)
   end
 }
 nvim_lsp.eslint.setup{}
 nvim_lsp.rust_analyzer.setup{
-  on_attach = function (client)
-    client.resolved_capabilities.document_formatting = false
-    on_attach(client)
-  end
+  on_attach = on_attach
 }
 nvim_lsp.cssls.setup{}
 nvim_lsp.html.setup{}
@@ -71,53 +68,3 @@ nvim_lsp.bashls.setup{}
 nvim_lsp.clangd.setup{}
 -- nvim_lsp.sumneko_lua.setup{}
 nvim_lsp.yamlls.setup{}
-
-local filetypes = {
-    javascript = "eslint",
-    javascriptreact = "eslint",
-    typescript = "eslint",
-    typescriptreact = "eslint",
-}
-
-local linters = {
-    eslint = {
-        sourceName = "eslint",
-        command = "eslint_d",
-        rootPatterns = {".eslintrc.js", "package.json"},
-        debounce = 100,
-        args = {"--stdin", "--stdin-filename", "%filepath", "--format", "json"},
-        parseJson = {
-            errorsRoot = "[0].messages",
-            line = "line",
-            column = "column",
-            endLine = "endLine",
-            endColumn = "endColumn",
-            message = "${message} [${ruleId}]",
-            security = "severity"
-        },
-        securities = {[2] = "error", [1] = "warning"}
-    }
-}
-
-local formatters = {
-    prettier = {command = "prettier", args = {"--stdin-filepath", "%filepath"}}
-}
-
-local formatFiletypes = {
-    typescript = "prettier",
-    typescriptreact = "prettier"
-}
-
-nvim_lsp.diagnosticls.setup {
-    on_attach = on_attach,
-    filetypes = vim.tbl_keys(filetypes),
-    init_options = {
-        filetypes = filetypes,
-        linters = linters,
-        formatters = formatters,
-        formatFiletypes = formatFiletypes
-    }
-}
-
--- References:
--- https://jose-elias-alvarez.medium.com/configuring-neovims-lsp-client-for-typescript-development-5789d58ea9c
