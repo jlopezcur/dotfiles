@@ -128,12 +128,6 @@
   "cpu": { "interval": 5, "format": " {usage:2}%" },
   "temperature": { "format": " {temperatureC}°C" },
   "disk": { "interval": 5, "format": " {percentage_used:2}%", "path": "/" },
-  "custom/bluetooth": {
-    "format": "{}",
-    "return-type": "json",
-    "exec": "$HOME/.config/waybar/modules/bluetooth.py",
-    "interval": 3600,
-  },
 
   "custom/cmus": {
     "format": "♪ {}",
