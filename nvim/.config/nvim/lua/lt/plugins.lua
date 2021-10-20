@@ -20,16 +20,19 @@ return require('packer').startup(function()
   use 'tjdevries/nlua.nvim'
   use 'glepnir/lspsaga.nvim'
   use 'nvim-lua/lsp-status.nvim'
-  use 'hrsh7th/nvim-compe' --completion
-  -- use {'tzachar/compe-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-compe'}
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/nvim-cmp'
+  use 'onsails/lspkind-nvim'
+  use 'f3fora/cmp-spell'
 
   -- formatter
   use 'mhartington/formatter.nvim' -- https://github.com/mhartington/formatter.nvim
 
   -- snippets
-  -- use 'SirVer/ultisnips' -- https://github.com/sirver/UltiSnips
-  -- use 'honza/vim-snippets' -- https://github.com/honza/vim-snippets
-  use 'norcalli/snippets.nvim' -- https://github.com/norcalli/snippets.nvim
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
 
   -- theme
   use 'folke/tokyonight.nvim'

@@ -8,7 +8,7 @@ vim.o.title = true
 vim.o.path = ".,**"
 vim.o.encoding = "UTF-8"
 vim.g.mapleader = ','
-vim.o.completeopt = "menuone,noselect"
+vim.o.completeopt = "menu,menuone,noselect"
 
 -- vim.cmd("set clipboard+=unnamedplus")
 -- vim.o.clipboard = "unnamedplus"
