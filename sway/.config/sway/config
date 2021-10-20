@@ -76,7 +76,7 @@ bindsym $mod+Shift+p exec ~/.config/sway/scripts/password.sh
 bindsym $mod+Shift+o exec ~/.config/sway/scripts/otp.sh
 bindsym $mod+Shift+m exec ~/.config/sway/scripts/man.sh
 bindsym $mod+escape exec ~/.config/sway/scripts/system.sh
-
+bindsym $mod+Shift+v exec ~/.config/sway/scripts/vpn.sh
 
 # cmus
 bindsym $mod+m exec $term --class cmus -e cmus
