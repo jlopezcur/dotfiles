@@ -53,6 +53,7 @@ end
 
 nvim_lsp.pyright.setup{}
 nvim_lsp.tsserver.setup{
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   on_attach = function (client, bufnr)
     client.resolved_capabilities.document_formatting = false
     on_attach(client, bufnr)
@@ -60,6 +61,7 @@ nvim_lsp.tsserver.setup{
 }
 nvim_lsp.eslint.setup{}
 nvim_lsp.rust_analyzer.setup{
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   on_attach = on_attach
 }
 nvim_lsp.cssls.setup{}
