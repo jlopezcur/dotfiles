@@ -76,6 +76,14 @@ window#waybar.bottom {
 #battery.critical {
   background: red;
 }
+
+#memory.warning {
+  color: orange;
+}
+#memory.critical {
+  color: red;
+}
+
 #custom-updates.one,
 #custom-updates.many {
   color: orange;

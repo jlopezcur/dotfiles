@@ -126,7 +126,14 @@
     "on-click": "exec swaymsg 'scratchpad show'",
     "on-click-right": "exec swaymsg 'move scratchpad'"
   },
-  "memory": { "interval": 1, "format": " {}% ({used:0.2f}G)" },
+  "memory": {
+    "interval": 1,
+    "format": " {}% ({used:0.2f}G)",
+    "states": {
+      "warning": 70,
+      "critical": 85,
+    }
+  },
   "cpu": { "interval": 5, "format": " {usage:2}%" },
   "temperature": { "format": " {temperatureC}°C" },
   "disk": { "interval": 5, "format": " {percentage_used:2}%", "path": "/" },
