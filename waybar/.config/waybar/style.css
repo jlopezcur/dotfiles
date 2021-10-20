@@ -96,3 +96,7 @@ window#waybar.bottom {
 #custom-gifrec {
   color: red;
 }
+
+#custom-vpn.connected {
+  color: orange;
+}

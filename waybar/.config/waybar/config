@@ -35,9 +35,11 @@
   },
 
   "custom/vpn": {
-    "format": "VPN ",
+    "format": "ﱾ VPN",
     "exec": "echo '{\"class\": \"connected\"}'",
     "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
+    "on-click": "alacritty --title VPN -e vpn-check",
+    "on-click-middle": "alacritty --title VPN -e vpn-stop",
     "return-type": "json",
     "interval": 5
   },
