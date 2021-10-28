@@ -2,7 +2,7 @@
 	name = Javier López Úbeda
 	email = jlopezcur@gmail.com
 [pull]
-	rebase = false
+	rebase = true
 [color "status"]
 	branch = magenta
 	untracked = cyan
