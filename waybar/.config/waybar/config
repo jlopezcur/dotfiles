@@ -160,6 +160,7 @@
     "exec": "cmus-remote -C \"format_print '%a - %t'\"",
     "exec-if": "pgrep cmus",
     "on-click": "cmus-remote -u",
+    "signal": 9,
     "escape": true
   },
 
