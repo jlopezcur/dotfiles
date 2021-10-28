@@ -441,6 +441,37 @@ ls.snippets = {
       i(3),
       t({"", "};"}),
     }),
+    s("des", {
+      t("import { "),
+      i(2),
+      t(" } from '"),
+      i(1),
+      t({"';", ""}),
+      t({
+        "",
+        "const cases = [",
+        "\t[",
+        "\t\t'Case 1',",
+        "\t\t{},",
+        "\t\t[]",
+        "\t]",
+        "];",
+        ""
+      }),
+      t({"", "describe('"}),
+      i(3, "example"),
+      t({
+        "', () => {",
+        "\tit.each(cases)('%s', (_title, params, expected) => {",
+        "\t\texpect("
+      }),
+      f(copy, 2),
+      t({
+        "(params)).toEqual(expected);",
+        "\t});",
+        "});"
+      })
+    })
   },
   javascriptreact = {
     s("re", {
