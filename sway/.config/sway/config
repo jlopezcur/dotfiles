@@ -44,7 +44,8 @@ exec gammastep -l 40.241111:-3.699444
 exec mako
 
 # Drive auto mounter
-exec udiskie
+# I usually don't use external drives so...
+# exec udiskie
 
 # key bindings
 # ------------------------------------------------------------------------------
