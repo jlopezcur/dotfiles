@@ -3,25 +3,12 @@ require('lualine').setup({
   extensions = {
     'fugitive',
     'quickfix',
+    'toggleterm',
   },
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch'},
-    lualine_c = {
-      {
-        'diagnostic',
-        sources = {'nvim_lsp'},
-        symbols = {
-          error = '',
-          warn = '',
-          info = '',
-        }
-      },
-      {
-        'filename',
-        path = 1
-      }
-    },
+    lualine_c = { { 'diagnostics' }, { 'filename', path = 1 } },
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'},
