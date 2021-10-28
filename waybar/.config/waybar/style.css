@@ -84,6 +84,24 @@ window#waybar.bottom {
   color: red;
 }
 
+#cpu.warning {
+  color: orange;
+}
+#cpu.critical {
+  color: red;
+}
+
+#temperature.critical {
+  color: red;
+}
+
+#disk.warning {
+  color: orange;
+}
+#disk.critical {
+  color: red;
+}
+
 #custom-updates.one,
 #custom-updates.many {
   color: orange;
