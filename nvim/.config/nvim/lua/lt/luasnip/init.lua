@@ -16,7 +16,7 @@ local dl = require("luasnip.extras").dynamic_lambda
 local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local types = require("luasnip.util.types")
-local conds = require("luasnip.extras.conditions")
+-- local conds = require("luasnip.extras.conditions")
 
 -- Every unspecified option will be set to the default.
 ls.config.set_config({
@@ -459,15 +459,15 @@ ls.snippets = {
         ""
       }),
       t({"", "describe('"}),
-      i(3, "example"),
+      f(copy, 2),
       t({
         "', () => {",
-        "\tit.each(cases)('%s', (_title, params, expected) => {",
+        "\tit.each(cases)('%s', (_title, args, expected) => {",
         "\t\texpect("
       }),
       f(copy, 2),
       t({
-        "(params)).toEqual(expected);",
+        "(args)).toEqual(expected);",
         "\t});",
         "});"
       })
