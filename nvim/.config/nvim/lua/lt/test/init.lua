@@ -3,6 +3,10 @@ options = { noremap = true, silent = true }
 
 -- Use jest configuration on js environments
 vim.g['test#javascript#runner'] = 'jest'
+vim.g['test#javascript#jest#options'] = {
+  all = '--coverage',
+  suite = ''
+}
 
 -- Geneal mappings
 map('n', '<Leader>tn', "<cmd>:TestNearest<CR>", options)
