@@ -14,6 +14,7 @@ c.url.searchengines = {
   "wa": "https://wiki.archlinux.org/?search={}",
   "ww": "https://en.wikipedia.org/w/index.php?search={}",
   "yt": "https://www.youtube.com/results?search_query={}",
+  "cr": "https://crates.io/search?q={}",
   "od": "https://odysee.com/$/search?q={}",
   "dles": "https://www.deepl.com/translator#en/es/{}",
   "dlen": "https://www.deepl.com/translator#es/en/{}"
