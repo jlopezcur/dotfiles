@@ -59,3 +59,9 @@ abbr -a -g reboot systemctl reboot
 abbr -a -g poweroff systemctl poweroff
 abbr -a -g suspend systemctl suspend
 abbr -a -g hibernate systemctl hibernate
+
+# Eye Candy
+# https://wiki.archlinux.org/title/Color_output_in_console
+alias diff "diff --color=auto"
+alias grep "grep --color=auto"
+alias ip "ip -color=auto"

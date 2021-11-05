@@ -26,6 +26,10 @@ export BROWSER="qutebrowser"
 export PAGER="less"
 export MANPAGER="nvim -c 'set ft=man' -"
 
+# Eye Candy
+# https://wiki.archlinux.org/title/Color_output_in_console
+export LESS='-R --use-color -Dd+r$Du+b'
+
 # Set general architecture flags
 export ARCHFLAGS="-arch x86_64"
 
