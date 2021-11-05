@@ -8,3 +8,10 @@ vim.api.nvim_set_keymap('n', '<Leader>rr', ':TermExec cmd="cargo run" go_back=0 
 
 -- close a buffer
 vim.api.nvim_set_keymap('n', '<Leader>gq', "<cmd>:BufDel<CR>", options)
+
+--
+-- vimrc
+--
+
+-- Edit vimrc configuration file
+vim.cmd("nnoremap <Leader>e :e $MYVIMRC<CR>")

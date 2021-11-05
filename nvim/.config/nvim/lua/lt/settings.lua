@@ -87,13 +87,6 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 
 --
--- vimrc
---
-
--- Edit vimrc configuration file
-vim.cmd("nnoremap <Leader>e :e $MYVIMRC<CR>")
-
---
 -- Visual editor integration
 --
 
