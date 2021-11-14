@@ -17,15 +17,14 @@ require("telescope").setup {
     },
     git_branches = {
       sort_lastused = true,
-      ignore_current_buffer = true
+    },
+    buffers = {
+      sort_lastused = true,
+      ignore_current_buffer = true,
+      theme = "dropdown"
     }
-    -- find_files = {
-    --   theme = "dropdown"
-    -- }
   }
 }
-
-require("telescope").load_extension("fzy_native")
 
 require "lt.telescope.mappings"
 
