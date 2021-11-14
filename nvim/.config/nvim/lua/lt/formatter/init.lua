@@ -30,6 +30,7 @@ require('formatter').setup({
     scss = prettierForOthers,
     css = prettierForOthers,
     markdown = prettierForOthers,
+    mdx = prettierForOthers,
     rust = {
       -- Rustfmt
       function()
