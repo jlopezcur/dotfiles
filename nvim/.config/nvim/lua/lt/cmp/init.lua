@@ -18,7 +18,7 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    -- ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
@@ -40,16 +40,17 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
     { name = 'luasnip' },
+    { name = 'path' },
     { name = 'buffer' },
     { name = 'spell' },
   },
   formatting = {
     format = lspkind.cmp_format({with_text = true, maxwidth = 50})
   },
-  experimental = {
-    native_menu = false
-  },
+  -- experimental = {
+  --   native_menu = true
+  -- },
   completion = {
-    completeopt = 'menu,menuone,noinsert',
+    completeopt = 'menu,menuone,noselect',
   }
 })
