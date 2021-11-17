@@ -173,7 +173,7 @@
     "exec-if": "checkupdates",
     "interval": 3600,
     "signal": 8,
-    "on-click": "alacritty -e paru && pkill -SIGRTMIN+8 waybar",
+    "on-click": "alacritty -e system-update",
   },
   "custom/updates-aur": {
     "format": " {}",
@@ -184,7 +184,7 @@
     "exec-if": "paru -Qua",
     "interval": 3600,
     "signal": 8,
-    "on-click": "alacritty -e paru && pkill -SIGRTMIN+8 waybar",
+    "on-click": "alacritty -e system-update",
   },
   "custom/tasks": {
     "format": " {}",
