@@ -50,6 +50,7 @@
   - Browser: [Gopass Bridge](https://github.com/gopasspw/gopassbridge)
 - Focus Sounds: [blanket](https://github.com/rafaelmardojai/blanket)
 - Tmux: [Byobu](https://www.byobu.org/)
+- Video Wallpapers: [mpvpaper](https://github.com/GhostNaN/mpvpaper)
 
 ## Replacements
 
