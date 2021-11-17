@@ -30,7 +30,7 @@ Using LSP needs some manual installation for several languages:
 
 - tsserver: `npm i -g typescript typescript-language-server prettier eslint_d`
 - texlab: `paru texlive-core texlab`
-- rust: `rustup component add rls rust-analysis rust-src` https://github.com/rust-lang/rls
+- rust: `paru rust-analysis`
 - python: `pip install python-language-server`
 - vimls: `npm i -g vim-language-server`
 - jsonls: `npm i -g vscode-json-languageserver`
@@ -38,7 +38,7 @@ Using LSP needs some manual installation for several languages:
 - yaml: `npm i -g yaml-language-server`
 - bashls: `npm i -g bash-language-server`
 - cssls: `npm i -g vscode-css-languageserver-bin`
-- summeko_lua: `npm i -g vscode-css-languageserver-bin`
+- summeko_lua: `paru lua-language-server`
 
 ## References
 
