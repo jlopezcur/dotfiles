@@ -1,0 +1,20 @@
+#!/bin/sh
+
+LIST=$HOME/.cache/package-updates.list
+ARCH_COUNT=$HOME/.cache/package-updates-arch.count
+AUR_COUNT=$HOME/.cache/package-updates-aur.count
+
+rm -f $LIST
+rm -f $ARCH_COUNT
+rm -f $AUR_COUNT
+
+arch=$(checkupdates)
+aur=$(paru -Qua)
+
+[[ -n $arch || -n $aur ]] && touch $LIST
+
+[[ -n $arch ]] && echo -e "Arch:\n-----\n$arch" >> $LIST
+[[ -n $aur ]] && echo -e "AUR:\n----\n$aur" >> $LIST
+
+[[ -n $arch ]] && echo -e "$arch" | wc -l > $ARCH_COUNT
+[[ -n $aur ]] && echo -e "$aur" | wc -l > $AUR_COUNT

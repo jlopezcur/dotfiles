@@ -102,12 +102,7 @@ window#waybar.bottom {
   color: red;
 }
 
-#custom-updates.one,
-#custom-updates.many {
-  color: orange;
-}
-#custom-updates-aur.one,
-#custom-updates-aur.many {
+#custom-updates, #custom-updates-aur {
   color: orange;
 }
 #custom-scratchpad-indicator {

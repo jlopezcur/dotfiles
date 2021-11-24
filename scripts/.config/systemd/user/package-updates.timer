@@ -1,0 +1,10 @@
+[Unit]
+Description=Package updater timer
+
+[Timer]
+OnBootSec=5s
+OnUnitActiveSec=2h
+Unit=package-updates.service
+
+[Install]
+WantedBy=timers.target

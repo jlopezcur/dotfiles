@@ -1,21 +1,7 @@
 #!/bin/sh
 
-arch=$(checkupdates)
-aur=$(paru -Qua)
+paru
 
-if [[ -z $arch && -z $aur ]]; then
-  echo -e "Nothing to update!\n"; read -p "Press Enter to continue" </dev/tty
-else
-  [[ -n $arch ]] && echo -e "Arch:\n-----\n$arch\n"
-  [[ -n $aur ]] && echo -e "AUR:\n----\n$aur\n"
-
-  read -p "Update this packages? (Y/n)" response
-  if [[ -z $response ]]; then
-    response="Y"
-  fi
-  case $response in
-    "Y") paru && pkill -SIGRTMIN+8 waybar ; read -p "Process exited review the output (press Enter to continue)..." </dev/tty ;;
-    *) ;;
-  esac
-fi
-
+rm -f $HOME/.cache/package-updates.list
+rm -f $HOME/.cache/package-updates-arch.count
+rm -f $HOME/.cache/package-updates-aur.count
