@@ -59,7 +59,7 @@ return require("packer").startup(
     -- fuzzy finder
     use {
       "nvim-telescope/telescope.nvim",
-      requires = { {"nvim-lua/plenary.nvim"} }
+      requires = {{"nvim-lua/plenary.nvim"}}
     }
 
     -- markdown preview

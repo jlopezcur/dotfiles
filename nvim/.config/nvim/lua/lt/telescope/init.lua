@@ -27,4 +27,3 @@ require("telescope").setup {
 }
 
 require "lt.telescope.mappings"
-
