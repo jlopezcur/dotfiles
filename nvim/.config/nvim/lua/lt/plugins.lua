@@ -149,5 +149,8 @@ return require("packer").startup(
     use "nacro90/numb.nvim" -- https://github.com/nacro90/numb.nvim
     use "godlygeek/tabular" --
     use "simrat39/rust-tools.nvim"
+
+    -- arduino
+    use "stevearc/vim-arduino" -- https://github.com/stevearc/vim-arduino
   end
 )
