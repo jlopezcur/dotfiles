@@ -121,7 +121,17 @@ ls.snippets = {
       }
     )
   },
-  rust = {}
+  rust = {},
+  tex = {
+    s(
+      "enum",
+      {
+        t({"\\begin{enumerate}", "\t\\item "}),
+        i(1, "Item"),
+        t({"", "\\end{enumerate}"})
+      }
+    )
+  }
 }
 
 ls.filetype_extend("javascriptreact", {"javascript"})
