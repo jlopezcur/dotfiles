@@ -56,17 +56,21 @@ return require("packer").startup(
       end
     }
 
+    -- file manager
     -- fuzzy finder
     use {
       "nvim-telescope/telescope.nvim",
       requires = {{"nvim-lua/plenary.nvim"}}
     }
+    use "tpope/vim-vinegar" -- https://github.com/tpope/vim-vinegar
+    -- https://github.com/ThePrimeagen/harpoon
+    use {
+      "ThePrimeagen/harpoon",
+      requires = {{"nvim-lua/plenary.nvim"}}
+    }
 
     -- markdown preview
     use {"iamcco/markdown-preview.nvim", run = "cd app && yarn install"} -- https://github.com/iamcco/markdown-preview.nvim
-
-    -- file manager
-    use "tpope/vim-vinegar" -- https://github.com/tpope/vim-vinegar
 
     -- comments
     -- https://github.com/numToStr/Comment.nvim
