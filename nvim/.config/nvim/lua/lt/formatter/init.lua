@@ -85,7 +85,19 @@ require("formatter").setup(
         end
       },
       cpp = clangFormatter,
-      arduino = clangFormatter
+      arduino = clangFormatter,
+      python = {
+        function()
+          return {
+            exe = "python -m autopep8",
+            args = {
+              "--in-place --aggressive --aggressive",
+              vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
+            },
+            stdin = false
+          }
+        end
+      }
     }
   }
 )
