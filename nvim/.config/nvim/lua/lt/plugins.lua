@@ -146,7 +146,6 @@ return require("packer").startup(
       }
     }
     use "rhysd/git-messenger.vim" -- https://github.com/rhysd/git-messenger.vim
-    use "f-person/git-blame.nvim" -- https://github.com/f-person/git-blame.nvim
 
     -- others
     use "edluffy/specs.nvim" -- https://github.com/edluffy/specs.nvim
