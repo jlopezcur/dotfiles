@@ -19,7 +19,7 @@ if (isfile(count_file_path)):
     text = count_file.readline().replace("\n", "")
     count_file.close()
 
-tooltip = "";
+tooltip = ""
 if (isfile(list_file_path)):
     list_file = open(list_file_path, "r")
     tooltip = "".join(list_file.readlines())[:-1]
@@ -31,4 +31,3 @@ data['class'] = "updates"
 data['tooltip'] = tooltip
 
 print(json.dumps(data))
-
