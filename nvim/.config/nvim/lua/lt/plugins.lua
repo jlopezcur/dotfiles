@@ -19,7 +19,6 @@ return require("packer").startup(
     -- lsp
     use "neovim/nvim-lspconfig"
     use "tjdevries/nlua.nvim"
-    use "glepnir/lspsaga.nvim"
     use "nvim-lua/lsp-status.nvim"
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/cmp-nvim-lua"
@@ -28,6 +27,7 @@ return require("packer").startup(
     use "hrsh7th/nvim-cmp"
     use "onsails/lspkind-nvim"
     use "f3fora/cmp-spell"
+    use "b0o/schemastore.nvim" -- https://github.com/b0o/SchemaStore.nvim
 
     -- formatter
     use "mhartington/formatter.nvim" -- https://github.com/mhartington/formatter.nvim
@@ -35,6 +35,7 @@ return require("packer").startup(
     -- snippets
     use "L3MON4D3/LuaSnip"
     use "saadparwaiz1/cmp_luasnip"
+    use "mattn/emmet-vim" -- https://github.com/mattn/emmet-vim
 
     -- theme
     use "folke/tokyonight.nvim"
@@ -103,10 +104,8 @@ return require("packer").startup(
     use "ojroques/nvim-bufdel"
 
     -- dashboard
-    -- use 'mhinz/vim-startify' -- https://github.com/mhinz/vim-startify
-    -- https://github.com/goolord/alpha-nvim
     use {
-      "goolord/alpha-nvim",
+      "goolord/alpha-nvim", -- https://github.com/goolord/alpha-nvim
       requires = {"kyazdani42/nvim-web-devicons"},
       config = function()
         require "alpha".setup(require "alpha.themes.startify".opts)
@@ -146,14 +145,26 @@ return require("packer").startup(
       }
     }
     use "rhysd/git-messenger.vim" -- https://github.com/rhysd/git-messenger.vim
+    use {"sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim"} -- https://github.com/sindrets/diffview.nvim
 
     -- others
     use "edluffy/specs.nvim" -- https://github.com/edluffy/specs.nvim
     use "nacro90/numb.nvim" -- https://github.com/nacro90/numb.nvim
     use "godlygeek/tabular" --
     use "simrat39/rust-tools.nvim"
+    use {
+      "folke/zen-mode.nvim", -- https://github.com/folke/zen-mode.nvim
+      config = function()
+        require("zen-mode").setup {}
+      end
+    }
 
-    -- arduino
-    use "stevearc/vim-arduino" -- https://github.com/stevearc/vim-arduino
+    -- dependencies
+    use(
+      {
+        "vuki656/package-info.nvim",
+        requires = "MunifTanjim/nui.nvim"
+      }
+    )
   end
 )
