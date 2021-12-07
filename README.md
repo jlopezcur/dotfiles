@@ -51,6 +51,7 @@
 - Focus Sounds: [blanket](https://github.com/rafaelmardojai/blanket)
 - Tmux: [Byobu](https://www.byobu.org/)
 - Video Wallpapers: [mpvpaper](https://github.com/GhostNaN/mpvpaper)
+- Tabular data viewer: [visidata](https://www.visidata.org/)
 
 ## Replacements
 
