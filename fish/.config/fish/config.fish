@@ -40,3 +40,11 @@ export ARCHFLAGS="-arch x86_64"
 # Starship
 
 starship init fish | source
+
+# Check for a .nvmrc file and use it for change node version
+function __check_nvmrc --on-variable PWD --description 'Do nvm stuff'
+  status --is-command-substitution; and return
+  if test -f .nvmrc
+    nvm use || nvm install
+  end
+end
