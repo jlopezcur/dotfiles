@@ -108,3 +108,6 @@ HISTSIZE=10000
 shopt -s histappend
 HISTCONTROL=ignoreboth
 
+# ------------------------------------------------------------------------------
+
+eval "$(starship init bash)"
