@@ -1,11 +1,14 @@
 alias ...='cd ...'
 alias ....='cd ....'
 
-alias ls='ls --color=auto'
-alias l='ls -alh'
-alias ll='ls -alh'
 
-alias vim='nvim'
+alias ls='exa'
+alias l='exa -alh --icons'
+alias cat='bat'
+alias find='fd'
+alias ps='procs'
+alias ping='gping'
+alias v='nvim'
 
 alias myip='curl http://ipecho.net/plain; echo'
 alias update-system='yay && yay -Yc && nvim +PlugUpdate +PlugUpgrade +TSUpdate'
