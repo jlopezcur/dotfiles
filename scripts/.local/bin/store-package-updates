@@ -14,6 +14,7 @@ aur=$(paru -Qua)
 [[ -n $arch || -n $aur ]] && touch $LIST
 
 [[ -n $arch ]] && echo -e "Arch:\n-----\n$arch" >> $LIST
+[[ -n $arch && -n $aur ]] && echo " " >> $LIST
 [[ -n $aur ]] && echo -e "AUR:\n----\n$aur" >> $LIST
 
 [[ -n $arch ]] && echo -e "$arch" | wc -l > $ARCH_COUNT
