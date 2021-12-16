@@ -64,6 +64,14 @@ return require("packer").startup(
       requires = {{"nvim-lua/plenary.nvim"}}
     }
     use "tpope/vim-vinegar" -- https://github.com/tpope/vim-vinegar
+    use "cljoly/telescope-repo.nvim" -- https://github.com/cljoly/telescope-repo.nvim
+    use {
+      "AckslD/nvim-neoclip.lua",
+      requires = {"tami5/sqlite.lua", module = "sqlite"},
+      config = function()
+        require("neoclip").setup()
+      end
+    }
     -- https://github.com/ThePrimeagen/harpoon
     use {
       "ThePrimeagen/harpoon",

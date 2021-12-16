@@ -15,3 +15,10 @@ map("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references{}<CR>", opts)
 map("n", "<leader>gb", "<cmd>lua require'telescope.builtin'.git_branches{}<CR>", opts)
 map("n", "<leader>gc", "<cmd>lua require'telescope.builtin'.git_bcommits{}<CR>", opts)
 map("n", "<leader>gt", "<cmd>lua require'telescope.builtin'.git_stash{}<CR>", opts)
+
+-- Repo List
+map("n", "<leader>rl", "<cmd>Telescope repo list<CR>", opts)
+
+-- Neoclip
+map("n", "<leader>yl", "<cmd>Telescope neoclip<CR>", opts)
+

@@ -16,7 +16,7 @@ require("telescope").setup {
       ignore_current_buffer = true
     },
     git_branches = {
-      sort_lastused = true,
+      sort_lastused = true
     },
     buffers = {
       sort_lastused = true,
@@ -25,5 +25,8 @@ require("telescope").setup {
     }
   }
 }
+
+require "telescope".load_extension "repo"
+require "telescope".load_extension "neoclip"
 
 require "lt.telescope.mappings"
