@@ -30,7 +30,7 @@ require("lualine").setup(
             removed = {fg = "#F7768E"} -- changes diff's removed color you
           }
         },
-        {"diagnostics", sources = {"nvim_lsp"}},
+        {"diagnostics", sources = {"nvim_diagnostic"}},
         "require('package-info').get_status()"
       },
       lualine_c = {"filename"},
