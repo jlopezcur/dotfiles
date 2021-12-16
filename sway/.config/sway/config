@@ -79,15 +79,11 @@ bindsym $mod+Shift+m exec ~/.config/sway/scripts/man.sh
 bindsym $mod+escape exec ~/.config/sway/scripts/system.sh
 bindsym $mod+Shift+v exec ~/.config/sway/scripts/vpn.sh
 
-# cmus
-bindsym $mod+m exec $term --class cmus -e cmus
-for_window [app_id="cmus"] floating enable
+# cmus & btop
 for_window [app_id="cmus"] move to scratchpad; [app_id="cmus"] scratchpad show; [app_id="cmus"] resize set width 1600 px height 800 px
-
-# top
-bindsym $mod+t exec $term --class top -e btop
-for_window [app_id="top"] floating enable
-for_window [app_id="top"] move to scratchpad; [app_id="top"] scratchpad show; [app_id="top"] resize set width 1600 px height 800 px
+for_window [app_id="btop"] move to scratchpad; [app_id="btop"] scratchpad show; [app_id="btop"] resize set width 1600 px height 800 px
+bindsym $mod+m exec ~/.local/bin/open-cmus
+bindsym $mod+t exec ~/.local/bin/open-btop
 
 # capture menu (screenshot, video, gif & color)
 bindsym $mod+c exec ~/.config/sway/scripts/capture.sh

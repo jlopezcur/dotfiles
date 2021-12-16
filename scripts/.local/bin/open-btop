@@ -1,0 +1,16 @@
+#!/bin/sh
+
+process_id=$(pidof btop)
+if [[ -z $process_id ]]; then
+  exec alacritty --class btop -e btop
+else
+  visibility=$(swaymsg -t get_tree | jq '..|objects|select(.app_id=="btop")|.visible')
+  swaymsg "scratchpad show"
+
+  if [[ $visibility == 'false' ]]; then
+    visibility=$(swaymsg -t get_tree | jq '..|objects|select(.app_id=="btop")|.visible')
+    [[ $visibility == 'false' ]] && swaymsg "scratchpad show"
+    visibility=$(swaymsg -t get_tree | jq '..|objects|select(.app_id=="btop")|.visible')
+    [[ $visibility == 'false' ]] && swaymsg "scratchpad show"
+  fi
+fi

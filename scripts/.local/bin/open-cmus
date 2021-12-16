@@ -1,0 +1,16 @@
+#!/bin/sh
+
+process_id=$(pidof cmus)
+if [[ -z $process_id ]]; then
+  exec alacritty --class cmus -e cmus
+else
+  visibility=$(swaymsg -t get_tree | jq '..|objects|select(.app_id=="cmus")|.visible')
+  swaymsg "scratchpad show"
+
+  if [[ $visibility == 'false' ]]; then
+    visibility=$(swaymsg -t get_tree | jq '..|objects|select(.app_id=="cmus")|.visible')
+    [[ $visibility == 'false' ]] && swaymsg "scratchpad show"
+    visibility=$(swaymsg -t get_tree | jq '..|objects|select(.app_id=="cmus")|.visible')
+    [[ $visibility == 'false' ]] && swaymsg "scratchpad show"
+  fi
+fi
