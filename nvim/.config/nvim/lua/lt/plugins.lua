@@ -77,6 +77,8 @@ return require("packer").startup(
       "ThePrimeagen/harpoon",
       requires = {{"nvim-lua/plenary.nvim"}}
     }
+    use "tpope/vim-repeat" -- https://github.com/tpope/vim-repeat
+    use "ggandor/lightspeed.nvim" -- https://github.com/ggandor/lightspeed.nvim
 
     -- markdown preview
     use {"iamcco/markdown-preview.nvim", run = "cd app && yarn install"} -- https://github.com/iamcco/markdown-preview.nvim
