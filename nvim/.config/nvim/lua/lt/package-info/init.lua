@@ -1,4 +1,11 @@
-require("package-info").setup()
+require("package-info").setup(
+  {
+    colors = {
+      up_to_date = "#3C4048", -- Text color for up to date package virtual text
+      outdated = "#d19a66" -- Text color for outdated package virtual text
+    }
+  }
+)
 
 -- Show package versions
 vim.api.nvim_set_keymap("n", "<leader>ns", ":lua require('package-info').show()<CR>", {silent = true, noremap = true})
