@@ -31,9 +31,21 @@ local clangFormatter = {
   end
 }
 
+local xmlFormatter = {
+  -- python-xmlformatter
+  function()
+    return {
+      exe = "xmlformat",
+      args = {vim.api.nvim_buf_get_name(0)},
+      stdin = true
+    }
+  end
+}
+
 require("formatter").setup(
   {
     filetype = {
+      xml = xmlFormatter,
       javascript = prettierForJS,
       javascriptreact = prettierForJS,
       typescript = prettierForJS,
