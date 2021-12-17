@@ -25,10 +25,10 @@ local on_attach = function(client, bufnr)
   set_keymap("n", "go", "<cmd>Telescope lsp_document_symbols<CR>", opts)
   set_keymap("n", "<leader>fa", "<cmd>Telescope lsp_code_actions<CR>", opts)
   set_keymap("v", "<leader>fa", "<cmd>Telescope lsp_range_code_actions<CR>", opts)
-  set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-  set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
+  set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+  set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
   set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-  set_keymap("n", "<space>d", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
+  set_keymap("n", "<space>d", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
