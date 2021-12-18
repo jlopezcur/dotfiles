@@ -116,10 +116,7 @@ return require("packer").startup(
     -- dashboard
     use {
       "goolord/alpha-nvim", -- https://github.com/goolord/alpha-nvim
-      requires = {"kyazdani42/nvim-web-devicons"},
-      config = function()
-        require "alpha".setup(require "alpha.themes.startify".opts)
-      end
+      requires = {"kyazdani42/nvim-web-devicons"}
     }
 
     -- wich key
