@@ -10,21 +10,22 @@ c.content.autoplay = False
 # c.backend = 'webkit'
 
 c.url.searchengines = {
-  "DEFAULT": "https://www.ecosia.org/search?q={}",
-  "wa": "https://wiki.archlinux.org/?search={}",
-  "ww": "https://en.wikipedia.org/w/index.php?search={}",
-  "yt": "https://www.youtube.com/results?search_query={}",
-  "cr": "https://crates.io/search?q={}",
-  "od": "https://odysee.com/$/search?q={}",
-  "dles": "https://www.deepl.com/translator#en/es/{}",
-  "dlen": "https://www.deepl.com/translator#es/en/{}"
+    "DEFAULT": "https://www.ecosia.org/search?q={}",
+    "wa": "https://wiki.archlinux.org/?search={}",
+    "ww": "https://en.wikipedia.org/w/index.php?search={}",
+    "yt": "https://www.youtube.com/results?search_query={}",
+    "cr": "https://crates.io/search?q={}",
+    "od": "https://odysee.com/$/search?q={}",
+    "dles": "https://www.deepl.com/translator#en/es/{}",
+    "dlen": "https://www.deepl.com/translator#es/en/{}",
+    "am": "https://www.amazon.es/s?k={}"
 }
 
 c.aliases = {
-  "q": "close",
-  "qa": "quit",
-  "w": "session-save",
-  "private": "open -p",
+    "q": "close",
+    "qa": "quit",
+    "w": "session-save",
+    "private": "open -p",
 }
 
 config.source('mappings.py')
@@ -52,6 +53,5 @@ c.content.blocking.adblock.lists = [
     "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt",
     "https://fanboy.co.nz/fanboy-problematic-sites.txt",
     "https://easylist.to/easylist/easylist.txt",
-    "https://raw.githubusercontent.com/bogachenko/fuckfuckadblock/master/fuckfuckadblock.txt"
-]
+    "https://raw.githubusercontent.com/bogachenko/fuckfuckadblock/master/fuckfuckadblock.txt"]
 c.content.blocking.enabled = True
