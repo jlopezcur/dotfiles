@@ -9,7 +9,7 @@ rm -f $ARCH_COUNT
 rm -f $AUR_COUNT
 
 arch=$(checkupdates)
-aur=$(paru -Qua)
+aur=$(paru -Qua | sed '/\[ignored\]$/d')
 
 [[ -n $arch || -n $aur ]] && touch $LIST
 
