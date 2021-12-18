@@ -5,6 +5,14 @@ local fmt = function(str)
   return str:sub(1, 1)
 end
 
+local function packageinfo()
+  local result = require("package-info").get_status()
+  if result ~= "" then
+    return result
+  end
+  return Null
+end
+
 require("lualine").setup(
   {
     options = {
@@ -31,7 +39,7 @@ require("lualine").setup(
           }
         },
         {"diagnostics", sources = {"nvim_diagnostic"}},
-        "require('package-info').get_status()"
+        {"packageinfo"}
       },
       lualine_c = {"filename"},
       -- {"filename", path = 1},
