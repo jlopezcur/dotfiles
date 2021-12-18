@@ -52,7 +52,6 @@ end
 local servers = {
   "pyright",
   "tsserver",
-  "rust_analyzer",
   "cssls",
   "html",
   "bashls",
