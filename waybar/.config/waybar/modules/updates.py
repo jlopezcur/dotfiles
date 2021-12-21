@@ -6,14 +6,10 @@ import sys
 
 home = expanduser("~")
 
-part = "arch"
-if len(sys.argv) > 1:
-    part = sys.argv[1]
-
-count_file_path = home + "/.cache/package-updates-" + part + ".count"
+count_file_path = home + "/.cache/package-updates.count"
 list_file_path = home + "/.cache/package-updates.list"
 
-text = "0"
+text = ""
 if (isfile(count_file_path)):
     count_file = open(count_file_path, "r")
     text = count_file.readline().replace("\n", "")

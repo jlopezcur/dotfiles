@@ -1,12 +1,10 @@
 #!/bin/sh
 
 LIST=$HOME/.cache/package-updates.list
-ARCH_COUNT=$HOME/.cache/package-updates-arch.count
-AUR_COUNT=$HOME/.cache/package-updates-aur.count
+COUNTER=$HOME/.cache/package-updates.count
 
 rm -f $LIST
-rm -f $ARCH_COUNT
-rm -f $AUR_COUNT
+rm -f $COUNTER
 
 arch=$(checkupdates)
 aur=$(paru -Qua | sed '/\[ignored\]$/d')
@@ -17,5 +15,12 @@ aur=$(paru -Qua | sed '/\[ignored\]$/d')
 [[ -n $arch && -n $aur ]] && echo " " >> $LIST
 [[ -n $aur ]] && echo -e "AUR:\n----\n$aur" >> $LIST
 
-[[ -n $arch ]] && echo -e "$arch" | wc -l > $ARCH_COUNT
-[[ -n $aur ]] && echo -e "$aur" | wc -l > $AUR_COUNT
+arch_count=$(echo -e "$arch" | wc -l)
+aur_count=$(echo -e "$aur" | wc -l)
+if [[ -n $arch && -n $aur ]]; then
+  echo -e " $arch_count  $aur_count" > $COUNTER
+elif [[ -n $arch ]]; then
+  echo -e " $arch_count" > $COUNTER
+elif [[ -n $aur ]]; then
+  echo -e " $aur_count" > $COUNTER
+fi

@@ -116,7 +116,7 @@
   "position": "bottom",
   "modules-left": ["custom/scratchpad-indicator", "memory", "cpu", "temperature", "disk"],
   "modules-center": ["custom/cmus"],
-  "modules-right": ["custom/updates", "custom/updates-aur", "custom/tasks", "custom/quit"],
+  "modules-right": ["custom/updates", "custom/tasks", "custom/quit"],
 
   "custom/scratchpad-indicator": {
     "interval": 3,
@@ -165,22 +165,12 @@
   },
 
   "custom/updates": {
-    "format": " {}",
+    "format": "{}",
     "format-none": "",
     "escape": true,
     "return-type": "json",
-    "exec": "$HOME/.config/waybar/modules/updates.py arch",
-    "exec-if": "test -e $HOME/.cache/package-updates-arch.count",
-    "interval": 5,
-    "on-click": "alacritty -e system-update",
-  },
-  "custom/updates-aur": {
-    "format": " {}",
-    "format-none": "",
-    "escape": true,
-    "return-type": "json",
-    "exec": "$HOME/.config/waybar/modules/updates.py aur",
-    "exec-if": "test -e $HOME/.cache/package-updates-aur.count",
+    "exec": "$HOME/.config/waybar/modules/updates.py",
+    "exec-if": "test -e $HOME/.cache/package-updates.count",
     "interval": 5,
     "on-click": "alacritty -e system-update",
   },

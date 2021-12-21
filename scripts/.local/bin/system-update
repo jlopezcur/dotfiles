@@ -1,7 +1,3 @@
 #!/bin/sh
 
-paru
-
-rm -f $HOME/.cache/package-updates.list
-rm -f $HOME/.cache/package-updates-arch.count
-rm -f $HOME/.cache/package-updates-aur.count
+paru && rm -f $HOME/.cache/package-updates.list && rm -f $HOME/.cache/package-updates.count
