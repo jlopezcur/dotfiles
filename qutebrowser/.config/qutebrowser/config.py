@@ -5,7 +5,7 @@ c.downloads.position = 'bottom'
 c.spellcheck.languages = ['en-US', 'es-ES']
 c.tabs.show = 'never'
 # c.qt.force_software_rendering = 'chromium'
-c.content.autoplay = False
+# c.content.autoplay = True
 # c.qt.force_software_rendering = True
 # c.backend = 'webkit'
 
@@ -32,10 +32,10 @@ config.source('mappings.py')
 config.source('theme.py')
 config.source('private.py')
 
-c.content.webgl = True
-c.content.canvas_reading = False
-c.content.javascript.enabled = True
-c.content.pdfjs = False
+# c.content.webgl = True
+# c.content.canvas_reading = False
+# c.content.javascript.enabled = True
+# c.content.pdfjs = False
 
 c.content.blocking.method = 'both'
 c.content.blocking.adblock.lists = [
