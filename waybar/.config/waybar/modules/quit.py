@@ -3,8 +3,9 @@
 import json
 from datetime import datetime
 
-emoji = "🎃"
-# emoji = "🚭"
+# emoji = "🎃" # Halloween
+# emoji = "🚭" # Normal
+emoji = "🎄"  # Christmas
 per_day = 20
 cost_per_day = 1
 quit_date = datetime(2021, 8, 14, 21)
