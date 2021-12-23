@@ -73,6 +73,7 @@ bindsym $mod+Ctrl+Alt+Return exec $term --title Weechat -e weechat
 # launchers
 bindsym $mod+p exec $term --class launcher --title Launcher -e sway-launcher-desktop
 bindsym $mod+Alt+p exec $term --class launcher --title Launcher -e slings
+bindsym $mod+Alt+m exec wofi -i --show drun
 for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
 
 bindsym $mod+Shift+p exec ~/.config/sway/scripts/password.sh
