@@ -43,6 +43,8 @@ exec gammastep -l 40.241111:-3.699444
 # Mako notification manager
 exec mako
 
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 # Drive auto mounter
 # I usually don't use external drives so...
 # exec udiskie
