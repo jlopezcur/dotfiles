@@ -24,7 +24,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export BROWSER="qutebrowser"
 export PAGER="less"
-export MANPAGER="nvim -c 'set ft=man' -"
+# export MANPAGER="nvim"
 
 # Eye Candy
 # https://wiki.archlinux.org/title/Color_output_in_console
@@ -42,9 +42,13 @@ export ARCHFLAGS="-arch x86_64"
 starship init fish | source
 
 # Check for a .nvmrc file and use it for change node version
-function __check_nvmrc --on-variable PWD --description 'Do nvm stuff'
-  status --is-command-substitution; and return
-  if test -f .nvmrc
-    nvm use || nvm install
-  end
-end
+# function __check_nvmrc --on-variable PWD --description 'Do nvm stuff'
+#   status --is-command-substitution; and return
+#   if test -f .nvmrc
+#     nvm use || nvm install
+#   end
+# end
+
+# You must call it on initialization or listening to directory switching won't
+# work
+load_nvm
