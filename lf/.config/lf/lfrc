@@ -12,7 +12,7 @@ set previewer ~/.config/lf/preview
 cmd open ${{
   case $(file --mime-type "$f" -bL) in
     text/*|application/json) nvim "$f" ;;
-    image/*) imv "$f" > /dev/null & ;;
+    image/*) sxiv "$f" > /dev/null & ;;
     video/*) mpv "$f" > /dev/null ;;
     sound/*) mpv "$f" > /dev/null ;;
     image/vnd.djvu|application/pdf|application/octet-stream) setsid -f zathura $fx >/dev/null 2>&1 ;;
