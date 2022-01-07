@@ -5,7 +5,6 @@ set scrolloff 10
 set period 1
 set drawbox
 set ratios 2:3
-set hidden
 
 set preview true
 set previewer ~/.config/lf/preview
