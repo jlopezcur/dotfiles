@@ -1,0 +1,10 @@
+#!/bin/sh
+
+pgrep -x bemenu && exit
+
+exclusionregex="/boot$|/home$|/$"
+drives=$(lsblk -lp | rg "t /" | rg -v "$exclusionregex" | awk '{print $1, "(" $4 ")", "on", $7}')
+[ "$drives" = "" ] && exit
+chosen=$(printf '%s' "$drives" | bemenu -i -H 25 --tf '#268bd2' --hf '#268bd2' -p "Unmount which drive?" | awk '{print $1}')
+[ "$chosen" = "" ] && exit
+doas umount "$chosen" && notify-send "$chosen unmounted"

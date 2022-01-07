@@ -1,0 +1,16 @@
+#!/bin/sh
+
+pgrep -x bemenu && exit
+
+mountable=$(lsblk -lp | rg "part $" | awk '{print $1, "(" $4 ")"}')
+[ "$mountable" = "" ] && exit 1
+chosen=$(printf '%s' "$mountable" | bemenu -i -H 25 --tf '#268bd2' --hf '#268bd2' -p "Mount which drive?" | awk '{print $1}')
+doas mount "$chosen" && exit 0
+dirs=$(find /mnt /media /mount /home -type d -maxdepth 3 2>/dev/null)
+mountpoint=$(printf '%s' "$dirs" | bemenu -i -H 25 --tf '#268bd2' --hf '#268bd2' -p "Type in mount point:")
+[ "$mountpoint" = "" ] && exit 1
+if [ ! -d "$mountpoint" ]; then
+  mkdiryn=$(printf "No\nYes" | bemenu -i -H 25 --tf '#268bd2' --hf '#268bd2' -p "$mountpoint does not exists. Create it?")
+  [ "$mkdiryn" = Yes ] && doas mkdir -p "$mountpoint"
+fi
+doas mount "$chosen" "$mountpoint" && notify-send "$chosen mounted to $mountpoint"
