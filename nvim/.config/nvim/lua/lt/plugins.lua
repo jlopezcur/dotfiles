@@ -29,6 +29,15 @@ return require("packer").startup(
     use "f3fora/cmp-spell"
     use "b0o/schemastore.nvim" -- https://github.com/b0o/SchemaStore.nvim
 
+    -- diagnostic
+    use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+        require("trouble").setup {}
+      end
+    }
+
     -- formatter
     use "mhartington/formatter.nvim" -- https://github.com/mhartington/formatter.nvim
 
