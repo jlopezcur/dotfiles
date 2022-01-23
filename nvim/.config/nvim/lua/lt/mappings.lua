@@ -12,6 +12,9 @@ vim.api.nvim_set_keymap('n', '<Leader>rr', ':tabnew<cr>:term cargo run<cr>i', op
 -- close a buffer
 vim.api.nvim_set_keymap('n', '<Leader>gq', "<cmd>:BufDel<CR>", options)
 
+-- duplicate current file
+vim.api.nvim_set_keymap('n', '<Leader>d', "<cmd>:!cp '%:p' '%:p:h/%:t:r-copy.%:e'<CR>", options)
+
 --
 -- vimrc
 --
