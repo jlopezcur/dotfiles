@@ -42,6 +42,17 @@ local xmlFormatter = {
   end
 }
 
+local texFormatter = {
+  -- latexindent
+  function()
+    return {
+      exe = "latexindent",
+      args = {vim.api.nvim_buf_get_name(0)},
+      stdin = true
+    }
+  end
+}
+
 require("formatter").setup(
   {
     filetype = {
@@ -57,6 +68,7 @@ require("formatter").setup(
       css = prettierForOthers,
       markdown = prettierForOthers,
       mdx = prettierForOthers,
+      tex = texFormatter,
       rust = {
         -- Rustfmt
         function()
