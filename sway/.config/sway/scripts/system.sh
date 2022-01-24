@@ -9,7 +9,6 @@ actions=(
   "reboot"
   "poweroff"
   "update"
-  "topgrade"
 )
 
 list=$(printf "\n%s" "${actions[@]}") # list of entries in lines
@@ -23,6 +22,5 @@ case $action in
   "reboot") systemctl reboot ;;
   "poweroff") systemctl poweroff ;;
   "update") alacritty -e system-update ;;
-  "topgrade") alacritty -e topgrade ;;
   *) echo "Invalid option $action" ;;
 esac
