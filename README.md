@@ -12,7 +12,10 @@
 - (tiling)WM: [sway](https://swaywm.org/) [:pencil: Notes](docs/sway.md)
 - Shell: [fish](https://www.gnu.org/software/bash/) [:pencil: Notes](docs/fish.md)
 - Prompt: [starship](https://starship.rs/)
-- Terminal Emulator: [alacritty](https://github.com/alacritty/alacritty)
+- Terminal Emulator:
+  - [alacritty](https://github.com/alacritty/alacritty)
+  - [kitty](https://github.com/kovidgoyal/kitty)
+  - [foot](https://codeberg.org/dnkl/foot)
 - Grep: [RigGrep](https://github.com/BurntSushi/ripgrep)
 - Fzf: [Fzf](https://github.com/junegunn/fzf)
 - Browsers:
