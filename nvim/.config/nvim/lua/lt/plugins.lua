@@ -76,7 +76,6 @@ return require("packer").startup(
     use "cljoly/telescope-repo.nvim" -- https://github.com/cljoly/telescope-repo.nvim
     use {
       "AckslD/nvim-neoclip.lua",
-      requires = {"tami5/sqlite.lua", module = "sqlite"},
       config = function()
         require("neoclip").setup()
       end
