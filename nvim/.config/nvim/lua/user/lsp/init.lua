@@ -66,16 +66,16 @@ for _, lsp in ipairs(servers) do
 end
 lspconfig.eslint.setup {}
 
-lspconfig.arduino_language_server.setup(
-  {
-    cmd = {
-      -- Required
-      "arduino-language-server",
-      "-cli-config",
-      "$HOME/.arduino15/arduino-cli.yaml",
-    }
-  }
-)
+-- lspconfig.arduino_language_server.setup(
+--   {
+--     cmd = {
+--       -- Required
+--       "arduino-language-server",
+--       "-cli-config",
+--       "$HOME/.arduino15/arduino-cli.yaml",
+--     }
+--   }
+-- )
 
 -- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
 -- local sumneko_root_path = vim.fn.stdpath("cache") .. "/lspconfig/sumneko_lua/lua-language-server"
@@ -135,7 +135,7 @@ lspconfig.yamlls.setup {
   }
 }
 
--- require "lt.lsp.json"
+-- require "user.lsp.json"
 
 vim.diagnostic.config(
   {

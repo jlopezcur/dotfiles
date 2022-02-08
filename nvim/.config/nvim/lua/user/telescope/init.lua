@@ -29,4 +29,4 @@ require("telescope").setup {
 require "telescope".load_extension "repo"
 require "telescope".load_extension "neoclip"
 
-require "lt.telescope.mappings"
+require "user.telescope.mappings"
