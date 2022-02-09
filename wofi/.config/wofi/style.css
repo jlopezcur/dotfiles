@@ -1,0 +1,37 @@
+* {
+  font-family: monospace;
+  font-size: 14px;
+}
+
+window {
+  background-color: rgba(33,33,33,.9);
+}
+
+#input {
+  border-radius: 0px;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+#inner-box {
+  background-color: transparent;
+}
+
+#outer-box {
+  margin: 16px;
+  background-color: transparent;
+}
+
+#text {
+  padding: 5px;
+  color: white;
+}
+
+#entry:nth-child(even) {
+  background-color: rgba(40,40,40,.9);
+}
+
+#entry:selected {
+  background-color: rgba(45,45,45,.9);
+}

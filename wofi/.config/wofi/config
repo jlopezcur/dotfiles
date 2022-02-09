@@ -1,0 +1,7 @@
+width=400
+prompt=Find your tool...
+term=alacritty
+gtk_dark=true
+key_up=Control_L-p
+key_down=Control_L-n
+location=0
