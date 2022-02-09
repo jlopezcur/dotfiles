@@ -1,4 +1,4 @@
 #!/bin/sh
 
-paru && rm -f $HOME/.cache/package-updates.list && rm -f $HOME/.cache/package-updates.count
+paru
 $HOME/.local/bin/store-package-updates
