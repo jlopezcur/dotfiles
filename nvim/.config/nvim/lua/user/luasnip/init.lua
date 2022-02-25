@@ -1,65 +1,33 @@
 local ls = require("luasnip")
--- some shorthands...
 local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 local f = ls.function_node
 local types = require("luasnip.util.types")
+local fmt = require("luasnip.extras.fmt").fmt
+local rep = require("luasnip.extras").rep
+local snippet = ls.parser.parse_snippet
 
--- Every unspecified option will be set to the default
-ls.config.set_config(
-  {
-    history = true,
-    -- Update more often, :h events for more info.
-    updateevents = "TextChanged,TextChangedI",
-    ext_opts = {
-      [types.choiceNode] = {
-        active = {
-          virt_text = {{"choiceNode", "Comment"}}
-        }
+ls.config.set_config {
+  history = true,
+  updateevents = "TextChanged,TextChangedI",
+  ext_opts = {
+    [types.choiceNode] = {
+      active = {
+        virt_text = {{"🤔", "Comment"}}
       }
-    },
-    -- treesitter-hl has 100, use something higher (default is 200).
-    ext_base_prio = 300,
-    -- minimal increase in priority.
-    ext_prio_increase = 1,
-    enable_autosnippets = true
-  }
-)
-
--- args is a table, where 1 is the text in Placeholder 1, 2 the text in
--- placeholder 2,...
-local function copy(args)
-  return args[1]
-end
+    }
+  },
+  enable_autosnippets = true
+}
 
 ls.snippets = {
   all = {},
   javascript = {
-    s("im", {t("import { "), i(0), t(" } from '"), i(1), t("';")}),
-    s("exp", {t("export * from '"), i(1), t("';")}),
-    s(
-      "co",
-      {
-        t("const "),
-        i(1, "name"),
-        t(" = "),
-        i(2, "value"),
-        t(";")
-      }
-    ),
-    s(
-      "cof",
-      {
-        t("const "),
-        i(1, "name"),
-        t(" = ("),
-        i(2),
-        t({") => {", "\t"}),
-        i(3),
-        t({"", "};"})
-      }
-    ),
+    snippet("im", "import { $2 } from '$1';"),
+    snippet("ex", "export * from '$1';"),
+    snippet("co", "console.log('$1');"),
+    snippet("exp", "export const ${1:name} = (${2:params}) => $3;"),
     s(
       "des",
       {
@@ -82,7 +50,7 @@ ls.snippets = {
           }
         ),
         t({"", "describe('"}),
-        f(copy, 2),
+        rep(2),
         t(
           {
             "', () => {",
@@ -90,7 +58,7 @@ ls.snippets = {
             "\t\texpect("
           }
         ),
-        f(copy, 2),
+        rep(2),
         t(
           {
             "(args)).toEqual(expected);",
@@ -113,9 +81,9 @@ ls.snippets = {
         t({" }) => {", "\t"}),
         i(3),
         t({"", "};", "", ""}),
-        f(copy, 1),
+        rep(1),
         t({".propTypes = {", "\t"}),
-        f(copy, 2),
+        rep(2),
         t({": PropTypes.string,", ""}),
         t({"};"})
       }
@@ -123,15 +91,11 @@ ls.snippets = {
   },
   rust = {},
   tex = {
-    s(
-      "enum",
-      {
-        t({"\\begin{enumerate}", "\t\\item "}),
-        i(1, "Item"),
-        t({"", "\\end{enumerate}"})
-      }
-    )
+    snippet("list", "\\begin{${1|enumerate,itemize|}}\n\t\\item ${2:item}\n\\end{$1}")
   }
 }
 
 ls.filetype_extend("javascriptreact", {"javascript"})
+
+vim.api.nvim_set_keymap("i", "<C-E>", "<Plug>luasnip-next-choice", {})
+vim.api.nvim_set_keymap("s", "<C-E>", "<Plug>luasnip-next-choice", {})
