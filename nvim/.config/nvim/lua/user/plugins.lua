@@ -163,7 +163,6 @@ return require("packer").startup(
     use {"sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim"} -- https://github.com/sindrets/diffview.nvim
 
     -- others
-    use "edluffy/specs.nvim" -- https://github.com/edluffy/specs.nvim
     use "nacro90/numb.nvim" -- https://github.com/nacro90/numb.nvim
     use "godlygeek/tabular" --
     use "simrat39/rust-tools.nvim"
@@ -175,11 +174,11 @@ return require("packer").startup(
     }
 
     -- dependencies
-    use(
-      {
-        "vuki656/package-info.nvim",
-        requires = "MunifTanjim/nui.nvim"
-      }
-    )
+    -- use(
+    --   {
+    --     "vuki656/package-info.nvim",
+    --     requires = "MunifTanjim/nui.nvim"
+    --   }
+    -- )
   end
 )
