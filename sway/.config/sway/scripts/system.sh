@@ -9,6 +9,8 @@ actions=(
   "reboot"
   "poweroff"
   "update"
+  "check email"
+  "check updates"
 )
 
 list=$(printf "\n%s" "${actions[@]}") # list of entries in lines
@@ -22,5 +24,7 @@ case $action in
   "reboot") systemctl reboot ;;
   "poweroff") systemctl poweroff ;;
   "update") alacritty -e system-update ;;
+  "check email") mbsync gmail ;;
+  "check updates") store-package-updates ;;
   *) echo "Invalid option $action" ;;
 esac
