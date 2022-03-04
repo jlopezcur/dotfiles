@@ -55,7 +55,8 @@ local servers = {
   "cssls",
   "html",
   "bashls",
-  "clangd"
+  "clangd",
+  "texlab"
 }
 
 for _, lsp in ipairs(servers) do
