@@ -182,8 +182,7 @@ return require("packer").startup(
     --   }
     -- )
 
-    -- https://github.com/b0o/mapx.nvim
     -- keymapping more easy
-    use "b0o/mapx.nvim"
+    use "b0o/mapx.nvim" -- https://github.com/b0o/mapx.nvim
   end
 )
