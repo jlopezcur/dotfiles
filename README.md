@@ -55,6 +55,7 @@
 - Tmux: [Byobu](https://www.byobu.org/)
 - Video Wallpapers: [mpvpaper](https://github.com/GhostNaN/mpvpaper)
 - Tabular data viewer: [visidata](https://www.visidata.org/)
+- Torrent: [rtorrent](https://github.com/rakshasa/rtorrent/wiki)
 
 ## Replacements
 
