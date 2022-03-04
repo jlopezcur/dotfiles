@@ -47,7 +47,7 @@ return require("packer").startup(
     use "mattn/emmet-vim" -- https://github.com/mattn/emmet-vim
 
     -- theme
-    use "folke/tokyonight.nvim"
+    use "EdenEast/nightfox.nvim"
 
     -- line
     use {

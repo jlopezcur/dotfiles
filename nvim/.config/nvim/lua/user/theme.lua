@@ -1,14 +1,17 @@
-vim.o.syntax = "on"
+local nightfox = require("nightfox")
 
-vim.o.termguicolors = true
+nightfox.setup(
+  {
+    fox = "nightfox",
+    transparent = true,
+    terminal_colors = true,
+    styles = {
+      comments = "italic",
+      keywords = "bold",
+      functions = "italic,bold"
+    }
+  }
+)
 
-vim.g.tokyonight_transparent = true
-vim.g.tokyonight_style = 'night'
-vim.g.tokyonight_color_gamma = '1.0'
-vim.g.tokyonight_enable_italic = true
-vim.g.tokyonight_enable_italic_comment = true
-
-vim.cmd('colorscheme tokyonight')
-
--- vim.cmd('highlight ColorColumn ctermbg=0 guibg=#242424')
--- vim.cmd('highlight SignColumn guibg=#282828')
+-- Load the configuration set above and apply the colorscheme
+nightfox.load()

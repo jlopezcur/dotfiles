@@ -16,7 +16,7 @@ end
 require("lualine").setup(
   {
     options = {
-      theme = "tokyonight"
+      theme = "nightfox"
     },
     extensions = {
       "fugitive",
