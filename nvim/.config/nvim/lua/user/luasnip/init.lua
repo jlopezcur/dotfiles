@@ -60,8 +60,14 @@ ls.snippets = {
     s(
       "re",
       {
-        t({"import React from 'react';", "import PropTypes from 'prop-types';"}),
-        t({"", "", "export const "}),
+        t(
+          {
+            "import React from 'react';",
+            "import PropTypes from 'prop-types';",
+            "",
+            "export const "
+          }
+        ),
         i(1, "Component"),
         t(" = ({ "),
         i(2, "prop"),
@@ -76,6 +82,32 @@ ls.snippets = {
       }
     )
   },
+  typescriptreact = {
+    s(
+      "re",
+      {
+        t(
+          {
+            "import React from 'react';",
+            "",
+            "interface Props {",
+            "\tparam1: string;",
+            "}",
+            "",
+            "export const "
+          }
+        ),
+        i(1, "Component"),
+        t(
+          {
+            ": React.RC<Props> = (props: Props) => {",
+            "\treturn <div>{props.chilren}</div>;",
+            "};"
+          }
+        )
+      }
+    )
+  },
   rust = {},
   tex = {
     snippet("list", "\\begin{${1|enumerate,itemize|}}\n\t\\item ${2:item}\n\\end{$1}")
@@ -83,6 +115,8 @@ ls.snippets = {
 }
 
 ls.filetype_extend("javascriptreact", {"javascript"})
+ls.filetype_extend("typescript", {"javascript"})
+ls.filetype_extend("typescriptreact", {"javascript"})
 
 vim.api.nvim_set_keymap("i", "<C-E>", "<Plug>luasnip-next-choice", {})
 vim.api.nvim_set_keymap("s", "<C-E>", "<Plug>luasnip-next-choice", {})
