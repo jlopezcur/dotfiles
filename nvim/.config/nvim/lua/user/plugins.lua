@@ -28,6 +28,7 @@ return require("packer").startup(
     use "onsails/lspkind-nvim"
     use "f3fora/cmp-spell"
     use "b0o/schemastore.nvim" -- https://github.com/b0o/SchemaStore.nvim
+    use "williamboman/nvim-lsp-installer" -- https://github.com/williamboman/nvim-lsp-installer/
 
     -- diagnostic
     use {
