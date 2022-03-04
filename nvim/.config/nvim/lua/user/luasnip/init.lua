@@ -31,34 +31,21 @@ ls.snippets = {
     s(
       "des",
       {
-        t("import { "),
-        i(2),
-        t(" } from '"),
-        i(1),
-        t({"';", ""}),
-        t(
-          {
-            "",
-            "const cases = [",
-            "\t[",
-            "\t\t'Case 1',",
-            "\t\t{},",
-            "\t\t[]",
-            "\t]",
-            "];",
-            ""
-          }
-        ),
-        t({"", "describe('"}),
-        rep(2),
+        t("describe('"),
+        i(1, "test"),
         t(
           {
             "', () => {",
+            "\tconst cases = [",
+            "\t\t['Case 1', {}, []],",
+            "\t\t['Case 2', {}, []],",
+            "\t];",
+            "",
             "\tit.each(cases)('%s', (_title, args, expected) => {",
             "\t\texpect("
           }
         ),
-        rep(2),
+        i(2, "func"),
         t(
           {
             "(args)).toEqual(expected);",
