@@ -1,3 +1,4 @@
+// vim: set syntax=json:
 [{
   "position": "top",
   "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
@@ -6,7 +7,7 @@
 
   "sway/workspaces": {
     "disable-scroll": true,
-    "format": "{icon}",
+    "format": "{icon}"
   },
 
   "sway/mode": { "format": " {}", "max-length": 50 },
@@ -17,13 +18,13 @@
     "on-click": "alacritty --title Calcurse -e calcurse",
     "exec": "$HOME/.config/waybar/modules/cal.py",
     "interval": 3600,
-    "return-type": "json",
+    "return-type": "json"
   },
   "custom/times": {
     "format": " {}",
     "exec": "$HOME/.config/waybar/modules/times.py",
     "interval": 60,
-    "return-type": "json",
+    "return-type": "json"
   },
   "custom/weather": {
     "format": "{}",
@@ -110,8 +111,8 @@
     "format": "{icon} {time}",
     "format-charging": " {capacity}%",
     "format-plugged": "",
-    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""],
-  },
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+  }
 }, {
   "position": "bottom",
   "modules-left": ["custom/scratchpad-indicator", "memory", "cpu", "temperature", "disk"],
@@ -131,7 +132,7 @@
     "format": " {percentage}% ({used:0.2f}G)",
     "states": {
       "warning": 70,
-      "critical": 85,
+      "critical": 85
     }
   },
   "cpu": {
@@ -139,7 +140,7 @@
     "format": " {usage:2}%",
     "states": {
       "warning": 70,
-      "critical": 85,
+      "critical": 85
     }
   },
   "temperature": { "format": " {temperatureC}°C" },
@@ -149,7 +150,7 @@
     "path": "/",
     "states": {
       "warning": 70,
-      "critical": 85,
+      "critical": 85
     }
   },
 
@@ -172,18 +173,18 @@
     "exec": "$HOME/.config/waybar/modules/updates.py",
     "exec-if": "test -e $HOME/.cache/package-updates.count",
     "interval": 5,
-    "on-click": "alacritty -e system-update",
+    "on-click": "alacritty -e system-update"
   },
   "custom/tasks": {
     "format": " {}",
     "return-type": "json",
     "exec": "$HOME/.config/waybar/modules/tasks.py",
-    "interval": 3600,
+    "interval": 3600
   },
   "custom/quit": {
     "format": "{}",
     "return-type": "json",
     "exec": "$HOME/.config/waybar/modules/quit.py",
-    "interval": 3600,
-  },
+    "interval": 3600
+  }
 }]
