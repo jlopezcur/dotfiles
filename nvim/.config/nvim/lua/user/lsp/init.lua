@@ -52,11 +52,9 @@ end
 local servers = {
   "pyright",
   "tsserver",
-  "cssls",
   "html",
   "bashls",
-  "clangd",
-  "texlab"
+  "clangd"
 }
 
 for _, lsp in ipairs(servers) do
@@ -65,39 +63,61 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach
   }
 end
+
+--
+-- latex
+--
+
+lspconfig.texlab.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  cmd = {vim.fn.stdpath "data" .. "/lsp_servers/latex/texlab"},
+  standalone = false
+}
+
+--
+-- css
+--
+
+lspconfig.cssls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  cmd = {vim.fn.stdpath "data" .. "/lsp_servers/cssls/node_modules/.bin/vscode-css-language-server", "--stdio"},
+  single_file_support = true,
+}
+
+--
+-- eslint
+--
+
 lspconfig.eslint.setup {}
 
--- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
--- local sumneko_root_path = vim.fn.stdpath("cache") .. "/lspconfig/sumneko_lua/lua-language-server"
--- local sumneko_binary = "/usr/bin/lua-language-server"
 --
--- local runtime_path = vim.split(package.path, ";")
--- table.insert(runtime_path, "lua/?.lua")
--- table.insert(runtime_path, "lua/?/init.lua")
+-- lua
 --
--- lspconfig.sumneko_lua.setup {
---   capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
---   cmd = {sumneko_binary},
---   on_attach = function(client, bufnr)
---     client.resolved_capabilities.document_formatting = false
---     on_attach(client, bufnr)
---   end,
---   settings = {
---     runtime = {
---       version = "LuaJIT",
---       path = runtime_path
---     },
---     diagnostic = {
---       globals = {"vim"}
---     },
---     workspace = {
---       library = vim.api.nvim_get_runtime_file("", true)
---     },
---     telemetry = {
---       enable = false
---     }
---   }
--- }
+
+lspconfig.sumneko_lua.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  cmd = {vim.fn.stdpath "data" .. "/lsp_servers/sumneko_lua/extension/server/bin/lua-language-server"},
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {"vim"}
+      },
+      telemetry = {
+        enable = false
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true)
+      }
+    }
+  }
+}
+
+--
+-- json
 --
 
 lspconfig.jsonls.setup {
@@ -109,6 +129,10 @@ lspconfig.jsonls.setup {
     }
   }
 }
+
+--
+-- yaml
+--
 
 lspconfig.yamlls.setup {
   settings = {
@@ -124,6 +148,10 @@ lspconfig.yamlls.setup {
     }
   }
 }
+
+--
+-- diagnostic
+--
 
 vim.diagnostic.config(
   {

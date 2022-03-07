@@ -17,7 +17,10 @@ return require("packer").startup(
     use {"wbthomason/packer.nvim", opt = true}
 
     -- lsp
-    use "neovim/nvim-lspconfig"
+    use {
+      "neovim/nvim-lspconfig", -- https://github.com/neovim/nvim-lspconfig
+      "williamboman/nvim-lsp-installer" -- https://github.com/williamboman/nvim-lsp-installer/
+    }
     use "tjdevries/nlua.nvim"
     use "nvim-lua/lsp-status.nvim"
     use "hrsh7th/cmp-nvim-lsp"
@@ -28,7 +31,6 @@ return require("packer").startup(
     use "onsails/lspkind-nvim"
     use "f3fora/cmp-spell"
     use "b0o/schemastore.nvim" -- https://github.com/b0o/SchemaStore.nvim
-    use "williamboman/nvim-lsp-installer" -- https://github.com/williamboman/nvim-lsp-installer/
 
     -- diagnostic
     use {
