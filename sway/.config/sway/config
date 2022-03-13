@@ -81,11 +81,13 @@ bindsym $mod+Shift+m exec ~/.config/sway/scripts/man.sh
 bindsym $mod+escape exec ~/.config/sway/scripts/system.sh
 bindsym $mod+Shift+v exec ~/.config/sway/scripts/vpn.sh
 
-# cmus & btop
+# cmus & btop & gdu
 for_window [app_id="cmus"] move to scratchpad; [app_id="cmus"] scratchpad show; [app_id="cmus"] resize set width 1600 px height 800 px
 for_window [app_id="btop"] move to scratchpad; [app_id="btop"] scratchpad show; [app_id="btop"] resize set width 1600 px height 800 px
+for_window [app_id="gdu"] move to scratchpad; [app_id="gdu"] scratchpad show; [app_id="gdu"] resize set width 1600 px height 800 px
 bindsym $mod+m exec ~/.local/bin/open-cmus
 bindsym $mod+t exec ~/.local/bin/open-btop
+bindsym $mod+d exec ~/.local/bin/open-gdu
 
 # capture menu (screenshot, video, gif & color)
 bindsym $mod+c exec ~/.config/sway/scripts/capture.sh
