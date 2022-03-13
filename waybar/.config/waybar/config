@@ -21,11 +21,12 @@
   },
   "custom/reminders": {
     "format": "",
-    "on-click": "foot -e wyrd",
-    "exec": "remind -h $HOME/.reminders",
+    "on-click": "tkremind",
+    "exec": "$HOME/.config/waybar/modules/reminders.py",
     "exec-if": "remind -h $HOME/.reminders",
     "tooltip": true,
-    "interval": 3600
+    "interval": 3600,
+    "return-type": "json"
   },
   "custom/times": {
     "format": " {}",
