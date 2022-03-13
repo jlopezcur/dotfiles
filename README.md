@@ -56,6 +56,10 @@
 - Video Wallpapers: [mpvpaper](https://github.com/GhostNaN/mpvpaper)
 - Tabular data viewer: [visidata](https://www.visidata.org/)
 - Torrent: [rtorrent](https://github.com/rakshasa/rtorrent/wiki)
+- Calendar:
+  - [remind](https://dianne.skoll.ca/projects/remind/)
+  - [calcurse](https://www.calcurse.org/)
+  - [wyrd](https://gitlab.com/wyrd-calendar/wyrd)
 
 ## Replacements
 
