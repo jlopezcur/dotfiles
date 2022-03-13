@@ -76,6 +76,7 @@ return require("packer").startup(
       requires = {{"nvim-lua/plenary.nvim"}}
     }
     use "tpope/vim-vinegar" -- https://github.com/tpope/vim-vinegar
+    -- use "SidOfc/carbon.nvim" -- https://github.com/SidOfc/carbon.nvim
     use "cljoly/telescope-repo.nvim" -- https://github.com/cljoly/telescope-repo.nvim
     use {
       "AckslD/nvim-neoclip.lua",
