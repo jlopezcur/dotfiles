@@ -46,6 +46,7 @@ window#waybar.bottom {
 
 #clock,
 #pulseaudio,
+#backlight,
 #memory,
 #cpu,
 #disk,
@@ -66,9 +67,8 @@ window#waybar.bottom {
 #bluetooth,
 #network,
 #battery,
-#window,
 #idle_inhibitor {
-  padding: 0 8px;
+  padding: 0 12px;
 }
 
 /* Modules status */
