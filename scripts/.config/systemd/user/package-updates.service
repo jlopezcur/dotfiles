@@ -1,6 +1,0 @@
-[Unit]
-Description=Store all the updates on a file
-
-[Service]
-Type=oneshot
-ExecStart=/home/jlopez/.local/bin/store-package-updates
