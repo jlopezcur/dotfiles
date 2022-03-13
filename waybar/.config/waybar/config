@@ -2,7 +2,7 @@
 [{
   "position": "top",
   "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-center": ["custom/calendar", "custom/times", "custom/weather"],
+  "modules-center": ["custom/calendar", "custom/reminders", "custom/times", "custom/weather"],
   "modules-right": ["custom/videorec", "custom/gifrec", "custom/vpn", "network", "pulseaudio", "backlight", "idle_inhibitor", "battery"],
 
   "sway/workspaces": {
@@ -18,6 +18,14 @@
     "exec": "$HOME/.config/waybar/modules/cal.py",
     "interval": 3600,
     "return-type": "json"
+  },
+  "custom/reminders": {
+    "format": "",
+    "on-click": "foot -e wyrd",
+    "exec": "remind -h $HOME/.reminders",
+    "exec-if": "remind -h $HOME/.reminders",
+    "tooltip": true,
+    "interval": 3600
   },
   "custom/times": {
     "format": " {}",
