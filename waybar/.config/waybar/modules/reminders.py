@@ -9,7 +9,7 @@ events = subprocess.check_output(
     universal_newlines=True)
 
 data = {}
-data['text'] = "nope"
+data['text'] = ""
 data['class'] = "reminders"
 data['tooltip'] = events
 

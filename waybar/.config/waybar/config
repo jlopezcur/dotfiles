@@ -20,10 +20,10 @@
     "return-type": "json"
   },
   "custom/reminders": {
-    "format": "",
+    "format": "{}",
     "on-click": "tkremind",
     "exec": "$HOME/.config/waybar/modules/reminders.py",
-    "exec-if": "remind -h $HOME/.reminders",
+    "exec-if": "test -e \"remind -h $HOME/.reminders\"",
     "tooltip": true,
     "interval": 3600,
     "return-type": "json"
