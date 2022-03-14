@@ -50,7 +50,6 @@ end
 --
 
 local servers = {
-  "pyright",
   "tsserver",
   "html",
   "bashls",
@@ -63,6 +62,16 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach
   }
 end
+
+--
+-- python
+--
+
+lspconfig.pyright.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  cmd = {vim.fn.stdpath "data" .. "/lsp_servers/python/node_modules/.bin/pyright-langserver", "--stdio"}
+}
 
 --
 -- latex
@@ -83,7 +92,7 @@ lspconfig.cssls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/cssls/node_modules/.bin/vscode-css-language-server", "--stdio"},
-  single_file_support = true,
+  single_file_support = true
 }
 
 --
