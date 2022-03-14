@@ -51,9 +51,7 @@ end
 
 local servers = {
   "tsserver",
-  "html",
   "bashls",
-  "clangd"
 }
 
 for _, lsp in ipairs(servers) do
@@ -62,6 +60,26 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach
   }
 end
+
+--
+-- clang
+--
+
+lspconfig.clangd.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  cmd = {vim.fn.stdpath "data" .. "/lsp_servers/clangd/clangd/bin/clangd"}
+}
+
+--
+-- html
+--
+
+lspconfig.html.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  cmd = {vim.fn.stdpath "data" .. "/lsp_servers/html/node_modules/.bin/vscode-html-language-server", "--stdio"}
+}
 
 --
 -- python
