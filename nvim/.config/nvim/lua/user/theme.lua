@@ -1,17 +1,11 @@
-local nightfox = require("nightfox")
+-- vim.cmd("colorscheme nightfox")
 
-nightfox.setup(
-  {
-    fox = "nightfox",
-    transparent = true,
-    terminal_colors = true,
-    styles = {
-      comments = "italic",
-      keywords = "bold",
-      functions = "italic,bold"
-    }
-  }
-)
+-- vim.opt.termguicolors = true
+-- vim.cmd("colorscheme melange")
 
--- Load the configuration set above and apply the colorscheme
-nightfox.load()
+-- require('onenord').setup()
+
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_italic_functions = true
+vim.g.tokyonight_transparent = true
+vim.cmd[[colorscheme tokyonight]]

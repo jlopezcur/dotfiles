@@ -31,6 +31,7 @@ return require("packer").startup(
     use "onsails/lspkind-nvim"
     use "f3fora/cmp-spell"
     use "b0o/schemastore.nvim" -- https://github.com/b0o/SchemaStore.nvim
+    use "folke/lsp-colors.nvim" -- https://github.com/folke/lsp-colors.nvim
 
     -- diagnostic
     use {
@@ -51,6 +52,9 @@ return require("packer").startup(
 
     -- theme
     use "EdenEast/nightfox.nvim"
+    use "savq/melange" -- https://github.com/savq/melange
+    use "rmehri01/onenord.nvim" -- https://github.com/rmehri01/onenord.nvim
+    use 'folke/tokyonight.nvim' -- https://github.com/folke/tokyonight.nvim
 
     -- line
     use {
