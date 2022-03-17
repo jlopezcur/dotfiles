@@ -23,9 +23,8 @@
     "format": "{}",
     "on-click": "tkremind",
     "exec": "$HOME/.config/waybar/modules/reminders.py",
-    "exec-if": "test -e \"remind -h $HOME/.reminders\"",
+    "exec-if": "test -n \"$(remind -h $HOME/.reminders)\"",
     "tooltip": true,
-    "interval": 3600,
     "return-type": "json"
   },
   "custom/times": {
