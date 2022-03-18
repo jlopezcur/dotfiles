@@ -12,3 +12,4 @@ config.bind(',xt', 'config-cycle tabs.show always never')
 config.bind(',xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
 
 config.bind(',gh', 'open https://github.com/jlopezcur')
+config.bind(',p', ':spawn --userscript qute-pass')
