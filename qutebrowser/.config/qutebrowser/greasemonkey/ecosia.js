@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Ecosia dark mode
 // @description Adds the dark mode to ecosia
-// @namespace https://kloder.com
+// @include https://www.ecosia.org/*
 // @copyright Javier López Úbeda
 // @version 1.0.0
 // ==/UserScript==
