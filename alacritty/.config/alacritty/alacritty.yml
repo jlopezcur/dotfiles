@@ -93,7 +93,7 @@ font:
   # Normal (roman) font face
   normal:
     family: SauceCodePro Nerd Font Mono
-    style: Regular
+    style: Retina
 
   # Bold font face
   bold:
