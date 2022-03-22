@@ -18,7 +18,8 @@ c.url.searchengines = {
     "od": "https://odysee.com/$/search?q={}",
     "dles": "https://www.deepl.com/translator#en/es/{}",
     "dlen": "https://www.deepl.com/translator#es/en/{}",
-    "am": "https://www.amazon.es/s?k={}"
+    "am": "https://www.amazon.es/s?k={}",
+    "npm": "https://www.npmjs.com/search?q={}"
 }
 
 c.aliases = {
