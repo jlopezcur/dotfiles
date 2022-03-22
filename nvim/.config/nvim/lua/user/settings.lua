@@ -38,6 +38,7 @@ vim.o.lazyredraw = true
 --
 
 vim.o.backup = false
+vim.o.backupcopy = 'yes'
 vim.o.swapfile = false
 
 -- 
