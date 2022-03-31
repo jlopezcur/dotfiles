@@ -92,23 +92,23 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: SauceCodePro Nerd Font Mono
+    family: Hasklug Nerd Font
     style: Retina
 
   # Bold font face
   bold:
-    family: SauceCodePro Nerd Font Mono
+    family: Hasklug Nerd Font
     style: Bold
 
   # Italic font face
   italic:
-    family: SauceCodePro Nerd Font Mono
+    family: Hasklug Nerd Font
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: SauceCodePro Nerd Font Mono
-    style: BoldItalic
+    family: Hasklug Nerd Font
+    style: Bold Italic
 
   # Point size
   size: 11.0
