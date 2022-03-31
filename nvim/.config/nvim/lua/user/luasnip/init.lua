@@ -1,11 +1,9 @@
-local ls = require("luasnip")
+local ls = require "luasnip"
 local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
-local f = ls.function_node
-local types = require("luasnip.util.types")
-local fmt = require("luasnip.extras.fmt").fmt
-local rep = require("luasnip.extras").rep
+local types = require "luasnip.util.types"
+local rep = require "luasnip.extras".rep
 local snippet = ls.parser.parse_snippet
 
 ls.config.set_config {
@@ -21,9 +19,9 @@ ls.config.set_config {
   enable_autosnippets = true
 }
 
-ls.snippets = {
-  all = {},
-  javascript = {
+ls.add_snippets(
+  "javascript",
+  {
     snippet("im", "import { $2 } from '$1';"),
     snippet("ex", "export * from '$1';"),
     snippet("co", "console.log('$1');"),
@@ -56,8 +54,12 @@ ls.snippets = {
         )
       }
     )
-  },
-  javascriptreact = {
+  }
+)
+
+ls.add_snippets(
+  "javascriptreact",
+  {
     s(
       "re",
       {
@@ -82,8 +84,12 @@ ls.snippets = {
         t({"};"})
       }
     )
-  },
-  typescriptreact = {
+  }
+)
+
+ls.add_snippets(
+  "typescriptreact",
+  {
     s(
       "re",
       {
@@ -108,12 +114,15 @@ ls.snippets = {
         )
       }
     )
-  },
-  rust = {},
-  tex = {
+  }
+)
+
+ls.add_snippets(
+  "tex",
+  {
     snippet("list", "\\begin{${1|enumerate,itemize|}}\n\t\\item ${2:item}\n\\end{$1}")
   }
-}
+)
 
 ls.filetype_extend("javascriptreact", {"javascript"})
 ls.filetype_extend("typescript", {"javascript"})
