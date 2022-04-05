@@ -11,7 +11,7 @@ end
 vim.cmd [[packadd packer.nvim]]
 vim.cmd("autocmd BufWritePost plugins.lua PackerCompile")
 
-return require("packer").startup(
+return require "packer".startup(
   function()
     -- Packer can manage itself as an optional plugin
     use {"wbthomason/packer.nvim", opt = true}
@@ -38,7 +38,7 @@ return require("packer").startup(
       "folke/trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
-        require("trouble").setup {}
+        require "trouble".setup {}
       end
     }
 
@@ -54,7 +54,7 @@ return require("packer").startup(
     use "EdenEast/nightfox.nvim"
     use "savq/melange" -- https://github.com/savq/melange
     use "rmehri01/onenord.nvim" -- https://github.com/rmehri01/onenord.nvim
-    use 'folke/tokyonight.nvim' -- https://github.com/folke/tokyonight.nvim
+    use "folke/tokyonight.nvim" -- https://github.com/folke/tokyonight.nvim
 
     -- line
     use {
@@ -69,7 +69,7 @@ return require("packer").startup(
     use {
       "lewis6991/spellsitter.nvim",
       config = function()
-        require("spellsitter").setup()
+        require "spellsitter".setup()
       end
     }
 
@@ -77,7 +77,7 @@ return require("packer").startup(
     -- fuzzy finder
     use {
       "nvim-telescope/telescope.nvim",
-      requires = {{"nvim-lua/plenary.nvim"}}
+      requires = {{"nvim-lua/plenary.nvim"}, {"nvim-telescope/telescope-fzy-native.nvim"}}
     }
     use "tpope/vim-vinegar" -- https://github.com/tpope/vim-vinegar
     -- use "SidOfc/carbon.nvim" -- https://github.com/SidOfc/carbon.nvim
@@ -85,7 +85,7 @@ return require("packer").startup(
     use {
       "AckslD/nvim-neoclip.lua",
       config = function()
-        require("neoclip").setup()
+        require "neoclip".setup()
       end
     }
     -- https://github.com/ThePrimeagen/harpoon
@@ -104,13 +104,13 @@ return require("packer").startup(
     use {
       "numToStr/Comment.nvim",
       config = function()
-        require("Comment").setup()
+        require "Comment".setup()
       end
     }
 
     -- pears
     use "steelsojka/pears.nvim"
-    require("pears").setup()
+    require "pears".setup()
 
     -- wiki
     use "vimwiki/vimwiki" -- https://github.com/vimwiki/vimwiki
@@ -139,7 +139,7 @@ return require("packer").startup(
     use {
       "folke/which-key.nvim",
       config = function()
-        require("which-key").setup {}
+        require "which-key".setup {}
       end
     }
 
@@ -154,7 +154,7 @@ return require("packer").startup(
     -- debug
     use "mfussenegger/nvim-dap"
     use "nvim-telescope/telescope-dap.nvim"
-    -- use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
 
     -- term
     use "akinsho/nvim-toggleterm.lua"
@@ -177,7 +177,7 @@ return require("packer").startup(
     use {
       "folke/zen-mode.nvim", -- https://github.com/folke/zen-mode.nvim
       config = function()
-        require("zen-mode").setup {}
+        require "zen-mode".setup {}
       end
     }
 

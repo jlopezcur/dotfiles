@@ -1,35 +1,11 @@
 local lspconfig = require("lspconfig")
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local opts = {noremap = true, silent = true}
 
 --
 -- keymaps
 --
 
-local on_attach = function(client, bufnr)
-  local function set_keymap(...)
-    vim.api.nvim_buf_set_keymap(bufnr, ...)
-  end
-  local function set_option(...)
-    vim.api.nvim_buf_set_option(bufnr, ...)
-  end
-
-  set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
-
-  -- Mappings.
-  local opts = {noremap = true, silent = true}
-  set_keymap("n", "gd", "<cmd>lua require'telescope.builtin'.lsp_definitions()<CR>", opts)
-  set_keymap("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-  set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-  set_keymap("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>", opts)
-  set_keymap("n", "go", "<cmd>Telescope lsp_document_symbols<CR>", opts)
-  set_keymap("n", "<leader>fa", "<cmd>Telescope lsp_code_actions<CR>", opts)
-  set_keymap("v", "<leader>fa", "<cmd>Telescope lsp_range_code_actions<CR>", opts)
-  set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-  set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-  set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-  set_keymap("n", "<space>d", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-
+local on_attach = function(client)
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
     vim.api.nvim_exec(
@@ -45,18 +21,34 @@ local on_attach = function(client, bufnr)
   end
 end
 
+vim.api.nvim_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+
+vim.api.nvim_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
+vim.api.nvim_set_keymap("n", "gh", ":lua vim.lsp.buf.hover()<CR>", opts)
+vim.api.nvim_set_keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
+vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references()<CR>", opts)
+vim.api.nvim_set_keymap("n", "ga", ":Telescope lsp_code_actions<CR>", opts)
+vim.api.nvim_set_keymap("v", "ga", ":Telescope lsp_range_code_actions<CR>", opts)
+vim.api.nvim_set_keymap("n", "go", ":Telescope lsp_document_symbols<CR>", opts)
+
+vim.api.nvim_set_keymap("n", "[d", ":lua vim.diagnostic.goto_prev()<CR>", opts)
+vim.api.nvim_set_keymap("n", "]d", ":lua vim.diagnostic.goto_next()<CR>", opts)
+
+vim.api.nvim_set_keymap("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", opts)
+vim.api.nvim_set_keymap("n", "<space>d", ":lua vim.diagnostic.setloclist()<CR>", opts)
+
 --
 -- servers
 --
 
 local servers = {
   "tsserver",
-  "bashls",
+  "bashls"
 }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
-    capabilities = capabilities,
+    capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
     on_attach = on_attach
   }
 end
@@ -66,7 +58,6 @@ end
 --
 
 lspconfig.clangd.setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/clangd/clangd/bin/clangd"}
 }
@@ -76,7 +67,6 @@ lspconfig.clangd.setup {
 --
 
 lspconfig.html.setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/html/node_modules/.bin/vscode-html-language-server", "--stdio"}
 }
@@ -86,7 +76,6 @@ lspconfig.html.setup {
 --
 
 lspconfig.pyright.setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/python/node_modules/.bin/pyright-langserver", "--stdio"}
 }
@@ -96,7 +85,6 @@ lspconfig.pyright.setup {
 --
 
 lspconfig.texlab.setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/latex/texlab"},
   standalone = false
@@ -107,7 +95,6 @@ lspconfig.texlab.setup {
 --
 
 lspconfig.cssls.setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/cssls/node_modules/.bin/vscode-css-language-server", "--stdio"},
   single_file_support = true
@@ -124,14 +111,13 @@ lspconfig.eslint.setup {}
 --
 
 lspconfig.sumneko_lua.setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/sumneko_lua/extension/server/bin/lua-language-server"},
   settings = {
     Lua = {
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {"vim"}
+        globals = {"vim", "use"}
       },
       telemetry = {
         enable = false
@@ -148,7 +134,6 @@ lspconfig.sumneko_lua.setup {
 --
 
 lspconfig.jsonls.setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   settings = {
     json = {
@@ -180,15 +165,7 @@ lspconfig.yamlls.setup {
 -- diagnostic
 --
 
-vim.diagnostic.config(
-  {
-    virtual_text = true,
-    signs = true,
-    underline = true,
-    update_in_insert = true,
-    severity_sort = false
-  }
-)
+vim.diagnostic.config({update_in_insert = true})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
   vim.lsp.with(

@@ -1,33 +1,27 @@
-local dap = require('dap')
+local dap = require "dap"
 
 dap.adapters.node2 = {
-  type = 'executable',
-  command = 'node',
-  args = {os.getenv('HOME') .. '/.config/nvm/12.16.3/lib/node_modules/node-debug2/bin/node-debug.js'}
+  type = "executable",
+  command = "node",
+  args = {os.getenv("HOME") .. "/.nvm/versions/node/v14.18.1/bin/node-debug"}
 }
 
 dap.configurations.javascript = {
   {
-    name = 'Node file',
-    type = 'node2',
-    request = 'launch',
-    -- program = '${workspaceFolder}/${file}',
-    program = '${file}',
+    name = "Launch",
+    type = "node2",
+    request = "launch",
+    program = "${file}",
     cwd = vim.fn.getcwd(),
     sourceMaps = true,
-    protocol = 'inspector',
-    console = 'integratedTerminal',
+    protocol = "inspector",
+    console = "integratedTerminal"
   },
   {
-    name = 'Node file2',
-    type = 'node2',
-    request = 'launch',
-    -- program = '${workspaceFolder}/${file}',
-    program = '${file}',
-    cwd = vim.fn.getcwd(),
-    sourceMaps = true,
-    protocol = 'inspector',
-    console = 'integratedTerminal',
-  },
+    -- For this to work you need to make sure the node process is started with the `--inspect` flag.
+    name = "Attach to process",
+    type = "node2",
+    request = "attach",
+    processId = require "dap.utils".pick_process
+  }
 }
-

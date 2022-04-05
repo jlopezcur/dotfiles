@@ -14,19 +14,16 @@ require("telescope").setup {
     buffers = {
       sort_lastused = true,
       ignore_current_buffer = true
+      -- theme = "dropdown"
     },
     git_branches = {
       sort_lastused = true
-    },
-    buffers = {
-      sort_lastused = true,
-      ignore_current_buffer = true,
-      theme = "dropdown"
     }
   }
 }
 
 require "telescope".load_extension "repo"
 require "telescope".load_extension "neoclip"
+require "telescope".load_extension "fzy_native"
 
 require "user.telescope.mappings"
