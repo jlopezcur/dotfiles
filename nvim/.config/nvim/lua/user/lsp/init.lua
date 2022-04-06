@@ -59,6 +59,7 @@ end
 
 lspconfig.clangd.setup {
   on_attach = on_attach,
+  capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/clangd/clangd/bin/clangd"}
 }
 
@@ -68,6 +69,7 @@ lspconfig.clangd.setup {
 
 lspconfig.html.setup {
   on_attach = on_attach,
+  capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/html/node_modules/.bin/vscode-html-language-server", "--stdio"}
 }
 
@@ -77,6 +79,7 @@ lspconfig.html.setup {
 
 lspconfig.pyright.setup {
   on_attach = on_attach,
+  capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/python/node_modules/.bin/pyright-langserver", "--stdio"}
 }
 
@@ -86,6 +89,7 @@ lspconfig.pyright.setup {
 
 lspconfig.texlab.setup {
   on_attach = on_attach,
+  capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/latex/texlab"},
   standalone = false
 }
@@ -96,6 +100,7 @@ lspconfig.texlab.setup {
 
 lspconfig.cssls.setup {
   on_attach = on_attach,
+  capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/cssls/node_modules/.bin/vscode-css-language-server", "--stdio"},
   single_file_support = true
 }
@@ -112,6 +117,7 @@ lspconfig.eslint.setup {}
 
 lspconfig.sumneko_lua.setup {
   on_attach = on_attach,
+  capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/sumneko_lua/extension/server/bin/lua-language-server"},
   settings = {
     Lua = {
@@ -135,6 +141,7 @@ lspconfig.sumneko_lua.setup {
 
 lspconfig.jsonls.setup {
   on_attach = on_attach,
+  capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   settings = {
     json = {
       schemas = require("schemastore").json.schemas()
@@ -147,6 +154,7 @@ lspconfig.jsonls.setup {
 --
 
 lspconfig.yamlls.setup {
+  capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   settings = {
     yaml = {
       schemas = {
