@@ -18,4 +18,4 @@ vim.api.nvim_set_keymap("n", "<Leader>gq", "<cmd>:BufDel<CR>", options)
 --
 
 -- Edit vimrc configuration file
-vim.cmd("nnoremap <Leader>e :e $MYVIMRC<CR>")
+vim.cmd("nnoremap <Leader>e :e ~/.config/nvim/lua/user/<CR>")
