@@ -180,6 +180,12 @@ return require "packer".startup(
         require "zen-mode".setup {}
       end
     }
+    use {
+      "folke/twilight.nvim",
+      config = function()
+        require("twilight").setup {}
+      end
+    }
 
     -- dependencies
     -- use(
