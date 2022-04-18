@@ -11,6 +11,7 @@ actions=(
   "update"
   "check email"
   "check updates"
+  "firmware upgrade"
 )
 
 list=$(printf "\n%s" "${actions[@]}") # list of entries in lines
@@ -26,5 +27,6 @@ case $action in
   "update") alacritty -e system-update ;;
   "check email") mbsync gmail ;;
   "check updates") store-package-updates ;;
+  "firmware upgrade") alacritty -e "fwupdmgr refresh; fwupdmgr get-updates; fwupdmgr update" ;;
   *) echo "Invalid option $action" ;;
 esac
