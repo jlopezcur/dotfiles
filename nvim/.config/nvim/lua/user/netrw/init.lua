@@ -1,5 +1,3 @@
-require "mapx".setup {global = true}
-
 vim.g.netrw_bufsettings = "noma nomod nowrap ro nobl rnu"
 vim.g.netrw_liststyle = 0
 -- vim.g.netrw_fastbrowse = 0
@@ -11,7 +9,7 @@ vim.g.netrw_localcopydircmd = "cp -r"
 
 -- remove any file or directory directly
 -- TODO multiple files or directories
-function _remove_files_or_directories()
+local function _remove_files_or_directories()
   local file = vim.fn.expand([[<cfile>]])
   local path = vim.fn.expand([[%:p]]) .. file
   if vim.fn.input(string.format("Delete '%s'? (N/y) ", file)) == "y" then
@@ -19,18 +17,10 @@ function _remove_files_or_directories()
     vim.cmd([[:Explore]])
   end
 end
--- vim.keymap(
---   "n",
---   function()
---
---   end,
---   {ft = "netrw"}
--- )
-nnoremap("dd", ":lua _remove_files_or_directories()<cr>", "silent", {ft = "netrw"})
 
 -- modify the premissions of a file or directory
 -- TODO multiple files or directories
-function _chmod_file()
+local function _chmod_file()
   local file = vim.fn.expand([[<cfile>]])
   local path = vim.fn.expand([[%:p]]) .. file
   local result = vim.fn.input(string.format("Set permissions for '%s': (leave it blank for exit) ", file))
@@ -40,11 +30,10 @@ function _chmod_file()
     vim.cmd([[:Explore]])
   end
 end
-nnoremap("M", ":lua _chmod_file()<cr>", "silent", {ft = "netrw"})
 
 -- rename a file or directory
 -- TODO multiple files or directories
-function _rename_file()
+local function _rename_file()
   local file = vim.fn.expand([[<cfile>]])
   local path = vim.fn.expand([[%:p]]) .. file
   local result = vim.fn.input(string.format("Rename '%s' as: (leave it blank for exit) ", file))
@@ -56,10 +45,24 @@ function _rename_file()
     vim.notify("Done!", 0, {})
   end
 end
-nnoremap("R", ":lua _rename_file()<cr>", "silent", {ft = "netrw"})
 
 -- This is for testing
-function _testing()
+local function _testing()
   print(vim.fn.expand([[<cfile>:p]]))
 end
-nnoremap("T", ":lua _testing()<cr>", "silent", {ft = "netrw"})
+
+vim.api.nvim_create_autocmd(
+  {"BufEnter", "BufWinEnter"},
+  {
+    pattern = "*",
+    callback = function()
+      if vim.bo.filetype == "netrw" then
+        vim.keymap.set("n", "M", _chmod_file)
+        vim.keymap.set("n", "R", _rename_file)
+        vim.keymap.set("n", "T", _testing)
+        vim.keymap.set("n", "dd", _remove_files_or_directories)
+      end
+    end,
+    desc = "set the netrw keymaps"
+  }
+)
