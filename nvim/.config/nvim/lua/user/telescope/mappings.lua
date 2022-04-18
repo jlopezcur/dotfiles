@@ -1,24 +1,20 @@
-local opts = {noremap = true, silent = true}
-local map = vim.api.nvim_set_keymap
-
 -- Files
-map("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files{}<CR>", opts)
-map("n", "<leader>fg", "<cmd>lua require'telescope.builtin'.live_grep{}<CR>", opts)
-map("n", "<leader>fb", "<cmd>lua require'telescope.builtin'.buffers{}<CR>", opts)
-map("n", "<leader>fh", "<cmd>lua require'telescope.builtin'.help_tags{}<CR>", opts)
+vim.keymap.set("n", "<leader>ff", require "telescope.builtin".find_files)
+vim.keymap.set("n", "<leader>fg", require "telescope.builtin".live_grep)
+vim.keymap.set("n", "<leader>fb", require "telescope.builtin".buffers)
+vim.keymap.set("n", "<leader>fh", require "telescope.builtin".help_tags)
 
 -- LSP
-map("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references{}<CR>", opts)
+vim.keymap.set("n", "gr", require "telescope.builtin".lsp_references)
 
 -- Git
 -- Remember: Ctrl-a create a new brnach, Ctrl-d remove selected branch
-map("n", "<leader>gb", "<cmd>lua require'telescope.builtin'.git_branches{}<CR>", opts)
-map("n", "<leader>gc", "<cmd>lua require'telescope.builtin'.git_bcommits{}<CR>", opts)
-map("n", "<leader>gt", "<cmd>lua require'telescope.builtin'.git_stash{}<CR>", opts)
+vim.keymap.set("n", "<leader>gb", require "telescope.builtin".git_branches)
+vim.keymap.set("n", "<leader>gc", require "telescope.builtin".git_bcommits)
+vim.keymap.set("n", "<leader>gt", require "telescope.builtin".git_stash)
 
 -- Repo List
-map("n", "<leader>rl", "<cmd>Telescope repo list<CR>", opts)
+vim.keymap.set("n", "<leader>rl", ":Telescope repo list<CR>")
 
 -- Neoclip
-map("n", "<leader>yl", "<cmd>Telescope neoclip<CR>", opts)
-
+vim.keymap.set("n", "<leader>yl", ":Telescope neoclip<CR>")

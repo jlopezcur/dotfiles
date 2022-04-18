@@ -7,7 +7,7 @@ vim.o.title = true
 
 vim.o.path = ".,**"
 vim.o.encoding = "UTF-8"
-vim.g.mapleader = ','
+vim.g.mapleader = ","
 vim.o.completeopt = "menu,menuone,noselect"
 
 -- vim.cmd("set clipboard+=unnamedplus")
@@ -17,10 +17,10 @@ vim.o.clipboard = "unnamedplus"
 -- "+y Regular clipboard (ctrl+v)
 
 vim.o.hidden = true
-vim.cmd('set list')
+vim.cmd("set list")
 vim.o.updatetime = 100
 vim.o.timeoutlen = 600
-vim.o.signcolumn = 'yes'
+vim.o.signcolumn = "yes"
 
 -- Avoid showing message extra message when using completion
 -- vim.cmd("set shortmess+=c")
@@ -38,10 +38,10 @@ vim.o.lazyredraw = true
 --
 
 vim.o.backup = false
-vim.o.backupcopy = 'yes'
+vim.o.backupcopy = "yes"
 vim.o.swapfile = false
 
--- 
+--
 -- folding
 --
 

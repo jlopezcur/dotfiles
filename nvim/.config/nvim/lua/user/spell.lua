@@ -6,5 +6,4 @@ vim.cmd("autocmd FileType gitcommit setlocal spell spelllang=en_us,es_es")
 vim.cmd("set complete+=kspell")
 
 -- Use telescope on spell suggestion list
-vim.api.nvim_set_keymap('n', 'z=',
-  "<cmd>lua require('telescope.builtin').spell_suggest()<CR>", {noremap=true, silent=true})
+vim.keymap.set("n", "z=", require("telescope.builtin").spell_suggest)

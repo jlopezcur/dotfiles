@@ -1,6 +1,3 @@
-local map = vim.api.nvim_set_keymap
-local options = {noremap = true, silent = true}
-
 -- Use jest configuration on js environments
 vim.g["test#javascript#runner"] = "jest"
 vim.g["test#javascript#jest#options"] = {
@@ -9,11 +6,11 @@ vim.g["test#javascript#jest#options"] = {
 }
 
 -- Geneal mappings
-map("n", "<Leader>tn", "<cmd>:TestNearest<CR>", options)
-map("n", "<Leader>tf", "<cmd>:TestFile<CR>", options)
-map("n", "<Leader>ts", "<cmd>:TestSuite<CR>", options)
-map("n", "<Leader>tl", "<cmd>:TestLast<CR>", options)
-map("n", "<Leader>tv", "<cmd>:TestVisit<CR>", options)
+vim.keymap.set("n", "<Leader>tn", ":TestNearest<CR>")
+vim.keymap.set("n", "<Leader>tf", ":TestFile<CR>")
+vim.keymap.set("n", "<Leader>ts", ":TestSuite<CR>")
+vim.keymap.set("n", "<Leader>tl", ":TestLast<CR>")
+vim.keymap.set("n", "<Leader>tv", ":TestVisit<CR>")
 
 -- " Storybook
 -- nnoremap <Leader>ss :terminal npm start<cr>

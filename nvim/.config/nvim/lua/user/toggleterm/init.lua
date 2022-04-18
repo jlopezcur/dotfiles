@@ -9,5 +9,4 @@ require "toggleterm".setup {
   direction = "float" -- vertical | horizontal | float,
 }
 
-local options = {noremap = true, silent = true}
-vim.api.nvim_set_keymap("t", "<Leader><Esc>", "<C-\\><C-n>", options)
+vim.keymap.set("t", "<Leader><Esc>", "<C-\\><C-n>")

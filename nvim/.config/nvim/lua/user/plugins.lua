@@ -194,8 +194,5 @@ return require "packer".startup(
     --     requires = "MunifTanjim/nui.nvim"
     --   }
     -- )
-
-    -- keymapping more easy
-    use "b0o/mapx.nvim" -- https://github.com/b0o/mapx.nvim
   end
 )

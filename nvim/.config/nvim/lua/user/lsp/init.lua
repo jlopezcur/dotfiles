@@ -1,5 +1,4 @@
 local lspconfig = require("lspconfig")
-local opts = {noremap = true, silent = true}
 
 --
 -- keymaps

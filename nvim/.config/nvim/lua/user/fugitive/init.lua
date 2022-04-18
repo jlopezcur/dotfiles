@@ -1,28 +1,25 @@
-local map = vim.api.nvim_set_keymap
-local options = { noremap = true, silent = true }
-
 --
 -- Commands
 --
 
 -- Git status
-map('n', '<Leader>gs', "<cmd>:G<CR>", options)
+vim.keymap.set("n", "<Leader>gs", "<cmd>:G<CR>")
 
 -- Git push
-map('n', '<Leader>gp', "<cmd>:Git push<CR>", options)
+vim.keymap.set("n", "<Leader>gp", "<cmd>:Git push<CR>")
 
 --
 -- Movements
 --
 
 -- Go to previous git change
-map('n', '[q', "<cmd>:cprev<CR>", options)
+vim.keymap.set("n", "[q", "<cmd>:cprev<CR>")
 
 -- Go to next git change
-map('n', ']q', "<cmd>:cnext<CR>", options)
+vim.keymap.set("n", "]q", "<cmd>:cnext<CR>")
 
 -- Go to first git change
-map('n', '[Q', "<cmd>:cfirst<CR>", options)
+vim.keymap.set("n", "[Q", "<cmd>:cfirst<CR>")
 
 -- Go to last git change
-map('n', ']Q', "<cmd>:clast<CR>", options)
+vim.keymap.set("n", "]Q", "<cmd>:clast<CR>")

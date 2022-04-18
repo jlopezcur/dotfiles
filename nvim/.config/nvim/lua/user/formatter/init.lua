@@ -79,15 +79,15 @@ require("formatter").setup(
           }
         end
       },
-      python = {
-        -- Rustfmt
-        function()
-          return {
-            exe = "pyformat",
-            stdin = true
-          }
-        end
-      },
+      -- python = {
+      --   -- Rustfmt
+      --   function()
+      --     return {
+      --       exe = "pyformat",
+      --       stdin = true
+      --     }
+      --   end
+      -- },
       sh = {
         -- Shell Script Formatter
         function()
@@ -126,7 +126,5 @@ require("formatter").setup(
   }
 )
 
-local map = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
-map("n", "<space>f", "<cmd>Format<CR>", opts)
-map("v", "<space>f", "<cmd>Format<CR>", opts)
+vim.keymap.set("n", "<space>f", "<cmd>Format<CR>")
+vim.keymap.set("v", "<space>f", "<cmd>Format<CR>")

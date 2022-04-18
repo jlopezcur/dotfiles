@@ -1,21 +1,18 @@
-local options = {noremap = true, silent = true}
-
 -- Change require into import
-vim.api.nvim_set_keymap("n", "<Leader>qf", "<cmd>_ciwimportf=dwdwifrom lx$hxj", options)
+vim.keymap.set("n", "<Leader>qf", "<cmd>_ciwimportf=dwdwifrom lx$hxj")
 
 -- tex
-vim.api.nvim_set_keymap("n", "<Leader>lp", ":!pandoc -o '%:p:h/%:t:r.pdf' '%'<cr>", options)
-vim.api.nvim_set_keymap("n", "<Leader>lf", ":!pdflatex '%'<cr>", options)
+vim.keymap.set("n", "<Leader>lp", ":!pandoc -o '%:p:h/%:t:r.pdf' '%'<CR>")
+vim.keymap.set("n", "<Leader>lf", ":!pdflatex '%'<CR>")
 
--- _ciwimportf=dwdwifrom lx$hxj
-vim.api.nvim_set_keymap("n", "<Leader>rr", ":tabnew<cr>:term cargo run<cr>i", options)
+vim.keymap.set("n", "<Leader>rr", ":tabnew<CR>:term cargo run<CR>i")
 
 -- close a buffer
-vim.api.nvim_set_keymap("n", "<Leader>gq", "<cmd>:BufDel<CR>", options)
+vim.keymap.set("n", "<Leader>gq", ":BufDel<CR>")
 
 --
 -- vimrc
 --
 
 -- Edit vimrc configuration file
-vim.cmd("nnoremap <Leader>e :e ~/.config/nvim/lua/user/<CR>")
+vim.keymap.set("n", "<Leader>e", ":e ~/.config/nvim/lua/user/<CR>")

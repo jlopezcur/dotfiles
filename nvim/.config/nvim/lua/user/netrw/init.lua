@@ -15,10 +15,17 @@ function _remove_files_or_directories()
   local file = vim.fn.expand([[<cfile>]])
   local path = vim.fn.expand([[%:p]]) .. file
   if vim.fn.input(string.format("Delete '%s'? (N/y) ", file)) == "y" then
-    vim.cmd(':!rm -rf ' .. path)
+    vim.cmd(":!rm -rf " .. path)
     vim.cmd([[:Explore]])
   end
 end
+-- vim.keymap(
+--   "n",
+--   function()
+--
+--   end,
+--   {ft = "netrw"}
+-- )
 nnoremap("dd", ":lua _remove_files_or_directories()<cr>", "silent", {ft = "netrw"})
 
 -- modify the premissions of a file or directory
@@ -28,8 +35,8 @@ function _chmod_file()
   local path = vim.fn.expand([[%:p]]) .. file
   local result = vim.fn.input(string.format("Set permissions for '%s': (leave it blank for exit) ", file))
   if result ~= "" then
-    print(' ')
-    vim.cmd(string.format(':!chmod %s %s', result, path))
+    print(" ")
+    vim.cmd(string.format(":!chmod %s %s", result, path))
     vim.cmd([[:Explore]])
   end
 end
@@ -43,8 +50,8 @@ function _rename_file()
   local result = vim.fn.input(string.format("Rename '%s' as: (leave it blank for exit) ", file))
   local new_path = vim.fn.expand([[%:p]]) .. result
   if result ~= "" then
-    print(' ')
-    vim.cmd(string.format(':!mv %s %s', path, new_path))
+    print(" ")
+    vim.cmd(string.format(":!mv %s %s", path, new_path))
     vim.cmd([[:e]])
     vim.notify("Done!", 0, {})
   end
