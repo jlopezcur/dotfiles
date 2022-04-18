@@ -21,7 +21,7 @@
   },
   "custom/reminders": {
     "format": "{}",
-    "on-click": "tkremind",
+    "on-click": "alacritty --title Reminders -e wyrd",
     "exec": "$HOME/.config/waybar/modules/reminders.py",
     "exec-if": "test -n \"$(remind -h $HOME/.reminders)\"",
     "tooltip": true,
