@@ -29,6 +29,7 @@ alias find "fd"
 alias ps "procs"
 alias ping "gping"
 alias v "nvim"
+alias hx "helix"
 abbr -a -g ... ../..
 abbr -a -g .... ../../..
 abbr -a -g ..... ../../../..

@@ -7,7 +7,9 @@
 - Icons: [Paper](https://snwh.org/paper)
 - GTK Theme: [Arc Dark](https://github.com/horst3180/Arc-theme)
 - GTK Theme Manager: [lxappearance](https://wiki.lxde.org/es/LXAppearance)
-- Editor: [neovim](https://neovim.io/) [:pencil: Notes](docs/neovim.md) 
+- Editor: 
+  - [neovim](https://neovim.io/) [:pencil: Notes](docs/neovim.md) 
+  - [helix](https://helix-editor.com/)
 - File Manager: [lf](https://github.com/gokcehan/lf) [:pencil: Notes](docs/lf.md)
 - (tiling)WM: [sway](https://swaywm.org/) [:pencil: Notes](docs/sway.md)
 - Shell: [fish](https://www.gnu.org/software/bash/) [:pencil: Notes](docs/fish.md)
