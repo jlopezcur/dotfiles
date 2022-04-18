@@ -23,19 +23,19 @@ end
 
 vim.api.nvim_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
-vim.api.nvim_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
-vim.api.nvim_set_keymap("n", "gh", ":lua vim.lsp.buf.hover()<CR>", opts)
-vim.api.nvim_set_keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
-vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references()<CR>", opts)
-vim.api.nvim_set_keymap("n", "ga", ":Telescope lsp_code_actions<CR>", opts)
-vim.api.nvim_set_keymap("v", "ga", ":Telescope lsp_range_code_actions<CR>", opts)
-vim.api.nvim_set_keymap("n", "go", ":Telescope lsp_document_symbols<CR>", opts)
+vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions)
+vim.keymap.set("n", "gh", vim.lsp.buf.hover)
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
+vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references)
+vim.keymap.set("n", "ga", require("telescope.builtin").lsp_code_actions)
+vim.keymap.set("v", "ga", require("telescope.builtin").lsp_range_code_actions)
+vim.keymap.set("n", "go", require("telescope.builtin").lsp_document_symbols)
 
-vim.api.nvim_set_keymap("n", "[d", ":lua vim.diagnostic.goto_prev()<CR>", opts)
-vim.api.nvim_set_keymap("n", "]d", ":lua vim.diagnostic.goto_next()<CR>", opts)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 
-vim.api.nvim_set_keymap("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", opts)
-vim.api.nvim_set_keymap("n", "<space>d", ":lua vim.diagnostic.setloclist()<CR>", opts)
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+vim.keymap.set("n", "<space>d", vim.diagnostic.setloclist)
 
 --
 -- servers
