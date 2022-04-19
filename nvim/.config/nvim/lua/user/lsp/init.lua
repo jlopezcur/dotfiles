@@ -1,6 +1,20 @@
 local lspconfig = require("lspconfig")
 
 --
+-- decorations
+--
+
+local border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = border})
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = border})
+
+--
+-- config
+--
+
+vim.api.nvim_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+
+--
 -- keymaps
 --
 
@@ -19,8 +33,6 @@ local on_attach = function(client)
     )
   end
 end
-
-vim.api.nvim_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
 vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions)
 vim.keymap.set("n", "gh", vim.lsp.buf.hover)

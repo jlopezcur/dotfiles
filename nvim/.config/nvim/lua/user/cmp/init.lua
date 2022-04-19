@@ -14,21 +14,10 @@ cmp.setup(
         luasnip.lsp_expand(args.body)
       end
     },
-    -- duplicates = {
-    --   nvim_lsp = 1,
-    --   luasnip = 1,
-    --   cmp_tabnine = 1,
-    --   buffer = 1,
-    --   path = 1
-    -- },
-    -- confirm_opts = {
-    --   behavior = cmp.ConfirmBehavior.Replace,
-    --   select = false
-    -- },
-    -- documentation = {
-    -- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-    -- border = {" ", " ", " ", " ", " ", " ", " ", " "}
-    -- },
+    window = {
+      documentation = cmp.config.window.bordered(),
+      completion = cmp.config.window.bordered()
+    },
     mapping = cmp.mapping.preset.insert(
       {
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
@@ -66,7 +55,8 @@ cmp.setup(
         {name = "nvim_lua"},
         {name = "luasnip"},
         {name = "path"},
-        {name = "spell"}
+        {name = "spell"},
+        {name = "cmdline"}
       },
       {
         {name = "buffer"}
@@ -75,12 +65,5 @@ cmp.setup(
     formatting = {
       format = lspkind.cmp_format({with_text = false, maxwidth = 50})
     }
-    -- experimental = {
-    --   ghost_text = false,
-    --   native_menu = false
-    -- },
-    -- completion = {
-    --   completeopt = "menu,menuone,noselect"
-    -- }
   }
 )
