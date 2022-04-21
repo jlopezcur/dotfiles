@@ -5,7 +5,8 @@ from datetime import datetime
 
 # emoji = "🎃" # Halloween
 # emoji = "🚭" # Normal
-emoji = "🎄"  # Christmas
+# emoji = "🎄"  # Christmas
+emoji = "🏆"  # Trophy
 per_day = 20
 cost_per_day = 1
 quit_date = datetime(2021, 8, 14, 21)
