@@ -60,7 +60,7 @@ vim.api.nvim_create_autocmd(
         vim.keymap.set("n", "M", _chmod_file, {buffer = true})
         vim.keymap.set("n", "R", _rename_file, {buffer = true})
         vim.keymap.set("n", "T", _testing, {buffer = true})
-        vim.keymap.set("n", "dd", _remove_files_or_directories, {buffer = true})
+        vim.keymap.set("n", "D", _remove_files_or_directories, {buffer = true})
       end
     end,
     desc = "set the netrw keymaps"
