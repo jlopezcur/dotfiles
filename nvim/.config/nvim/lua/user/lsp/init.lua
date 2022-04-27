@@ -18,6 +18,24 @@ vim.api.nvim_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 -- keymaps
 --
 
+vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions)
+vim.keymap.set("n", "gh", vim.lsp.buf.hover)
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
+vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references)
+vim.keymap.set("n", "ga", vim.lsp.buf.code_action)
+vim.keymap.set("v", "ga", vim.lsp.buf.range_code_action)
+vim.keymap.set("n", "go", require("telescope.builtin").lsp_document_symbols)
+
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+vim.keymap.set("n", "<space>d", vim.diagnostic.setloclist)
+
+--
+-- servers
+--
+
 local on_attach = function(client)
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
@@ -33,24 +51,6 @@ local on_attach = function(client)
     )
   end
 end
-
-vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions)
-vim.keymap.set("n", "gh", vim.lsp.buf.hover)
-vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
-vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references)
-vim.keymap.set("n", "ga", require("telescope.builtin").lsp_code_actions)
-vim.keymap.set("v", "ga", require("telescope.builtin").lsp_range_code_actions)
-vim.keymap.set("n", "go", require("telescope.builtin").lsp_document_symbols)
-
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-
-vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
-vim.keymap.set("n", "<space>d", vim.diagnostic.setloclist)
-
---
--- servers
---
 
 local servers = {
   "tsserver",
