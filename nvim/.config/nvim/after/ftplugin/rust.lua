@@ -1,17 +1,13 @@
-local function set_keymap(...)
-  vim.api.nvim_buf_set_keymap(vim.lsp.buf, ...)
-end
+vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions)
+vim.keymap.set("n", "gh", vim.lsp.buf.hover)
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
+vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references)
+vim.keymap.set("n", "go", require("telescope.builtin").lsp_document_symbols)
+vim.keymap.set("n", "ga", vim.lsp.buf.code_action)
+vim.keymap.set("v", "ga", vim.lsp.buf.range_code_action)
 
-local opts = {noremap = true, silent = true}
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 
-set_keymap("n", "gd", "<cmd>lua require'telescope.builtin'.lsp_definitions()<CR>", opts)
-set_keymap("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-set_keymap("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>", opts)
-set_keymap("n", "go", "<cmd>Telescope lsp_document_symbols<CR>", opts)
-set_keymap("n", "<leader>fa", "<cmd>RustCodeAction<CR>", opts)
-set_keymap("v", "<leader>fa", "<cmd>RustCodeAction<CR>", opts)
-set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-set_keymap("n", "<space>d", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+vim.keymap.set("n", "<space>d", vim.diagnostic.setloclist)
