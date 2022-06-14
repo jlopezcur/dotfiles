@@ -125,7 +125,7 @@
   "position": "bottom",
   "modules-left": ["custom/scratchpad-indicator", "memory", "cpu", "temperature", "disk"],
   "modules-center": ["custom/cmus"],
-  "modules-right": ["custom/updates", "custom/tasks", "custom/quit"],
+  "modules-right": ["custom/updates", "custom/quit"],
 
   "custom/scratchpad-indicator": {
     "interval": 3,
@@ -182,12 +182,6 @@
     "exec-if": "test -e $HOME/.cache/package-updates.count",
     "interval": 5,
     "on-click": "alacritty -e system-update"
-  },
-  "custom/tasks": {
-    "format": " {}",
-    "return-type": "json",
-    "exec": "$HOME/.config/waybar/modules/tasks.py",
-    "interval": 3600
   },
   "custom/quit": {
     "format": "{}",
