@@ -27,6 +27,7 @@ ls.add_snippets(
     snippet("co", "console.log('$1');"),
     snippet("exp", "export const ${1:name} = (${2:params}) => $3;"),
     snippet("for", "for (let ${1:i} = 0; $1 < ${2:length}; $1++) {\n\t$3\n}"),
+    snippet("it", "it('${1:test}', () => {\n\t$2\n});"),
     s(
       "des",
       {
