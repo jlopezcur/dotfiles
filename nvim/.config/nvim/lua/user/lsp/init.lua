@@ -155,7 +155,8 @@ lspconfig.jsonls.setup {
   capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   settings = {
     json = {
-      schemas = require("schemastore").json.schemas()
+      schemas = require("schemastore").json.schemas(),
+      validate = {enable = true}
     }
   }
 }
@@ -195,3 +196,39 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
     }
   }
 )
+
+vim.diagnostic.open_float =
+  (function(orig)
+  return function(opts)
+    local lnum = vim.api.nvim_win_get_cursor(0)[1] - 1
+    -- A more robust solution would check the "scope" value in `opts` to
+    -- determine where to get diagnostics from, but if you're only using
+    -- this for your own purposes you can make it as simple as you like
+    local diagnostics = vim.diagnostic.get(opts.bufnr or 0, {lnum = lnum})
+    local max_severity = vim.diagnostic.severity.HINT
+    for _, d in ipairs(diagnostics) do
+      -- Equality is "less than" based on how the severities are encoded
+      if d.severity < max_severity then
+        max_severity = d.severity
+      end
+    end
+    local border_color =
+      ({
+      [vim.diagnostic.severity.HINT] = "NonText",
+      [vim.diagnostic.severity.INFO] = "Question",
+      [vim.diagnostic.severity.WARN] = "WarningMsg",
+      [vim.diagnostic.severity.ERROR] = "ErrorMsg"
+    })[max_severity]
+    opts.border = {
+      {"╭", border_color},
+      {"─", border_color},
+      {"╮", border_color},
+      {"│", border_color},
+      {"╯", border_color},
+      {"─", border_color},
+      {"╰", border_color},
+      {"│", border_color}
+    }
+    orig(opts)
+  end
+end)(vim.diagnostic.open_float)
