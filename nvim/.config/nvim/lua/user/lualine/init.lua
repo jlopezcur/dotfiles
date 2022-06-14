@@ -5,20 +5,11 @@ local fmt = function(str)
   return str:sub(1, 1)
 end
 
-local function packageinfo()
-  local result = require("package-info").get_status()
-  if result ~= "" then
-    return result
-  end
-  return Null
-end
-
 require("lualine").setup(
   {
     options = {
-      -- theme = "nightfox"
-      -- theme = "onenord"
-      theme = "tokyonight"
+      theme = "tokyonight",
+      globalstatus = true
     },
     extensions = {
       "fugitive",
@@ -40,8 +31,7 @@ require("lualine").setup(
             removed = {fg = "#F7768E"} -- changes diff's removed color you
           }
         },
-        {"diagnostics", sources = {"nvim_diagnostic"}},
-        {"packageinfo"}
+        {"diagnostics", sources = {"nvim_diagnostic"}}
       },
       lualine_c = {"filename"},
       -- {"filename", path = 1},
