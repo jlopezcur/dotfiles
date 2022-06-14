@@ -11,3 +11,7 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 vim.keymap.set("n", "<space>d", vim.diagnostic.setloclist)
+
+-- Run rust programs
+vim.keymap.set("n", "<Leader>rr", ":tabnew<CR>:term cargo run<CR>i", {buffer = true})
+vim.keymap.set("n", "<Leader>rt", ":tabnew<CR>:term trunk serve<CR>i", {buffer = true})

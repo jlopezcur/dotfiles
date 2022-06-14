@@ -5,7 +5,17 @@ vim.keymap.set("n", "<Leader>qf", "<cmd>_ciwimportf=dwdwifrom lx$hxj")
 vim.keymap.set("n", "<Leader>lp", ":!pandoc -o '%:p:h/%:t:r.pdf' '%'<CR>")
 vim.keymap.set("n", "<Leader>lf", ":!pdflatex '%'<CR>")
 
-vim.keymap.set("n", "<Leader>rr", ":tabnew<CR>:term cargo run<CR>i")
+-- npm
+vim.api.nvim_create_autocmd(
+  {"BufEnter", "BufWinEnter"},
+  {
+    pattern = {"*.js", "*.jsx", "*.ts", "*.tsx", "package.json"},
+    callback = function()
+      vim.keymap.set("n", "<Leader>rr", ":tabnew<CR>:term npm start<CR>i", {buffer = true})
+    end,
+    desc = "run npm program"
+  }
+)
 
 -- close a buffer
 vim.keymap.set("n", "<Leader>gq", ":BufDel<CR>")
