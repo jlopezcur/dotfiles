@@ -21,6 +21,6 @@
 [init]
 	defaultBranch = master
 [core]
-	pager = nvim -R
+	pager = bat
 [color]
 	pager = no
