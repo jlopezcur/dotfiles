@@ -30,6 +30,7 @@ alias ps "procs"
 alias ping "gping"
 alias v "nvim"
 alias hx "helix"
+alias open "xdg-open"
 abbr -a -g ... ../..
 abbr -a -g .... ../../..
 abbr -a -g ..... ../../../..
