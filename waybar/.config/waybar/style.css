@@ -1,6 +1,6 @@
 * {
   border: none;
-  border-radius: 0;
+  border-radius: 8px;
   font-size: 16px;
   font-family: SauceCodePro Nerd Font;
 }
@@ -9,9 +9,10 @@
 
 window#waybar {
   color: #999;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 16px;
 }
 window#waybar.top {
-  background: rgba(0, 0, 0, 0.7);
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.7) 0%,
@@ -19,11 +20,10 @@ window#waybar.top {
   );
 }
 window#waybar.bottom {
-  background: rgba(0, 0, 0, 0.7);
   background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.3) 100%
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.7) 100%
   );
 }
 
@@ -33,6 +33,7 @@ window#waybar.bottom {
   padding: 0 5px;
   background: transparent;
   color: #fdf6e3;
+  border-radius: 16px;
 }
 #workspaces button.focused {
   color: #ccc;
@@ -103,7 +104,8 @@ window#waybar.bottom {
   color: red;
 }
 
-#custom-updates, #custom-updates-aur {
+#custom-updates,
+#custom-updates-aur {
   color: orange;
 }
 #custom-scratchpad-indicator {
