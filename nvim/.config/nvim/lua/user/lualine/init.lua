@@ -9,7 +9,8 @@ require("lualine").setup(
   {
     options = {
       theme = "tokyonight",
-      globalstatus = true
+      component_separators = "|",
+      section_separators = {left = "", right = ""}
     },
     extensions = {
       "fugitive",
@@ -35,8 +36,22 @@ require("lualine").setup(
       },
       lualine_c = {"filename"},
       -- {"filename", path = 1},
-      lualine_x = {"encoding", "fileformat", "filetype"},
+      lualine_x = {
+        "encoding",
+        "fileformat",
+        "filetype"
+      },
       lualine_y = {"progress"},
+      lualine_z = {
+        {"location"}
+      }
+    },
+    inactive_sections = {
+      lualine_a = {"filename"},
+      lualine_b = {},
+      lualine_c = {},
+      lualine_x = {},
+      lualine_y = {},
       lualine_z = {"location"}
     }
   }
