@@ -8,6 +8,9 @@ vim.keymap.set("n", "<Leader>gs", "<cmd>:G<CR>")
 -- Git push
 vim.keymap.set("n", "<Leader>gp", "<cmd>:Git push<CR>")
 
+-- Git pull
+vim.keymap.set("n", "<Leader>gl", "<cmd>:Git pull<CR>")
+
 --
 -- Movements
 --
