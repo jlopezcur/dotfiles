@@ -98,6 +98,8 @@ for_window [app_id="^scrcpy$"] floating enable, sticky enable, resize set 508 px
 for_window [app_id="^telegramdesktop$"] floating disable
 for_window [app_id="^statusline$"] floating enable, sticky enable, resize set 98 ppt 18 ppt, border pixel 2, move position 1ppt 80 ppt
 
+for_window [title="LibreWolf — Sharing Indicator"] floating enable, resize set 1 px 1 px, move position 0 px 85 ppt
+
 # basics
 # ======
 
