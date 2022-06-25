@@ -108,7 +108,7 @@ ls.add_snippets(
         i(1, "Component"),
         t(
           {
-            ": React.RC<Props> = (props: Props) => {",
+            ": React.FC<Props> = ({}) => {",
             "\treturn <div>{props.chilren}</div>;",
             "};"
           }
