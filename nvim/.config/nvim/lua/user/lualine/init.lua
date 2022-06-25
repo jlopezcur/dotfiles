@@ -22,7 +22,9 @@ require("lualine").setup(
         {"mode", fmt = fmt}
       },
       lualine_b = {
-        "branch",
+        "filename"
+      },
+      lualine_c = {
         {
           "diff",
           diff_color = {
@@ -34,7 +36,6 @@ require("lualine").setup(
         },
         {"diagnostics", sources = {"nvim_diagnostic"}}
       },
-      lualine_c = {"filename"},
       -- {"filename", path = 1},
       lualine_x = {
         "encoding",
