@@ -41,6 +41,14 @@ require "nvim-treesitter.configs".setup {
 }
 
 --
+-- folding
+--
+
+vim.wo.foldmethod = "expr"
+vim.wo.foldenable = false
+vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+
+--
 -- Mappings
 --
 

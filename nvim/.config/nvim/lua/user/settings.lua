@@ -42,14 +42,6 @@ vim.o.backupcopy = "yes"
 vim.o.swapfile = false
 
 --
--- folding
---
-
-vim.wo.foldmethod = "expr"
-vim.wo.foldenable = false
-vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
-
---
 -- indentation
 --
 
