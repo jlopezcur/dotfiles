@@ -1,3 +1,7 @@
+--
+-- Configuration
+--
+
 local alpha = require("alpha")
 local theme = require("alpha.themes.startify")
 

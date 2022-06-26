@@ -1,4 +1,12 @@
+--
+-- Configuration
+--
+
 require("harpoon").setup()
+
+--
+-- Mappings
+--
 
 vim.keymap.set("n", "<space>h", "<cmd>lua require'harpoon.ui'.toggle_quick_menu()<CR>")
 vim.keymap.set("n", "<space>j", "<cmd>lua require'harpoon.ui'.nav_file(1)<CR>")

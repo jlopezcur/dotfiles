@@ -1,3 +1,7 @@
+--
+-- Configuration
+--
+
 require "nvim-treesitter.configs".setup {
   context_commentstring = {enable = true},
   ensure_installed = "all",
@@ -36,7 +40,15 @@ require "nvim-treesitter.configs".setup {
   }
 }
 
+--
+-- Mappings
+--
+
 vim.keymap.set("n", "<Leader>tp", ":TSPlaygroundToggle<CR>")
+
+--
+-- Custom
+--
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.mdx = {

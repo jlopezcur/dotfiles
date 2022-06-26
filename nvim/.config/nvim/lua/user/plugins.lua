@@ -52,9 +52,6 @@ return require "packer".startup(
     use "mattn/emmet-vim" -- https://github.com/mattn/emmet-vim
 
     -- theme
-    use "EdenEast/nightfox.nvim"
-    use "savq/melange" -- https://github.com/savq/melange
-    use "rmehri01/onenord.nvim" -- https://github.com/rmehri01/onenord.nvim
     use "folke/tokyonight.nvim" -- https://github.com/folke/tokyonight.nvim
 
     -- line
@@ -62,6 +59,8 @@ return require "packer".startup(
       "hoob3rt/lualine.nvim",
       requires = {"kyazdani42/nvim-web-devicons", opt = true}
     }
+
+    -- notifications
     use "rcarriga/nvim-notify"
 
     -- treesitter
@@ -123,12 +122,10 @@ return require "packer".startup(
     use "norcalli/nvim-colorizer.lua" -- https://github.com/norcalli/nvim-colorizer.lua
 
     -- multi edition
-    -- https://github.com/brooth/far.vim
-    use "brooth/far.vim"
+    use "brooth/far.vim" -- https://github.com/brooth/far.vim
 
     -- buffers
-    -- https://github.com/ojroques/nvim-bufdel
-    use "ojroques/nvim-bufdel"
+    use "ojroques/nvim-bufdel" -- https://github.com/ojroques/nvim-bufdel
 
     -- dashboard
     use {

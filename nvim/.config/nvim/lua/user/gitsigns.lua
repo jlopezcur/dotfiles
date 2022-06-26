@@ -1,4 +1,12 @@
+--
+-- Configuration
+--
+
 require "gitsigns".setup {}
+
+--
+-- Mappings
+--
 
 -- Preview hunk
 vim.keymap.set("n", "<Leader>gh", "<cmd>:Gitsigns preview_hunk<CR>", {desc = "Preview hunk"})

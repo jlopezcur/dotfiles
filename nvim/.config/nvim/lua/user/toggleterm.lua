@@ -1,3 +1,7 @@
+--
+-- Configuration
+--
+
 require "toggleterm".setup {
   size = 20,
   open_mapping = [[<c-\>]],
@@ -8,5 +12,9 @@ require "toggleterm".setup {
   persist_size = true,
   direction = "float" -- vertical | horizontal | float,
 }
+
+--
+-- Mappings
+--
 
 vim.keymap.set("t", "<Leader><Esc>", "<C-\\><C-n>")

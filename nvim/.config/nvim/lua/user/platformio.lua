@@ -1,3 +1,7 @@
+--
+-- Mappings
+--
+
 vim.keymap.set("n", "<leader>pr", ":term pio -f -c vim run<CR>i")
 vim.keymap.set("n", "<leader>pu", ":term pio -f -c vim run --target upload<CR>i")
 vim.keymap.set("n", "<leader>pc", ":term pio -f -c vim run --target clean<CR>i")

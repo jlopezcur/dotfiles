@@ -1,3 +1,7 @@
+--
+-- Configuration
+--
+
 require("rust-tools").setup(
   {
     server = {

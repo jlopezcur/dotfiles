@@ -1,3 +1,7 @@
+--
+-- Configuration
+--
+
 local fmt = function(str)
   if str == "V-BLOCK" then
     return "V-B"

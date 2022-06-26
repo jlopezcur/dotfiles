@@ -1,3 +1,7 @@
+--
+-- Configuration
+--
+
 require("package-info").setup(
   {
     colors = {
@@ -6,6 +10,10 @@ require("package-info").setup(
     }
   }
 )
+
+--
+-- Mappings
+--
 
 -- Show package versions
 vim.keymap.set("n", "<leader>ns", ":lua require('package-info').show()<CR>")

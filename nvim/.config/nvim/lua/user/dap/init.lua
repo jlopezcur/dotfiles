@@ -1,3 +1,7 @@
+--
+-- Configuration
+--
+
 require("telescope").load_extension("dap")
 
 require "user.dap.bindings"

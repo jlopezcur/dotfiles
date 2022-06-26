@@ -1,9 +1,6 @@
--- vim.cmd("colorscheme nightfox")
-
--- vim.opt.termguicolors = true
--- vim.cmd("colorscheme melange")
-
--- require('onenord').setup()
+--
+-- Configuration
+--
 
 vim.g.tokyonight_style = "storm"
 vim.g.tokyonight_italic_functions = true

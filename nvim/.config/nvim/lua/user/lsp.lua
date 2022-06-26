@@ -1,21 +1,19 @@
+--
+-- Configuration
+--
+
 local lspconfig = require("lspconfig")
 
---
 -- decorations
---
-
 local border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = border})
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = border})
 
---
 -- config
---
-
 vim.api.nvim_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
 --
--- keymaps
+-- Mappings
 --
 
 vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions)
@@ -64,40 +62,28 @@ for _, lsp in ipairs(servers) do
   }
 end
 
---
 -- clang
---
-
 lspconfig.clangd.setup {
   on_attach = on_attach,
   capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/clangd/clangd/bin/clangd"}
 }
 
---
 -- html
---
-
 lspconfig.html.setup {
   on_attach = on_attach,
   capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/html/node_modules/.bin/vscode-html-language-server", "--stdio"}
 }
 
---
 -- python
---
-
 lspconfig.pyright.setup {
   on_attach = on_attach,
   capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   cmd = {vim.fn.stdpath "data" .. "/lsp_servers/python/node_modules/.bin/pyright-langserver", "--stdio"}
 }
 
---
 -- latex
---
-
 lspconfig.texlab.setup {
   on_attach = on_attach,
   capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
@@ -105,10 +91,7 @@ lspconfig.texlab.setup {
   standalone = false
 }
 
---
 -- css
---
-
 lspconfig.cssls.setup {
   on_attach = on_attach,
   capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
@@ -116,16 +99,10 @@ lspconfig.cssls.setup {
   single_file_support = true
 }
 
---
 -- eslint
---
-
 lspconfig.eslint.setup {}
 
---
 -- lua
---
-
 lspconfig.sumneko_lua.setup {
   on_attach = on_attach,
   capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
@@ -146,10 +123,7 @@ lspconfig.sumneko_lua.setup {
   }
 }
 
---
 -- json
---
-
 lspconfig.jsonls.setup {
   on_attach = on_attach,
   capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
@@ -161,10 +135,7 @@ lspconfig.jsonls.setup {
   }
 }
 
---
 -- yaml
---
-
 lspconfig.yamlls.setup {
   capabilities = require "cmp_nvim_lsp".update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   settings = {
@@ -181,10 +152,7 @@ lspconfig.yamlls.setup {
   }
 }
 
---
 -- diagnostic
---
-
 vim.diagnostic.config({update_in_insert = true})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =

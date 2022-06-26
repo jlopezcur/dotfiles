@@ -1,3 +1,7 @@
+--
+-- Configuration
+--
+
 local ls = require "luasnip"
 local s = ls.snippet
 local t = ls.text_node
@@ -128,6 +132,10 @@ ls.add_snippets(
 ls.filetype_extend("javascriptreact", {"javascript"})
 ls.filetype_extend("typescript", {"javascript"})
 ls.filetype_extend("typescriptreact", {"javascript"})
+
+--
+-- Mappings
+--
 
 vim.keymap.set("i", "<C-E>", "<Plug>luasnip-next-choice")
 vim.keymap.set("s", "<C-E>", "<Plug>luasnip-next-choice")

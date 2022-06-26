@@ -1,3 +1,7 @@
+--
+-- Configuration
+--
+
 local dap = require "dap"
 
 dap.adapters.node2 = {

@@ -1,18 +1,26 @@
-local dap = require "dap"
+--
+-- Configuration
+--
 
-function _dap_attach()
-  print("attaching...")
-  dap.run(
-    {
-      type = "node2",
-      request = "attach",
-      cwd = vim.fn.getcwd(),
-      sourceMaps = true,
-      protocol = "inspector",
-      skipFiles = {"<node_internals>/**/*.js"}
-    }
-  )
-end
+-- local dap = require "dap"
+
+-- local function dap_attach()
+--   print("attaching...")
+--   dap.run(
+--     {
+--       type = "node2",
+--       request = "attach",
+--       cwd = vim.fn.getcwd(),
+--       sourceMaps = true,
+--       protocol = "inspector",
+--       skipFiles = {"<node_internals>/**/*.js"}
+--     }
+--   )
+-- end
+
+--
+-- Mappings
+--
 
 vim.keymap.set("n", "<Leader>dd", ":lua require'dap'.toggle_breakpoint()<CR>")
 vim.keymap.set("n", "<Leader>db", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")

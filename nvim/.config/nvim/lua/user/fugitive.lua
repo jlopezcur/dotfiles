@@ -1,5 +1,5 @@
 --
--- Commands
+-- Mappings
 --
 
 -- Git status
@@ -10,10 +10,6 @@ vim.keymap.set("n", "<Leader>gp", "<cmd>:Git push<CR>")
 
 -- Git pull
 vim.keymap.set("n", "<Leader>gl", "<cmd>:Git pull<CR>")
-
---
--- Movements
---
 
 -- Go to previous git change
 vim.keymap.set("n", "[q", "<cmd>:cprev<CR>")
