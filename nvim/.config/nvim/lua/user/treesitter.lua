@@ -12,13 +12,12 @@ require "nvim-treesitter.configs".setup {
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm"
+      init_selection = "gl",
+      node_incremental = "gj",
+      node_decremental = "gk"
     }
   },
-  indent = {enable = false},
+  indent = {enable = true},
   autotag = {enable = true},
   playground = {
     enable = true,
@@ -64,5 +63,5 @@ parser_config.mdx = {
     url = "~/tree-sitter/tree-sitter-mdx", -- local path or git repo
     files = {"src/parser.c"}
   },
-  filetype = "mdx" -- if filetype does not agrees with parser name
+  filetype = "mdx"
 }
