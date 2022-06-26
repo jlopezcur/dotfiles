@@ -35,12 +35,14 @@ require "nvim-treesitter.configs".setup {
     }
   }
 }
---
--- local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
--- parser_config.mdx = {
---   install_info = {
---     url = "~/dev/tree-sitter-mdx", -- local path or git repo
---     files = {"src/parser.c"}
---   },
---   filetype = "mdx" -- if filetype does not agrees with parser name
--- }
+
+vim.keymap.set("n", "<Leader>tp", ":TSPlaygroundToggle<CR>")
+
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.mdx = {
+  install_info = {
+    url = "~/tree-sitter/tree-sitter-mdx", -- local path or git repo
+    files = {"src/parser.c"}
+  },
+  filetype = "mdx" -- if filetype does not agrees with parser name
+}
