@@ -43,9 +43,15 @@ if status is-interactive
   # Starship
   starship init fish | source
 
-  # nvm
-  source $HOME/.config/fish/nvm.fish
-
   # nnn
   source $HOME/.config/fish/nnn.fish
+
+  # Bun
+  set -Ux BUN_INSTALL "/home/jlopez/.bun"
+  set -px --path PATH "/home/jlopez/.bun/bin"
+
+  # volta
+  set -gx VOLTA_HOME "$HOME/.volta"
+  set -gx PATH "$VOLTA_HOME/bin" $PATH
 end
+
