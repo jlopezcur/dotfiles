@@ -25,7 +25,6 @@ abbr -a -g vim nvim
 alias myip "curl http://ipecho.net/plain; echo"
 alias ls "exa"
 alias cat "bat"
-alias find "fd"
 alias ps "procs"
 alias ping "gping"
 alias v "nvim"
