@@ -56,5 +56,8 @@ if status is-interactive
 
   # zoxide
   zoxide init fish | source
+
+  # the fuck
+  thefuck --alias | source
 end
 
