@@ -30,7 +30,7 @@ alias ping "gping"
 alias v "nvim"
 alias hx "helix"
 alias open "xdg-open"
-alias man "tldr"
+alias man2 "tldr"
 alias du "dust"
 abbr -a -g ... ../..
 abbr -a -g .... ../../..
