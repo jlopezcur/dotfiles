@@ -1,5 +1,0 @@
---
--- Configuration
---
-
-require('numb').setup()

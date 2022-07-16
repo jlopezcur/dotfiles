@@ -13,7 +13,6 @@ stow -vt ~ $DIR/mako             # Notifications
 stow -vt ~ $DIR/swaylock         # Locker
 stow -vt ~ $DIR/lf               # File manager
 stow -vt ~ $DIR/alacritty        # Terminal
-stow -vt ~ $DIR/nvim             # Text editor
 stow -vt ~ $DIR/qutebrowser      # Primary browsers
 stow -vt ~ $DIR/brave            # Second browser
 stow -vt ~ $DIR/chromium         # Third browser
