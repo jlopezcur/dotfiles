@@ -8,7 +8,7 @@ set horizontal-scroll = 33%     # Scroll 33% of the view width
 
 # From: https://github.com/edentsai/tig-theme-molokai-like
 # General colors
-color default                       253         233
+color default                       253         default
 color cursor                        default     237
 color status                        250         235
 color title-focus                   default     238
