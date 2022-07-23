@@ -8,7 +8,7 @@
 - GTK Theme: [Arc Dark](https://github.com/horst3180/Arc-theme)
 - GTK Theme Manager: [lxappearance](https://wiki.lxde.org/es/LXAppearance)
 - Editor: 
-  - [neovim](https://neovim.io/) [:pencil: Notes](docs/neovim.md) 
+  - [neovim](https://neovim.io/)
   - [helix](https://helix-editor.com/)
 - File Manager: [lf](https://github.com/gokcehan/lf) [:pencil: Notes](docs/lf.md)
 - (tiling)WM: [sway](https://swaywm.org/) [:pencil: Notes](docs/sway.md)
