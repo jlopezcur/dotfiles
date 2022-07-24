@@ -1,17 +1,17 @@
 [user]
-	name = Javier López Úbeda
-	email = jlopezcur@gmail.com
+  name = Javier López Úbeda
+  email = jlopezcur@gmail.com
 [pull]
-	rebase = true
+  rebase = true
 [color "status"]
-	branch = magenta
-	untracked = cyan
-	unmerged = yellow
+  branch = magenta
+  untracked = cyan
+  unmerged = yellow
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [alias]
   st = status --short
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -19,8 +19,9 @@
   br = branch
   co = checkout
 [init]
-	defaultBranch = master
+  defaultBranch = master
 [core]
-	pager = bat
+  pager = bat
+  editor = nvim
 [color]
-	pager = no
+  pager = no
