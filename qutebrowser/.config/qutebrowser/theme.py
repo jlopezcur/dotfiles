@@ -1,3 +1,5 @@
+# pyright: basic, reportUndefinedVariable=false
+
 # Dark mode
 
 # config.set("colors.webpage.darkmode.enabled", True)

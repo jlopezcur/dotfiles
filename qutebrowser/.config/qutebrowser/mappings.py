@@ -1,3 +1,5 @@
+# pyright: basic, reportUndefinedVariable=false
+
 # Bind for open a link into mpv
 config.bind(',om', 'hint links spawn mpv {hint-url}')
 
