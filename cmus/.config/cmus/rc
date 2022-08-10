@@ -3,4 +3,3 @@ set continue_album=true
 set mouse=true
 
 colorscheme amazon
-view playlist
