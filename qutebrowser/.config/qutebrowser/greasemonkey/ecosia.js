@@ -40,6 +40,9 @@ a.result__source {
   background-color: #222 !important;
   color: #999 !important;
 }
+.mainline__result-wrapper {
+  background-color: #222 !important;
+}
 
 /* ************************************************************************** */
 /* header                                                                     */
@@ -65,6 +68,15 @@ a.result__source {
   background-color: #222 !important;
   color: #999 !important;
 }
+.search-form__input-wrapper {
+  border: 0px !important;
+}
+.search-form__search-field {
+  background-color: #222 !important;
+}
+.search-form__submit {
+  border: 0px !important;
+}
 
 /* ************************************************************************** */
 /* pills & chips                                                              */
@@ -89,6 +101,10 @@ a.result__source {
 .query-expansions__control--previous {
   background: linear-gradient(270deg, hsla(0,0%,100%,0), rgba(22,22,22,.8) 42%, #222 74%) !important;
   color: #999 !important;
+}
+.base-button--variant-solid-white {
+  background-color: #222 !important;
+  border-color: #999 !important;
 }
 
 /* ************************************************************************** */
@@ -123,6 +139,16 @@ a.result__source {
 }
 .snippet-card__title {
   color: #999 !important;
+}
+.snippet-card {
+  background-color: #222 !important;
+  color: #999 !important;
+  border: 0px;
+}
+.base-button--variant-outline {
+  background-color: #222 !important;
+  color: #999 !important;
+  border: 1px solid #999 !important;
 }
 
 /* ************************************************************************** */
