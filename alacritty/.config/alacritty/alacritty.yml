@@ -11,7 +11,6 @@
 # check the local terminfo database and use `alacritty` if it is
 # available, otherwise `xterm-256color` is used.
 # TERM: xterm-256color
-
 window:
   # Window dimensions (changes require restart)
   #
@@ -64,14 +63,12 @@ window:
 
   # Window title
   # title: Alacritty
-
   # Window class (Linux/BSD only):
   #class:
   # Application instance name
   #instance: Alacritty
   # General application class
   #general: Alacritty
-
   dynamic_title: true
 
   # Background opacity
@@ -112,7 +109,6 @@ font:
 
   # Point size
   size: 11.0
-
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   #offset:
@@ -132,37 +128,36 @@ font:
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
-
 # Colors (Gruvbox dark)
 colors:
   # Default colors
   primary:
-    background: "0x282828"
-    foreground: "0xbbc5ff"
+    # hard contrast: background = '#1d2021'
+    background: '#282828'
+    # soft contrast: background = '#32302f'
+    foreground: '#ebdbb2'
 
-  # # Normal colors
-  # normal:
-  #   # black: "0x292d3e"
-  #   black: "0x292d3e"
-  #   red: "0xcc241d"
-  #   green: "0x98971a"
-  #   yellow: "0xd79921"
-  #   blue: "0x458588"
-  #   magenta: "0xb16286"
-  #   cyan: "0x689d6a"
-  #   white: "0xebdbb2"
-  #
-  # # Bright colors
-  # bright:
-  #   black: "0x5d5051"
-  #   red: "0xfb4934"
-  #   green: "0xb8bb26"
-  #   yellow: "0xfabd2f"
-  #   blue: "0x83a598"
-  #   magenta: "0xd3869b"
-  #   cyan: "0x8ec07c"
-  #   white: "0xfbf1c7"
+  # Normal colors
+  normal:
+    black: '#282828'
+    red: '#cc241d'
+    green: '#98971a'
+    yellow: '#d79921'
+    blue: '#458588'
+    magenta: '#b16286'
+    cyan: '#689d6a'
+    white: '#a89984'
 
+  # Bright colors
+  bright:
+    black: '#928374'
+    red: '#fb4934'
+    green: '#b8bb26'
+    yellow: '#fabd2f'
+    blue: '#83a598'
+    magenta: '#d3869b'
+    cyan: '#8ec07c'
+    white: '#ebdbb2'
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
@@ -191,13 +186,11 @@ bell:
 
 selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
-
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: true
 
 # Allow terminal applications to change Alacritty's window title.
 # dynamic_title: true
-
 cursor:
   # Cursor style
   #
@@ -223,7 +216,6 @@ cursor:
 
 # Live config reload (changes require restart)
 #live_config_reload: true
-
 # Shell
 #
 # You can set `shell.program` to the path of your favorite shell, e.g. `/bin/fish`.
@@ -237,13 +229,11 @@ shell:
   program: /bin/fish
 #  args:
 #    - --login
-
 # Startup directory
 #
 # Directory the shell is started in. If this is unset, or `None`, the working
 # directory of the parent process will be used.
 #working_directory: None
-
 # WinPTY backend (Windows only)
 #
 # Alacritty defaults to using the newer ConPTY backend if it is available,
@@ -253,10 +243,8 @@ shell:
 # Setting this option to `true` makes Alacritty use the legacy WinPTY backend,
 # even if the ConPTY backend is available.
 #winpty_backend: false
-
 # Send ESC (\x1b) before characters when alt is pressed.
 #alt_send_esc: true
-
 #mouse:
 # Click settings
 #
@@ -265,10 +253,8 @@ shell:
 # or triple click.
 #double_click: { threshold: 300 }
 #triple_click: { threshold: 300 }
-
 # If this is `true`, the cursor is temporarily hidden when typing.
 #hide_when_typing: false
-
 #url:
 # URL launcher
 #
@@ -284,13 +270,11 @@ shell:
 #launcher:
 #  program: xdg-open
 #  args: []
-
 # URL modifiers
 #
 # These are the modifiers that need to be held down for opening URLs when clicking
 # on them. The available modifiers are documented in the key binding section.
 #modifiers: None
-
 # Mouse bindings
 #
 # Mouse bindings are specified as a list of objects, much like the key
@@ -315,7 +299,6 @@ shell:
 # - `mods` (see key bindings)
 #mouse_bindings:
 #  - { mouse: Middle, action: PasteSelection }
-
 # Key bindings
 #
 # Key bindings are specified as a list of objects. For example, this is the
@@ -451,7 +434,13 @@ shell:
 # If the same trigger is assigned to multiple actions, all of them are executed
 # at once.
 key_bindings:
-- { key: Return,     mods: Control|Shift,       action: SpawnNewInstance }
+  - {
+      key: Return,
+      mods: Control|Shift,
+      action: SpawnNewInstance
+    }
+theme: Gruvbox-Dark
+
 #- { key: Paste,                                action: Paste          }
 #- { key: Copy,                                 action: Copy           }
 #- { key: L,         mods: Control,             action: ClearLogNotice }
@@ -460,7 +449,6 @@ key_bindings:
 #- { key: PageDown,  mods: Shift,   mode: ~Alt, action: ScrollPageDown }
 #- { key: Home,      mods: Shift,   mode: ~Alt, action: ScrollToTop,   }
 #- { key: End,       mods: Shift,   mode: ~Alt, action: ScrollToBottom }
-
 # Vi Mode
 #- { key: Space,  mods: Shift|Control, mode: Vi, action: ScrollToBottom          }
 #- { key: Space,  mods: Shift|Control,           action: ToggleViMode            }
@@ -504,7 +492,6 @@ key_bindings:
 #- { key: W,      mods: Shift,         mode: Vi, action: WordRight               }
 #- { key: E,      mods: Shift,         mode: Vi, action: WordRightEnd            }
 #- { key: Key5,   mods: Shift,         mode: Vi, action: Bracket                 }
-
 # (Windows, Linux, and BSD only)
 #- { key: V,        mods: Control|Shift,           action: Paste            }
 #- { key: C,        mods: Control|Shift,           action: Copy             }
@@ -515,10 +502,8 @@ key_bindings:
 #- { key: Add,      mods: Control,                 action: IncreaseFontSize }
 #- { key: Subtract, mods: Control,                 action: DecreaseFontSize }
 #- { key: Minus,    mods: Control,                 action: DecreaseFontSize }
-
 # (Windows only)
 #- { key: Return,   mods: Alt,           action: ToggleFullscreen }
-
 # (macOS only)
 #- { key: K,      mods: Command, mode: ~Vi, chars: "\x0c"            }
 #- { key: Key0,   mods: Command,            action: ResetFontSize    }
@@ -535,14 +520,11 @@ key_bindings:
 #- { key: W,      mods: Command,            action: Quit             }
 #- { key: N,      mods: Command,            action: SpawnNewInstance }
 #- { key: F,      mods: Command|Control,    action: ToggleFullscreen }
-
 #debug:
 # Display the time it takes to redraw each frame.
 #render_timer: false
-
 # Keep the log file after quitting Alacritty.
 #persistent_logging: false
-
 # Log level
 #
 # Values for `log_level`:
@@ -553,6 +535,5 @@ key_bindings:
 #   - Debug
 #   - Trace
 #log_level: Warn
-
 # Print all received window events.
 #print_events: false

@@ -16,6 +16,7 @@
 - Prompt: [starship](https://starship.rs/)
 - Terminal Emulator:
   - [alacritty](https://github.com/alacritty/alacritty)
+    - [alacritty-themes](https://github.com/rajasegar/alacritty-themes)
   - [kitty](https://github.com/kovidgoyal/kitty)
   - [foot](https://codeberg.org/dnkl/foot)
 - Grep: [RigGrep](https://github.com/BurntSushi/ripgrep)
