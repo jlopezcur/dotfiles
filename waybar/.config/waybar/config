@@ -3,7 +3,7 @@
   "margin": "8px",
   "position": "top",
   "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-center": ["custom/calendar", "custom/reminders", "custom/times", "custom/weather"],
+  "modules-center": ["custom/calendar", "custom/times", "custom/weather"],
   "modules-right": ["custom/videorec", "custom/gifrec", "custom/vpn", "network", "pulseaudio", "backlight", "idle_inhibitor", "battery"],
 
   "sway/workspaces": {
@@ -18,14 +18,6 @@
     "on-click": "alacritty --title Calcurse -e calcurse",
     "exec": "$HOME/.config/waybar/modules/cal.py",
     "interval": 3600,
-    "return-type": "json"
-  },
-  "custom/reminders": {
-    "format": "{}",
-    "on-click": "alacritty --title Reminders -e wyrd",
-    "exec": "$HOME/.config/waybar/modules/reminders.py",
-    "exec-if": "test -n \"$(remind -h $HOME/.reminders)\"",
-    "tooltip": true,
     "return-type": "json"
   },
   "custom/times": {
