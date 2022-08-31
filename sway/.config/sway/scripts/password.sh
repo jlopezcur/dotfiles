@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Requirements: gopass & bemenu
+# Requirements: gopass & wofi
 
 key="$(gopass ls -f | wofi -i --show dmenu -p 'Passwords...')"
 [ -n ${key} ] && gopass -c $key

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Requirements: bemenu
+# Requirements: wofi
 
 actions=(
   " lock"
