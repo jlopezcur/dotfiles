@@ -89,22 +89,22 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: Hasklug Nerd Font
+    family: FiraCode Nerd Font
     style: Retina
 
   # Bold font face
   bold:
-    family: Hasklug Nerd Font
+    family: FiraCode Nerd Font
     style: Bold
 
   # Italic font face
   italic:
-    family: Hasklug Nerd Font
+    family: FiraCode Nerd Font
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: Hasklug Nerd Font
+    family: FiraCode Nerd Font
     style: Bold Italic
 
   # Point size

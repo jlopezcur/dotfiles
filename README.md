@@ -2,7 +2,7 @@
 
 ## Pieces
 
-- Font: [SauceCodePro Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro)
+- Font: [FiraCode Nerd Font](https://github.com/tonsky/FiraCode)
 - Emoji Font: [Noto Fonts Emoji](https://archlinux.org/packages/extra/any/noto-fonts-emoji/)
 - Icons: [Paper](https://snwh.org/paper)
 - GTK Theme: [Arc Dark](https://github.com/horst3180/Arc-theme)
