@@ -21,6 +21,6 @@ calendar = calendar.replace(
 data = {}
 data['text'] = text
 data['class'] = "calendar"
-data['tooltip'] = calendar + "\n" + events
+data['tooltip'] = calendar
 
 print(json.dumps(data))

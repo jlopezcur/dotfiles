@@ -151,7 +151,7 @@
     "format": " {percentage_used:2}%",
     "path": "/",
     "states": {
-      "warning": 70,
+      "warning": 75,
       "critical": 85
     }
   },
