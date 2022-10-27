@@ -61,7 +61,7 @@ WEATHER_CODES = {
 data = {}
 
 
-weather = requests.get("https://wttr.in/Pinto?format=j1").json()
+weather = requests.get("https://wttr.in/Villa+del+prado?format=j1").json()
 
 
 def format_time(time):
@@ -94,7 +94,8 @@ def format_chances(hour):
 data['text'] = WEATHER_CODES[weather['current_condition'][0]['weatherCode']
                              ] + " " + weather['current_condition'][0]['FeelsLikeC'] + "°"
 
-data['tooltip'] = f"<b>{weather['current_condition'][0]['weatherDesc'][0]['value']} {weather['current_condition'][0]['temp_C']}°</b>\n"
+data['tooltip'] = f"<b>Villa del Prado</b>\n\n"
+data['tooltip'] += f"<b>{weather['current_condition'][0]['weatherDesc'][0]['value']} {weather['current_condition'][0]['temp_C']}°</b>\n"
 data['tooltip'] += f"Feels like: {weather['current_condition'][0]['FeelsLikeC']}°\n"
 data['tooltip'] += f"Wind: {weather['current_condition'][0]['windspeedKmph']}Km/h\n"
 data['tooltip'] += f"Humidity: {weather['current_condition'][0]['humidity']}%\n"

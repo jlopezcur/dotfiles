@@ -1,5 +1,5 @@
 #!/bin/sh
 
-curl 'https://wttr.in/Pinto'
+curl 'https://wttr.in/Villa_del_Prado'
 
 read -p "Press Enter to continue" </dev/tty
