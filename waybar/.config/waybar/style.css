@@ -16,7 +16,7 @@ window#waybar.top {
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.3) 100%
+    rgba(0, 0, 0, 0.8) 100%
   );
 }
 window#waybar.bottom {
