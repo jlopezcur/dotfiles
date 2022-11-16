@@ -4,7 +4,7 @@
   "position": "top",
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["custom/calendar", "custom/times", "custom/weather"],
-  "modules-right": ["custom/videorec", "custom/gifrec", "custom/vpn", "network", "pulseaudio", "backlight", "idle_inhibitor", "battery"],
+  "modules-right": ["custom/videorec", "custom/gifrec", "custom/vpn", "network", "pulseaudio", "bluetooth", "backlight", "idle_inhibitor", "battery"],
 
   "sway/workspaces": {
     "disable-scroll": true,
@@ -89,6 +89,15 @@
     "on-click-right": "alacritty -e ncpamixer",
     "format-source": "",
     "format-source-muted": ""
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "",
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_battery_percentage} %\t{device_address}\t{device_alias}"
   },
 
   "backlight": {
