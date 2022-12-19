@@ -1,3 +1,5 @@
+# vim:ft=conf
+
 set shellopts '-eu'
 set icons
 set info size
@@ -6,8 +8,7 @@ set period 1
 set drawbox
 set ratios 2:3
 
-set preview true
-set previewer ~/.config/lf/preview
+set previewer ~/.config/lf/pv.sh
 
 cmd open ${{
   case $(file --mime-type "$f" -bL) in
@@ -45,3 +46,4 @@ cmd tar ${{
 
 map d
 map dd delete
+map <enter> shell
