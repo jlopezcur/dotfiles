@@ -10,7 +10,6 @@
 window#waybar {
   color: #999;
   background: rgba(0, 0, 0, 0.7);
-  border-radius: 16px;
 }
 window#waybar.top {
   background: linear-gradient(
@@ -30,10 +29,10 @@ window#waybar.bottom {
 /* Workspaces buttons */
 
 #workspaces button {
-  padding: 0 5px;
+  padding: 0 4px;
   background: transparent;
-  color: #fdf6e3;
-  border-radius: 16px;
+  color: #ccc;
+  border-radius: 16px 16px 0 0;
 }
 #workspaces button.focused {
   color: #ccc;

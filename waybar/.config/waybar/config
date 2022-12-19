@@ -1,6 +1,6 @@
 // vim: set syntax=json:
 [{
-  "margin": "8px",
+  "margin": "0px",
   "position": "top",
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["custom/calendar", "custom/times", "custom/weather"],
@@ -124,7 +124,7 @@
     "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
   }
 }, {
-  "margin": "8px",
+  "margin": "0px",
   "position": "bottom",
   "modules-left": ["custom/scratchpad-indicator", "memory", "cpu", "temperature", "disk"],
   "modules-center": ["custom/cmus"],
@@ -160,8 +160,8 @@
     "format": " {percentage_used:2}%",
     "path": "/",
     "states": {
-      "warning": 75,
-      "critical": 85
+      "warning": 80,
+      "critical": 90
     }
   },
 
