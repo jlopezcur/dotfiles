@@ -1,14 +1,5 @@
 # pyright: basic, reportUndefinedVariable=false
 
-# Dark mode
-
-# config.set("colors.webpage.darkmode.enabled", True)
-# config.set("colors.webpage.darkmode.threshold.background", 128)
-# config.set("colors.webpage.darkmode.threshold.text", 128)
-# config.set("colors.webpage.darkmode.policy.images", 'never')
-# config.set("colors.webpage.preferred_color_scheme", "dark")
-# config.set("colors.webpage.bg", "#22272E")
-
 # Font
 
 c.fonts.statusbar = '11pt "SauceCodePro Nerd Font"'
