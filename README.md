@@ -7,8 +7,8 @@
 - Icons: [Paper](https://snwh.org/paper)
 - GTK Theme: [Arc Dark](https://github.com/horst3180/Arc-theme)
 - GTK Theme Manager: [lxappearance](https://wiki.lxde.org/es/LXAppearance)
-- Editor: 
-  - [neovim](https://neovim.io/) [:pencil: Notes](https://github.com/jlopezcur/dotfiles-nvim) 
+- Editor:
+  - [neovim](https://neovim.io/) [:pencil: Notes](https://github.com/jlopezcur/dotfiles-nvim)
   - [helix](https://helix-editor.com/)
 - File Manager: [lf](https://github.com/gokcehan/lf) [:pencil: Notes](docs/lf.md)
 - (tiling)WM: [sway](https://swaywm.org/) [:pencil: Notes](docs/sway.md)
@@ -26,7 +26,7 @@
   - [Nyxt](https://github.com/atlas-engineer/nyxt)
   - [Brave](https://brave.com/) [:pencil: Notes](docs/brave.md)
   - [LibreWolf](https://gitlab.com/librewolf-community)
-- PDF: [Zathura](https://en.wikipedia.org/wiki/Zathura_(document_viewer))
+- PDF: [Zathura](<https://en.wikipedia.org/wiki/Zathura_(document_viewer)>)
 - Vector: [Inkscape](https://inkscape.org/es/)
 - Raster: [Gimp](https://www.gimp.org/)
 - Image Viewer: [imv](https://github.com/eXeC64/imv)
@@ -43,7 +43,9 @@
 - Font Preview: [fontpreview](https://github.com/sdushantha/fontpreview)
 - Package Manager: [paru](https://github.com/morganamilo/paru)
 - Languages Info: [tokei](https://github.com/XAMPPRocky/tokei)
-- Git browser: [tig](https://github.com/jonas/tig)
+- Git browser:
+  - [tig](https://github.com/jonas/tig)
+  - [gitui](https://github.com/extrawurst/gitui)
 - Cheatsheet: [navi](https://github.com/denisidoro/navi)
 - Cryptocurrencies: [cointop](https://github.com/miguelmota/cointop)
 - Kernel Manager: [kmon](https://github.com/orhun/kmon)
@@ -55,7 +57,9 @@
   - Mobile: [Password Store](https://play.google.com/store/apps/details?id=dev.msfjarvis.aps)
   - Browser: [Gopass Bridge](https://github.com/gopasspw/gopassbridge)
 - Focus Sounds: [blanket](https://github.com/rafaelmardojai/blanket)
-- Tmux: [Byobu](https://www.byobu.org/)
+- Tmux:
+  - [tmux](https://github.com/tmux/tmux)
+  - [byobu](https://www.byobu.org/)
 - Video Wallpapers: [mpvpaper](https://github.com/GhostNaN/mpvpaper)
 - Tabular data viewer: [visidata](https://www.visidata.org/)
 - Torrent: [rtorrent](https://github.com/rakshasa/rtorrent/wiki)
