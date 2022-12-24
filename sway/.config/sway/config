@@ -81,6 +81,7 @@ bindsym $mod+Shift+o exec ~/.config/sway/scripts/otp.sh
 bindsym $mod+escape exec ~/.config/sway/scripts/system.sh
 bindsym $mod+Shift+v exec ~/.config/sway/scripts/vpn.sh
 bindsym $mod+Shift+m exec ~/.config/sway/scripts/meetings.sh
+bindsym $mod+Shift+b exec ~/.local/bin/bookmarks
 
 # cmus & btop & gdu
 for_window [app_id="cmus"] move to scratchpad; [app_id="cmus"] scratchpad show; [app_id="cmus"] resize set width 1600 px height 800 px
