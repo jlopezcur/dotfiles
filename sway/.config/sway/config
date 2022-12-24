@@ -63,6 +63,7 @@ bindsym $mod+Ctrl+Return exec $term --title Newsboat -e newsboat
 
 # email client
 bindsym $mod+Alt+Return exec $term --title Neomutt -e neomutt
+bindsym $mod+Alt+m exec ~/.config/sway/scripts/mail.sh
 
 # irc client
 bindsym $mod+Ctrl+Alt+Return exec $term --title Weechat -e weechat
