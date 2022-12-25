@@ -3,10 +3,6 @@
 # Mail editor
 set editor=nvim
 
-# Display Sidebar
-set sidebar_width=20
-set sidebar_visible=true
-
 # If hcache is a folder, Mutt create a sub cache folders for each account witch
 # may speeds things up even more
 set header_cache = ~/.cache/mutt
@@ -44,7 +40,7 @@ set mailcap_path = "~/.config/mutt/mailcap"
 auto_view text/html # automatically show html (mailcap uses lynx)
 
 # sidebar
-set sidebar_visible = yes
+set sidebar_visible
 set sidebar_width = 20
 set sidebar_short_path = yes
 set sidebar_next_new_wrap = yes
