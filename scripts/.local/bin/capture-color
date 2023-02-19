@@ -14,5 +14,6 @@ fi
 
 if [ -n "$result" ]; then
   wl-copy -p "$result"
+  wl-copy "$result"
   notify-send "$format copied!" "$result" -u normal -i color
 fi
