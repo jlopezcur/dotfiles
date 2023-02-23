@@ -30,8 +30,9 @@ alias ping "gping"
 alias v "nvim --startuptime /tmp/nvim-startuptime"
 alias hx "helix"
 alias open "xdg-open"
-alias man2 "tldr"
+alias cheat "tldr"
 alias du "dust"
+alias fzf "sk"
 abbr -a -g ... ../..
 abbr -a -g .... ../../..
 abbr -a -g ..... ../../../..
