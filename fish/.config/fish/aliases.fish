@@ -32,7 +32,7 @@ alias hx "helix"
 alias open "xdg-open"
 alias cheat "tldr"
 alias du "dust"
-alias fzf "sk"
+# alias fzf "sk"
 abbr -a -g ... ../..
 abbr -a -g .... ../../..
 abbr -a -g ..... ../../../..
