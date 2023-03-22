@@ -3,7 +3,7 @@
 # Partialy based on: https://github.com/mhdzli/dotfiles/blob/master/src/.local/bin/wayrecord
 # Requirements: wofi
 
-action=$(printf "screen\nvideo\ngif\ncolor" | wofi -i --show dmenu -p "Capture command...")
+action=$(printf "📷 screen\n🎥 video\n🖼️ gif\n💧 color" | wofi -i --show dmenu -p "Capture command...")
 
 list_geometry () {
     append=
@@ -16,7 +16,7 @@ FILENAME="$(date +'%Y-%m-%d-%H%M%S_screenshot.png')"
 IMAGE_DIR="$HOME/images/"
 
 case $action in
-  "screen")
+  "📷 screen")
     subaction=$(printf "fullscreen\nregion\nfocused" | wofi -i --show dmenu -p "Capture image command...")
     case $subaction in
       "fullscreen") grim "$IMAGE_DIR/pic-full-$FILENAME";;
@@ -24,7 +24,7 @@ case $action in
       "focused") grim -g "$FOCUSED" "$IMAGE_DIR/pic-focused-$FILENAME";;
     esac
     ;;
-  "video")
+  "🎥 video")
     subaction=$(printf "mute\naudio" | wofi -i --show dmenu -p "Capture video command...")
     case $subaction in
       "mute") record-screen ;;
@@ -32,8 +32,8 @@ case $action in
       *) echo "Invalid suboption $subaction" ;;
     esac
     ;;
-  "gif") record-gif ;;
-  "color")
+  "🖼️ gif") record-gif ;;
+  "💧 color")
     subaction=$(printf "hex\nrgb" | wofi -i --show dmenu -p "Capture color command...")
     case $subaction in
       "hex") capture-color --hex ;;
