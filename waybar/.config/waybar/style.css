@@ -56,7 +56,6 @@ window#waybar.bottom {
 #custom-mouse-bat,
 #custom-keyboard-bat,
 #custom-weather,
-#custom-vpn,
 #custom-quit,
 #custom-bluetooth,
 #custom-calendar,
@@ -120,6 +119,6 @@ window#waybar.bottom {
   color: red;
 }
 
-#custom-vpn.connected {
+#network.ethernet {
   color: orange;
 }
