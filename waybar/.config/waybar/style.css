@@ -63,6 +63,7 @@ window#waybar.bottom {
 #custom-tasks,
 #custom-videorec,
 #custom-gifrec,
+#custom-vpn,
 #temperature,
 #bluetooth,
 #network,
@@ -119,6 +120,7 @@ window#waybar.bottom {
   color: red;
 }
 
+#custom-vpn.connected,
 #network.ethernet {
   color: orange;
 }

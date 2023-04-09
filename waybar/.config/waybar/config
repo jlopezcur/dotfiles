@@ -4,7 +4,7 @@
   "position": "top",
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["custom/calendar", "custom/times", "custom/weather"],
-  "modules-right": ["custom/videorec", "custom/gifrec", "network", "pulseaudio", "bluetooth", "backlight", "idle_inhibitor", "battery"],
+  "modules-right": ["custom/videorec", "custom/gifrec", "custom/vpn", "network", "pulseaudio", "bluetooth", "backlight", "idle_inhibitor", "battery"],
 
   "sway/workspaces": {
     "disable-scroll": true,
@@ -47,6 +47,16 @@
     "exec": "exec record-gifd",
     "exec-on-event": false,
     "on-click": "pkill -INT -P \"$(pgrep -xo record-gif)\" wf-recorder"
+  },
+
+  "custom/vpn": {
+    "format": "ﱾ VPN",
+    "exec": "echo '{\"class\": \"connected\"}'",
+    "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
+    "on-click": "alacritty --title VPN -e vpn-check",
+    "on-click-middle": "alacritty --title VPN -e vpn-stop",
+    "return-type": "json",
+    "interval": 5
   },
 
   "network": {
