@@ -28,6 +28,7 @@ if status is-interactive
   set -gx BROWSER qutebrowser
   set -gx PAGER less
   set -gx READER zathura
+  set -gx DELTA_FEATURES +side-by-side
   # set -gx MANPAGER nvim
 
   # Eye Candy
