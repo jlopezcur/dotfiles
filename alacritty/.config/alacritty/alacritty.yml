@@ -221,7 +221,7 @@ cursor:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /bin/fish
+  program: /bin/nu
 #  args:
 #    - --login
 # Startup directory
@@ -429,13 +429,8 @@ shell:
 # If the same trigger is assigned to multiple actions, all of them are executed
 # at once.
 key_bindings:
-  - {
-      key: Return,
-      mods: Control|Shift,
-      action: SpawnNewInstance
-    }
+  - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
 theme: Gruvbox-Dark
-
 #- { key: Paste,                                action: Paste          }
 #- { key: Copy,                                 action: Copy           }
 #- { key: L,         mods: Control,             action: ClearLogNotice }

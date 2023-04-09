@@ -1,33 +1,32 @@
 # Nushell Environment Config File
 
-def create_left_prompt [] {
-    let path_segment = if (is-admin) {
-        $"(ansi red_bold)($env.PWD)"
-    } else {
-        $"(ansi green_bold)($env.PWD)"
-    }
-
-    $path_segment
-}
-
-def create_right_prompt [] {
-    let time_segment = ([
-        (date now | date format '%m/%d/%Y %r')
-    ] | str collect)
-
-    $time_segment
-}
+# def create_left_prompt [] {
+#     let path_segment = if (is-admin) {
+#         $"(ansi red_bold)($env.PWD)"
+#     } else {
+#         $"(ansi green_bold)($env.PWD)"
+#     }
+#
+#     $path_segment
+# }
+#
+# def create_right_prompt [] {
+#     let time_segment = ([
+#         (date now | date format '%m/%d/%Y %r')
+#     ] | str join)
+#
+#     $time_segment
+# }
 
 # Use nushell functions to define your right and left prompt
-let-env PROMPT_COMMAND = { create_left_prompt }
-let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
+# let-env PROMPT_COMMAND = { || create_left_prompt }
+# let-env PROMPT_COMMAND_RIGHT = { || create_right_prompt }
 
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
-let-env PROMPT_INDICATOR = { "〉" }
-let-env PROMPT_INDICATOR_VI_INSERT = { ": " }
-let-env PROMPT_INDICATOR_VI_NORMAL = { "〉" }
-let-env PROMPT_MULTILINE_INDICATOR = { "::: " }
+let-env PROMPT_INDICATOR_VI_INSERT = { || "" }
+let-env PROMPT_INDICATOR_VI_NORMAL = { || "N " }
+let-env PROMPT_MULTILINE_INDICATOR = { || "::: " }
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
@@ -36,11 +35,11 @@ let-env PROMPT_MULTILINE_INDICATOR = { "::: " }
 let-env ENV_CONVERSIONS = {
   "PATH": {
     from_string: { |s| $s | split row (char esep) }
-    to_string: { |v| $v | path expand | str collect (char esep) }
+    to_string: { |v| $v | path expand | str join (char esep) }
   }
   "Path": {
     from_string: { |s| $s | split row (char esep) }
-    to_string: { |v| $v | path expand | str collect (char esep) }
+    to_string: { |v| $v | path expand | str join (char esep) }
   }
 }
 
@@ -59,10 +58,8 @@ let-env NU_PLUGIN_DIRS = [
 ]
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
-# let-env PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
+let-env PATH = ($env.PATH | split row (char esep) | prepend ['~/.local/bin/'])
 
-mkdir ~/.cache/starship
-starship init nu | save ~/.cache/starship/init.nu
-
-mkdir ~/.cache/zoxide
-zoxide init nushell --hook prompt | save ~/.cache/zoxide/init.nu
+let-env EDITOR = "nvim"
+let-env VISUAL = "nvim"
+let-env VISUAL = "nvim"
