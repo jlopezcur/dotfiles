@@ -63,3 +63,4 @@ let-env PATH = ($env.PATH | split row (char esep) | prepend ['~/.local/bin/'])
 let-env EDITOR = "nvim"
 let-env VISUAL = "nvim"
 let-env VISUAL = "nvim"
+let-env LANG = "en_US.utf8"
