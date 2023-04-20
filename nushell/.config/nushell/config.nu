@@ -2,6 +2,7 @@
 
 source ~/.config/nushell/completions/git.nu
 source ~/.config/nushell/completions/npm.nu
+source ~/.config/nushell/completions/zathura.nu
 
 # for more information on themes see
 # https://www.nushell.sh/book/coloring_and_theming.html
@@ -391,8 +392,8 @@ let-env config = {
   ]
 }
 
-source .config/nushell/scripts/starship.nu
-source .config/nushell/scripts/zoxide.nu
+source ~/.config/nushell/scripts/starship.nu
+source ~/.config/nushell/scripts/zoxide.nu
 
 alias myip = curl http://ipecho.net/plain
 alias l = exa -alh --icons --git
