@@ -1,6 +1,6 @@
 * {
   border: none;
-  border-radius: 8px;
+  border-radius: 0;
   font-size: 16px;
   font-family: FiraCode Nerd Font;
 }
@@ -18,25 +18,17 @@ window#waybar.top {
     rgba(0, 0, 0, 0.8) 100%
   );
 }
-window#waybar.bottom {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.7) 100%
-  );
-}
 
 /* Workspaces buttons */
 
 #workspaces button {
   padding: 0 4px;
   background: transparent;
-  color: #ccc;
-  border-radius: 16px 16px 0 0;
+  color: #999;
 }
 #workspaces button.focused {
   color: #ccc;
-  background: rgba(38, 139, 210, 0.7);
+  font-weight: 900;
 }
 #workspaces button.urgent {
   background: rgba(214, 93, 14, 0.7);
@@ -120,7 +112,6 @@ window#waybar.bottom {
   color: red;
 }
 
-#custom-vpn.connected,
-#network.ethernet {
+#custom-vpn.connected {
   color: orange;
 }

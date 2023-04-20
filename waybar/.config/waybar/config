@@ -2,9 +2,9 @@
 [{
   "margin": "0px",
   "position": "top",
-  "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-center": ["custom/calendar", "custom/times", "custom/weather"],
-  "modules-right": ["custom/videorec", "custom/gifrec", "custom/vpn", "network", "pulseaudio", "bluetooth", "backlight", "idle_inhibitor", "battery"],
+  "modules-left": ["sway/workspaces", "sway/mode", "custom/cmus"],
+  "modules-center": ["custom/calendar", "custom/times"],
+  "modules-right": ["memory", "cpu", "temperature", "disk", "custom/videorec", "custom/gifrec", "custom/vpn", "network", "pulseaudio", "bluetooth", "idle_inhibitor", "battery"],
 
   "sway/workspaces": {
     "disable-scroll": true,
@@ -14,26 +14,27 @@
   "sway/mode": { "format": " ↔️ {}", "max-length": 50 },
 
   "custom/calendar": {
-    "format": "📅 {}",
+    "format": "{}",
     "on-click": "alacritty --title Calcurse -e calcurse",
     "exec": "$HOME/.config/waybar/modules/cal.py",
     "interval": 3600,
     "return-type": "json"
   },
   "custom/times": {
-    "format": "🕒 {}",
+    "format": "{}",
     "exec": "$HOME/.config/waybar/modules/times.py",
     "interval": 60,
     "return-type": "json"
   },
-  "custom/weather": {
-    "format": "{}",
-    "tooltip": true,
-    "on-click": "alacritty --title Weather -e weather",
-    "interval": 3600,
-    "exec": "$HOME/.config/waybar/modules/wttr.py",
-    "return-type": "json"
-  },
+
+//  "custom/weather": {
+//    "format": "{}",
+//    "tooltip": true,
+//    "on-click": "alacritty --title Weather -e weather",
+//    "interval": 3600,
+//    "exec": "$HOME/.config/waybar/modules/wttr.py",
+//    "return-type": "json"
+//  },
 
   "custom/videorec": {
     "format": " VID",
@@ -74,17 +75,13 @@
   "pulseaudio": {
     "format": "{icon} {volume:2}% {format_source}",
     "format-bluetooth": "{icon}  {volume:2}% {format_source}",
-    "format-source": "🎙️",
+    "format-source": "",
     "format-source-muted": "",
     "format-muted": "{icon} --% {format_source}",
     "format-icons": {
-      "headphone": "🎧",
-      "hands-free": "☎️",
-      "headset": "🎧",
-      "phone": "☎️",
-      "portable": "☎️",
-      "car": "🚗",
-      "default": "🎻"
+      "headphone": "󰋎",
+      "headset": "󰋎",
+      "default": "󰕾"
     },
     "scroll-step": 1,
     "on-click": "pamixer -t",
@@ -92,60 +89,46 @@
   },
 
   "bluetooth": {
-    "format": "📡 {status}",
+    "format": "󰂯 {status}",
     "format-disabled": "",
-    "format-connected": "📡 {num_connections}",
+    "format-connected": "󰂯 {num_connections}",
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_battery_percentage} %\t{device_address}\t{device_alias}"
   },
 
-  "backlight": {
-    "format": "{icon} {percent}%",
-    "format-icons": ["","","","","","",""],
-    "on-scroll-down": "light -U 1",
-    "on-scroll-up": "light -A 1"
-  },
+//   "backlight": {
+//     "format": "{icon} {percent}%",
+//     "format-icons": ["","","","","","",""],
+//     "on-scroll-down": "light -U 1",
+//     "on-scroll-up": "light -A 1"
+//   },
 
   "idle_inhibitor": {
     "format": "{icon}",
-    "format-icons": { "activated": "👀", "deactivated": "⏰" }
+    "format-icons": { "activated": "󰛐", "deactivated": "󰛑" }
   },
 
   "battery": {
     "states": { "good": 95, "warning": 30, "critical": 15 },
-    "format": "{icon} {time}",
+    "format": "󰁹 {time}",
     "format-time": "{H}H{M}",
-    "format-charging": "🔋 {capacity}%",
-    "format-plugged": "",
-    "format-icons": ["🪫", "", "", "", "", "", "", "", "", "", "🔋"]
-  }
-}, {
-  "margin": "0px",
-  "position": "bottom",
-  "modules-left": ["custom/scratchpad-indicator", "memory", "cpu", "temperature", "disk"],
-  "modules-center": ["custom/cmus"],
-  "modules-right": ["custom/quit"],
-
-  "custom/scratchpad-indicator": {
-    "interval": 3,
-    "return-type": "json",
-    "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '( select(.name == \"root\") | .nodes[] | select(.name == \"__i3\") | .nodes[] | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") }'",
-    "format": "{}",
-    "on-click": "exec swaymsg 'scratchpad show'",
-    "on-click-right": "exec swaymsg 'move scratchpad'"
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "",
+    "format-icons": ["󱃍", "", "", "", "", "", "", "", "", "", "󰁹"]
   },
+
   "memory": {
-    "format": "🔬 {percentage}% ({used:0.2f}G)",
+    "format": "M.{percentage}%",
     "states": { "warning": 70, "critical": 85 }
   },
   "cpu": {
-    "format": "🧬 {usage:2}%",
+    "format": "P.{usage:2}%",
     "states": { "warning": 70, "critical": 85 }
   },
-  "temperature": { "format": "🌡️ {temperatureC}°C" },
+  "temperature": { "format": "T.{temperatureC}°C" },
   "disk": {
-    "format": "🗄️ {percentage_used:2}%",
+    "format": "D.{percentage_used:2}%",
     "path": "/",
     "states": { "warning": 80, "critical": 90 }
   },
@@ -159,12 +142,5 @@
     "on-click": "cmus-remote -u",
     "signal": 9,
     "escape": true
-  },
-
-  "custom/quit": {
-    "format": "{}",
-    "return-type": "json",
-    "exec": "$HOME/.config/waybar/modules/quit.py",
-    "interval": 3600
   }
 }]
