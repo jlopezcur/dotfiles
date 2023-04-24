@@ -2,7 +2,7 @@
 [{
   "margin": "0px",
   "position": "top",
-  "modules-left": ["sway/workspaces", "sway/mode", "custom/cmus"],
+  "modules-left": ["sway/mode", "sway/workspaces", "custom/cmus"],
   "modules-center": ["custom/calendar", "custom/times"],
   "modules-right": ["memory", "cpu", "temperature", "disk", "custom/videorec", "custom/gifrec", "custom/vpn", "network", "pulseaudio", "bluetooth", "idle_inhibitor", "battery"],
 
@@ -11,7 +11,7 @@
     "format": "{icon}"
   },
 
-  "sway/mode": { "format": " ↔️ {}", "max-length": 50 },
+  "sway/mode": { "format": "󰩨", "max-length": 50 },
 
   "custom/calendar": {
     "format": "{}",
