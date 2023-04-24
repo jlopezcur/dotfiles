@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -euo pipefail
+set -euo
 
 # Only output color if the command isn't being piped.
 if [ -t 1 ]; then

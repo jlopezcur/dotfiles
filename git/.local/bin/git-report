@@ -4,23 +4,23 @@
 # git-report jlopez '2022-01-01' 'now'
 # git-report User 'from' 'to'
 
-if [ -z $1 ]; then
-  echo -n "About what user? "
-  read user
+if [ -z "$1" ]; then
+  echo "About what user? "
+  read -r user
 else
   user=$1
 fi
 
-if [ -z $2 ]; then
-  echo -n "From what date? "
-  read from
+if [ -z "$2" ]; then
+  echo "From what date? "
+  read -r from
 else
   from=$2
 fi
 
-if [ -z $3 ]; then
-  echo -n "To what date? "
-  read to
+if [ -z "$3" ]; then
+  echo "To what date? "
+  read -r to
 else
   to=$3
 fi
@@ -29,5 +29,5 @@ clear
 echo "> Report for user $user from $from to $to"
 echo "> git log --author=$user --since=\"$from\" --until=\"$to\" --format='%Cgreen%ci%Creset %s%Creset' --no-merges"
 
-git log --author=$user --since="$from" --until="$to" --format='%Cgreen%ci%Creset %s%Creset' --no-merges
+git log --author="$user" --since="$from" --until="$to" --format='%Cgreen%ci%Creset %s%Creset' --no-merges
 
