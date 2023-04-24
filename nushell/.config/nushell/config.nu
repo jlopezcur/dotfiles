@@ -3,6 +3,8 @@
 source ~/.config/nushell/completions/git.nu
 source ~/.config/nushell/completions/npm.nu
 source ~/.config/nushell/completions/zathura.nu
+source ~/.config/nushell/completions/cargo.nu
+source ~/.config/nushell/completions/rustup.nu
 
 # for more information on themes see
 # https://www.nushell.sh/book/coloring_and_theming.html
@@ -402,7 +404,8 @@ alias ping = gping
 alias v = nvim
 alias vi = nvim
 alias vim = nvim
-alias open = xdg-open
 alias cheat = tldr
 alias du = dust
 alias ip = ^ip -color=auto a
+
+source /home/jlopez/.config/broot/launcher/nushell/br
