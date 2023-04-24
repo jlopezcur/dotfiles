@@ -5,7 +5,7 @@ config.load_autoconfig(True)
 c.new_instance_open_target = 'window'
 c.downloads.position = 'bottom'
 c.spellcheck.languages = ['en-US', 'es-ES']
-c.tabs.show = 'never'
+c.tabs.show = 'multiple' # always, never, multiple, switching
 c.qt.force_software_rendering = 'none'
 
 c.url.searchengines = {
