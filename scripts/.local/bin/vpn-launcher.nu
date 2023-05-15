@@ -1,9 +1,9 @@
 #!/usr/bin/env nu
 
-# Requirements: wofi
+# Requirements: wofi & vpns file
+# vpns file is a list of valid VPNs session name, each name on one line
 
-let options = "DEVO"
-let vpn = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p "VPN Selection...")
+let vpn = (cat ~/.config/vpns | wofi -i --show dmenu -p "VPN Selection...")
 
 if ($vpn | is-empty) { exit 0 }
 
