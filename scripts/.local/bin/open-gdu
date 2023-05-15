@@ -1,8 +1,0 @@
-#!/bin/sh
-
-process_id=$(pidof gdu)
-if [ -z "$process_id" ]; then
-  exec alacritty --class gdu -e gdu -B ~
-else
-  swaymsg "scratchpad show"
-fi
