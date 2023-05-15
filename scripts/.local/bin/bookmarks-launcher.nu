@@ -1,6 +1,6 @@
 #!/usr/bin/env nu
 
-# Requirements: wofi
+# Requirements: qutebrowser & wofi
 
 let bookmark = (cat .config/qutebrowser/bookmarks/urls | wofi -i --show dmenu -p "Select a bookmark..." --width 80%)
 let link = ($bookmark | split column " " | get column1)
