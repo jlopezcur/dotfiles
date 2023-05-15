@@ -1,18 +1,23 @@
 #!/usr/bin/env nu
 
-# Requirements: wofi
+# Requirements: wofi & mbsync & accounts file
+# Accounts file is located at ~/.config/mail_accounts
+# Each line is an account, has two columns separated by comma: the email and the
+# account: f.e:
+# example@gmail.com,example
+# second.example@gmail.com,second
 
-let options = "jlopezcur@gmail.com,jlopez2123@alumno.uned.es,javier.lopez@devo.com"
-let account = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p "Sync account...")
+let accounts = (cat ~/.config/mail_accounts | lines | parse '{email},{account}')
+let account_name = ($accounts | get email | str join "\n" | wofi -i --show dmenu -p "Sync account...")
 
-if ($account | is-empty) { exit 0 }
+if ($account_name | is-empty) { exit 0 }
 
-match $account {
-  "jlopezcur@gmail.com" => { alacritty -e mbsync jlopezcur },
-  "jlopez2123@alumno.uned.es" => { alacritty -e mbsync uned },
-  "javier.lopez@devo.com" => { alacritty -e mbsync devo },
-  _ => {
-    notify-send -i /usr/share/icons/Arc/status/32/error.png "Error" $"Invalid account '($account)'"
-    exit 1
-  }
-}
+let filtered = ($accounts | filter {|x| $x.email == $account_name})
+
+if (($filtered | length) == 0) { exit 0 }
+
+let account_key = ($filtered | get account | get 0)
+
+notify-send "Syncing..." $"Syncing account '($account_name): ($account_key)'"
+mbsync jlopezcur
+notify-send "Synced!" $"Synces account '($account_name): ($account_key)'!"
