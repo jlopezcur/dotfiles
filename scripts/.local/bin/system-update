@@ -1,4 +1,0 @@
-#!/bin/sh
-
-paru
-$HOME/.local/bin/store-package-updates

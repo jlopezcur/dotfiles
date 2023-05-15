@@ -1,4 +1,0 @@
-#!/bin/sh
-
-killall swaybg
-mpvpaper eDP-1 $HOME/video/bg.webm

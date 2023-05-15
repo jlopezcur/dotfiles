@@ -40,6 +40,7 @@ set $term alacritty
 
 # Adjust the color temperature of your screen according to your surroundings.
 exec gammastep -l 40.241111:-3.699444
+exec wl-paste --watch cliphist store
 
 # Mako notification manager
 exec mako
@@ -63,39 +64,44 @@ bindsym $mod+Ctrl+Return exec $term --title Newsboat -e newsboat
 
 # email client
 bindsym $mod+Alt+Return exec $term --title Neomutt -e neomutt
-bindsym $mod+Alt+m exec ~/.config/sway/scripts/mail.sh
 
 # irc client
 bindsym $mod+Ctrl+Alt+Return exec $term --title Weechat -e weechat
 
-# launchers
-# bindsym $mod+p exec $term --class launcher --title Launcher -e sway-launcher-desktop
-# bindsym $mod+p exec $term --class launcher --title Launcher -e slings
-# for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
-bindsym $mod+p exec wofi -i --show drun
-bindsym $mod+Ctrl+m exec mountdrive
+# bindsym $mod+Ctrl+m exec mountdrive
+bindsym $mod+Ctrl+m exec ~/.config/sway/scripts/mount.sh
 bindsym $mod+Ctrl+Shift+m exec umountdrive
 
-bindsym $mod+Shift+p exec ~/.config/sway/scripts/password.sh
-bindsym $mod+Shift+o exec ~/.config/sway/scripts/otp.sh
-bindsym $mod+escape exec ~/.config/sway/scripts/system.sh
-bindsym $mod+Shift+v exec ~/.config/sway/scripts/vpn.sh
-bindsym $mod+Shift+m exec ~/.config/sway/scripts/meetings.sh
-bindsym $mod+Shift+b exec ~/.local/bin/bookmarks
+# launchers
+# ------------------------------------------------------------------------------
+
+bindsym $mod+p exec wofi -i --show drun
+bindsym $mod+Shift+p exec ~/.local/bin/passwd-launcher.nu
+bindsym $mod+Shift+o exec ~/.local/bin/otp-launcher.nu
+bindsym $mod+escape exec ~/.local/bin/system-launcher.nu
+bindsym $mod+Shift+v exec ~/.local/bin/vpn-launcher.nu
+bindsym $mod+Shift+m exec ~/.local/bin/meetings-launcher.nu
+bindsym $mod+Alt+m exec ~/.local/bin/mail-launcher.nu
+bindsym $mod+Shift+b exec ~/.local/bin/bookmarks-launcher.nu
+bindsym $mod+Shift+slash exec ~/.local/bin/shortcuts-launcher.nu
+bindsym $mod+y exec ~/.local/bin/clipboard-launcher.nu
+# capture launcher: screenshot, video, gif & color
+bindsym $mod+c exec ~/.local/bin/capture-launcher.nu
+# system maintenance tools
+bindsym $mod+Shift+s exec ~/.local/bin/maintenance-launcher.nu
+
+# scratchpads
+# ------------------------------------------------------------------------------
 
 # cmus & btop & gdu
 for_window [app_id="cmus"] move to scratchpad; [app_id="cmus"] scratchpad show; [app_id="cmus"] resize set width 1600 px height 800 px
+bindsym $mod+m exec ~/.local/bin/launch-cmus.nu
+
 for_window [app_id="btop"] move to scratchpad; [app_id="btop"] scratchpad show; [app_id="btop"] resize set width 1600 px height 800 px
-for_window [app_id="gdu"] move to scratchpad; [app_id="gdu"] scratchpad show; [app_id="gdu"] resize set width 1600 px height 800 px
-bindsym $mod+m exec ~/.local/bin/open-cmus
-bindsym $mod+t exec ~/.local/bin/open-btop
-bindsym $mod+d exec ~/.local/bin/open-gdu
+bindsym $mod+t exec ~/.local/bin/launch-btop.nu
 
-# capture menu (screenshot, video, gif & color)
-bindsym $mod+c exec ~/.config/sway/scripts/capture.sh
-
-# system maintenance tools
-bindsym $mod+Shift+s exec ~/.config/sway/scripts/maintenance.sh
+# win modifications
+# ------------------------------------------------------------------------------
 
 # Open scrcpy in floating mode on the right side of the screen
 for_window [app_id="^scrcpy$"] floating enable, sticky enable, resize set 508 px 900 px, border pixel 10, move position 70 ppt 4 ppt
@@ -106,7 +112,7 @@ for_window [app_id="^statusline$"] floating enable, resize set 98 ppt 18 ppt, bo
 for_window [title="LibreWolf — Sharing Indicator"] floating enable, resize set 1 px 1 px, move position 0 px 85 ppt
 
 # basics
-# ======
+# ------------------------------------------------------------------------------
 
 # Kill focused window
 bindsym $mod+Shift+c kill
@@ -129,7 +135,7 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. 
 
 
 # moving around
-# =============
+# ------------------------------------------------------------------------------
 
 # Move your focus around
 bindsym $mod+$left focus left
@@ -155,7 +161,7 @@ bindsym $mod+Shift+Right move right
 
 
 # workspaces
-# ==========
+# ------------------------------------------------------------------------------
 
 # Switch to workspace
 bindsym $mod+1 workspace number 1
@@ -183,8 +189,8 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # We just use 1-10 as the default.
 
 
-# layout 
-# ======
+# layout
+# ------------------------------------------------------------------------------
 
 # You can "split" the current object of your focus with
 # $mod+b or $mod+v, for horizontal and vertical splits
@@ -211,7 +217,7 @@ bindsym $mod+a focus parent
 
 
 # scratchpad
-# ==========
+# ------------------------------------------------------------------------------
 
 # Sway has a "scratchpad", which is a bag of holding for windows.
 # You can send windows there and get them back later.
@@ -225,7 +231,7 @@ bindsym $mod+minus scratchpad show, resize set width 1600 px height 800 px
 
 
 # resizing containers
-# ===================
+# ------------------------------------------------------------------------------
 
 mode "resize" {
   # left will shrink the containers width
@@ -251,7 +257,7 @@ bindsym $mod+r mode "resize"
 
 
 # screens
-# =======
+# ------------------------------------------------------------------------------
 
 bindsym $mod+comma move workspace to output eDP-1
 bindsym $mod+period move workspace to output HDMI-A-1

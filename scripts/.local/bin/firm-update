@@ -3,5 +3,3 @@
 fwupdmgr refresh
 fwupdmgr get-updates
 fwupdmgr update
-
-read -p "Press Enter to continue" </dev/tty

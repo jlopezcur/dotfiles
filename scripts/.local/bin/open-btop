@@ -1,16 +1,15 @@
-#!/bin/sh
+#!/usr/bin/env nu
 
-process_id=$(pidof btop)
-if [[ -z $process_id ]]; then
-  exec alacritty --class btop -e btop
-else
-  visibility=$(swaymsg -t get_tree | jq '..|objects|select(.app_id=="btop")|.visible')
+let process_id = (pidof btop)
+if ($process_id | is-empty) {
+  alacritty --class btop -e btop
+} else {
+  let visibility = ((swaymsg -t get_tree | jq '..|objects|select(.app_id=="btop")|.visible') == "true")
   swaymsg "scratchpad show"
 
-  if [[ $visibility == 'false' ]]; then
-    visibility=$(swaymsg -t get_tree | jq '..|objects|select(.app_id=="btop")|.visible')
-    [[ $visibility == 'false' ]] && swaymsg "scratchpad show"
-    visibility=$(swaymsg -t get_tree | jq '..|objects|select(.app_id=="btop")|.visible')
-    [[ $visibility == 'false' ]] && swaymsg "scratchpad show"
-  fi
-fi
+  # rotate two times because I dont have more than two diferent scratchpads
+  if (not $visibility) {
+    let visibility = ((swaymsg -t get_tree | jq '..|objects|select(.app_id=="btop")|.visible') == "true")
+    if (not $visibility) { swaymsg "scratchpad show" }
+  }
+}
