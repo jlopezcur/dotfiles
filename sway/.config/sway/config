@@ -95,10 +95,10 @@ bindsym $mod+Shift+s exec ~/.local/bin/maintenance-launcher.nu
 
 # cmus & btop & gdu
 for_window [app_id="cmus"] move to scratchpad; [app_id="cmus"] scratchpad show; [app_id="cmus"] resize set width 1600 px height 800 px
-bindsym $mod+m exec ~/.local/bin/launch-cmus.nu
+bindsym $mod+m exec ~/.local/bin/open-cmus.nu
 
 for_window [app_id="btop"] move to scratchpad; [app_id="btop"] scratchpad show; [app_id="btop"] resize set width 1600 px height 800 px
-bindsym $mod+t exec ~/.local/bin/launch-btop.nu
+bindsym $mod+t exec ~/.local/bin/open-btop.nu
 
 # win modifications
 # ------------------------------------------------------------------------------
