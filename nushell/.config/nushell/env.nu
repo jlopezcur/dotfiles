@@ -46,6 +46,7 @@ let-env PATH = ($env.PATH | split row (char esep) | prepend [
 let-env EDITOR = "nvim"
 let-env VISUAL = "nvim"
 let-env VISUAL = "nvim"
+let-env BROWSER = "thorium-browser"
 
 let-env LANG = "en_US.utf8"
 
