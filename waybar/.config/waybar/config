@@ -120,13 +120,19 @@
 
   "memory": {
     "format": "M.{percentage}%",
+    "interval": 1,
     "states": { "warning": 70, "critical": 85 }
   },
   "cpu": {
     "format": "P.{usage:2}%",
+    "interval": 1,
     "states": { "warning": 70, "critical": 85 }
   },
-  "temperature": { "format": "T.{temperatureC}°C" },
+  "temperature": {
+    "format": "T.{temperatureC}°C",
+    "critical-threshold": 70,
+    "interval": 1
+  },
   "disk": {
     "format": "D.{percentage_used:2}%",
     "path": "/",

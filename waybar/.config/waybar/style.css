@@ -68,32 +68,18 @@ window#waybar.top {
 
 /* Modules status */
 
-#battery.critical {
-  background: red;
-}
-
-#memory.warning {
-  color: orange;
-}
-#memory.critical {
-  color: red;
-}
-
-#cpu.warning {
-  color: orange;
-}
-#cpu.critical {
-  color: red;
-}
-
-#temperature.critical {
-  color: red;
-}
-
+#cpu.warning,
+#memory.warning,
+#battery.critical,
 #disk.warning {
   color: orange;
 }
-#disk.critical {
+
+#cpu.critical,
+#temperature.critical,
+#disk.critical,
+#battery.critical,
+#memory.critical {
   color: red;
 }
 
