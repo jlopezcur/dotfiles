@@ -55,6 +55,12 @@ let info = [
   $"(ansi blue)Root:(ansi reset) (ansi yellow)($disk_used)(ansi reset) / ($disk_size) \(($disk_used_pct)\)",
   $"(ansi blue)\$EDITOR:(ansi reset) ($env.EDITOR)",
   $"(ansi blue)\$BROWSER:(ansi reset) ($env.BROWSER)",
+  $"(ansi blue)Alt Browser:(ansi reset) qutebrowser",
+  $"(ansi blue)Terminal:(ansi reset) alacritty",
+  $"(ansi blue)Font:(ansi reset) FiraCode Nerd Font",
+  $"(ansi blue)WM:(ansi reset) Sway",
+  $"(ansi blue)Bar:(ansi reset) Waybar",
+  $"(ansi blue)Player:(ansi reset) MPV / (ansi blue)PDF:(ansi reset) Zathura",
 ]
 let info_len = ($info | length)
 
