@@ -14,7 +14,9 @@ if ($action | is-empty) { exit 0 }
 
 match $action {
   "Start" => { openvpn3 session-start -c $vpn },
-  "Check" => { dialog --erase-on-exit --msgbox (openvpn3 sessions-list) 30 81 },
+  "Check" => {
+    alacritty -e vpn-check.nu
+  },
   "Stop" => { openvpn3 session-manage -D -c $vpn  },
   _ => {
     notify-send -i /usr/share/icons/Arc/status/32/error.png "Error" $"Invalid action '($action)'"
