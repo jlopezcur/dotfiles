@@ -257,7 +257,7 @@ export extern "cargo run" [
   --frozen                                  # Require Cargo.lock and cache are up to date
   --locked                                  # Require Cargo.lock is up to date
   --offline                                 # Run without accessing the network
-  --config: string                          # Override a configuration value (unstable)
+  # --config: string                          # Override a configuration value (unstable)
   -Z: string                                # Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
   --help(-h)                                # Prints help information
 ]
@@ -484,7 +484,7 @@ export extern "cargo metadata"  [
 export extern "cargo help" [
   subcommand: string@"nu-complete cargo subcommands"
   --color: string@"nu-complete cargo color" # Control when colored output is used
-  --config: string # Override a configuration value
+  # --config: string # Override a configuration value
   --frozen         # Require Cargo.lock and cache are up to date
   --locked         # Require Cargo.lock is up to date
   --offline        # Run without accessing the network
@@ -571,7 +571,7 @@ export extern "cargo add" [
   --package(-p)           # Package to modify
   --offline               # Run without accessing the network
   --quiet(-q)             # Do not print cargo log messages
-  --config                # Override a configuration value
+  # --config                # Override a configuration value
   --dry-run               # Don't actually write the manifest
   --help(-h)              # Print help information
   --path                  # Filesystem path to local crate to add

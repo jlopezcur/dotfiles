@@ -5,6 +5,7 @@ source ~/.config/nushell/completions/npm.nu
 source ~/.config/nushell/completions/zathura.nu
 source ~/.config/nushell/completions/cargo.nu
 source ~/.config/nushell/completions/rustup.nu
+source ~/.config/nushell/completions/paru.nu
 
 # for more information on themes see
 # https://www.nushell.sh/book/coloring_and_theming.html
@@ -111,7 +112,7 @@ let light_theme = {
 }
 
 # The default config record. This is where much of your global configuration is setup.
-let-env config = {
+$env.config = {
   ls: {
     use_ls_colors: true
     clickable_links: true
@@ -396,6 +397,7 @@ let-env config = {
 
 source ~/.config/nushell/scripts/starship.nu
 source ~/.config/nushell/scripts/zoxide.nu
+# source ~/.local/share/atuin/init.nu
 
 alias myip = curl http://ipecho.net/plain
 alias l = exa -alh --icons --git
@@ -404,7 +406,6 @@ alias ping = gping
 alias v = nvim
 alias vi = nvim
 alias vim = nvim
-alias cheat = tldr
 alias du = dust
 alias ip = ^ip -color=auto a
 

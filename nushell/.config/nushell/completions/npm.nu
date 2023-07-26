@@ -1,8 +1,5 @@
 # autocompletions for npm
 
-export extern "npm" [
-  command?: string@"nu-complete npm"
-]
 def "nu-complete npm" [] {
   ^npm help
   |lines
@@ -13,11 +10,16 @@ def "nu-complete npm" [] {
   |split row ','
 }
 
+export extern "npm" [
+  command?: string@"nu-complete npm"
+]
+
 def "nu-complete npm run" [] {
   open ./package.json
   |get scripts
   |columns
 }
+
 export extern "npm run" [
   command?: string@"nu-complete npm run"
   --workspace(-w)
