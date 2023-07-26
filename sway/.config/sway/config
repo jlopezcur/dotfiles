@@ -75,20 +75,20 @@ bindsym $mod+Ctrl+Shift+m exec umountdrive
 # launchers
 # ------------------------------------------------------------------------------
 
-bindsym $mod+p exec wofi -i --show drun
-bindsym $mod+Shift+p exec ~/.local/bin/passwd-launcher.nu
-bindsym $mod+Shift+o exec ~/.local/bin/otp-launcher.nu
-bindsym $mod+escape exec ~/.local/bin/system-launcher.nu
-bindsym $mod+Shift+v exec ~/.local/bin/vpn-launcher.nu
-bindsym $mod+Shift+m exec ~/.local/bin/meetings-launcher.nu
-bindsym $mod+Alt+m exec ~/.local/bin/mail-launcher.nu
-bindsym $mod+Shift+b exec ~/.local/bin/bookmarks-launcher.nu
-bindsym $mod+Shift+slash exec ~/.local/bin/shortcuts-launcher.nu
-bindsym $mod+y exec ~/.local/bin/clipboard-launcher.nu
+bindsym $mod+p exec pkill wofi || wofi -i --show drun
+bindsym $mod+Shift+p exec pkill wofi || ~/.local/bin/passwd-launcher.nu
+bindsym $mod+Shift+o exec pkill wofi || ~/.local/bin/otp-launcher.nu
+bindsym $mod+escape exec pkill wofi || ~/.local/bin/system-launcher.nu
+bindsym $mod+Shift+v exec pkill wofi || ~/.local/bin/vpn-launcher.nu
+bindsym $mod+Shift+m exec pkill wofi || ~/.local/bin/meetings-launcher.nu
+bindsym $mod+Alt+m exec pkill wofi || ~/.local/bin/mail-launcher.nu
+bindsym $mod+Shift+b exec pkill wofi || ~/.local/bin/bookmarks-launcher.nu
+bindsym $mod+Shift+slash exec pkill wofi || ~/.local/bin/shortcuts-launcher.nu
+bindsym $mod+y exec pkill wofi || ~/.local/bin/clipboard-launcher.nu
 # capture launcher: screenshot, video, gif & color
-bindsym $mod+c exec ~/.local/bin/capture-launcher.nu
+bindsym $mod+c exec pkill wofi || ~/.local/bin/capture-launcher.nu
 # system maintenance tools
-bindsym $mod+Shift+s exec ~/.local/bin/maintenance-launcher.nu
+bindsym $mod+Shift+s exec pkill wofi || ~/.local/bin/maintenance-launcher.nu
 
 # scratchpads
 # ------------------------------------------------------------------------------
