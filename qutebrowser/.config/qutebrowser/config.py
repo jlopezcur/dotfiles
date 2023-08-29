@@ -1,12 +1,11 @@
 # pyright: basic, reportUndefinedVariable=false
 
-config.load_autoconfig(True)
+config.load_autoconfig()
 
 c.new_instance_open_target = 'window'
 c.downloads.position = 'bottom'
 c.spellcheck.languages = ['en-US', 'es-ES']
 c.tabs.show = 'multiple' # always, never, multiple, switching
-c.qt.force_software_rendering = 'none'
 
 c.url.searchengines = {
     "DEFAULT": "https://www.ecosia.org/search?q={}",
@@ -53,7 +52,7 @@ c.content.blocking.enabled = True
 
 # Dark mode
 
-# c.colors.webpage.preferred_color_scheme = 'dark'
+c.colors.webpage.preferred_color_scheme = 'dark'
 # c.colors.webpage.darkmode.enabled = True
 # c.colors.webpage.darkmode.algorithm = "lightness-cielab"
 # c.colors.webpage.darkmode.threshold.text = 150
@@ -61,4 +60,3 @@ c.content.blocking.enabled = True
 # c.colors.webpage.darkmode.policy.images = 'always'
 # c.colors.webpage.darkmode.grayscale.images = 0.35
 # config.set("colors.webpage.bg", "#212429")
-
