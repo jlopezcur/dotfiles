@@ -2,9 +2,9 @@
 
 # Font
 
-c.fonts.statusbar = '11pt "SauceCodePro Nerd Font"'
-c.fonts.debug_console = '11pt "SauceCodePro Nerd Font"'
-c.fonts.default_family = '12pt "SauceCodePro Nerd Font"'
+c.fonts.statusbar = '11pt "FiraCode Nerd Font"'
+c.fonts.debug_console = '11pt "FiraCode Nerd Font"'
+c.fonts.default_family = '12pt "FiraCode Nerd Font"'
 
 # gruvbox dark hard qutebrowser theme by Florian Bruhin <me@the-compiler.org>
 #
