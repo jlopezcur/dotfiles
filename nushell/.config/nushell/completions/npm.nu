@@ -2,12 +2,12 @@
 
 def "nu-complete npm" [] {
   ^npm help
-  |lines
-  |str join ' '
-  |str replace '(.*)All commands:' ''
-  |str replace 'Specify configs(.*)' ''
-  |str replace -a ' ' ''
-  |split row ','
+  | lines
+  | str join ' '
+  | str replace '(.*)All commands:' ''
+  | str replace 'Specify configs(.*)' ''
+  | str replace -a ' ' ''
+  | split row ','
 }
 
 export extern "npm" [
@@ -16,8 +16,8 @@ export extern "npm" [
 
 def "nu-complete npm run" [] {
   open ./package.json
-  |get scripts
-  |columns
+  | get scripts
+  | columns
 }
 
 export extern "npm run" [

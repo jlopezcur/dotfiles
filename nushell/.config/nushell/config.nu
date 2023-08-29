@@ -6,6 +6,7 @@ source ~/.config/nushell/completions/zathura.nu
 source ~/.config/nushell/completions/cargo.nu
 source ~/.config/nushell/completions/rustup.nu
 source ~/.config/nushell/completions/paru.nu
+source ~/.config/nushell/completions/unzip.nu
 
 # for more information on themes see
 # https://www.nushell.sh/book/coloring_and_theming.html

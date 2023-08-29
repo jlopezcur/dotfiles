@@ -3,7 +3,7 @@
 def "nu-complete zathura" [] {
   ls
   | filter {|x| ($x.name | split row "." | last) in ['pdf', 'epub', 'cbz', 'cbr']}
-  | get name
+  | each {|x| $"`($x.name)`"}
 }
 
 export extern "zathura" [

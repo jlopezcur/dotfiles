@@ -14,8 +14,8 @@ export extern "paru" [
 
 def "nu-complete paru -R" [] {
   ^paru -Qe
-  |lines
-  |str replace ' (.*)' ''
+  | lines
+  | str replace ' (.*)' ''
 }
 
 export extern "paru -R" [
