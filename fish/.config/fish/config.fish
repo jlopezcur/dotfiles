@@ -61,5 +61,3 @@ if status is-interactive
   # the fuck
   thefuck --alias | source
 end
-
-status --is-login; and status --is-interactive; and exec byobu-launcher
