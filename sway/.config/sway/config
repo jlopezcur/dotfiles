@@ -103,6 +103,10 @@ bindsym $mod+t exec ~/.local/bin/open-btop.nu
 # win modifications
 # ------------------------------------------------------------------------------
 
+# general
+for_window [window_type="dialog"] floating enable
+for_window [window_role="dialog"] floating enable
+
 # Open scrcpy in floating mode on the right side of the screen
 for_window [app_id="^scrcpy$"] floating enable, sticky enable, resize set 508 px 900 px, border pixel 10, move position 70 ppt 4 ppt
 
