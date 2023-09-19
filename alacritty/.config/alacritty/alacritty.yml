@@ -16,9 +16,9 @@ window:
   #
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
-  dimensions:
-    columns: 0
-    lines: 0
+  # dimensions:
+  #   columns: 0
+  #   lines: 0
 
   # Window position (changes require restart)
   #
@@ -188,7 +188,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Block
+  # style: Block
 
   # Vi mode cursor style
   #
@@ -216,7 +216,8 @@ cursor:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /bin/nu
+#   program: /bin/nu
+  program: /usr/bin/tmux
 #  args:
 #    - --login
 # Startup directory
