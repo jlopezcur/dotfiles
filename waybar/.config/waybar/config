@@ -3,7 +3,7 @@
   "margin": "0px",
   "position": "top",
   "modules-left": ["sway/mode", "sway/workspaces", "custom/cmus"],
-  "modules-center": ["custom/calendar", "custom/times"],
+  "modules-center": ["clock", "custom/times"],
   "modules-right": ["memory", "cpu", "temperature", "disk", "custom/videorec", "custom/gifrec", "custom/vpn", "network", "pulseaudio", "bluetooth", "idle_inhibitor", "battery"],
 
   "sway/workspaces": {
@@ -13,13 +13,32 @@
 
   "sway/mode": { "format": "󰩨", "max-length": 50 },
 
-  "custom/calendar": {
-    "format": "{}",
-    "on-click": "alacritty --title Calcurse -e calcurse",
-    "exec": "$HOME/.config/waybar/modules/cal.py",
-    "interval": 3600,
-    "return-type": "json"
+  "clock": {
+    "format": "{:(%a) %d %B %Y}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
   },
+
   "custom/times": {
     "format": "{}",
     "exec": "$HOME/.config/waybar/modules/times.py",
