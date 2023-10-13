@@ -47,6 +47,7 @@ $env.EDITOR = "nvim"
 $env.VISUAL = "nvim"
 $env.VISUAL = "nvim"
 $env.BROWSER = "thorium-browser"
+$env.XDG_CURRENT_DESKTOP = "sway"
 
 $env.LANG = "en_US.utf8"
 
