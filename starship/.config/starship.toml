@@ -8,3 +8,7 @@ error_symbol = "[󰚌](bold red)"     # The "success_symbol" segment is being se
 
 [cmd_duration]
 min_time = 5000
+
+[directory]
+truncation_length = 8
+truncation_symbol = '…/'
