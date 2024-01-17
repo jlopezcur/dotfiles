@@ -121,9 +121,6 @@ $env.config = {
   rm: {
     always_trash: false
   }
-  cd: {
-    abbreviations: false # set to true to allow you to do things like cd s/o/f and nushell expand it to cd some/other/folder
-  }
   table: {
     mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
     index_mode: always
@@ -135,7 +132,7 @@ $env.config = {
   }
   history: {
     max_size: 10000 # Session has to be reloaded for this to take effect
-    sync_on_enter: true # Enable to share history between multiple sessions, else you have to close the session to write history to file
+    sync_on_enter: false # Enable to share history between multiple sessions, else you have to close the session to write history to file
     file_format: "plaintext" # "sqlite" or "plaintext"
   }
   completions: {
@@ -409,5 +406,17 @@ alias vi = nvim
 alias vim = nvim
 alias du = dust
 alias ip = ^ip -color=auto a
+
+alias ga = git add
+alias gc = git commit -v
+alias gd = git diff
+alias gst = git status
+alias gco = git checkout
+alias gcm = git checkout master
+alias gcd = git checkout develop
+alias gb = git branch
+alias gbr = git branch --remote
+alias gup = git pull
+alias gp = git push
 
 source /home/jlopez/.config/broot/launcher/nushell/br
