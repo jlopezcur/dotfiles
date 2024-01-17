@@ -6,7 +6,7 @@
 let image_dir = $"($env.HOME)/images/"
 
 def get_prefix [] {
-  return (date now | date format "%Y-%m-%d-%Hh%Mm%Ss_")
+  return (date now | format date "%Y-%m-%d-%Hh%Mm%Ss_")
 }
 
 let options = "📷 Screen,🎥 Video,🖼️ Gif,💧 Color"
