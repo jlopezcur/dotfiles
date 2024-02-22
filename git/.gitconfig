@@ -1,6 +1,7 @@
 [user]
   name = Javier López Úbeda
   email = jlopezcur@gmail.com
+  signingkey = /home/jlopez/.ssh/id_rsa.pub
 
 [pull]
   rebase = true
@@ -42,3 +43,7 @@
 
 [diff]
   colorMoved = default
+[gpg]
+  format = ssh
+[commit]
+  gpgsign = true
