@@ -42,6 +42,7 @@ window#waybar.top {
 #memory,
 #cpu,
 #disk,
+#mpd,
 #custom-reminders,
 #custom-updates,
 #custom-updates-aur,

@@ -2,7 +2,7 @@
 [{
   "margin": "0px",
   "position": "top",
-  "modules-left": ["sway/mode", "sway/workspaces", "custom/cmus"],
+  "modules-left": ["sway/mode", "sway/workspaces", "mpd"],
   "modules-center": ["clock", "custom/times"],
   "modules-right": ["memory", "cpu", "temperature", "disk", "custom/videorec", "custom/gifrec", "custom/vpn", "network", "pulseaudio", "bluetooth", "idle_inhibitor", "battery"],
 
@@ -158,14 +158,29 @@
     "states": { "warning": 80, "critical": 90 }
   },
 
-  "custom/cmus": {
-    "format": "♪ {}",
-    "max-length": 75,
+  "mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title}",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "",
     "interval": 10,
-    "exec": "cmus-remote -C \"format_print '%a - %t'\"",
-    "exec-if": "pgrep cmus",
-    "on-click": "cmus-remote -u",
-    "signal": 9,
-    "escape": true
+    "consume-icons": {
+      "on": " "
+    },
+    "random-icons": {
+      "on": " "
+    },
+    "repeat-icons": {
+      "on": " "
+    },
+    "single-icons": {
+      "on": "1 "
+    },
+    "state-icons": {
+      "paused": "",
+      "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
   }
+
 }]

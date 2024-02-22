@@ -395,7 +395,6 @@ $env.config = {
 
 source ~/.config/nushell/scripts/starship.nu
 source ~/.config/nushell/scripts/zoxide.nu
-# source ~/.local/share/atuin/init.nu
 
 alias myip = curl http://ipecho.net/plain
 alias l = exa -alh --icons --git
@@ -420,3 +419,9 @@ alias gup = git pull
 alias gp = git push
 
 source /home/jlopez/.config/broot/launcher/nushell/br
+
+if ("~/.config/mpd/pid" | path exists) {
+  # Do nothing
+} else {
+  mpd
+}
