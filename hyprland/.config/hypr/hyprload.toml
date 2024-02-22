@@ -1,0 +1,4 @@
+plugins = [
+    "zakk4223/hyprNStack",
+    { local = "https://github.com/zakk4223/hyprNStack", branch = "main", name = "hyprNStack" },
+]
