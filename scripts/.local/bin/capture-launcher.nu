@@ -9,13 +9,13 @@ def get_prefix [] {
   return (date now | format date "%Y-%m-%d-%Hh%Mm%Ss_")
 }
 
-let options = "📷 Screen,🎥 Video,🖼️ Gif,💧 Color"
+let options = "Screen,Video,Gif,Color"
 let action = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p "Capture command...")
 
 if ($action | is-empty) { exit 0 }
 
 match $action {
-  "📷 Screen" => {
+  "Screen" => {
     let options = "Fullscreen,Region,Focused"
     let subaction = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p "Capture image command...")
     if ($subaction | is-empty) { exit 0 }
@@ -40,7 +40,7 @@ match $action {
       }
     }
   },
-  "🎥 Video" => {
+  "Video" => {
     let options = "Mute,Audio"
     let subaction = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p "Capture video command...")
     if ($subaction | is-empty) { exit 0 }
@@ -53,8 +53,8 @@ match $action {
       }
     }
   },
-  "🖼️ Gif" => { record-gif },
-  "💧 Color" => {
+  "Gif" => { record-gif },
+  "Color" => {
     let options = "Hex,RGB"
     let subaction = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p "Capture color command...")
     if ($subaction | is-empty) { exit 0 }
