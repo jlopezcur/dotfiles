@@ -31,7 +31,8 @@ set $up k
 set $right l
 
 # terminal emulator
-set $term alacritty
+# set $term alacritty
+set $term wezterm
 # set $term kitty
 # set $term foot
 
@@ -57,16 +58,16 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 bindsym $mod+Return exec $term
 
 # file manager
-bindsym $mod+Shift+Return exec $term --title LF -e lf
+bindsym $mod+Shift+Return exec $term -e yazi
 
 # news reader
-bindsym $mod+Ctrl+Return exec $term --title Newsboat -e newsboat
+bindsym $mod+Ctrl+Return exec $term -e newsboat
 
 # email client
-bindsym $mod+Alt+Return exec $term --title Neomutt -e neomutt
+bindsym $mod+Alt+Return exec $term -e neomutt
 
 # irc client
-bindsym $mod+Ctrl+Alt+Return exec $term --title Weechat -e weechat
+bindsym $mod+Ctrl+Alt+Return exec $term -e weechat
 
 # bindsym $mod+Ctrl+m exec mountdrive
 bindsym $mod+Ctrl+m exec ~/.config/sway/scripts/mount.sh
@@ -75,27 +76,32 @@ bindsym $mod+Ctrl+Shift+m exec umountdrive
 # launchers
 # ------------------------------------------------------------------------------
 
-bindsym $mod+p exec pkill wofi || wofi -i --show drun
-bindsym $mod+Shift+p exec pkill wofi || ~/.local/bin/passwd-launcher.nu
-bindsym $mod+Shift+o exec pkill wofi || ~/.local/bin/otp-launcher.nu
-bindsym $mod+escape exec pkill wofi || ~/.local/bin/system-launcher.nu
-bindsym $mod+Shift+v exec pkill wofi || ~/.local/bin/vpn-launcher.nu
-bindsym $mod+Shift+m exec pkill wofi || ~/.local/bin/meetings-launcher.nu
-bindsym $mod+Alt+m exec pkill wofi || ~/.local/bin/mail-launcher.nu
-bindsym $mod+Shift+b exec pkill wofi || ~/.local/bin/bookmarks-launcher.nu
-bindsym $mod+Shift+slash exec pkill wofi || ~/.local/bin/shortcuts-launcher.nu
-bindsym $mod+y exec pkill wofi || ~/.local/bin/clipboard-launcher.nu
+bindsym $mod+p exec pgrep -x fuzzel >/dev/null 2>&1 || fuzzel
+bindsym $mod+Shift+p exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/passwd-launcher.nu
+bindsym $mod+Shift+o exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/otp-launcher.nu
+bindsym $mod+escape exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/system-launcher.nu
+bindsym $mod+Shift+v exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/vpn-launcher.nu
+bindsym $mod+Shift+m exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/meetings-launcher.nu
+bindsym $mod+Alt+m exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/mail-launcher.nu
+bindsym $mod+Shift+b exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/bookmarks-launcher.nu
+bindsym $mod+Shift+slash exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/shortcuts-launcher.nu
+bindsym $mod+y exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/clipboard-launcher.nu
 # capture launcher: screenshot, video, gif & color
-bindsym $mod+c exec pkill wofi || ~/.local/bin/capture-launcher.nu
+bindsym $mod+c exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/capture-launcher.nu
 # system maintenance tools
-bindsym $mod+Shift+s exec pkill wofi || ~/.local/bin/maintenance-launcher.nu
+bindsym $mod+Shift+s exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/maintenance-launcher.nu
+
+# jarvis
+# ------------------------------------------------------------------------------
+
+bindsym $mod+Alt+j exec ~/.local/bin/jarvis.nu
 
 # scratchpads
 # ------------------------------------------------------------------------------
 
 # cmus & btop & gdu
-for_window [app_id="cmus"] move to scratchpad; [app_id="cmus"] scratchpad show; [app_id="cmus"] resize set width 1600 px height 800 px
-bindsym $mod+m exec ~/.local/bin/open-cmus.nu
+for_window [app_id="ncmpcpp"] move to scratchpad; [app_id="ncmpcpp"] scratchpad show; [app_id="ncmpcpp"] resize set width 1600 px height 800 px
+bindsym $mod+m exec ~/.local/bin/open-ncmpcpp.nu
 
 for_window [app_id="btop"] move to scratchpad; [app_id="btop"] scratchpad show; [app_id="btop"] resize set width 1600 px height 800 px
 bindsym $mod+t exec ~/.local/bin/open-btop.nu
