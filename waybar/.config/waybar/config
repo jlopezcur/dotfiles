@@ -2,8 +2,8 @@
 [{
   "margin": "0px",
   "position": "top",
-  "modules-left": ["sway/mode", "sway/workspaces", "mpd"],
-  "modules-center": ["clock", "custom/times"],
+  "modules-left": ["sway/mode", "sway/workspaces"],
+  "modules-center": ["mpd", "clock", "custom/times"],
   "modules-right": ["memory", "cpu", "temperature", "disk", "custom/videorec", "custom/gifrec", "custom/vpn", "network", "pulseaudio", "bluetooth", "idle_inhibitor", "battery"],
 
   "sway/workspaces": {
@@ -159,7 +159,7 @@
   },
 
   "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title}",
+    "format": "{stateIcon}",
     "format-disconnected": "Disconnected ",
     "format-stopped": "",
     "interval": 10,
@@ -179,7 +179,7 @@
       "paused": "",
       "playing": ""
     },
-    "tooltip-format": "MPD (connected)",
+    "tooltip-format": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title}",
     "tooltip-format-disconnected": "MPD (disconnected)"
   }
 
