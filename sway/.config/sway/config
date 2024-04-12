@@ -76,7 +76,7 @@ bindsym $mod+Ctrl+Shift+m exec umountdrive
 # launchers
 # ------------------------------------------------------------------------------
 
-bindsym $mod+p exec pgrep -x fuzzel >/dev/null 2>&1 || fuzzel
+bindsym $mod+p exec pgrep -x wofi >/dev/null 2>&1 || wofi -i --show drun
 bindsym $mod+Shift+p exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/passwd-launcher.nu
 bindsym $mod+Shift+o exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/otp-launcher.nu
 bindsym $mod+escape exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/system-launcher.nu
