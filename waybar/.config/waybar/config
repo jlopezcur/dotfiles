@@ -14,7 +14,7 @@
   "sway/mode": { "format": "󰩨", "max-length": 50 },
 
   "clock": {
-    "format": "{:(%a) %d %B %Y}",
+    "format": "{:%a, %d %b %Y}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
@@ -83,7 +83,7 @@
     "tooltip": true,
     "format": "{iframe}",
     "format-wifi": "{icon} {signalStrength}%",
-    "format-ethernet": "{icon} {ifname}",
+    "format-ethernet": "{icon}",
     "format-disconnected": "",
     "format-icons": { "wifi": "", "ethernet": "" },
     "tooltip-format-wifi": "Inrterface: {ifname}\nIP: {ipaddr}/{cidr}\nSSID: {essid}\nFreq: {frequency} MHz\nStrength: {signaldBm} dBm ({signalStrength}%)\nUp: {bandwidthUpBits}\nDown: {bandwidthDownBits}",
@@ -176,8 +176,8 @@
       "on": "1 "
     },
     "state-icons": {
-      "paused": "",
-      "playing": ""
+      "paused": "",
+      "playing": ""
     },
     "tooltip-format": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title}",
     "tooltip-format-disconnected": "MPD (disconnected)"
