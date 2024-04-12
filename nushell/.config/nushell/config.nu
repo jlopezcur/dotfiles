@@ -419,9 +419,3 @@ alias gup = git pull
 alias gp = git push
 
 source /home/jlopez/.config/broot/launcher/nushell/br
-
-if ("~/.config/mpd/pid" | path exists) {
-  # Do nothing
-} else {
-  mpd
-}
