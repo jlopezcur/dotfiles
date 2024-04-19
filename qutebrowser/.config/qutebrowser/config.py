@@ -6,6 +6,7 @@ c.new_instance_open_target = 'window'
 c.downloads.position = 'bottom'
 c.spellcheck.languages = ['en-US', 'es-ES']
 c.tabs.show = 'multiple' # always, never, multiple, switching
+c.editor.command = ['wezterm','-e','nvim','{file}','-c','normal {line}G{column0}l']
 
 c.url.searchengines = {
     "DEFAULT": "https://www.ecosia.org/search?q={}",
