@@ -1,8 +1,8 @@
 # Nushell Environment Config File
 
-$env.PROMPT_INDICATOR_VI_INSERT = { || "" }
-$env.PROMPT_INDICATOR_VI_NORMAL = { || "N " }
-$env.PROMPT_MULTILINE_INDICATOR = { || "::: " }
+$env.PROMPT_INDICATOR_VI_INSERT = ""
+$env.PROMPT_INDICATOR_VI_NORMAL = "N "
+$env.PROMPT_MULTILINE_INDICATOR = "::: "
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
