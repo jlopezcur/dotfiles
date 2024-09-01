@@ -12,5 +12,5 @@ return {
   },
   hide_mouse_cursor_when_typing = true,
   window_background_opacity = 0.95,
-  default_prog = { '/usr/bin/zellij' },
+  -- default_prog = { '/usr/bin/zellij' },
 }

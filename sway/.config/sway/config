@@ -32,8 +32,8 @@ set $right l
 
 # terminal emulator
 # set $term alacritty
-set $term wezterm
-# set $term kitty
+# set $term wezterm
+set $term kitty
 # set $term foot
 
 # startup
