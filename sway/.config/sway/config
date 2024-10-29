@@ -100,11 +100,13 @@ bindsym $mod+Alt+j exec ~/.local/bin/jarvis.nu
 # ------------------------------------------------------------------------------
 
 # cmus & btop & gdu
-for_window [app_id="ncmpcpp"] move to scratchpad; [app_id="ncmpcpp"] scratchpad show; [app_id="ncmpcpp"] resize set width 1600 px height 800 px
-bindsym $mod+m exec ~/.local/bin/open-ncmpcpp.nu
+# for_window [app_id="ncmpcpp"] move to scratchpad; [app_id="ncmpcpp"] scratchpad show; [app_id="ncmpcpp"] resize set width 1600 px height 800 px
+# bindsym $mod+m exec ~/.local/bin/open-ncmpcpp.nu
+bindsym $mod+m exec $term ncmpcpp
 
-for_window [app_id="btop"] move to scratchpad; [app_id="btop"] scratchpad show; [app_id="btop"] resize set width 1600 px height 800 px
-bindsym $mod+t exec ~/.local/bin/open-btop.nu
+# for_window [app_id="btop"] move to scratchpad; [app_id="btop"] scratchpad show; [app_id="btop"] resize set width 1600 px height 800 px
+# bindsym $mod+t exec ~/.local/bin/open-btop.nu
+bindsym $mod+t exec $term -e btop
 
 # win modifications
 # ------------------------------------------------------------------------------
