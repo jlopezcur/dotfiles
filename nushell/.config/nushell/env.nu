@@ -47,7 +47,9 @@ $env.EDITOR = "nvim"
 $env.VISUAL = "nvim"
 $env.VISUAL = "nvim"
 $env.BROWSER = "thorium-browser"
-$env.XDG_CURRENT_DESKTOP = "sway"
+# $env.XDG_CURRENT_DESKTOP = "sway"
 
 $env.LANG = "en_US.utf8"
+$env.ANDROID_HOME = $"($env.HOME)/Android/Sdk"
+$env.NDK_HOME = $"($env.ANDROID_HOME)/ndk/28.0.12433566"
 
