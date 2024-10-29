@@ -58,16 +58,15 @@ match $action {
     let options = "Hex,RGB"
     let subaction = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p "Capture color command...")
     if ($subaction | is-empty) { exit 0 }
-    let formats = (grim -g (slurp -p) -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | split column " ")
     match $subaction {
       "Hex" => {
-        let color = ($formats | get column4 | first)
+        let color = (hyprpicker)
         wl-copy -p $color
         wl-copy $color
         notify-send "Hexadecimal copied!" $color -u normal -i color
       },
       "RGB" => {
-        let color = $"rgb($formats | get column2 | first)"
+        let color = (hyprpicker --format=rgb)
         wl-copy -p $color
         wl-copy $color
         notify-send "RGB copied!" $color -u normal -i color

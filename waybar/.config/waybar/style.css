@@ -26,7 +26,7 @@ window#waybar.top {
   background: transparent;
   color: #999;
 }
-#workspaces button.focused {
+#workspaces button.active {
   color: #ccc;
   font-weight: 900;
 }

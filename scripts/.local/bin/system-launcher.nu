@@ -8,8 +8,8 @@ let action = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p
 if ($action | is-empty) { exit 0 }
 
 match $action {
-  "Lock" => { swaylock },
-  "Logout" => { swaymsg exit },
+  "Lock" => { hyprlock },
+  "Logout" => { hyprctl exit },
   "Hibernate" => { systemctl hibernate },
   "Reboot" => { systemctl reboot },
   "Poweroff" => { systemctl poweroff },
