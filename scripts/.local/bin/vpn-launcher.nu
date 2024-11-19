@@ -9,7 +9,7 @@ if ($vpn | is-empty) { exit 0 }
 
 match $vpn {
   "Check" => {
-    alacritty -e vpn-check.nu
+    kitty -e vpn-check.nu
     exit 0
   },
   "Stop all!" => {
