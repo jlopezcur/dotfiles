@@ -71,8 +71,8 @@ mods = "Control|Shift"
 [selection]
 save_to_clipboard = true
 
-[shell]
-program = "/usr/bin/tmux"
+[terminal.shell]
+program = "/usr/bin/nu"
 
 [window]
 decorations = "none"
@@ -89,3 +89,5 @@ y = 0
 [window.position]
 x = 0
 y = 0
+
+[terminal]
