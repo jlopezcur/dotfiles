@@ -276,7 +276,7 @@ c.colors.statusbar.url.warn.fg = bright_purple
 ### tabs
 
 # Background color of the tab bar.
-c.colors.tabs.bar.bg = bg0
+c.colors.tabs.bar.bg = 'rgba(0, 0, 0, 255)'
 
 # Color gradient start for the tab indicator.
 c.colors.tabs.indicator.start = bright_blue
@@ -291,25 +291,25 @@ c.colors.tabs.indicator.error = bright_red
 c.colors.tabs.odd.fg = fg2
 
 # Background color of unselected odd tabs.
-c.colors.tabs.odd.bg = bg2
+c.colors.tabs.odd.bg = 'rgba(0, 0, 0, 0)'
 
 # Foreground color of unselected even tabs.
 c.colors.tabs.even.fg = c.colors.tabs.odd.fg
 
 # Background color of unselected even tabs.
-c.colors.tabs.even.bg = bg3
+c.colors.tabs.even.bg = 'rgba(0, 0, 0, 0)'
 
 # Foreground color of selected odd tabs.
-c.colors.tabs.selected.odd.fg = fg2
+c.colors.tabs.selected.odd.fg = 'rgba(0, 0, 0, 255)'
 
 # Background color of selected odd tabs.
-c.colors.tabs.selected.odd.bg = bg0
+c.colors.tabs.selected.odd.bg = 'rgba(255, 255, 255, 255)'
 
 # Foreground color of selected even tabs.
-c.colors.tabs.selected.even.fg = c.colors.tabs.selected.odd.fg
+c.colors.tabs.selected.even.fg = 'rgba(0, 0, 0, 255)'
 
 # Background color of selected even tabs.
-c.colors.tabs.selected.even.bg = bg0
+c.colors.tabs.selected.even.bg = 'rgba(255, 255, 255, 255)'
 
 # Background color of pinned unselected even tabs.
 c.colors.tabs.pinned.even.bg = bright_green
