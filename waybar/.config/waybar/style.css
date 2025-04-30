@@ -9,13 +9,13 @@
 
 window#waybar {
   color: #999;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 1);
 }
 window#waybar.top {
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.8) 100%
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
   );
 }
 
