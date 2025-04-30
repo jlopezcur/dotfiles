@@ -3,7 +3,8 @@
 # Requirements: wofi & vpns file
 # vpns file is a list of valid VPNs session name, each name on one line
 
-let vpn = (cat ~/.config/vpns | append "Check\n" | append "Stop all!" | str join "" | wofi -i --show dmenu -p "VPN Selection...")
+let entries = (openvpn3 configs-list --json | jq '.[] | .name' -r)
+let vpn = ($entries | append "\nCheck\nStop all!" | str join "" | wofi -i --show dmenu -p "VPN Selection...")
 
 if ($vpn | is-empty) { exit 0 }
 
