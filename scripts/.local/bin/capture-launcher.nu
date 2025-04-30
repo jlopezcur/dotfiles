@@ -11,12 +11,14 @@ def get_prefix [] {
 
 let options = "Screen,Video,Gif,Color"
 let action = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p "Capture command...")
+# let action = ($options | split row "," | str join "\n" | walker --modules dmenu -p "Capture command...")
+# notify-send "Action" $"the selected action is '($action)'"
 
 if ($action | is-empty) { exit 0 }
 
 match $action {
   "Screen" => {
-    let options = "Fullscreen,Region,Focused"
+    let options = "Fullscreen,Fullscreen with annotations,Region,Region with annotations,Focused"
     let subaction = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p "Capture image command...")
     if ($subaction | is-empty) { exit 0 }
     let filename = $"(get_prefix)screenshot.png"
@@ -25,9 +27,17 @@ match $action {
         grim $"($image_dir)/pic-full-($filename)"
         notify-send "Screenshot" $"Saved screenshot on '($image_dir)($filename)'"
       },
+      "Fullscreen with annotations" => {
+        grim -g (slurp -o) -t ppm - | satty --filename - --fullscreen --output-filename $"($image_dir)/pic-full-annotations-($filename)"
+        notify-send "Screenshot" $"Saved screenshot on '($image_dir)pic-full-annotations($filename)'"
+      },
       "Region" => {
         grim -g (slurp) $"($image_dir)/pic-selected-($filename)"
         notify-send "Screenshot" $"Saved screenshot on '($image_dir)($filename)'"
+      },
+      "Region with annotations" => {
+        grim -g (slurp -o -c '##ff0000ff') -t ppm - | satty --filename - --fullscreen --output-filename $"($image_dir)/pic-region-annotations-($filename)"
+        notify-send "Screenshot" $"Saved screenshot on '($image_dir)pic-region-annotations($filename)'"
       },
       "Focused" => {
         let geometry = (swaymsg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(."focused" and .pid) | "\(.rect.x),\(.rect.y) \(.rect.width)x\(.rect.height)"')
