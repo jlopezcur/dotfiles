@@ -1,7 +1,8 @@
-theme = "gruvbox"
+theme = "tokyonight"
 
 [editor]
 line-number = "relative"
+end-of-line-diagnostics = "hint"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -10,3 +11,6 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
