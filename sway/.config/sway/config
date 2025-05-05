@@ -1,22 +1,4 @@
-#  _____________
-# < sway/config >
-#  -------------
-#       \                    / \  //\
-#        \    |\___/|      /   \//  \\
-#             /0  0  \__  /    //  | \ \
-#            /     /  \/_/    //   |  \  \
-#            @_^_@'/   \/_   //    |   \   \
-#            //_^_/     \/_ //     |    \    \
-#         ( //) |        \///      |     \     \
-#       ( / /) _|_ /   )  //       |      \     _\
-#     ( // /) '/,_ _ _/  ( ; -.    |    _ _\.-~        .-~~~^-.
-#   (( / / )) ,-{        _      `-.|.-~-.           .~         `.
-#  (( // / ))  '/\      /                 ~-. _ .-~      .-~^-.  \
-#  (( /// ))      `.   {            }                   /      \  \
-#   (( / ))     .----~-.\        \-'                 .~         \  `. \^-.
-#              ///.----..>        \             _ -~             `.  ^-`  ^-_
-#                ///-._ _ _ _ _ _ _}^ - - - - ~                     ~-- ,.-~
-#                                                                   /.-~
+# vim: ft=swayconfig
 
 # variables
 # ------------------------------------------------------------------------------
@@ -45,6 +27,7 @@ exec wl-paste --watch cliphist store
 
 # Mako notification manager
 exec mako
+exec walker --gapplication-service
 
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
@@ -76,7 +59,8 @@ bindsym $mod+Ctrl+Shift+m exec umountdrive
 # launchers
 # ------------------------------------------------------------------------------
 
-bindsym $mod+p exec pgrep -x wofi >/dev/null 2>&1 || wofi -i --show drun
+bindsym $mod+p exec walker --modules applications
+# bindsym $mod+p exec pgrep -x wofi >/dev/null 2>&1 || wofi -i --show drun
 bindsym $mod+Shift+p exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/passwd-launcher.nu
 bindsym $mod+Shift+o exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/otp-launcher.nu
 bindsym $mod+escape exec pgrep -x wofi >/dev/null 2>&1 || ~/.local/bin/system-launcher.nu
@@ -204,6 +188,8 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # layout
 # ------------------------------------------------------------------------------
 
+workspace_layout tabbed
+
 # You can "split" the current object of your focus with
 # $mod+b or $mod+v, for horizontal and vertical splits
 # respectively.
@@ -285,5 +271,10 @@ bar {
 # ------------------------------------------------------------------------------
 
 include /etc/sway/config.d/*
-include ~/.config/sway/config.d/*
+
+include ~/.config/sway/output.conf
+include ~/.config/sway/input.conf
+include ~/.config/sway/fn.conf
+include ~/.config/sway/idle.conf
+include ~/.config/sway/style.conf
 

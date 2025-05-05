@@ -26,10 +26,12 @@ window#waybar.top {
   background: transparent;
   color: #999;
 }
-#workspaces button.active {
+
+#workspaces button.focused {
   color: #ccc;
   font-weight: 900;
 }
+
 #workspaces button.urgent {
   background: rgba(214, 93, 14, 0.7);
 }

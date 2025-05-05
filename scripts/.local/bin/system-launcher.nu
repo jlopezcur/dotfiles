@@ -8,8 +8,10 @@ let action = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p
 if ($action | is-empty) { exit 0 }
 
 match $action {
-  "Lock" => { hyprlock },
-  "Logout" => { hyprctl exit },
+  # "Lock" => { hyprlock },
+  "Lock" => { swaylock },
+  # "Logout" => { hyprctl exit },
+  "Logout" => { swaynag -t warning -m 'Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit' },
   "Hibernate" => { systemctl hibernate },
   "Reboot" => { systemctl reboot },
   "Poweroff" => { systemctl poweroff },
