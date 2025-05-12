@@ -25,6 +25,7 @@ alias cat = bat
 alias ping = gping
 alias v = nvim
 alias h = helix
+alias p = paru
 alias vi = nvim
 alias vim = nvim
 alias du = dust
