@@ -258,3 +258,7 @@ include ~/.config/sway/idle.conf
 include ~/.config/sway/style.conf
 include ~/.config/sway/launchers.conf
 
+# This import is needed for xdg-desktop-portal-xdg
+# https://wiki.archlinux.org/title/Sway#Configuration
+include /etc/sway/config.d/*
+
