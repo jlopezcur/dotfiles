@@ -2,16 +2,6 @@
 
 Pending work on this repo, kept across sessions.
 
-## Scripts living outside the repo
-
-`~/scripts/` holds two live scripts that are not versioned anywhere, and
-`launchers.conf` binds one of them.
-
-- [ ] Move `wofi-workspaces.nu` and `sway-setup-work.nu` into the repo, or
-      decide they stay out on purpose
-- [ ] `wofi-workspaces.nu` was migrated to fuzzel in place, so the name no
-      longer matches what it does
-
 ## Sway script cleanup
 
 `sway/.config/sway/scripts/` holds six orphans. Only `mount.sh` is still
