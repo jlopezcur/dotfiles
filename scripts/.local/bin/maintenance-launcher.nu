@@ -1,6 +1,6 @@
 #!/usr/bin/env nu
 
-# Requirements: wofi
+# Requirements: fuzzel
 
 let commands = {
   "Security": { || maintenance-security-launcher.nu },
@@ -9,7 +9,7 @@ let commands = {
   "Information": { || maintenance-info-launcher.nu },
 }
 
-let text = ($commands | columns | str join "\n" | wofi -i --show dmenu -p "Command...")
+let text = ($commands | columns | str join "\n" | fuzzel --dmenu -p "Command...")
 
 if ($text | is-empty) { exit 0 }
 

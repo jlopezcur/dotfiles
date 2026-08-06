@@ -1,9 +1,9 @@
 #!/usr/bin/env nu
 
-# Requirements: wofi
+# Requirements: fuzzel
 
 let options = "Lock,Logout,Hibernate,Reboot,Poweroff"
-let action = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p "System command...")
+let action = ($options | split row "," | str join "\n" | fuzzel --dmenu -p "System command...")
 
 if ($action | is-empty) { exit 0 }
 

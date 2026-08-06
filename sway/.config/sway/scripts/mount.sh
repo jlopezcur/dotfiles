@@ -5,11 +5,11 @@
 mountable=$(lsblk -lp | rg "part $" | awk '{print $1, "(" $4 ")"}')
 [ "$mountable" = "" ] && exit 1
 
-chosen=$(echo "${mountable}" | wofi -i --show dmenu -p "Mount which drive?") || exit 0
+chosen=$(echo "${mountable}" | fuzzel --dmenu -p "Mount which drive?") || exit 0
 # sudo mount "$chosen" && exit 0
 
 dirs=$(find /mnt /media /mount /home -type d -maxdepth 3 2>/dev/null)
-mountpoint=$(echo "${dirs}" | wofi -i --show dmenu -p "Mount point?")
+mountpoint=$(echo "${dirs}" | fuzzel --dmenu -p "Mount point?")
 [ "$mountpoint" = "" ] && exit 1
 
 if [ ! -d "$mountpoint" ]; then

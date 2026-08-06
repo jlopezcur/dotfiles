@@ -1,8 +1,8 @@
 #!/usr/bin/env nu
 
-# Requirements: wofi
+# Requirements: fuzzel
 
-let key = (gopass ls -f | rg otp | wofi -i --show dmenu -p "OTP...")
+let key = (gopass ls -f | rg otp | fuzzel --dmenu -p "OTP...")
 
 if (not ($key | is-empty)) {
   ^gopass otp -c $key

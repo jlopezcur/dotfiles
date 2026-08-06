@@ -1,6 +1,6 @@
 #!/usr/bin/env nu
 
-# Requirements: thorium-browser & wofi & meetings file
+# Requirements: thorium-browser & fuzzel & meetings file
 # Meetings file is located at ~/.config/meetings
 # Each line is a meeting, has two columns separated by comma: the name and the
 # link: f.e:
@@ -8,7 +8,7 @@
 # Second meetings,http://example2...
 
 let meetings = (cat ~/.config/meetings | lines | parse '{name},{link}')
-let meet_name = ($meetings | get name | str join "\n" | wofi -i --show dmenu -p "Select meet...")
+let meet_name = ($meetings | get name | str join "\n" | fuzzel --dmenu -p "Select meet...")
 
 if ($meet_name | is-empty) { exit 0 }
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env nu
 
-# Requirements: cliphist & wofi & wl-clipboard
+# Requirements: cliphist & fuzzel & wl-clipboard
 
-let entry = (cliphist list | wofi -i --show dmenu --width 800 -p "Clipboard...")
+let entry = (cliphist list | fuzzel --dmenu -w 100 -p "Clipboard...")
 
 if ($entry | is-empty) { exit 0 }
 

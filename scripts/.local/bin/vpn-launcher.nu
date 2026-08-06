@@ -1,10 +1,10 @@
 #!/usr/bin/env nu
 
-# Requirements: wofi & vpns file
+# Requirements: fuzzel & vpns file
 # vpns file is a list of valid VPNs session name, each name on one line
 
 let entries = (openvpn3 configs-list --json | jq '.[] | .name' -r)
-let vpn = ($entries | append "\nCheck\nStop all!" | str join "" | wofi -i --show dmenu -p "VPN Selection...")
+let vpn = ($entries | append "\nCheck\nStop all!" | str join "" | fuzzel --dmenu -p "VPN Selection...")
 
 if ($vpn | is-empty) { exit 0 }
 
@@ -25,7 +25,7 @@ match $vpn {
 }
 
 let options = "Start,Pause,Resume,Restart,Stop"
-let action = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p "VPN Action...")
+let action = ($options | split row "," | str join "\n" | fuzzel --dmenu -p "VPN Action...")
 
 if ($action | is-empty) { exit 0 }
 

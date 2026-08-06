@@ -1,8 +1,8 @@
 #!/usr/bin/env nu
 
-# Requirements: gopass & wofi
+# Requirements: gopass & fuzzel
 
-let key = (gopass ls -f | wofi -i --show dmenu -p 'Passwords...')
+let key = (gopass ls -f | fuzzel --dmenu -p 'Passwords...')
 
 if (not ($key | is-empty)) {
   gopass -c $key

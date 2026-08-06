@@ -1,7 +1,7 @@
 #!/usr/bin/env nu
 
 # Partialy based on: https://github.com/mhdzli/dotfiles/blob/master/src/.local/bin/wayrecord
-# Requirements: wofi
+# Requirements: fuzzel
 
 let image_dir = $"($env.HOME)/images/"
 
@@ -10,7 +10,7 @@ def get_prefix [] {
 }
 
 let options = "Screen,Video,Gif,Color"
-let action = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p "Capture command...")
+let action = ($options | split row "," | str join "\n" | fuzzel --dmenu -p "Capture command...")
 # let action = ($options | split row "," | str join "\n" | walker --modules dmenu -p "Capture command...")
 # notify-send "Action" $"the selected action is '($action)'"
 
@@ -19,7 +19,7 @@ if ($action | is-empty) { exit 0 }
 match $action {
   "Screen" => {
     let options = "Fullscreen,Fullscreen with annotations,Region,Region with annotations,Focused"
-    let subaction = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p "Capture image command...")
+    let subaction = ($options | split row "," | str join "\n" | fuzzel --dmenu -p "Capture image command...")
     if ($subaction | is-empty) { exit 0 }
     let filename = $"(get_prefix)screenshot.png"
     match $subaction {
@@ -52,7 +52,7 @@ match $action {
   },
   "Video" => {
     let options = "Mute,Audio"
-    let subaction = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p "Capture video command...")
+    let subaction = ($options | split row "," | str join "\n" | fuzzel --dmenu -p "Capture video command...")
     if ($subaction | is-empty) { exit 0 }
     match $subaction {
       "Mute" => { record-screen },
@@ -66,7 +66,7 @@ match $action {
   "Gif" => { record-gif },
   "Color" => {
     let options = "Hex,RGB"
-    let subaction = ($options | split row "," | str join "\n" | wofi -i --show dmenu -p "Capture color command...")
+    let subaction = ($options | split row "," | str join "\n" | fuzzel --dmenu -p "Capture color command...")
     if ($subaction | is-empty) { exit 0 }
     match $subaction {
       "Hex" => {

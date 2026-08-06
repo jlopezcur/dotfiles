@@ -1,6 +1,6 @@
 #!/usr/bin/env nu
 
-# Requirements: wofi & mbsync & accounts file
+# Requirements: fuzzel & mbsync & accounts file
 # Accounts file is located at ~/.config/mail_accounts
 # Each line is an account, has two columns separated by comma: the email and the
 # account: f.e:
@@ -8,7 +8,7 @@
 # second.example@gmail.com,second
 
 let accounts = (cat ~/.config/mail_accounts | lines | parse '{email},{account}')
-let account_name = ($accounts | get email | str join "\n" | wofi -i --show dmenu -p "Sync account...")
+let account_name = ($accounts | get email | str join "\n" | fuzzel --dmenu -p "Sync account...")
 
 if ($account_name | is-empty) { exit 0 }
 
