@@ -1,0 +1,89 @@
+[Default Applications]
+x-scheme-handler/mailto=thorium-browser-unstable.desktop
+x-scheme-handler/webcal=thorium-browser-unstable.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
+text/html=thorium-browser.desktop
+x-scheme-handler/http=thorium-browser.desktop
+x-scheme-handler/https=thorium-browser.desktop
+x-scheme-handler/about=thorium-browser-unstable.desktop
+x-scheme-handler/unknown=thorium-browser-unstable.desktop
+application/xhtml+xml=thorium-browser.desktop
+x-scheme-handler/prusaslicer=PrusaSlicerURLProtocol.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
+x-scheme-handler/etcher=balenaEtcher.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+
+# Documents
+application/pdf=zathura.desktop
+application/kml=gxpsee.desktop
+model/stl=orca-slicer.desktop
+
+# Image MIME types
+image/bmp=sxiv.desktop
+image/gif=sxiv.desktop
+image/jpeg=sxiv.desktop
+image/jpg=sxiv.desktop
+image/png=sxiv.desktop
+image/svg+xml=sxiv.desktop
+image/svg+xml-compressed=sxiv.desktop
+image/tiff=sxiv.desktop
+image/webp=sxiv.desktop
+image/x-bmp=sxiv.desktop
+image/x-bitmap=sxiv.desktop
+image/x-icon=sxiv.desktop
+image/x-pcx=sxiv.desktop
+image/x-png=sxiv.desktop
+image/x-portable-anymap=sxiv.desktop
+image/x-portable-bitmap=sxiv.desktop
+image/x-portable-graymap=sxiv.desktop
+image/x-portable-pixmap=sxiv.desktop
+image/x-tga=sxiv.desktop
+image/x-xbitmap=sxiv.desktop
+image/x-xpixmap=sxiv.desktop
+image/x-xwindowdump=sxiv.desktop
+image/x-psd=sxiv.desktop        # Photoshop
+image/x-xcf=sxiv.desktop         # GIMP
+image/heic=sxiv.desktop
+image/heif=sxiv.desktop
+image/avif=sxiv.desktop
+
+# Audio MIME types
+audio/mpeg=mpv.desktop
+audio/ogg=mpv.desktop
+audio/wav=mpv.desktop
+audio/x-flac=mpv.desktop
+audio/x-m4a=mpv.desktop
+audio/x-matroska=mpv.desktop
+audio/x-ms-wma=mpv.desktop
+audio/x-opus+ogg=mpv.desktop
+audio/x-speex+ogg=mpv.desktop
+audio/x-vorbis+ogg=mpv.desktop
+audio/x-wav=mpv.desktop
+audio/ac3=mpv.desktop
+audio/basic=mpv.desktop
+
+# Video MIME types
+video/mp4=mpv.desktop
+video/mpeg=mpv.desktop
+video/ogg=mpv.desktop
+video/quicktime=mpv.desktop
+video/webm=mpv.desktop
+video/x-avi=mpv.desktop
+video/x-flv=mpv.desktop
+video/x-matroska=mpv.desktop
+video/x-mkv=mpv.desktop
+video/x-ms-asf=mpv.desktop
+video/x-msvideo=mpv.desktop
+video/x-m4v=mpv.desktop
+video/x-ogm+ogg=mpv.desktop
+video/x-theora+ogg=mpv.desktop
+video/3gpp=mpv.desktop
+video/3gpp2=mpv.desktop
+video/divx=mpv.desktop
+video/x-ms-wmv=mpv.desktop
+video/x-ms-wmv=mpv.desktop
+
+[Added Associations]
+application/pdf=zathura.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-C74EW0.desktop;userapp-Telegram Desktop-XDACW1.desktop;org.telegram.desktop.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;
