@@ -9,7 +9,7 @@ use common.nu *
 
 const PACKAGES = [
     "sway" "swayidle" "swaylock" "uwsm"
-    "waybar" "mako" "wofi" "fuzzel" "wob"
+    "waybar" "mako" "fuzzel" "wob"
     "gammastep" "cliphist" "wl-clipboard"
     "grim" "slurp" "swappy" "wf-recorder"
     "wlr-randr" "wtype" "pamixer" "playerctl"
@@ -18,7 +18,7 @@ const PACKAGES = [
 ]
 
 const STOW = [
-    "sway" "waybar" "mako" "swaylock" "wofi" "fuzzel" "wob"
+    "sway" "waybar" "mako" "swaylock" "fuzzel" "wob"
     "workstyle" "scripts" "xdg-mime"
 ]
 
