@@ -52,7 +52,7 @@ bindsym $mod+Alt+Return exec $term -e neomutt
 bindsym $mod+Ctrl+Alt+Return exec $term -e weechat
 
 # bindsym $mod+Ctrl+m exec mountdrive
-bindsym $mod+Ctrl+m exec ~/.config/sway/scripts/mount.sh
+bindsym $mod+Ctrl+m exec ~/.local/bin/mount.sh
 bindsym $mod+Ctrl+Shift+m exec umountdrive
 
 # jarvis

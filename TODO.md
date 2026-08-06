@@ -2,16 +2,32 @@
 
 Pending work on this repo, kept across sessions.
 
-## Sway script cleanup
+## More scripts living outside the repo
 
-`sway/.config/sway/scripts/` holds six orphans. Only `mount.sh` is still
-referenced from the config; the rest were superseded by the `-launcher.nu`
-scripts and still call alacritty.
+`~/.local/bin` holds 11 unversioned scripts. Five are called from the repo,
+so a fresh install leaves them broken:
 
-- [ ] Review one by one: `capture.sh`, `maintenance.sh`, `otp.sh`,
-      `password.sh`, `system.sh`, `vpn.sh`
-- [ ] Delete or port whatever is worth keeping. They call wofi and alacritty,
-      neither of which is installed any more, so they are already broken.
+- `jarvis.nu`, bound to `$mod+Alt+j` in the sway config
+- `maintenance-{disk,info,monitor,security}-launcher.nu`, the four submenus
+  `maintenance-launcher.nu` opens
+
+The rest are standalone: `jarvis-chat.nu`, `jarvis-dj.nu`, `jarvis-mtv.nu`,
+`manganorm.nu`, `openvpn3-reinstall.nu`, `to_webm.nu`.
+
+- [ ] Decide which ones belong in the repo. Check the jarvis ones for API
+      keys before committing anything.
+- [ ] `openvpn3-reinstall.nu` looks obsolete now that ProtonVPN replaced
+      openvpn3
+
+## Launchers for tools no longer in use
+
+`$mod+Shift+v` still runs `vpn-launcher.nu`, and waybar has a `custom/vpn`
+module calling `vpn-check`, but openvpn3 is gone. `otp-launcher.nu` and
+`passwd-launcher.nu` are still present with their bindings commented out,
+and gopass has been replaced by ProtonPass.
+
+- [ ] Decide whether the vpn module and launcher still do anything useful
+- [ ] Retire `otp-launcher.nu` and `passwd-launcher.nu` if gopass is done
 
 ## Related repos
 
