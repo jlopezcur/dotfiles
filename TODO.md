@@ -2,17 +2,6 @@
 
 Pending work on this repo, kept across sessions.
 
-## Scripts deliberately left out of the repo
-
-These live in `~/.local/bin` and stay unversioned on purpose. Nothing in the
-repo references them any more, so a fresh install is not affected.
-
-- `jarvis*.nu`: an assistant experiment, superseded by current AI tooling.
-  The sway binding is gone. Belongs in a future repo about AI integration,
-  not in dotfiles.
-- `manganorm.nu`, `openvpn3-reinstall.nu`, `to_webm.nu`: personal one-offs,
-  not configuration.
-
 ## Launchers for tools no longer in use
 
 `$mod+Shift+v` still runs `vpn-launcher.nu`, and waybar has a `custom/vpn`
