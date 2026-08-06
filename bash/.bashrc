@@ -114,3 +114,8 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 eval "$(starship init bash)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/jlopez/.lmstudio/bin"
+# End of LM Studio CLI section
+
