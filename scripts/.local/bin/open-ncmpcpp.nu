@@ -2,7 +2,7 @@
 
 let process_id = (pidof ncmpcpp)
 if ($process_id | is-empty) {
-  alacritty --class ncmpcpp -e ncmpcpp
+  kitty --class ncmpcpp -e ncmpcpp
 } else {
   let visibility = ((swaymsg -t get_tree | jq '..|objects|select(.app_id=="ncmpcpp")|.visible') == "true")
   swaymsg "scratchpad show"

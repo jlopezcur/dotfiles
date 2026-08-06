@@ -82,7 +82,7 @@ fi
 # ------------------------------------------------------------------------------
 
 case ${TERM} in
-  alacritty)
+  xterm-kitty)
     PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s\007" "${PWD/#$HOME/\~}"'
     ;;
   screen*)

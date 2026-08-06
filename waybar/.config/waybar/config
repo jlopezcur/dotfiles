@@ -62,7 +62,7 @@
 //  "custom/weather": {
 //    "format": "{}",
 //    "tooltip": true,
-//    "on-click": "alacritty --title Weather -e weather",
+//    "on-click": "kitty --title Weather -e weather",
 //    "interval": 3600,
 //    "exec": "$HOME/.config/waybar/modules/wttr.py",
 //    "return-type": "json"
@@ -86,8 +86,8 @@
     "format": "ﱾ VPN",
     "exec": "echo '{\"class\": \"connected\"}'",
     "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
-    "on-click": "alacritty --title VPN -e vpn-check",
-    "on-click-middle": "alacritty --title VPN -e vpn-stop",
+    "on-click": "kitty --title VPN -e vpn-check",
+    "on-click-middle": "kitty --title VPN -e vpn-stop",
     "return-type": "json",
     "interval": 5
   },
@@ -101,7 +101,7 @@
     "format-icons": { "wifi": "", "ethernet": "" },
     "tooltip-format-wifi": "Inrterface: {ifname}\nIP: {ipaddr}/{cidr}\nSSID: {essid}\nFreq: {frequency} MHz\nStrength: {signaldBm} dBm ({signalStrength}%)\nUp: {bandwidthUpBits}\nDown: {bandwidthDownBits}",
     "tooltip-format-ethernet": "Inrterface: {ifname}\nIP: {ipaddr}/{cidr}\nUp: {bandwidthUpBits}\nDown: {bandwidthDownBits}",
-    "on-click": "alacritty -e nmtui"
+    "on-click": "kitty -e nmtui"
   },
 
   "pulseaudio": {
@@ -117,7 +117,7 @@
     },
     "scroll-step": 1,
     "on-click": "pamixer -t",
-    "on-click-right": "alacritty -e ncpamixer"
+    "on-click-right": "kitty -e ncpamixer"
   },
 
   "bluetooth": {

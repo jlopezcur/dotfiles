@@ -56,7 +56,7 @@ let info = [
   $"(ansi blue)\$EDITOR:(ansi reset) ($env.EDITOR)",
   $"(ansi blue)\$BROWSER:(ansi reset) ($env.BROWSER)",
   $"(ansi blue)Alt Browser:(ansi reset) qutebrowser",
-  $"(ansi blue)Terminal:(ansi reset) alacritty",
+  $"(ansi blue)Terminal:(ansi reset) kitty",
   $"(ansi blue)Font:(ansi reset) FiraCode Nerd Font",
   $"(ansi blue)WM:(ansi reset) Sway",
   $"(ansi blue)Bar:(ansi reset) Waybar",

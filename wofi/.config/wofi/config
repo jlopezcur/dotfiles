@@ -1,6 +1,6 @@
 width=400
 prompt=Find your tool...
-term=alacritty
+term=kitty
 gtk_dark=true
 key_up=Ctrl-p
 key_down=Ctrl-n
