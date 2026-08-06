@@ -1,6 +1,6 @@
 #!/usr/bin/env nu
 
-use ../fns/pause
+use ../../lib/nu/pause
 
 lynis audit system
 pause

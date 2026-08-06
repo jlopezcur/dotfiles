@@ -1,6 +1,6 @@
 #!/usr/bin/env nu
 
-use ../fns/pause
+use ../../lib/nu/pause
 
 sudo freshclam
 clamscan --recursive --infected $env.HOME
