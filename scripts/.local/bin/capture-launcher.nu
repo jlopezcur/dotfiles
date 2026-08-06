@@ -28,7 +28,7 @@ match $action {
         notify-send "Screenshot" $"Saved screenshot on '($image_dir)($filename)'"
       },
       "Fullscreen with annotations" => {
-        grim -g (slurp -o) -t ppm - | satty --filename - --fullscreen --output-filename $"($image_dir)/pic-full-annotations-($filename)"
+        grim -g (slurp -o) -t ppm - | satty --filename - --output-filename $"($image_dir)/pic-full-annotations-($filename)"
         notify-send "Screenshot" $"Saved screenshot on '($image_dir)pic-full-annotations($filename)'"
       },
       "Region" => {
@@ -36,7 +36,7 @@ match $action {
         notify-send "Screenshot" $"Saved screenshot on '($image_dir)($filename)'"
       },
       "Region with annotations" => {
-        grim -g (slurp -o -c '##ff0000ff') -t ppm - | satty --filename - --fullscreen --output-filename $"($image_dir)/pic-region-annotations-($filename)"
+        grim -g (slurp -o -c '##ff0000ff') -t ppm - | satty --filename - --output-filename $"($image_dir)/pic-region-annotations-($filename)"
         notify-send "Screenshot" $"Saved screenshot on '($image_dir)pic-region-annotations($filename)'"
       },
       "Focused" => {
