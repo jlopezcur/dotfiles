@@ -55,11 +55,6 @@ bindsym $mod+Ctrl+Alt+Return exec $term -e weechat
 bindsym $mod+Ctrl+m exec ~/.local/bin/mount.sh
 bindsym $mod+Ctrl+Shift+m exec umountdrive
 
-# jarvis
-# ------------------------------------------------------------------------------
-
-bindsym $mod+Alt+j exec ~/.local/bin/jarvis.nu
-
 # scratchpads
 # ------------------------------------------------------------------------------
 
