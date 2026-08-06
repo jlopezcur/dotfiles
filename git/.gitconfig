@@ -25,7 +25,7 @@
   co = checkout
 
 [init]
-  defaultBranch = master
+  defaultBranch = main
 
 [core]
   pager = delta
