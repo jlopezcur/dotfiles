@@ -2,22 +2,16 @@
 
 Pending work on this repo, kept across sessions.
 
-## More scripts living outside the repo
+## Scripts deliberately left out of the repo
 
-`~/.local/bin` holds 11 unversioned scripts. Five are called from the repo,
-so a fresh install leaves them broken:
+These live in `~/.local/bin` and stay unversioned on purpose. Nothing in the
+repo references them any more, so a fresh install is not affected.
 
-- `jarvis.nu`, bound to `$mod+Alt+j` in the sway config
-- `maintenance-{disk,info,monitor,security}-launcher.nu`, the four submenus
-  `maintenance-launcher.nu` opens
-
-The rest are standalone: `jarvis-chat.nu`, `jarvis-dj.nu`, `jarvis-mtv.nu`,
-`manganorm.nu`, `openvpn3-reinstall.nu`, `to_webm.nu`.
-
-- [ ] Decide which ones belong in the repo. Check the jarvis ones for API
-      keys before committing anything.
-- [ ] `openvpn3-reinstall.nu` looks obsolete now that ProtonVPN replaced
-      openvpn3
+- `jarvis*.nu`: an assistant experiment, superseded by current AI tooling.
+  The sway binding is gone. Belongs in a future repo about AI integration,
+  not in dotfiles.
+- `manganorm.nu`, `openvpn3-reinstall.nu`, `to_webm.nu`: personal one-offs,
+  not configuration.
 
 ## Launchers for tools no longer in use
 
