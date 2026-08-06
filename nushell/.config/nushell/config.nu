@@ -1,23 +1,24 @@
-# Nushell Config File
-
-# The default config record. This is where much of your global configuration is setup.
 $env.config = {
   rm: {
     always_trash: false
   }
   history: {
-    max_size: 10000 # Session has to be reloaded for this to take effect
-    sync_on_enter: false # Enable to share history between multiple sessions, else you have to close the session to write history to file
-    file_format: "plaintext" # "sqlite" or "plaintext"
+    max_size: 1_000_000
+    sync_on_enter: true
+    file_format: sqlite
+    isolation: true
   }
-  edit_mode: vi # emacs, vi
+  edit_mode: vi
   show_banner: false
 }
 
-mkdir ($nu.data-dir | path join "vendor/autoload")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
-zoxide init nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
-carapace _carapace nushell | save -f ($nu.data-dir | path join "vendor/autoload/carapace.nu")
+let vendor_path: path = ($nu.data-dir | path join "vendor/autoload")
+
+mkdir $vendor_path
+starship init nu | save -f ($vendor_path | path join starship.nu)
+carapace _carapace nushell | save -f ($vendor_path | path join carapace.nu)
+# TODO: Uncomment next line when new version support last nushell
+# zoxide init nushell | save -f ($vendor_path | path join zoxide.nu)
 
 alias myip = curl http://ipecho.net/plain
 alias l = exa -alh --icons --git
