@@ -16,7 +16,7 @@
 - Shell: [nushell](https://www.nushell.sh/)
 - Prompt: [starship](https://starship.rs/)
 - Terminal Emulator: [kitty](https://github.com/kovidgoyal/kitty)
-- Launcher: [wofi](https://hg.sr.ht/~scoopta/wofi)
+- Launcher: [fuzzel](https://codeberg.org/dnkl/fuzzel)
 - Grep: [RigGrep](https://github.com/BurntSushi/ripgrep)
 - Fzf: [Fzf](https://github.com/junegunn/fzf)
 - Browsers:
@@ -79,7 +79,7 @@ idempotent, so re-running is safe.
 
 | Step | | Covers |
 | --- | --- | --- |
-| `setup/desktop.nu` | 🖥️ | sway, waybar, mako, wofi and the Wayland tools |
+| `setup/desktop.nu` | 🖥️ | sway, waybar, mako, fuzzel and the Wayland tools |
 | `setup/theme.nu` | 🎨 | GTK theming, see [Theming](#theming) |
 | `setup/shell.nu` | 🐚 | nushell, starship, kitty, git and CLI tools |
 | `setup/apps.nu` | 📦 | everyday applications |

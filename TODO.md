@@ -2,22 +2,27 @@
 
 Pending work on this repo, kept across sessions.
 
-## Launcher: decide between wofi and fuzzel
+## Launcher: finish the wofi to fuzzel migration
 
-Both installed, both from `extra`. 24 of the 26 call sites already use plain
-dmenu mode, so the migration is mostly mechanical.
+Migrated. wofi config is in `legacy/`, the package is still installed on
+purpose so there is a working fallback for a few days.
 
-- [ ] Decide whether fuzzel replaces wofi
-- [ ] If it does, migrate the call sites:
-  - `wofi -i --show dmenu -p "X"` becomes `fuzzel --dmenu -p "X"` (`-i` is the
-    default in fuzzel)
-  - `wofi -i --show drun` becomes `fuzzel`
-  - `pgrep -x wofi` guards become `pgrep -x fuzzel`
-  - `--width 800` has no direct equivalent: fuzzel's `-w` counts characters,
-    not pixels
-- [ ] Commit `fuzzel/.config/fuzzel/fuzzel.ini`, still uncommitted while the
-      decision is open
-- [ ] Drop the loser from `setup/desktop.nu` and move its config to `legacy/`
+- [ ] Check every binding actually works, in particular the two width
+      conversions, which are approximations: wofi counted pixels, fuzzel
+      counts characters
+  - `clipboard-launcher.nu`: `--width 800` became `-w 100`
+  - `bookmarks-launcher.nu`: `--width 80%` became `-w 80`
+- [ ] Once confirmed, `sudo pacman -Rns wofi`
+
+## Scripts living outside the repo
+
+`~/scripts/` holds two live scripts that are not versioned anywhere, and
+`launchers.conf` binds one of them.
+
+- [ ] Move `wofi-workspaces.nu` and `sway-setup-work.nu` into the repo, or
+      decide they stay out on purpose
+- [ ] `wofi-workspaces.nu` was migrated to fuzzel in place, so the name no
+      longer matches what it does
 
 ## Sway script cleanup
 
@@ -27,7 +32,8 @@ scripts and still call alacritty.
 
 - [ ] Review one by one: `capture.sh`, `maintenance.sh`, `otp.sh`,
       `password.sh`, `system.sh`, `vpn.sh`
-- [ ] Delete or port whatever is worth keeping
+- [ ] Delete or port whatever is worth keeping. They still call wofi and
+      alacritty, both of which are on the way out, so leaving them is a trap.
 
 ## Session and environment
 
