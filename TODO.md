@@ -21,6 +21,5 @@ and gopass has been replaced by ProtonPass.
 
 ## Housekeeping
 
-- [ ] Push to Codeberg
 - [ ] `archinfo.nu` is a toy, revisit when there is time
 - [ ] Keep checking GTK rendering across apps as they come up
