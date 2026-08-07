@@ -100,23 +100,26 @@ stow -vt ~ -d legacy i3
 
 ## Theming
 
-Handled by `setup/theme.nu`: installs the theme packages, stows `gtk` and
-`environment`, and writes the GTK settings to dconf.
+Handled by `setup/theme.nu`: installs the theme packages, stows `gtk`, and
+writes the GTK settings to dconf.
 
 GTK4 apps built on libadwaita ignore `GTK_THEME` and do not load themes from
 `/usr/share/themes` at all, so no third-party theme can cover both GTK3 and
 GTK4. `adw-gtk3-dark` solves it from the other side: it makes GTK3 apps look
 like libadwaita, so everything matches.
 
-The theme has to be declared in four places or windows render
+The theme has to be declared in three places or windows render
 inconsistently:
 
 | Where | Read by |
 | --- | --- |
-| `environment/.config/environment.d/theme.conf` | GTK3 apps at session start |
 | `gtk/.config/gtk-3.0/settings.ini` | GTK3 apps not going through the portal |
 | `gtk/.config/gtk-4.0/settings.ini` | GTK4 apps not going through the portal |
 | dconf | The portal, Flatpak apps, libadwaita |
+
+`GTK_THEME` is never exported. Plain GTK4 apps, ones not built on libadwaita
+such as `pavucontrol`, do honour it, and without a `:dark` suffix it overrides
+the dark preference and renders them light on a dark desktop.
 
 Flatpak apps cannot see `/usr/share/themes`, so the theme is also installed
 as a runtime (`org.gtk.Gtk3theme.adw-gtk3-dark`).

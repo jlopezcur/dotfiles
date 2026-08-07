@@ -6,6 +6,10 @@
 # built on libadwaita ignore GTK_THEME and do not load themes from
 # /usr/share/themes at all, so the only way to get a consistent look across
 # GTK3 and GTK4 is to make GTK3 match libadwaita.
+#
+# GTK_THEME is deliberately not exported. Plain GTK4 apps do honour it, and
+# without a :dark suffix it overrides the dark preference and renders them
+# light. settings.ini and dconf cover every app without that trap.
 
 use common.nu *
 
@@ -14,7 +18,7 @@ const PACKAGES = ["adw-gtk-theme" "adwaita-icon-theme" "ttf-opensans"]
 # Flatpak apps cannot see /usr/share/themes, they need the theme as a runtime.
 const FLATPAK_THEME = "org.gtk.Gtk3theme.adw-gtk3-dark"
 
-const STOW = ["gtk" "environment"]
+const STOW = ["gtk"]
 
 # Flatpak apps and libadwaita read these over the portal; native apps read the
 # stowed settings.ini files. Both have to agree or windows render

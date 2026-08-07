@@ -28,6 +28,4 @@ def main [
     } | ignore
 
     print "\n✅ Done."
-    print "Log out and back in: environment.d is only read at session start,"
-    print "and running apps keep the old environment."
 }
